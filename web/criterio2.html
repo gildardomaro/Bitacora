@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Criterio 2 - Población Derechohabiente | MIC 2025-2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 24px 20px;
+            color: #1e2a3e;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            overflow-x: auto;
+            padding: 8px 0 20px 0;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e4668;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0 0 24px;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background: #2c7da0;
+            transform: translateX(-3px);
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0.5rem 1.5rem 0.2rem 1.5rem;
+            color: #0b3b5f;
+        }
+        .subtitle {
+            margin: 0 1.5rem 1.5rem 1.5rem;
+            color: #2c5a7a;
+            border-left: 4px solid #2c7da0;
+            padding-left: 16px;
+            font-weight: 400;
+            font-size: 0.95rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            min-width: 1000px;
+        }
+        th {
+            background-color: #1e4668;
+            color: white;
+            padding: 14px 10px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #2c5a7a;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            border: 1px solid #d4dee8;
+            padding: 12px 10px;
+            vertical-align: middle;
+            background-color: #ffffff;
+        }
+        tr:nth-child(even) td {
+            background-color: #f9fbfd;
+        }
+        .accion-text {
+            width: 100%;
+            padding: 8px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            resize: vertical;
+        }
+        .accion-text:focus {
+            outline: none;
+            border-color: #2c7da0;
+            box-shadow: 0 0 0 2px rgba(44,125,160,0.2);
+        }
+        .percent-input {
+            width: 70px;
+            padding: 6px 8px;
+            border-radius: 10px;
+            border: 1px solid #bdc5d0;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .percent-input:focus {
+            outline: none;
+            border-color: #2c7da0;
+        }
+        .file-label {
+            background-color: #e9ecef;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #2c5a7a;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: 0.2s;
+            border: 1px solid #cbd5e1;
+        }
+        .file-label:hover {
+            background-color: #d4e0ed;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-preview {
+            font-size: 0.65rem;
+            word-break: break-all;
+            background: #eef2ff;
+            border-radius: 12px;
+            padding: 3px 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .file-preview a {
+            color: #1e4668;
+            text-decoration: none;
+        }
+        .delete-file {
+            background: none;
+            border: none;
+            color: #b91c1c;
+            font-size: 0.7rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .footer-note {
+            font-size: 0.75rem;
+            text-align: right;
+            padding: 16px 24px 8px;
+            color: #4a627a;
+            border-top: 1px solid #e2edf2;
+            margin-top: 8px;
+        }
+        .badge-subcriterio {
+            background: #e9ecef;
+            color: #1e4668;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .variable-text {
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+        .avance-cell, .evidencia-cell {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .subcriterio-cell {
+            background-color: #f5f7fa;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 0 0 0 20px;">
+        <a href="index.html" class="back-button">← Volver al Dashboard</a>
+    </div>
+    <div class="container">
+        <h1>📋 Criterio 2 · Población derechohabiente y/o usuaria</h1>
+        <div class="subtitle">
+            ✅ Variables calificadas como <strong>Parcial</strong> o <strong>No cumple</strong> — <strong>Cada fila es una acción de mejora independiente</strong> con su propio porcentaje de avance y su propia evidencia.
+            <br>✏️ El texto de cada acción es editable. Los datos se guardan automáticamente.
+        </div>
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="min-width:220px;">Subcriterio / Variable</th>
+                        <th style="min-width:400px;">Acción de mejora (editable)</th>
+                        <th style="width:100px;">Avance (%)</th>
+                        <th style="width:180px;">Evidencia (PDF/Imagen)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ========================================== -->
+                    <!-- 2.1 Consolidado - Acción 1 -->
+                    <!-- ========================================== -->
+                    <tr style="background-color: #eef2fa;">
+                        <td colspan="4"><strong>📌 2.1 Conocimiento y atención a la PDU · Consolidado</strong> — Mecanismo de seguimiento y evaluación de la efectividad de los planes. <em>(Parcial/No cumple)</em></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.1</div>
+                            <div class="variable-text">Conocimiento y atención<br><small>Consolidado</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.1_cons_1" rows="2">Diseñar matriz de seguimiento integral que incluya medios de verificación, estatus (en proceso, concluido, pendiente), indicador de cumplimiento (avance porcentual) e impacto esperado de cada acción. Revisar mensualmente.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="35" class="percent-input" data-accion-pct="2.1_cons_1">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.1_cons_1"></td>
+                    </tr>
+                    
+                    <!-- 2.1 Consolidado - Acción 2 -->
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.1</div>
+                            <div class="variable-text">Conocimiento y atención<br><small>Consolidado</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.1_cons_2" rows="2">Establecer formato estándar de verificación de planes operativos que contenga: elemento a revisar, indicador asociado, acciones derivadas del resultado, fecha compromiso y responsable. Aplicar bimestralmente.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="20" class="percent-input" data-accion-pct="2.1_cons_2">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.1_cons_2"></td>
+                    </tr>
+
+                    <!-- ========================================== -->
+                    <!-- 2.1 Referencial - 4 acciones -->
+                    <!-- ========================================== -->
+                    <tr style="background-color: #eef2fa;">
+                        <td colspan="4"><strong>📌 2.1 Conocimiento y atención a la PDU · Referencial</strong> — Innovaciones, reconocimientos y comparaciones referenciales. <em>(No cumple)</em></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.1</div>
+                            <div class="variable-text">Conocimiento y atención<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.1_ref_1" rows="2">Implementar innovación tangible (canal digital para quejas/sugerencias vía WhatsApp, app o códigos QR). Documentar formato con fecha, proceso, descripción e impacto.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="15" class="percent-input" data-accion-pct="2.1_ref_1">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.1_ref_1"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.1</div>
+                            <div class="variable-text">Conocimiento y atención<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.1_ref_2" rows="2">Realizar benchmarking con unidad referente, elaborando informe con metodología, socio referente, fecha de visita, hallazgos y acciones a replicar.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="10" class="percent-input" data-accion-pct="2.1_ref_2">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.1_ref_2"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.1</div>
+                            <div class="variable-text">Conocimiento y atención<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.1_ref_3" rows="2">Desarrollar indicador de impacto (ej. reducción en tiempo de respuesta a quejas) con ficha completa: nombre, objetivo, fórmula, responsable, periodicidad y meta.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="5" class="percent-input" data-accion-pct="2.1_ref_3">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.1_ref_3"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.1</div>
+                            <div class="variable-text">Conocimiento y atención<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.1_ref_4" rows="2">Gestionar reconocimiento institucional participando en convocatorias de buenas prácticas (Premio IMSS a la Competitividad).</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="0" class="percent-input" data-accion-pct="2.1_ref_4">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.1_ref_4"></td>
+                    </tr>
+
+                    <!-- ========================================== -->
+                    <!-- 2.2 Mejorado - 2 acciones -->
+                    <!-- ========================================== -->
+                    <tr style="background-color: #eef2fa;">
+                        <td colspan="4"><strong>📌 2.2 Interacción positiva con la PDU · Mejorado</strong> — Medición del impacto de las mejoras. <em>(No cumple)</em></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.2</div>
+                            <div class="variable-text">Interacción positiva<br><small>Mejorado</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.2_mej_1" rows="2">Seleccionar mejora concreta (ej. reducción de tiempos de espera) y definir indicador de impacto. Elaborar ficha y establecer medición inicial y subsecuente.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="40" class="percent-input" data-accion-pct="2.2_mej_1">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.2_mej_1"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.2</div>
+                            <div class="variable-text">Interacción positiva<br><small>Mejorado</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.2_mej_2" rows="2">Establecer seguimiento trimestral de las mejoras implementadas, documentando resultados, análisis de desviaciones y acciones correctivas.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="25" class="percent-input" data-accion-pct="2.2_mej_2">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.2_mej_2"></td>
+                    </tr>
+
+                    <!-- ========================================== -->
+                    <!-- 2.2 Referencial - 4 acciones -->
+                    <!-- ========================================== -->
+                    <tr style="background-color: #eef2fa;">
+                        <td colspan="4"><strong>📌 2.2 Interacción positiva con la PDU · Referencial</strong> — Innovaciones, reconocimientos y comparaciones. <em>(No cumple)</em></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.2</div>
+                            <div class="variable-text">Interacción positiva<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.2_ref_1" rows="2">Implementar innovación: sistema de retroalimentación inmediata con códigos QR en áreas de espera. Documentar innovación e impacto.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="20" class="percent-input" data-accion-pct="2.2_ref_1">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.2_ref_1"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.2</div>
+                            <div class="variable-text">Interacción positiva<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.2_ref_2" rows="2">Realizar benchmarking con unidad referente en atención a quejas/sugerencias. Informe con metodología, socio, fecha y acciones a adoptar.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="15" class="percent-input" data-accion-pct="2.2_ref_2">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.2_ref_2"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.2</div>
+                            <div class="variable-text">Interacción positiva<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.2_ref_3" rows="2">Desarrollar indicador de impacto para innovaciones (ej. % de quejas resueltas en menos de 24 horas). Medición periódica y tablero de control.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="10" class="percent-input" data-accion-pct="2.2_ref_3">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.2_ref_3"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.2</div>
+                            <div class="variable-text">Interacción positiva<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.2_ref_4" rows="2">Obtener reconocimiento institucional participando en certámenes de buenas prácticas en atención a la PDU.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="0" class="percent-input" data-accion-pct="2.2_ref_4">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.2_ref_4"></td>
+                    </tr>
+
+                    <!-- ========================================== -->
+                    <!-- 2.3 Referencial - 4 acciones -->
+                    <!-- ========================================== -->
+                    <tr style="background-color: #eef2fa;">
+                        <td colspan="4"><strong>📌 2.3 Satisfacción de la PDU · Referencial</strong> — Innovaciones, reconocimientos y comparaciones. <em>(No cumple)</em></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.3</div>
+                            <div class="variable-text">Satisfacción de la PDU<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.3_ref_1" rows="2">Desarrollar innovación para medir/mejorar satisfacción: encuestas digitales accesibles vía QR con alertas tempranas. Documentar innovación e impacto.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="25" class="percent-input" data-accion-pct="2.3_ref_1">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.3_ref_1"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.3</div>
+                            <div class="variable-text">Satisfacción de la PDU<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.3_ref_2" rows="2">Realizar comparación referencial con unidad que tenga altos índices de satisfacción; analizar prácticas y adaptar las mejores.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="10" class="percent-input" data-accion-pct="2.3_ref_2">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.3_ref_2"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.3</div>
+                            <div class="variable-text">Satisfacción de la PDU<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.3_ref_3" rows="2">Crear indicador específico (% de usuarios satisfechos) con mediciones periódicas antes/después de innovaciones. Presentar tendencia en tablero de control.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="20" class="percent-input" data-accion-pct="2.3_ref_3">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.3_ref_3"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.3</div>
+                            <div class="variable-text">Satisfacción de la PDU<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.3_ref_4" rows="2">Participar en foros/concursos (Premio IMSS Competitividad) para reconocimiento de buenas prácticas en satisfacción de usuarios.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="5" class="percent-input" data-accion-pct="2.3_ref_4">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.3_ref_4"></td>
+                    </tr>
+
+                    <!-- ========================================== -->
+                    <!-- 2.4 Referencial - 4 acciones -->
+                    <!-- ========================================== -->
+                    <tr style="background-color: #eef2fa;">
+                        <td colspan="4"><strong>📌 2.4 Resultados orientados a la PDU · Referencial</strong> — Ser referente en resultados de indicadores propios. <em>(No cumple)</em></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.4</div>
+                            <div class="variable-text">Resultados orientados<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.4_ref_1" rows="2">Identificar indicadores propios clave (tasa de resolución de quejas, % de mejora en satisfacción). Realizar análisis comparativo con unidades similares.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="30" class="percent-input" data-accion-pct="2.4_ref_1">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.4_ref_1"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.4</div>
+                            <div class="variable-text">Resultados orientados<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.4_ref_2" rows="2">Implementar tablero de control integral que muestre tendencia, meta, valor de referencia y análisis causal. Revisiones mensuales.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="15" class="percent-input" data-accion-pct="2.4_ref_2">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.4_ref_2"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.4</div>
+                            <div class="variable-text">Resultados orientados<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.4_ref_3" rows="2">Participar en ejercicios de benchmarking coordinados por la División de Desarrollo de la Competitividad.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="5" class="percent-input" data-accion-pct="2.4_ref_3">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.4_ref_3"></td>
+                    </tr>
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 2.4</div>
+                            <div class="variable-text">Resultados orientados<br><small>Referencial</small></div>
+                        </td>
+                        <td>
+                            <textarea class="accion-text" data-accion-text="2.4_ref_4" rows="2">Difundir resultados referenciales en medios institucionales y gestionar reconocimiento por parte del área normativa.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="0" class="percent-input" data-accion-pct="2.4_ref_4">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_2.4_ref_4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer-note">
+            📎 <strong>Cada acción tiene su propia evidencia</strong> — haz clic en "Subir evidencia" junto a cada acción. El texto es editable y se guarda automáticamente.
+            <br>✅ Basado en análisis del archivo "Criterio 2 PDU" de la evaluación.
+        </div>
+    </div>
+
+    <script>
+        function createFileUploader(accionKey, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            const wrapper = document.createElement('div');
+            wrapper.style.display = 'flex';
+            wrapper.style.flexDirection = 'column';
+            wrapper.style.alignItems = 'center';
+            wrapper.style.gap = '6px';
+            
+            const label = document.createElement('label');
+            label.className = 'file-label';
+            label.innerHTML = '📎 Subir evidencia';
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*,application/pdf';
+            label.appendChild(fileInput);
+            wrapper.appendChild(label);
+            
+            const previewDiv = document.createElement('div');
+            previewDiv.className = 'file-preview';
+            wrapper.appendChild(previewDiv);
+            
+            const storedFile = localStorage.getItem(`evidencia_${accionKey}`);
+            if (storedFile) {
+                try {
+                    const fileMeta = JSON.parse(storedFile);
+                    if (fileMeta && fileMeta.name && fileMeta.dataURL) {
+                        const link = document.createElement('a');
+                        link.href = fileMeta.dataURL;
+                        link.download = fileMeta.name;
+                        link.textContent = `📄 ${fileMeta.name.length > 22 ? fileMeta.name.substring(0,19)+'...' : fileMeta.name}`;
+                        link.target = '_blank';
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.textContent = '🗑️';
+                        deleteBtn.className = 'delete-file';
+                        previewDiv.innerHTML = '';
+                        previewDiv.appendChild(link);
+                        previewDiv.appendChild(deleteBtn);
+                        deleteBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            localStorage.removeItem(`evidencia_${accionKey}`);
+                            createFileUploader(accionKey, containerId);
+                        });
+                    } else {
+                        localStorage.removeItem(`evidencia_${accionKey}`);
+                    }
+                } catch(e) { localStorage.removeItem(`evidencia_${accionKey}`); }
+            }
+            
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                if (!file.type.match('image.*') && file.type !== 'application/pdf') {
+                    alert('Solo se permiten archivos PDF o imágenes');
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    const dataURL = ev.target.result;
+                    const fileMeta = { name: file.name, dataURL: dataURL, type: file.type };
+                    localStorage.setItem(`evidencia_${accionKey}`, JSON.stringify(fileMeta));
+                    createFileUploader(accionKey, containerId);
+                };
+                reader.readAsDataURL(file);
+            });
+            
+            container.innerHTML = '';
+            container.appendChild(wrapper);
+        }
+
+        // Porcentajes
+        const percentInputs = document.querySelectorAll('.percent-input');
+        function saveProgress(inputElement) {
+            const accionId = inputElement.getAttribute('data-accion-pct');
+            if (accionId) {
+                let val = parseInt(inputElement.value, 10);
+                if (isNaN(val)) val = 0;
+                if (val < 0) val = 0;
+                if (val > 100) val = 100;
+                inputElement.value = val;
+                localStorage.setItem(`avance_${accionId}`, val);
+            }
+        }
+        
+        percentInputs.forEach(input => {
+            const accionId = input.getAttribute('data-accion-pct');
+            const saved = localStorage.getItem(`avance_${accionId}`);
+            if (saved !== null && !isNaN(parseInt(saved,10))) {
+                let savedVal = parseInt(saved,10);
+                if (savedVal < 0) savedVal = 0;
+                if (savedVal > 100) savedVal = 100;
+                input.value = savedVal;
+            }
+            input.addEventListener('change', function() { saveProgress(this); });
+            input.addEventListener('blur', function() {
+                let v = parseInt(this.value,10);
+                if (isNaN(v)) v = 0;
+                if (v < 0) v = 0;
+                if (v > 100) v = 100;
+                this.value = v;
+                saveProgress(this);
+            });
+        });
+
+        // Textos editables
+        const textareas = document.querySelectorAll('.accion-text');
+        textareas.forEach(textarea => {
+            const accionId = textarea.getAttribute('data-accion-text');
+            const savedText = localStorage.getItem(`texto_${accionId}`);
+            if (savedText !== null) {
+                textarea.value = savedText;
+            }
+            textarea.addEventListener('input', function() {
+                localStorage.setItem(`texto_${accionId}`, this.value);
+            });
+        });
+
+        // Inicializar evidencias
+        const evidenciaIds = [
+            'evidencia_2.1_cons_1', 'evidencia_2.1_cons_2',
+            'evidencia_2.1_ref_1', 'evidencia_2.1_ref_2', 'evidencia_2.1_ref_3', 'evidencia_2.1_ref_4',
+            'evidencia_2.2_mej_1', 'evidencia_2.2_mej_2',
+            'evidencia_2.2_ref_1', 'evidencia_2.2_ref_2', 'evidencia_2.2_ref_3', 'evidencia_2.2_ref_4',
+            'evidencia_2.3_ref_1', 'evidencia_2.3_ref_2', 'evidencia_2.3_ref_3', 'evidencia_2.3_ref_4',
+            'evidencia_2.4_ref_1', 'evidencia_2.4_ref_2', 'evidencia_2.4_ref_3', 'evidencia_2.4_ref_4'
+        ];
+        
+        evidenciaIds.forEach(id => {
+            const accionKey = id.replace('evidencia_', '');
+            createFileUploader(accionKey, id);
+        });
+    </script>
+</body>
+</html>

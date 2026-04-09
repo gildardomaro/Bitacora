@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Plan Operativo MC 2026 | Coordinación de Competitividad Sinaloa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #e8f0e8 0%, #d4e0d4 100%);
+            min-height: 100vh;
+            padding: 30px 24px;
+        }
+
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header con logos IMSS */
+        .header {
+            background: white;
+            border-radius: 24px;
+            padding: 20px 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 4px solid #006633;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo-imss {
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .logo-competitividad {
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .title-container {
+            text-align: right;
+        }
+
+        .title-container h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #003366;
+            margin-bottom: 5px;
+        }
+
+        .title-container p {
+            color: #006633;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .badge-year {
+            background: #006633;
+            color: white;
+            border-radius: 40px;
+            padding: 4px 16px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        /* Sección de bienvenida - VERDE IMSS */
+        .welcome-section {
+            background: #006633;
+            border-radius: 24px;
+            padding: 25px 30px;
+            margin-bottom: 35px;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .welcome-logo {
+            background: white;
+            border-radius: 20px;
+            padding: 12px 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .welcome-logo img {
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .welcome-text {
+            flex: 1;
+        }
+
+        .welcome-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .welcome-text p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            opacity: 0.95;
+            max-width: 90%;
+        }
+
+        /* Grid de criterios */
+        .criterios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        /* Tarjeta IMSS */
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(0, 102, 51, 0.15);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+            border-color: #006633;
+        }
+
+        /* Encabezado verde IMSS */
+        .card-header {
+            background: #006633;
+            padding: 18px 18px 12px 18px;
+            color: white;
+        }
+
+        .card-header h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .card-body {
+            padding: 18px;
+            flex-grow: 1;
+            background: #ffffff;
+        }
+
+        .card-body p {
+            color: #2c3e50;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            margin-bottom: 0;
+        }
+
+        .card-footer {
+            padding: 12px 18px 18px 18px;
+            border-top: 1px solid #e9edf2;
+            background: #fafcff;
+        }
+
+        .btn-acceder {
+            background: #eef2fa;
+            border: 1px solid #cbdde9;
+            border-radius: 40px;
+            padding: 8px 18px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #003366;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            width: fit-content;
+        }
+
+        .card:hover .btn-acceder {
+            background: #006633;
+            border-color: #006633;
+            color: white;
+        }
+
+        /* Footer */
+        .footer-dash {
+            text-align: center;
+            margin-top: 45px;
+            font-size: 0.75rem;
+            color: #4a627a;
+            border-top: 1px solid rgba(0, 102, 51, 0.2);
+            padding-top: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 16px;
+            }
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .title-container {
+                text-align: center;
+            }
+            .welcome-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .welcome-text p {
+                max-width: 100%;
+            }
+            .logo-imss {
+                height: 55px;
+            }
+            .logo-competitividad {
+                height: 55px;
+            }
+            .welcome-logo img {
+                height: 50px;
+            }
+            .card-header h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="dashboard-container">
+    <!-- Header con logos IMSS -->
+    <div class="header">
+        <div class="logo-container">
+            <!-- LOGO IMSS -->
+            <img src="logo-imss.png" alt="IMSS" class="logo-imss" onerror="this.style.display='none'">
+            <!-- LOGO Coordinación de Competitividad Sinaloa -->
+            <img src="CC2023.png" alt="Coordinación de Competitividad Sinaloa" class="logo-competitividad" onerror="this.style.display='none'">
+        </div>
+        <div class="title-container">
+            <h1>COORDINACION DE COMPETITIVIDAD SINALOA</h1>
+            <p>Plan Operativo MC 2026 · Modelo Institucional para la Competitividad</p>
+            <span class="badge-year">Unidad de Medicina Familiar 37</span>
+        </div>
+    </div>
+
+    <!-- Sección de bienvenida con logotipo del IMSS integrado -->
+    <div class="welcome-section">
+        <div class="welcome-logo">
+            <img src="logo-imss.png" alt="IMSS" onerror="this.style.display='none'">
+        </div>
+        <div class="welcome-text">
+            <h2>
+                <span>📋</span> 
+                Seguimiento y mejora continua
+            </h2>
+            <p>
+                Esta herramienta permite gestionar y dar seguimiento a las acciones de mejora derivadas de la evaluación 
+                del Modelo Institucional para la Competitividad (MIC). Selecciona un criterio para acceder a su plan de mejora 
+                detallado, registrar avances y adjuntar evidencias.
+            </p>
+        </div>
+    </div>
+
+    <!-- Grid de 8 criterios - SOLO EL NOMBRE DEL CRITERIO -->
+    <div class="criterios-grid">
+        <!-- Criterio 1 -->
+        <div class="card" data-criterio="1" data-url="criterio1.html">
+            <div class="card-header">
+                <h2>Planeación</h2>
+            </div>
+            <div class="card-body">
+                <p>Diagnóstico situacional, planeación estratégica y operativa, alineación al PIIMSS, objetivos, indicadores y recursos.</p>
+            </div>
+            <div class="card-footer">
+                <div class="btn-acceder">📌 Acceder a plan de acción →</div>
+            </div>
+        </div>
+
+        <!-- Criterio 2 -->
+        <div class="card" data-criterio="2" data-url="criterio2.html">
+            <div class="card-header">
+                <h2>Derechohabiencia y población usuaria</h2>
+            </div>
+            <div class="card-body">
+                <p>Conocimiento, atención, interacción positiva, satisfacción de la PDU. Variables con calificación parcial / no cumple y acciones de mejora.</p>
+            </div>
+            <div class="card-footer">
+                <div class="btn-acceder">📌 Acceder a plan de acción →</div>
+            </div>
+        </div>
+
+        <!-- Criterio 3 -->
+        <div class="card" data-criterio="3" data-url="criterio3.html">
+            <div class="card-header">
+                <h2>Liderazgo</h2>
+            </div>
+            <div class="card-body">
+                <p>Liderazgo en acción, competencias de la alta dirección, gestión directiva y resultados del liderazgo.</p>
+            </div>
+            <div class="card-footer">
+                <div class="btn-acceder">📌 Acceder a plan de acción →</div>
+            </div>
+        </div>
+
+        <!-- Criterio 4 -->
+        <div class="card" data-criterio="4" data-url="criterio4.html">
+            <div class="card-header">
+                <h2>Procesos</h2>
+            </div>
+            <div class="card-body">
+                <p>Gestión de procesos, seguimiento y control, seguridad en instalaciones, resultados de procesos.</p>
+            </div>
+            <div class="card-footer">
+                <div class="btn-acceder">📌 Acceder a plan de acción →</div>
+            </div>
+        </div>
+
+        <!-- Criterio 5 -->
+        <div class="card" data-criterio="5" data-url="criterio5.html">
+            <div class="card-header">
+                <h2>Talento Humano</h2>
+            </div>
+            <div class="card-body">
+                <p>Desarrollo del talento humano, bienestar y satisfacción laboral, clima organizacional y resultados.</p>
+            </div>
+            <div class="card-footer">
+                <div class="btn-acceder">📌 Acceder a plan de acción →</div>
+            </div>
+        </div>
+
+        <!-- Criterio 6 -->
+        <div class="card" data-criterio="6" data-url="criterio6.html">
+            <div class="card-header">
+                <h2>Conocimiento organizacional e innovación</h2>
+            </div>
+            <div class="card-body">
+                <p>Gestión del conocimiento, comunicación organizacional, innovación y resultados.</p>
+            </div>
+            <div class="card-footer">
+                <div class="btn-acceder">📌 Acceder a plan de acción →</div>
+            </div>
+        </div>
+
+        <!-- Criterio 7 -->
+        <div class="card" data-criterio="7" data-url="criterio7.html">
+            <div class="card-header">
+                <h2>Responsabilidad Social</h2>
+            </div>
+            <div class="card-body">
+                <p>Integridad, igualdad sustantiva, inclusión, relación con la comunidad de influencia, resultados.</p>
+            </div>
+            <div class="card-footer">
+                <div class="btn-acceder">📌 Acceder a plan de acción →</div>
+            </div>
+        </div>
+
+        <!-- Criterio 8 -->
+        <div class="card" data-criterio="8" data-url="criterio8.html">
+            <div class="card-header">
+                <h2>Evaluación</h2>
+            </div>
+            <div class="card-body">
+                <p>Equipo de evaluación, proceso de evaluación interna, externa y mejora continua.</p>
+            </div>
+            <div class="card-footer">
+                <div class="btn-acceder">📌 Acceder a plan de acción →</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-dash">
+        <p>Instituto Mexicano del Seguro Social · Coordinación de Competitividad Sinaloa</p>
+        <p>✅ Plan Operativo MC 2026 · Seguimiento a acciones de mejora</p>
+    </div>
+</div>
+
+<script>
+    // Redirección al hacer clic en cada tarjeta
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const url = card.getAttribute('data-url');
+            if (url) {
+                window.location.href = url;
+            } else {
+                const criterio = card.getAttribute('data-criterio');
+                alert(`📄 Página en desarrollo: Criterio ${criterio}. Próximamente disponible.`);
+            }
+        });
+    });
+</script>
+</body>
+</html>

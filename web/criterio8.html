@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Criterio 8 - Evaluación | Plan Operativo MC 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #e8f0e8 0%, #d4e0d4 100%);
+            margin: 0;
+            padding: 24px 20px;
+            color: #1e2a3e;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            overflow-x: auto;
+            padding: 8px 0 20px 0;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #006633;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0 0 24px;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background: #004d26;
+            transform: translateX(-3px);
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0.5rem 1.5rem 0.2rem 1.5rem;
+            color: #003366;
+        }
+        .subtitle {
+            margin: 0 1.5rem 1.5rem 1.5rem;
+            color: #006633;
+            border-left: 4px solid #006633;
+            padding-left: 16px;
+            font-weight: 400;
+            font-size: 0.95rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            min-width: 1000px;
+        }
+        th {
+            background-color: #006633;
+            color: white;
+            padding: 14px 10px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #008048;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            border: 1px solid #d4dee8;
+            padding: 12px 10px;
+            vertical-align: middle;
+            background-color: #ffffff;
+        }
+        tr:nth-child(even) td {
+            background-color: #f9fbfd;
+        }
+        .accion-text {
+            width: 100%;
+            padding: 8px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            border: 1px solid #cbdde9;
+            border-radius: 8px;
+            background: white;
+            resize: vertical;
+        }
+        .accion-text:focus {
+            outline: none;
+            border-color: #006633;
+            box-shadow: 0 0 0 2px rgba(0, 102, 51, 0.2);
+        }
+        .percent-input {
+            width: 70px;
+            padding: 6px 8px;
+            border-radius: 10px;
+            border: 1px solid #bdc5d0;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .percent-input:focus {
+            outline: none;
+            border-color: #006633;
+        }
+        .file-label {
+            background-color: #e9ecef;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #006633;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: 0.2s;
+            border: 1px solid #cbd5e1;
+        }
+        .file-label:hover {
+            background-color: #d4e0ed;
+            color: #004d26;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-preview {
+            font-size: 0.65rem;
+            word-break: break-all;
+            background: #eef2ff;
+            border-radius: 12px;
+            padding: 3px 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .file-preview a {
+            color: #003366;
+            text-decoration: none;
+        }
+        .delete-file {
+            background: none;
+            border: none;
+            color: #b91c1c;
+            font-size: 0.7rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .footer-note {
+            font-size: 0.75rem;
+            text-align: right;
+            padding: 16px 24px 8px;
+            color: #4a627a;
+            border-top: 1px solid #e2edf2;
+            margin-top: 8px;
+        }
+        .badge-subcriterio {
+            background: #e9ecef;
+            color: #006633;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .variable-text {
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+        .avance-cell, .evidencia-cell {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .section-header-row td {
+            background-color: #e8f0e8;
+            padding: 10px 15px;
+            font-weight: bold;
+            color: #006633;
+            border-left: 4px solid #006633;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 0 0 0 20px;">
+        <a href="index.html" class="back-button">← Volver al Dashboard</a>
+    </div>
+    <div class="container">
+        <h1>📋 Criterio 8 · Evaluación</h1>
+        <div class="subtitle">
+            ✅ Variables calificadas como <strong>Parcial</strong> o <strong>No cumple</strong> según evaluación — <strong>Cada fila es una acción de mejora independiente</strong> con su propio porcentaje de avance y su propia evidencia.
+            <br>✏️ Basado en el análisis del archivo "Criterio 8 Evaluación" de la evaluación MIC.
+        </div>
+        <div style="overflow-x: auto;">
+            <table id="tablaMejoras">
+                <thead>
+                    <tr>
+                        <th style="min-width:220px;">Subcriterio / Variable</th>
+                        <th style="min-width:400px;">Acción de mejora (editable)</th>
+                        <th style="width:100px;">Avance (%)</th>
+                        <th style="width:180px;">Evidencia (PDF/Imagen)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ========================================== -->
+                    <!-- 8.1 Equipo de evaluación - Referencial (2 acciones) -->
+                    <!-- ========================================== -->
+                    <tr class="section-header-row">
+                        <td colspan="4"><strong>📌 8.1 Equipo de evaluación · Referencial</strong> — El equipo evaluador debe contar con constancias de actualización. <em>(Parcial)</em></td>
+                    </tr>
+                    <!-- Acción 1 -->
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 8.1</div>
+                            <div class="variable-text">Equipo de evaluación<br><small>Referencial</small></div>
+                        </td>
+                        <td class="accion-cell">
+                            <textarea class="accion-text" data-accion-text="8.1_ref_1" rows="2">Identificar al menos 2 integrantes del equipo evaluador interno que participen en el Taller de actualización de evaluadores del Premio IMSS a la Competitividad.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="20" class="percent-input" data-accion-pct="8.1_ref_1">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_8.1_ref_1"></td>
+                    </tr>
+                    <!-- Acción 2 -->
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 8.1</div>
+                            <div class="variable-text">Equipo de evaluación<br><small>Referencial</small></div>
+                        </td>
+                        <td class="accion-cell">
+                            <textarea class="accion-text" data-accion-text="8.1_ref_2" rows="2">Gestionar y resguardar las constancias de aprobación del taller de actualización para los evaluadores internos.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="10" class="percent-input" data-accion-pct="8.1_ref_2">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_8.1_ref_2"></td>
+                    </tr>
+
+                    <!-- ========================================== -->
+                    <!-- 8.2 Proceso de evaluación - Mejorado (2 acciones) -->
+                    <!-- ========================================== -->
+                    <tr class="section-header-row">
+                        <td colspan="4"><strong>📌 8.2 Proceso de evaluación · Mejorado</strong> — Evaluaciones internas adicionales y revisión periódica de programas operativos. <em>(No cumple)</em></td>
+                    </tr>
+                    <!-- Acción 1 -->
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 8.2</div>
+                            <div class="variable-text">Proceso de evaluación<br><small>Mejorado</small></div>
+                        </td>
+                        <td class="accion-cell">
+                            <textarea class="accion-text" data-accion-text="8.2_mej_1" rows="2">Realizar evaluaciones internas adicionales a la del último trimestre del año, conforme al plan integral de implementación, para constatar el impacto de las acciones de mejora.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="15" class="percent-input" data-accion-pct="8.2_mej_1">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_8.2_mej_1"></td>
+                    </tr>
+                    <!-- Acción 2 -->
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 8.2</div>
+                            <div class="variable-text">Proceso de evaluación<br><small>Mejorado</small></div>
+                        </td>
+                        <td class="accion-cell">
+                            <textarea class="accion-text" data-accion-text="8.2_mej_2" rows="2">Que los líderes de los equipos operativos realicen revisión periódica del cumplimiento de los programas operativos, contrastando resultados con el informe de evaluación y la cédula de evaluación, y preparen propuestas de actualización o mejora.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="10" class="percent-input" data-accion-pct="8.2_mej_2">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_8.2_mej_2"></td>
+                    </tr>
+
+                    <!-- ========================================== -->
+                    <!-- 8.2 Proceso de evaluación - Referencial (2 acciones) -->
+                    <!-- ========================================== -->
+                    <tr class="section-header-row">
+                        <td colspan="4"><strong>📌 8.2 Proceso de evaluación · Referencial</strong> — Evaluaciones internas cruzadas con otras unidades. <em>(No cumple)</em></td>
+                    </tr>
+                    <!-- Acción 1 -->
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 8.2</div>
+                            <div class="variable-text">Proceso de evaluación<br><small>Referencial</small></div>
+                        </td>
+                        <td class="accion-cell">
+                            <textarea class="accion-text" data-accion-text="8.2_ref_1" rows="2">Realizar evaluaciones internas adicionales cruzadas con otras unidades implementadoras del MIC.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="0" class="percent-input" data-accion-pct="8.2_ref_1">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_8.2_ref_1"></td>
+                    </tr>
+                    <!-- Acción 2 -->
+                    <tr>
+                        <td class="subcriterio-cell">
+                            <div class="badge-subcriterio">Subcriterio 8.2</div>
+                            <div class="variable-text">Proceso de evaluación<br><small>Referencial</small></div>
+                        </td>
+                        <td class="accion-cell">
+                            <textarea class="accion-text" data-accion-text="8.2_ref_2" rows="2">Que el equipo evaluador interno participe en la aplicación de evaluaciones internas adicionales a la del último trimestre en otras unidades implementadoras.</textarea>
+                        </td>
+                        <td class="avance-cell">
+                            <input type="number" min="0" max="100" value="0" class="percent-input" data-accion-pct="8.2_ref_2">
+                            <span class="percent-symbol">%</span>
+                        </td>
+                        <td class="evidencia-cell" id="evidencia_8.2_ref_2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer-note">
+            📎 <strong>Cada acción tiene su propia evidencia</strong> — haz clic en "Subir evidencia" junto a cada acción. El texto es editable y se guarda automáticamente.
+            <br>✅ Basado en análisis del archivo "Criterio 8 Evaluación" de la evaluación MIC. Colores institucionales IMSS.
+        </div>
+    </div>
+
+    <script>
+        function createFileUploader(accionKey, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            const wrapper = document.createElement('div');
+            wrapper.style.display = 'flex';
+            wrapper.style.flexDirection = 'column';
+            wrapper.style.alignItems = 'center';
+            wrapper.style.gap = '6px';
+            
+            const label = document.createElement('label');
+            label.className = 'file-label';
+            label.innerHTML = '📎 Subir evidencia';
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*,application/pdf';
+            label.appendChild(fileInput);
+            wrapper.appendChild(label);
+            
+            const previewDiv = document.createElement('div');
+            previewDiv.className = 'file-preview';
+            wrapper.appendChild(previewDiv);
+            
+            const storedFile = localStorage.getItem(`evidencia_${accionKey}`);
+            if (storedFile) {
+                try {
+                    const fileMeta = JSON.parse(storedFile);
+                    if (fileMeta && fileMeta.name && fileMeta.dataURL) {
+                        const link = document.createElement('a');
+                        link.href = fileMeta.dataURL;
+                        link.download = fileMeta.name;
+                        link.textContent = `📄 ${fileMeta.name.length > 22 ? fileMeta.name.substring(0,19)+'...' : fileMeta.name}`;
+                        link.target = '_blank';
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.textContent = '🗑️';
+                        deleteBtn.className = 'delete-file';
+                        previewDiv.innerHTML = '';
+                        previewDiv.appendChild(link);
+                        previewDiv.appendChild(deleteBtn);
+                        deleteBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            localStorage.removeItem(`evidencia_${accionKey}`);
+                            createFileUploader(accionKey, containerId);
+                        });
+                    } else {
+                        localStorage.removeItem(`evidencia_${accionKey}`);
+                    }
+                } catch(e) { localStorage.removeItem(`evidencia_${accionKey}`); }
+            }
+            
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                if (!file.type.match('image.*') && file.type !== 'application/pdf') {
+                    alert('Solo se permiten archivos PDF o imágenes');
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    const dataURL = ev.target.result;
+                    const fileMeta = { name: file.name, dataURL: dataURL, type: file.type };
+                    localStorage.setItem(`evidencia_${accionKey}`, JSON.stringify(fileMeta));
+                    createFileUploader(accionKey, containerId);
+                };
+                reader.readAsDataURL(file);
+            });
+            
+            container.innerHTML = '';
+            container.appendChild(wrapper);
+        }
+
+        // Inicializar porcentajes
+        const percentInputs = document.querySelectorAll('.percent-input');
+        function saveProgress(inputElement) {
+            const accionId = inputElement.getAttribute('data-accion-pct');
+            if (accionId) {
+                let val = parseInt(inputElement.value, 10);
+                if (isNaN(val)) val = 0;
+                if (val < 0) val = 0;
+                if (val > 100) val = 100;
+                inputElement.value = val;
+                localStorage.setItem(`avance_${accionId}`, val);
+            }
+        }
+        
+        percentInputs.forEach(input => {
+            const accionId = input.getAttribute('data-accion-pct');
+            const saved = localStorage.getItem(`avance_${accionId}`);
+            if (saved !== null && !isNaN(parseInt(saved,10))) {
+                let savedVal = parseInt(saved,10);
+                if (savedVal < 0) savedVal = 0;
+                if (savedVal > 100) savedVal = 100;
+                input.value = savedVal;
+            }
+            input.addEventListener('change', function() { saveProgress(this); });
+            input.addEventListener('blur', function() {
+                let v = parseInt(this.value,10);
+                if (isNaN(v)) v = 0;
+                if (v < 0) v = 0;
+                if (v > 100) v = 100;
+                this.value = v;
+                saveProgress(this);
+            });
+        });
+
+        // Textos editables
+        const textareas = document.querySelectorAll('.accion-text');
+        textareas.forEach(textarea => {
+            const accionId = textarea.getAttribute('data-accion-text');
+            const savedText = localStorage.getItem(`texto_${accionId}`);
+            if (savedText !== null) {
+                textarea.value = savedText;
+            }
+            textarea.addEventListener('input', function() {
+                localStorage.setItem(`texto_${accionId}`, this.value);
+            });
+        });
+
+        // Inicializar evidencias
+        const evidenciaIds = [
+            'evidencia_8.1_ref_1', 'evidencia_8.1_ref_2',
+            'evidencia_8.2_mej_1', 'evidencia_8.2_mej_2',
+            'evidencia_8.2_ref_1', 'evidencia_8.2_ref_2'
+        ];
+        
+        evidenciaIds.forEach(id => {
+            const accionKey = id.replace('evidencia_', '');
+            createFileUploader(accionKey, id);
+        });
+    </script>
+</body>
+</html>
