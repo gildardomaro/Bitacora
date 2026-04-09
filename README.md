@@ -1,2 +1,2 @@
 # ccsinaloa
-Aplicacion para caputira de operaciones realizadas en trading diario
+plataforma web
