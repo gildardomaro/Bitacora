@@ -1,2 +1,0 @@
-# ccsinaloa
-plataforma web
