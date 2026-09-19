@@ -1209,3 +1209,404 @@ body {
   padding: 12px 14px;
   font-size: 13px;
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO: SMARTPHONES Y TABLETS
+   ========================================================================== */
+
+/* Tablets y pantallas intermedias (<= 1024px) */
+@media (max-width: 1024px) {
+  .app-container {
+    padding: 14px 16px;
+    gap: 16px;
+  }
+
+  .main-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px 18px;
+  }
+
+  .brand-section {
+    justify-content: flex-start;
+  }
+
+  .header-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .account-selector-wrapper {
+    flex: 1 1 100%;
+    display: flex;
+  }
+
+  .account-selector-wrapper .custom-select {
+    width: 100%;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .analytics-charts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .chart-canvas-box {
+    height: 280px;
+  }
+
+  .equity-canvas {
+    height: 380px;
+  }
+
+  .radar-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+/* Smartphones y pantallas pequeñas (<= 768px) */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px 12px;
+    gap: 12px;
+  }
+
+  .main-header {
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .brand-section {
+    gap: 12px;
+  }
+
+  .brand-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-title {
+    font-size: 18px;
+  }
+
+  .brand-subtitle {
+    font-size: 11px;
+  }
+
+  .header-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .account-selector-wrapper {
+    grid-column: span 2;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .account-selector-wrapper label {
+    font-size: 11px;
+  }
+
+  .account-selector-wrapper .custom-select {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  /* Botón de refresco amplio y cómodo para tocar con el dedo */
+  .refresh-btn {
+    grid-column: span 2;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    min-height: 42px;
+  }
+
+  .status-badge {
+    justify-content: center;
+    font-size: 11px;
+    padding: 8px 10px;
+    min-height: 36px;
+  }
+
+  .market-clock {
+    grid-column: span 2;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 14px;
+  }
+
+  /* KPIs en 2 columnas compactas en smartphones */
+  .kpi-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .kpi-card {
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    gap: 6px;
+  }
+
+  .kpi-title {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .kpi-icon {
+    font-size: 15px;
+  }
+
+  .kpi-value {
+    font-size: 18px;
+  }
+
+  .kpi-value small {
+    font-size: 10px;
+  }
+
+  .kpi-meta {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  /* Pestañas de navegación con scroll horizontal táctil nativo */
+  .dashboard-nav, .nav-tabs {
+    padding: 6px 8px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .dashboard-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Panel de Analítica */
+  .analytics-header-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .account-badge-group {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .account-pill-label {
+    font-size: 15px;
+  }
+
+  .month-selector-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .month-select {
+    width: 100%;
+    min-width: unset;
+    padding: 9px 12px;
+  }
+
+  .analytics-card {
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    gap: 12px;
+  }
+
+  .card-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .card-subtitle {
+    font-size: 11px;
+  }
+
+  .chart-canvas-box {
+    height: 240px;
+  }
+
+  .chart-canvas-box.pie-box {
+    height: 200px;
+  }
+
+  .pie-stats-summary {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .pie-stat-item {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .pie-stat-item strong {
+    font-size: 13px;
+  }
+
+  /* Extracto de Bitácora */
+  .monthly-extract-card {
+    padding: 14px;
+    border-radius: var(--radius-sm);
+  }
+
+  .extract-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .extract-totals {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .extract-totals .month-pill:last-child {
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  /* Curva de Equidad */
+  .equity-container {
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    gap: 14px;
+  }
+
+  .strategy-toggle {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    gap: 6px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .strategy-toggle::-webkit-scrollbar {
+    display: none;
+  }
+
+  .toggle-btn {
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .stat-highlight-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .stat-pill {
+    padding: 8px 10px;
+    font-size: 11px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .equity-canvas {
+    height: 300px;
+  }
+
+  /* Buscador de Bitácora */
+  .trades-container {
+    padding: 14px;
+    border-radius: var(--radius-sm);
+  }
+
+  .trades-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .table-search-box input {
+    width: 100%;
+  }
+
+  /* Tablas con scroll horizontal suave en móviles */
+  .table-responsive {
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+  }
+
+  .quant-table th, .quant-table td {
+    padding: 10px 12px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  /* Radar Multi-Timeframe en 1 columna */
+  .radar-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .radar-card {
+    padding: 14px;
+  }
+
+  .multi-tf-row {
+    gap: 4px;
+  }
+
+  .tf-box {
+    padding: 6px 4px;
+  }
+
+  .tf-box span {
+    font-size: 10px;
+  }
+
+  .tf-box strong {
+    font-size: 11px;
+  }
+}
+
+/* Pantallas extra pequeñas (<= 380px) */
+@media (max-width: 380px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-value {
+    font-size: 20px;
+  }
+}

@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-19T18:17:27.050659Z",
+  generated_at: "2026-09-19T18:22:40.575974Z",
   "equity": {
     "gold_m30": {
       "strategy": "smart+IA (SMC XAUUSD M30)",
@@ -35000,5 +35000,5 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": ""
     }
   ],
-  "last_sync": "2026-09-19 11:17:26"
+  "last_sync": "2026-09-19 11:22:40"
 };
