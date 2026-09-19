@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARO CONSULTORES | Mesa Cuantitativa & Trading con IA</title>
+  
+  <!-- Tipografía Google Fonts Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <script src="chart.umd.min.js"></script>
+  <script src="lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- HEADER INSTITUCIONAL -->
+    <header class="main-header">
+      <div class="brand-section">
+        <div class="brand-logo">
+          <img src="logo_maro.jpg" alt="Maro Consultores" class="brand-logo-img">
+        </div>
+        <div>
+          <h1 class="brand-title">MARO <span>CONSULTORES</span></h1>
+          <p class="brand-subtitle">Mesa Institucional Automatizada & Trading con IA</p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <!-- Selector de Cuenta / Bot -->
+        <div class="account-selector-wrapper">
+          <label for="terminalSelector">Terminal Activo:</label>
+          <select id="terminalSelector" class="custom-select">
+            <option value="PEPPERSTONE" selected>🦅 Pepperstone DEMO (smart+IA Oro)</option>
+            <option value="REAL1000">💎 Vantage REAL (REAL1000)</option>
+            <option value="HECTOR">🛡️ Vantage REAL (HECTOR)</option>
+            <option value="VANTAGE">📊 Vantage DEMO (BOT-1000)</option>
+          </select>
+        </div>
+
+        <!-- Botón de Refresco Inmediato -->
+        <button id="btnManualRefresh" class="status-badge sync-timer refresh-btn" title="Forzar sincronización inmediata de todas las cuentas en tiempo real">
+          <span class="sync-icon">🔄</span>
+          <span id="btnRefreshText">Refrescar Datos</span>
+        </button>
+
+        <!-- Estado de Conexión MT5 -->
+        <div class="status-badge live" id="mt5StatusBadge">
+          <span class="pulse-dot"></span>
+          <span id="mt5StatusText">MT5 CONECTADO</span>
+        </div>
+
+        <!-- Temporizador de Auto-actualización 30 min -->
+        <div class="status-badge sync-timer" id="syncTimerBadge" title="Próxima actualización automática de analítica y bitácora cada 30 min">
+          <span id="syncTimerText">Sinc: 30:00</span>
+        </div>
+
+        <!-- Reloj de Mercado -->
+        <div class="market-clock">
+          <span class="clock-label">LOCAL</span>
+          <span class="clock-time" id="localClock">--:--:--</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVEGACIÓN PRINCIPAL SUPERIOR (PESTAÑAS) -->
+    <nav class="dashboard-nav">
+      <button class="tab-btn active" data-tab="tab-analytics">
+        <span class="tab-icon">📊</span> Panel Interactivo & Rendimiento Mensual
+      </button>
+      <button class="tab-btn" data-tab="tab-equity">
+        <span class="tab-icon">📈</span> Curva de Rendimiento Acumulado
+      </button>
+      <button class="tab-btn" data-tab="tab-trades">
+        <span class="tab-icon">📑</span> Bitácora & Posiciones Reales
+      </button>
+      <button class="tab-btn" data-tab="tab-radar">
+        <span class="tab-icon">📡</span> Radar Institucional (5:00 AM)
+      </button>
+    </nav>
+
+    <!-- CARDS DE MÉTRICAS KPI (GLASSMORPHISM) -->
+    <section class="kpi-grid">
+      <!-- Balance -->
+      <div class="kpi-card" id="cardBalance">
+        <div class="kpi-header">
+          <span class="kpi-title">BALANCE CUENTA</span>
+          <span class="kpi-icon">💰</span>
+        </div>
+        <div class="kpi-value" id="kpiBalance">$0.00 <small>USD</small></div>
+        <div class="kpi-meta" id="kpiTerminalName">Conectando...</div>
+      </div>
+
+      <!-- Equidad -->
+      <div class="kpi-card" id="cardEquity">
+        <div class="kpi-header">
+          <span class="kpi-title">EQUIDAD NETA</span>
+          <span class="kpi-icon">📈</span>
+        </div>
+        <div class="kpi-value" id="kpiEquity">$0.00 <small>USD</small></div>
+        <div class="kpi-meta" id="kpiMarginFree">Margen Libre: $0.00</div>
+      </div>
+
+      <!-- Flotante -->
+      <div class="kpi-card" id="cardFloating">
+        <div class="kpi-header">
+          <span class="kpi-title">FLOTANTE EN VIVO</span>
+          <span class="kpi-icon">⚖️</span>
+        </div>
+        <div class="kpi-value neutral" id="kpiFloating">$0.00</div>
+        <div class="kpi-meta" id="kpiOpenPositions">0 posiciones activas</div>
+      </div>
+
+      <!-- % Rendimiento Mes Actual -->
+      <div class="kpi-card highlight" id="cardWinRate">
+        <div class="kpi-header">
+          <span class="kpi-title">% MES ACTUAL</span>
+          <span class="kpi-icon">📅</span>
+        </div>
+        <div class="kpi-value win" id="kpiWinRate">--%</div>
+        <div class="kpi-meta" id="kpiWinRateMeta">Cargando datos mensuales...</div>
+      </div>
+    </section>
+
+    <!-- ÁREA DE CONTENIDO PRINCIPAL -->
+    <main class="dashboard-content">
+
+      <!-- PESTAÑA 1: PANEL INTERACTIVO DE RENDIMIENTO MENSUAL, WIN/LOSS & EXTRACTO -->
+      <section id="tab-analytics" class="tab-pane active">
+        <!-- Barra de Estado de la Cuenta Seleccionada -->
+        <div class="analytics-header-card">
+          <div class="account-badge-group">
+            <span class="account-pill-label" id="panelAccountPill">🦅 smart+IA (Oro Demo)</span>
+            <span class="badge" id="panelAccountServer">Pepperstone-Demo</span>
+            <span class="badge" id="panelAccountSymbol" style="background:rgba(255,215,0,0.15); color:#FFD700; border:1px solid rgba(255,215,0,0.4);">XAUUSD</span>
+          </div>
+          <div class="month-selector-wrapper">
+            <label for="monthFilterSelector">📅 Seleccionar Mes a Detallar:</label>
+            <select id="monthFilterSelector" class="custom-select month-select">
+              <option value="2026-09" selected>Septiembre 2026</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Fila de Gráficos Cuantitativos (Comparativa % Mensual + Pastel Win/Loss) -->
+        <div class="analytics-charts-grid">
+          <!-- Gráfico 1: Comparativo % Ganancia por Mes -->
+          <div class="analytics-card">
+            <div class="card-header-flex">
+              <div>
+                <h3 class="card-title">📈 Rendimiento Mensual (% Ganancia s/ Capital Inicial)</h3>
+                <p class="card-subtitle">Retornos mensuales calculados estrictamente sobre el capital inicial de la cuenta</p>
+              </div>
+              <div class="chart-tag green" id="tagBestMonth">Mejor: +0.0%</div>
+            </div>
+            <div class="chart-canvas-box">
+              <canvas id="monthlyBarChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico 2: Pastel Operaciones Ganadas vs Perdidas -->
+          <div class="analytics-card">
+            <div class="card-header-flex">
+              <div>
+                <h3 class="card-title">🏆 Proporción Ganadas vs. Perdidas</h3>
+                <p class="card-subtitle" id="pieSubtitle">Distribución de operaciones cerradas</p>
+              </div>
+              <div class="chart-tag" id="tagWinRatePill">Win Rate: --%</div>
+            </div>
+            <div class="chart-canvas-box pie-box">
+              <canvas id="winLossPieChart"></canvas>
+            </div>
+            <div class="pie-stats-summary" id="pieStatsSummary">
+              <div class="pie-stat-item">
+                <span class="dot green"></span>
+                <span>Ganadas:</span>
+                <strong id="statPieWins" class="green">0</strong>
+              </div>
+              <div class="pie-stat-item">
+                <span class="dot red"></span>
+                <span>Perdidas:</span>
+                <strong id="statPieLosses" class="red">0</strong>
+              </div>
+              <div class="pie-stat-item">
+                <span class="dot cyan"></span>
+                <span>Total:</span>
+                <strong id="statPieTotal">0</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extracto de la Bitácora del Mes Seleccionado -->
+        <div class="monthly-extract-card">
+          <div class="extract-header">
+            <div>
+              <h3 class="card-title" id="extractTitle">📑 Extracto de Bitácora del Mes Seleccionado</h3>
+              <p class="card-subtitle">Registro granular de operaciones cerradas: Fecha, Hora, Tipo (BUY/SELL), Lotaje, Comisión/Swap y Ganancia Neta</p>
+            </div>
+            <div class="extract-totals" id="extractMonthSummary">
+              <div class="month-pill">Trades Mes: <strong id="extractMonthTrades">0</strong></div>
+              <div class="month-pill">Comisión/Swap: <strong id="extractMonthCosts">$0.00 USD</strong></div>
+              <div class="month-pill">Resultado Mes: <strong class="green" id="extractMonthProfit">+$0.00 USD</strong></div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="quant-table monthly-table" id="monthlyExtractTable">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Instrumento</th>
+                  <th>Tipo</th>
+                  <th>Lotaje</th>
+                  <th>Precio Cierre</th>
+                  <th>Comisión / Swap</th>
+                  <th>Ganancia Neta (USD)</th>
+                  <th>Resultado</th>
+                </tr>
+              </thead>
+              <tbody id="monthlyExtractTableBody">
+                <tr><td colspan="9" class="text-center" style="padding:24px;">Seleccione una cuenta para cargar su operativa mensual</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 2: CURVA DE EQUIDAD INTERACTIVA -->
+      <section id="tab-equity" class="tab-pane">
+        <div class="equity-container">
+          <div class="equity-header">
+            <div>
+              <h2 class="section-title">Curva de Rendimiento Acumulado</h2>
+              <p class="section-desc" id="equitySubtitleDesc">Cuentas Reales de la Bitácora y Modelos Cuantitativos Validados</p>
+            </div>
+            <div class="strategy-toggle">
+              <button class="toggle-btn active" id="btnShowReal1000">💎 REAL1000 (Real 211 Trades)</button>
+              <button class="toggle-btn" id="btnShowHector">🛡️ HECTOR (Real 139 Trades)</button>
+              <button class="toggle-btn" id="btnShowBot1000">🤖 BOT-1000 (Demo 15 Trades)</button>
+              <button class="toggle-btn" id="btnShowGold">🦅 smart+IA (Oro M30)</button>
+              <button class="toggle-btn" id="btnShowMaro">📊 MARO (GBPUSD M15)</button>
+            </div>
+          </div>
+
+          <div class="stat-highlight-row">
+            <div class="stat-pill">
+              <span>Capital Inicial:</span>
+              <strong id="statInitialBalance">$250.00 USD</strong>
+            </div>
+            <div class="stat-pill">
+              <span>Capital Final Alcanzado:</span>
+              <strong class="green" id="statFinalBalance">$2,133.86 USD</strong>
+            </div>
+            <div class="stat-pill">
+              <span>Rendimiento Neto:</span>
+              <strong class="green" id="statNetReturn">+753.5%</strong>
+            </div>
+            <div class="stat-pill">
+              <span>Profit Factor:</span>
+              <strong id="statProfitFactor">1.70</strong>
+            </div>
+            <div class="stat-pill">
+              <span>Trades Totales:</span>
+              <strong id="statTotalTrades">211</strong>
+            </div>
+          </div>
+
+          <div id="equityChartContainer" class="equity-canvas"></div>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 3: BITÁCORA Y REGISTRO DE TRADES REALES -->
+      <section id="tab-trades" class="tab-pane">
+        <div class="trades-container">
+          <div class="trades-header">
+            <div>
+              <h2 class="section-title">Bitácora Oficial de Operaciones</h2>
+              <p class="section-desc">Historial completo importado de BITACORA-NXT-1000.xlsm y terminales MT5 en vivo</p>
+            </div>
+            <div class="trades-filters-row" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+              <div class="account-filter-box">
+                <select id="tradeAccountFilter" class="custom-select" style="min-width:210px;">
+                  <option value="ALL">🌐 Todas las Cuentas (368 trades)</option>
+                  <option value="REAL1000">💎 REAL1000 (Real - 211 trades)</option>
+                  <option value="HECTOR">🛡️ HECTOR (Real - 139 trades)</option>
+                  <option value="BOT-1000">🤖 BOT-1000 (Demo - 15 trades)</option>
+                  <option value="SMART+IA">🦅 smart+IA (Oro M30 - 3 trades)</option>
+                </select>
+              </div>
+              <div class="table-search-box">
+                <input type="text" id="tradeSearchInput" placeholder="Buscar por fecha, par, WIN/LOSS o estrategia...">
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="quant-table" id="tradesTable">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Cuenta / Origen</th>
+                  <th>Instrumento</th>
+                  <th>Tipo</th>
+                  <th>Lote</th>
+                  <th>Resultado</th>
+                  <th>Beneficio (USD)</th>
+                  <th>Balance Acumulado</th>
+                  <th>Estrategia</th>
+                </tr>
+              </thead>
+              <tbody id="tradesTableBody">
+                <tr><td colspan="9" class="text-center">Cargando bitácora de operaciones...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 4: RADAR INSTITUCIONAL 5:00 AM -->
+      <section id="tab-radar" class="tab-pane">
+        <div class="radar-container">
+          <div class="radar-header">
+            <h2 class="section-title">Radar de Inteligencia de Mercado (5:00 AM)</h2>
+            <p class="section-desc">Diagnóstico institucional multi-activo: GBP/USD, Oro y AUD/USD con noticias macro y SMC</p>
+          </div>
+
+          <div class="radar-grid" id="radarGridContainer">
+            <div class="loading-placeholder">Consultando inteligencia de mercado en MetaTrader...</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script id="staticDataScript" src="static_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
