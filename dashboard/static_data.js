@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-21T19:54:49.436191Z",
+  generated_at: "2026-09-21T20:00:07.300143Z",
   "equity": {
     "gold_m30": {
       "strategy": "smart+IA (SMC XAUUSD M30)",
@@ -10150,10 +10150,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 61587621,
     "server": "Pepperstone-Demo",
     "balance": 1051.08,
-    "equity": 1051.28,
+    "equity": 1047.08,
     "margin": 66.85,
-    "margin_free": 984.43,
-    "floating": 0.2,
+    "margin_free": 980.23,
+    "floating": -4.0,
     "positions_count": 1,
     "dynamic_lot": 0.02,
     "next_lot_balance": 1100.0,
@@ -10164,10 +10164,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.1,
         "open_price": 1.33707,
-        "current_price": 1.33709,
+        "current_price": 1.33667,
         "sl": 1.32103,
         "tp": 1.33867,
-        "profit": 0.2,
+        "profit": -4.0,
         "time": "2026-09-21 10:20:05"
       }
     ],
@@ -35937,5 +35937,5 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": ""
     }
   ],
-  "last_sync": "2026-09-21 12:54:49"
+  "last_sync": "2026-09-21 13:00:07"
 };
