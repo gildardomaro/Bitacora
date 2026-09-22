@@ -2,7 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#090D14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>MARO CONSULTORES | Mesa Cuantitativa & Trading con IA</title>
   
   <!-- Tipografía Google Fonts Outfit & JetBrains Mono -->
@@ -33,12 +39,18 @@
         <div class="account-selector-wrapper">
           <label for="terminalSelector">Terminal Activo:</label>
           <select id="terminalSelector" class="custom-select">
-            <option value="PEPPERSTONE" selected>🦅 Pepperstone DEMO (smart+IA Oro - $1,903.34 USD)</option>
-            <option value="REAL1000">💎 Vantage REAL (REAL1000 - $2,133.86 USD)</option>
-            <option value="HECTOR">🛡️ Vantage REAL (HECTOR - $210.61 USD)</option>
-            <option value="VANTAGE">📊 Vantage DEMO (BOT-1000 - $1,104.35 USD)</option>
+            <option value="PEPPERSTONE" selected>🦅 Pepperstone DEMO (smart+IA Oro)</option>
+            <option value="REAL1000">💎 Vantage REAL (REAL1000)</option>
+            <option value="HECTOR">🛡️ Vantage REAL (HECTOR)</option>
+            <option value="VANTAGE">📊 Vantage DEMO (BOT-1000)</option>
           </select>
         </div>
+
+        <!-- Botón de Refresco Inmediato -->
+        <button id="btnManualRefresh" class="status-badge sync-timer refresh-btn" title="Forzar sincronización inmediata de todas las cuentas en tiempo real">
+          <span class="sync-icon">🔄</span>
+          <span id="btnRefreshText">Refrescar Datos</span>
+        </button>
 
         <!-- Estado de Conexión MT5 -->
         <div class="status-badge live" id="mt5StatusBadge">
@@ -48,7 +60,6 @@
 
         <!-- Temporizador de Auto-actualización 30 min -->
         <div class="status-badge sync-timer" id="syncTimerBadge" title="Próxima actualización automática de analítica y bitácora cada 30 min">
-          <span class="sync-icon">🔄</span>
           <span id="syncTimerText">Sinc: 30:00</span>
         </div>
 
@@ -332,7 +343,19 @@
     </main>
   </div>
 
-  <script id="staticDataScript" src="static_data.js"></script>
-  <script src="app.js"></script>
+  <script>
+    (function() {
+      const v = Date.now();
+      const s1 = document.createElement('script');
+      s1.id = 'staticDataScript';
+      s1.src = 'static_data.js?v=' + v;
+      s1.onload = function() {
+        const s2 = document.createElement('script');
+        s2.src = 'app.js?v=' + v;
+        document.body.appendChild(s2);
+      };
+      document.body.appendChild(s1);
+    })();
+  </script>
 </body>
 </html>

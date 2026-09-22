@@ -19,6 +19,8 @@ function startDashboard() {
   // Referencias DOM
   const dom = {
     terminalSelector: document.getElementById('terminalSelector'),
+    btnManualRefresh: document.getElementById('btnManualRefresh'),
+    btnRefreshText: document.getElementById('btnRefreshText'),
     mt5StatusBadge: document.getElementById('mt5StatusBadge'),
     mt5StatusText: document.getElementById('mt5StatusText'),
     syncTimerBadge: document.getElementById('syncTimerBadge'),
@@ -932,10 +934,13 @@ function startDashboard() {
   }
 
   async function triggerFullDataRefresh() {
+    if (dom.btnRefreshText) dom.btnRefreshText.textContent = "Sincronizando...";
+    if (dom.btnManualRefresh) dom.btnManualRefresh.disabled = true;
     if (dom.syncTimerText) {
       dom.syncTimerText.textContent = "Sincronizando...";
     }
-    const icon = dom.syncTimerBadge ? dom.syncTimerBadge.querySelector('.sync-icon') : null;
+    const icon = (dom.btnManualRefresh && dom.btnManualRefresh.querySelector('.sync-icon')) || 
+                 (dom.syncTimerBadge && dom.syncTimerBadge.querySelector('.sync-icon'));
     if (icon) icon.classList.add('rotating');
 
     try {
@@ -963,6 +968,8 @@ function startDashboard() {
       console.warn("Aviso en refresco de datos:", err);
     } finally {
       if (icon) icon.classList.remove('rotating');
+      if (dom.btnRefreshText) dom.btnRefreshText.textContent = "Refrescar Datos";
+      if (dom.btnManualRefresh) dom.btnManualRefresh.disabled = false;
       syncSecondsLeft = SYNC_INTERVAL_SEC;
       if (dom.syncTimerText) {
         dom.syncTimerText.textContent = formatCountdown(syncSecondsLeft);
@@ -970,7 +977,14 @@ function startDashboard() {
     }
   }
 
-  // Activar botón de sincronización inmediata con cursor clickeable y evento click
+  // Activar botón de refresco manual
+  if (dom.btnManualRefresh) {
+    dom.btnManualRefresh.addEventListener('click', () => {
+      triggerFullDataRefresh();
+    });
+  }
+
+  // Activar badge de sincronización inmediata con cursor clickeable y evento click
   if (dom.syncTimerBadge) {
     dom.syncTimerBadge.style.cursor = isGitHubPages ? 'default' : 'pointer';
     dom.syncTimerBadge.title = isGitHubPages
