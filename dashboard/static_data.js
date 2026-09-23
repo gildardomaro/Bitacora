@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-23T03:44:27.357571Z",
+  generated_at: "2026-09-23T04:14:27.062103Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -37,15 +37,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61587621,
     "server": "Pepperstone-Demo",
-    "balance": 1130.86,
-    "equity": 1130.86,
-    "margin": 0.0,
-    "margin_free": 1130.86,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 1130.47,
+    "equity": 1128.38,
+    "margin": 73.25,
+    "margin_free": 1055.13,
+    "floating": -2.09,
+    "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 387248442,
+        "symbol": "GBPUSD",
+        "type": "BUY",
+        "volume": 0.11,
+        "open_price": 1.33186,
+        "current_price": 1.33167,
+        "sl": 1.31588,
+        "tp": 1.33346,
+        "profit": -2.09,
+        "time": "2026-09-22 23:45:00"
+      }
+    ],
     "strategy": "BOT-1000 (MARO)"
   },
   "account_pepperstone": {
@@ -26522,5 +26535,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-09-22 20:44:27"
+  "last_sync": "2026-09-22 21:14:27"
 };
