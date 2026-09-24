@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-24T17:18:53.790358Z",
+  generated_at: "2026-09-24T17:48:53.919287Z",
   "real_trades": [],
   "trades": [],
   "monthly_analytics": {
@@ -76,5 +76,5 @@ window.STATIC_DASHBOARD_DATA = {
       "all_trades_by_month": {}
     }
   },
-  "last_sync": "2026-09-24 10:18:53"
+  "last_sync": "2026-09-24 10:48:53"
 };
