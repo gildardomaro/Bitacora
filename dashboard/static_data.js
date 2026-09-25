@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-25T20:44:26.704784Z",
+  generated_at: "2026-09-25T21:14:26.252443Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -38,10 +38,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 61587621,
     "server": "Pepperstone-Demo",
     "balance": 1130.47,
-    "equity": 1049.55,
+    "equity": 1047.41,
     "margin": 73.25,
-    "margin_free": 976.3,
-    "floating": -79.42,
+    "margin_free": 974.16,
+    "floating": -81.18,
     "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
@@ -52,10 +52,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.11,
         "open_price": 1.33186,
-        "current_price": 1.32464,
+        "current_price": 1.3244799999999999,
         "sl": 1.31588,
         "tp": 1.33346,
-        "profit": -79.42,
+        "profit": -81.18,
         "time": "2026-09-22 23:45:00"
       }
     ],
@@ -66,15 +66,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 1947.68,
-    "equity": 1947.68,
-    "margin": 0.0,
-    "margin_free": 1947.68,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 1947.01,
+    "equity": 1909.1,
+    "margin": 407.18,
+    "margin_free": 1501.92,
+    "floating": -21.47,
+    "positions_count": 1,
     "dynamic_lot": 0.02,
     "next_lot_balance": 2100.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 389818183,
+        "symbol": "XAUUSD",
+        "type": "BUY",
+        "volume": 0.19,
+        "open_price": 4286.08,
+        "current_price": 4284.95,
+        "sl": 4284.79,
+        "tp": 4287.4,
+        "profit": -21.47,
+        "time": "2026-09-25 16:53:29"
+      }
+    ],
     "strategy": "smart+IA (SMC Oro)"
   },
   "real_trades": [
@@ -28515,5 +28528,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-09-25 13:44:26"
+  "last_sync": "2026-09-25 14:14:26"
 };
