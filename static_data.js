@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-25T09:14:27.154629Z",
+  generated_at: "2026-09-25T09:44:25.399641Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -38,10 +38,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 61587621,
     "server": "Pepperstone-Demo",
     "balance": 1130.47,
-    "equity": 1038.22,
+    "equity": 1041.74,
     "margin": 73.25,
-    "margin_free": 964.97,
-    "floating": -90.75,
+    "margin_free": 968.49,
+    "floating": -87.23,
     "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
@@ -52,10 +52,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.11,
         "open_price": 1.33186,
-        "current_price": 1.32361,
+        "current_price": 1.32393,
         "sl": 1.31588,
         "tp": 1.33346,
-        "profit": -90.75,
+        "profit": -87.23,
         "time": "2026-09-22 23:45:00"
       }
     ],
@@ -66,15 +66,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 1921.33,
-    "equity": 1921.33,
-    "margin": 0.0,
-    "margin_free": 1921.33,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 1920.66,
+    "equity": 1973.86,
+    "margin": 407.66,
+    "margin_free": 1566.2,
+    "floating": 53.2,
+    "positions_count": 1,
     "dynamic_lot": 0.02,
     "next_lot_balance": 2100.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 389319367,
+        "symbol": "XAUUSD",
+        "type": "BUY",
+        "volume": 0.19,
+        "open_price": 4291.17,
+        "current_price": 4293.97,
+        "sl": 4291.27,
+        "tp": 4305.83,
+        "profit": 53.2,
+        "time": "2026-09-25 05:30:00"
+      }
+    ],
     "strategy": "smart+IA (SMC Oro)"
   },
   "real_trades": [
@@ -28119,5 +28132,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-09-25 02:14:27"
+  "last_sync": "2026-09-25 02:44:25"
 };
