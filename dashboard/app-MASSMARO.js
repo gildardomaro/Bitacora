@@ -19,12 +19,16 @@ function startDashboard() {
   // Referencias DOM
   const dom = {
     terminalSelector: document.getElementById('terminalSelector'),
+    btnManualRefresh: document.getElementById('btnManualRefresh'),
+    btnRefreshText: document.getElementById('btnRefreshText'),
     mt5StatusBadge: document.getElementById('mt5StatusBadge'),
     mt5StatusText: document.getElementById('mt5StatusText'),
     syncTimerBadge: document.getElementById('syncTimerBadge'),
     syncTimerText: document.getElementById('syncTimerText'),
     localClock: document.getElementById('localClock'),
     kpiBalance: document.getElementById('kpiBalance'),
+    kpiMonthlyAvg: document.getElementById('kpiMonthlyAvg') || document.getElementById('kpiEquity'),
+    kpiMonthlyAvgMeta: document.getElementById('kpiMonthlyAvgMeta') || document.getElementById('kpiMarginFree'),
     kpiEquity: document.getElementById('kpiEquity'),
     kpiFloating: document.getElementById('kpiFloating'),
     kpiLot: document.getElementById('kpiLot'),
@@ -288,8 +292,9 @@ function startDashboard() {
     if (!analytics) return;
     state.monthlyAnalytics = analytics;
 
-    // Actualizar el KPI del mes actual
+    // Actualizar los KPIs del mes actual y promedio mensual
     updateCurrentMonthKpi();
+    updateMonthlyAverageKpi();
 
     // Actualizar badges del panel superior
     const termNames = {
@@ -353,6 +358,41 @@ function startDashboard() {
         : `$${(state.monthlyAnalytics.base_capital || 0).toLocaleString('en-US')} base`;
       dom.kpiWinRateMeta.textContent =
         `${monthData.wins}G / ${monthData.losses}P | WR ${monthData.win_rate}% | sobre ${depStr}`;
+    }
+  }
+
+  // =========================================================================
+  // KPI: PROMEDIO DE GANANCIA MENSUAL (BASADO EN % DE CADA MES)
+  // =========================================================================
+  function updateMonthlyAverageKpi() {
+    if (!state.monthlyAnalytics) return;
+
+    const series = state.monthlyAnalytics.monthly_series || [];
+    if (!dom.kpiMonthlyAvg) return;
+
+    if (series.length === 0) {
+      dom.kpiMonthlyAvg.textContent = "--%";
+      dom.kpiMonthlyAvg.className = "kpi-value neutral";
+      if (dom.kpiMonthlyAvgMeta) dom.kpiMonthlyAvgMeta.textContent = "Sin datos mensuales";
+      return;
+    }
+
+    // Promedio aritmético de los porcentajes de ganancia de cada mes
+    const totalPct = series.reduce((sum, item) => sum + (Number(item.profit_pct) || 0), 0);
+    const avgPct = totalPct / series.length;
+    const avgPctStr = `${avgPct >= 0 ? '+' : ''}${avgPct.toFixed(1)}%`;
+
+    dom.kpiMonthlyAvg.textContent = avgPctStr;
+    dom.kpiMonthlyAvg.className = `kpi-value ${avgPct >= 0 ? 'win' : 'negative'}`;
+
+    if (dom.kpiMonthlyAvgMeta) {
+      const totalProfitUsd = series.reduce((sum, item) => sum + (Number(item.profit_usd) || 0), 0);
+      const avgProfitUsd = totalProfitUsd / series.length;
+      const profitUsdSign = avgProfitUsd >= 0 ? '+' : '-';
+      const profitUsdStr = `${profitUsdSign}$${Math.abs(avgProfitUsd).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD/m`;
+      const count = series.length;
+      const countLabel = count === 1 ? '1 mes auditado' : `${count} meses auditados`;
+      dom.kpiMonthlyAvgMeta.textContent = `${countLabel} | Prom. ${profitUsdStr}`;
     }
   }
 
@@ -538,8 +578,15 @@ function startDashboard() {
 
     // Formatear valores
     dom.kpiBalance.innerHTML = `$${acc.balance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} <small>USD</small>`;
-    dom.kpiEquity.innerHTML = `$${acc.equity.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} <small>USD</small>`;
-    dom.kpiMarginFree.textContent = `Margen Libre: $${acc.margin_free.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+    if (dom.kpiEquity && dom.kpiEquity !== dom.kpiMonthlyAvg) {
+      dom.kpiEquity.innerHTML = `$${acc.equity.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} <small>USD</small>`;
+    }
+    if (dom.kpiMarginFree && dom.kpiMarginFree !== dom.kpiMonthlyAvgMeta) {
+      dom.kpiMarginFree.textContent = `Margen Libre: $${acc.margin_free.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+    }
+    if (state.monthlyAnalytics) {
+      updateMonthlyAverageKpi();
+    }
 
     // Flotante
     const flt = acc.floating;
@@ -932,10 +979,13 @@ function startDashboard() {
   }
 
   async function triggerFullDataRefresh() {
+    if (dom.btnRefreshText) dom.btnRefreshText.textContent = "Sincronizando...";
+    if (dom.btnManualRefresh) dom.btnManualRefresh.disabled = true;
     if (dom.syncTimerText) {
       dom.syncTimerText.textContent = "Sincronizando...";
     }
-    const icon = dom.syncTimerBadge ? dom.syncTimerBadge.querySelector('.sync-icon') : null;
+    const icon = (dom.btnManualRefresh && dom.btnManualRefresh.querySelector('.sync-icon')) || 
+                 (dom.syncTimerBadge && dom.syncTimerBadge.querySelector('.sync-icon'));
     if (icon) icon.classList.add('rotating');
 
     try {
@@ -963,6 +1013,8 @@ function startDashboard() {
       console.warn("Aviso en refresco de datos:", err);
     } finally {
       if (icon) icon.classList.remove('rotating');
+      if (dom.btnRefreshText) dom.btnRefreshText.textContent = "Refrescar Datos";
+      if (dom.btnManualRefresh) dom.btnManualRefresh.disabled = false;
       syncSecondsLeft = SYNC_INTERVAL_SEC;
       if (dom.syncTimerText) {
         dom.syncTimerText.textContent = formatCountdown(syncSecondsLeft);
@@ -970,7 +1022,14 @@ function startDashboard() {
     }
   }
 
-  // Activar botón de sincronización inmediata con cursor clickeable y evento click
+  // Activar botón de refresco manual
+  if (dom.btnManualRefresh) {
+    dom.btnManualRefresh.addEventListener('click', () => {
+      triggerFullDataRefresh();
+    });
+  }
+
+  // Activar badge de sincronización inmediata con cursor clickeable y evento click
   if (dom.syncTimerBadge) {
     dom.syncTimerBadge.style.cursor = isGitHubPages ? 'default' : 'pointer';
     dom.syncTimerBadge.title = isGitHubPages
