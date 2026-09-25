@@ -17,11 +17,77 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css">
+  <script src="auth.js"></script>
   <script src="chart.umd.min.js"></script>
   <script src="lightweight-charts.standalone.production.js"></script>
 </head>
 <body>
-  <div class="app-container">
+  <!-- PANTALLA DE ACCESO INSTITUCIONAL (LOGIN GATE) -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-backdrop-glow"></div>
+    <div class="login-card" id="loginCard">
+      <!-- Marca y Cabecera -->
+      <div class="login-brand">
+        <div class="login-logo-ring">
+          <img src="logo_maro.jpg" alt="Maro Consultores" class="login-logo-img" onerror="this.style.display='none'; document.getElementById('loginLogoFallback').style.display='flex';">
+          <div id="loginLogoFallback" class="login-logo-fallback" style="display:none;">🦅</div>
+        </div>
+        <h2 class="login-title">MARO <span>CONSULTORES</span></h2>
+        <p class="login-subtitle">Mesa Institucional & Trading Cuantitativo con IA</p>
+        <div class="login-badge-secure">
+          <span>🔒</span> Acceso Restringido & Autenticado
+        </div>
+      </div>
+
+      <!-- Formulario de Acceso -->
+      <form id="loginForm" class="login-form" autocomplete="on">
+        <div class="login-input-group">
+          <label for="loginUser">Usuario Institucional</label>
+          <div class="login-input-wrapper">
+            <span class="input-icon">👤</span>
+            <input type="text" id="loginUser" name="username" placeholder="admin" required autofocus autocomplete="username">
+          </div>
+        </div>
+
+        <div class="login-input-group">
+          <label for="loginPass">Contraseña de Acceso</label>
+          <div class="login-input-wrapper">
+            <span class="input-icon">🔑</span>
+            <input type="password" id="loginPass" name="password" placeholder="••••••••••••" required autocomplete="current-password">
+            <button type="button" id="btnTogglePassword" class="btn-toggle-pass" title="Mostrar/Ocultar contraseña">
+              <span id="eyeIcon">👁️</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="login-options-row">
+          <label class="login-remember-label">
+            <input type="checkbox" id="chkRememberMe" checked>
+            <span>Recordar sesión en este equipo</span>
+          </label>
+        </div>
+
+        <!-- Alerta de Error -->
+        <div id="loginErrorMsg" class="login-error-alert" style="display: none;">
+          <span class="alert-icon">⚠️</span>
+          <span id="loginErrorText">Usuario o contraseña incorrectos.</span>
+        </div>
+
+        <!-- Botón de Envío -->
+        <button type="submit" id="btnLoginSubmit" class="login-submit-btn">
+          <span id="loginBtnText">INGRESAR A LA BITÁCORA</span>
+          <span class="submit-arrow">➔</span>
+        </button>
+      </form>
+
+      <!-- Pie de Seguridad -->
+      <div class="login-footer">
+        <span>Maro Consultores © 2026 • Acceso Protegido SHA-256</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-container blurred">
     <!-- HEADER INSTITUCIONAL -->
     <header class="main-header">
       <div class="brand-section">
@@ -68,6 +134,12 @@
           <span class="clock-label">LOCAL</span>
           <span class="clock-time" id="localClock">--:--:--</span>
         </div>
+
+        <!-- Botón Cerrar Sesión -->
+        <button id="btnLogout" class="status-badge logout-btn" title="Cerrar sesión de la bitácora">
+          <span class="logout-icon">🔒</span>
+          <span>Salir</span>
+        </button>
       </div>
     </header>
 
