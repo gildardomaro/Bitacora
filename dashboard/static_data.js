@@ -1,15 +1,15 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-25T02:14:25.245655Z",
+  generated_at: "2026-09-25T02:44:26.869075Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
     "login": 27497962,
     "server": "VantageMarkets-Live 5",
     "balance": 2380.1,
-    "equity": 2883.25,
+    "equity": 2883.04,
     "margin": 92.51,
-    "margin_free": 2790.74,
-    "floating": 3.15,
+    "margin_free": 2790.53,
+    "floating": 2.94,
     "positions_count": 1,
     "dynamic_lot": 0.05,
     "next_lot_balance": 2400.0,
@@ -20,10 +20,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.21,
         "open_price": 1.32153,
-        "current_price": 1.32168,
+        "current_price": 1.3216700000000001,
         "sl": 0.0,
         "tp": 0.0,
-        "profit": 3.15,
+        "profit": 2.94,
         "time": "2026-09-24 21:54:20"
       }
     ],
@@ -35,10 +35,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 29263904,
     "server": "VantageMarkets-Live 5",
     "balance": 241.15,
-    "equity": 291.85,
+    "equity": 291.8,
     "margin": 66.08,
-    "margin_free": 225.77,
-    "floating": 0.7,
+    "margin_free": 225.72,
+    "floating": 0.65,
     "positions_count": 1,
     "dynamic_lot": 0.02,
     "next_lot_balance": 300.0,
@@ -49,10 +49,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.32153,
-        "current_price": 1.3216700000000001,
+        "current_price": 1.32166,
         "sl": 0.0,
         "tp": 0.0,
-        "profit": 0.7,
+        "profit": 0.65,
         "time": "2026-09-24 21:54:19"
       }
     ],
@@ -93,10 +93,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 61595338,
     "server": "Pepperstone-Demo",
     "balance": 2167.55,
-    "equity": 2219.21,
+    "equity": 2136.05,
     "margin": 450.25,
-    "margin_free": 1768.96,
-    "floating": 51.66,
+    "margin_free": 1685.8,
+    "floating": -31.5,
     "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 2200.0,
@@ -107,10 +107,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.21,
         "open_price": 4288.11,
-        "current_price": 4290.57,
+        "current_price": 4286.61,
         "sl": 4280.83,
         "tp": 4305.72,
-        "profit": 51.66,
+        "profit": -31.5,
         "time": "2026-09-24 22:00:00"
       }
     ],
@@ -27564,5 +27564,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-09-24 19:14:25"
+  "last_sync": "2026-09-24 19:44:26"
 };
