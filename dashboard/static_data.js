@@ -1,16 +1,16 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-25T03:44:26.800207Z",
+  generated_at: "2026-09-25T04:14:25.367547Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
     "login": 27497962,
     "server": "VantageMarkets-Live 5",
     "balance": 2380.1,
-    "equity": 2865.82,
-    "margin": 185.0,
-    "margin_free": 2680.82,
-    "floating": -14.28,
-    "positions_count": 2,
+    "equity": 2862.25,
+    "margin": 277.49,
+    "margin_free": 2584.76,
+    "floating": -17.85,
+    "positions_count": 3,
     "dynamic_lot": 0.05,
     "next_lot_balance": 2400.0,
     "positions": [
@@ -20,10 +20,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.21,
         "open_price": 1.32153,
-        "current_price": 1.3211,
+        "current_price": 1.32108,
         "sl": 0.0,
-        "tp": 0.0,
-        "profit": -9.03,
+        "tp": 1.32156,
+        "profit": -9.45,
         "time": "2026-09-24 21:54:20"
       },
       {
@@ -32,11 +32,23 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.21,
         "open_price": 1.32135,
-        "current_price": 1.3211,
+        "current_price": 1.32108,
         "sl": 0.0,
-        "tp": 0.0,
-        "profit": -5.25,
+        "tp": 1.32156,
+        "profit": -5.67,
         "time": "2026-09-24 23:04:26"
+      },
+      {
+        "ticket": 209087004,
+        "symbol": "GBPUSD",
+        "type": "BUY",
+        "volume": 0.21,
+        "open_price": 1.32121,
+        "current_price": 1.32108,
+        "sl": 0.0,
+        "tp": 1.32156,
+        "profit": -2.73,
+        "time": "2026-09-24 23:45:40"
       }
     ],
     "strategy": "MARO REAL1000"
@@ -47,11 +59,11 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 29263904,
     "server": "VantageMarkets-Live 5",
     "balance": 241.15,
-    "equity": 287.6,
-    "margin": 132.14,
-    "margin_free": 155.46,
-    "floating": -3.55,
-    "positions_count": 2,
+    "equity": 286.65,
+    "margin": 198.21,
+    "margin_free": 88.44,
+    "floating": -4.5,
+    "positions_count": 3,
     "dynamic_lot": 0.02,
     "next_lot_balance": 300.0,
     "positions": [
@@ -61,10 +73,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.32153,
-        "current_price": 1.3210899999999999,
+        "current_price": 1.32107,
         "sl": 0.0,
-        "tp": 0.0,
-        "profit": -2.2,
+        "tp": 1.32156,
+        "profit": -2.3,
         "time": "2026-09-24 21:54:19"
       },
       {
@@ -73,11 +85,23 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.3213599999999999,
-        "current_price": 1.3210899999999999,
+        "current_price": 1.32107,
         "sl": 0.0,
-        "tp": 0.0,
-        "profit": -1.35,
+        "tp": 1.32156,
+        "profit": -1.45,
         "time": "2026-09-24 23:04:25"
+      },
+      {
+        "ticket": 209087003,
+        "symbol": "GBPUSD",
+        "type": "BUY",
+        "volume": 0.05,
+        "open_price": 1.32122,
+        "current_price": 1.32107,
+        "sl": 0.0,
+        "tp": 1.32156,
+        "profit": -0.75,
+        "time": "2026-09-24 23:45:40"
       }
     ],
     "strategy": "MARO HECTOR"
@@ -88,10 +112,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 61587621,
     "server": "Pepperstone-Demo",
     "balance": 1130.47,
-    "equity": 1011.49,
+    "equity": 1011.27,
     "margin": 73.25,
-    "margin_free": 938.24,
-    "floating": -117.48,
+    "margin_free": 938.02,
+    "floating": -117.7,
     "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
@@ -102,10 +126,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.11,
         "open_price": 1.33186,
-        "current_price": 1.32118,
+        "current_price": 1.32116,
         "sl": 1.31588,
         "tp": 1.33346,
-        "profit": -117.48,
+        "profit": -117.7,
         "time": "2026-09-22 23:45:00"
       }
     ],
@@ -27641,5 +27665,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-09-24 20:44:26"
+  "last_sync": "2026-09-24 21:14:25"
 };
