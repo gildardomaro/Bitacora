@@ -1,0 +1,51 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.pkl
+*.log
+
+# MT5 binarios
+*.ex5
+*.mqh
+
+# Archivos sensibles
+telegram_config.json
+whatsapp_config.json
+*.xlsm
+
+# Temporales
+*.tmp
+*.bak
+calendar_backup.raw
+calendar_cache.json
+
+# Solo subir la carpeta dashboard/ y el workflow
+# (El resto del BOT es codigo privado)
+/analyze_*.py
+/backtest_*.py
+/backtest_*.csv
+/check_*.py
+/compare_*.py
+/daily_*.py
+/diagnose_*.py
+/fast_*.py
+/maro.mq5
+/maroponzis.mq5
+/smart*.mq5
+/smart_IA.mq5
+/monitor_*.py
+/monthly_*.py
+/mt5_*.py
+/oanda_*.py
+/run_monthly_*.py
+/test_*.py
+/auto_sync_bitacora.py
+/dashboard_server.py
+/telegram_notifier.py
+/whatsapp_notifier.py
+BITACORA_OPERACIONES_MARO.md
+network_info.json
+
+scratch/
+*-MASSMARO*
