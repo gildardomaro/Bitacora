@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-28T15:14:38.420052Z",
+  generated_at: "2026-09-28T15:44:40.265095Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -53,10 +53,10 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 2099.33,
-    "equity": 2099.33,
+    "balance": 2099.93,
+    "equity": 2099.93,
     "margin": 0.0,
-    "margin_free": 2099.33,
+    "margin_free": 2099.93,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.02,
@@ -10272,6 +10272,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE",
       "strategy": "BOT-1000 (MARO)",
       "comment": ""
+    },
+    {
+      "time": "2026-09-28 11:20:24",
+      "date": "2026-09-28",
+      "hour": "11:20:24",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.2,
+      "volume": 0.2,
+      "price": 4124.04,
+      "profit": 1.3,
+      "raw_profit": 2.0,
+      "commission": -0.7,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 305922671,
+      "order": 390766809,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[sl 4124.04]"
     }
   ],
   "trades": [
@@ -20482,6 +20504,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE",
       "strategy": "BOT-1000 (MARO)",
       "comment": ""
+    },
+    {
+      "time": "2026-09-28 11:20:24",
+      "date": "2026-09-28",
+      "hour": "11:20:24",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.2,
+      "volume": 0.2,
+      "price": 4124.04,
+      "profit": 1.3,
+      "raw_profit": 2.0,
+      "commission": -0.7,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 305922671,
+      "order": 390766809,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[sl 4124.04]"
     }
   ],
   "monthly_analytics": {
@@ -29419,23 +29463,23 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 2000.0
       },
-      "total_wins": 49,
+      "total_wins": 50,
       "total_losses": 19,
-      "total_trades": 68,
-      "win_rate": 72.1,
-      "total_profit_usd": 147.69,
-      "total_return_pct": 7.38,
+      "total_trades": 69,
+      "win_rate": 72.5,
+      "total_profit_usd": 148.99,
+      "total_return_pct": 7.45,
       "monthly_series": [
         {
           "month": "2026-09",
-          "profit_usd": 147.69,
-          "profit_pct": 7.38,
+          "profit_usd": 148.99,
+          "profit_pct": 7.45,
           "deposit_usd": 2000.0,
-          "wins": 49,
+          "wins": 50,
           "losses": 19,
-          "total_trades": 68,
-          "win_rate": 72.1,
-          "commission_swap_usd": -64.8
+          "total_trades": 69,
+          "win_rate": 72.5,
+          "commission_swap_usd": -65.5
         }
       ],
       "months_available": [
@@ -30939,10 +30983,32 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "smart+IA (SMC Oro)",
             "comment": "[sl 4120.14]"
+          },
+          {
+            "time": "2026-09-28 11:20:24",
+            "date": "2026-09-28",
+            "hour": "11:20:24",
+            "month": "2026-09",
+            "symbol": "XAUUSD",
+            "type": "SELL",
+            "lot": 0.2,
+            "volume": 0.2,
+            "price": 4124.04,
+            "profit": 1.3,
+            "raw_profit": 2.0,
+            "commission": -0.7,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 305922671,
+            "order": 390766809,
+            "account": "SMART+IA",
+            "terminal": "PEPPERSTONE",
+            "strategy": "smart+IA (SMC Oro)",
+            "comment": "[sl 4124.04]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-09-28 08:14:38"
+  "last_sync": "2026-09-28 08:44:40"
 };
