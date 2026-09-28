@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-28T16:44:36.835766Z",
+  generated_at: "2026-09-28T17:14:39.000049Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -53,10 +53,10 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 2101.15,
-    "equity": 2101.15,
+    "balance": 2101.77,
+    "equity": 2101.77,
     "margin": 0.0,
-    "margin_free": 2101.15,
+    "margin_free": 2101.77,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.03,
@@ -10338,6 +10338,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[sl 4141.13]"
+    },
+    {
+      "time": "2026-09-28 13:09:22",
+      "date": "2026-09-28",
+      "hour": "13:09:22",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "BUY",
+      "lot": 0.21,
+      "volume": 0.21,
+      "price": 4127.35,
+      "profit": 1.36,
+      "raw_profit": 2.1,
+      "commission": -0.74,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 306017337,
+      "order": 390878132,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[sl 4127.35]"
     }
   ],
   "trades": [
@@ -20614,6 +20636,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[sl 4141.13]"
+    },
+    {
+      "time": "2026-09-28 13:09:22",
+      "date": "2026-09-28",
+      "hour": "13:09:22",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "BUY",
+      "lot": 0.21,
+      "volume": 0.21,
+      "price": 4127.35,
+      "profit": 1.36,
+      "raw_profit": 2.1,
+      "commission": -0.74,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 306017337,
+      "order": 390878132,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[sl 4127.35]"
     }
   ],
   "monthly_analytics": {
@@ -29551,23 +29595,23 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 2000.0
       },
-      "total_wins": 52,
+      "total_wins": 53,
       "total_losses": 19,
-      "total_trades": 71,
-      "win_rate": 73.2,
-      "total_profit_usd": 151.65,
-      "total_return_pct": 7.58,
+      "total_trades": 72,
+      "win_rate": 73.6,
+      "total_profit_usd": 153.01,
+      "total_return_pct": 7.65,
       "monthly_series": [
         {
           "month": "2026-09",
-          "profit_usd": 151.65,
-          "profit_pct": 7.58,
+          "profit_usd": 153.01,
+          "profit_pct": 7.65,
           "deposit_usd": 2000.0,
-          "wins": 52,
+          "wins": 53,
           "losses": 19,
-          "total_trades": 71,
-          "win_rate": 73.2,
-          "commission_swap_usd": -66.94
+          "total_trades": 72,
+          "win_rate": 73.6,
+          "commission_swap_usd": -67.68
         }
       ],
       "months_available": [
@@ -31137,10 +31181,32 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "smart+IA (SMC Oro)",
             "comment": "[sl 4141.13]"
+          },
+          {
+            "time": "2026-09-28 13:09:22",
+            "date": "2026-09-28",
+            "hour": "13:09:22",
+            "month": "2026-09",
+            "symbol": "XAUUSD",
+            "type": "BUY",
+            "lot": 0.21,
+            "volume": 0.21,
+            "price": 4127.35,
+            "profit": 1.36,
+            "raw_profit": 2.1,
+            "commission": -0.74,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 306017337,
+            "order": 390878132,
+            "account": "SMART+IA",
+            "terminal": "PEPPERSTONE",
+            "strategy": "smart+IA (SMC Oro)",
+            "comment": "[sl 4127.35]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-09-28 09:44:36"
+  "last_sync": "2026-09-28 10:14:38"
 };
