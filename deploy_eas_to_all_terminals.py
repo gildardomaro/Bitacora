@@ -60,16 +60,45 @@ def deploy():
             seen.add(norm)
             unique_targets.append(d)
 
+    # Archivos de smart+IA
+    source_smart_ex5 = os.path.join(bot_dir, "smart+IA.ex5")
+    source_smart_mq5 = os.path.join(bot_dir, "smart+IA.mq5")
+    source_telegram  = os.path.join(bot_dir, "TelegramNotifier.mqh")
+
+    # Crear smart_IA.ex5 / smart_IA.mq5 como alias espejo
+    if os.path.exists(source_smart_ex5):
+        shutil.copy2(source_smart_ex5, os.path.join(bot_dir, "smart_IA.ex5"))
+    if os.path.exists(source_smart_mq5):
+        shutil.copy2(source_smart_mq5, os.path.join(bot_dir, "smart_IA.mq5"))
+
     print(f"[*] Se detectaron {len(unique_targets)} directorios Experts activos:")
     count_ok = 0
     for target in unique_targets:
         try:
-            # Copiar MARO.ex5 (con mayúsculas y minúsculas para compatibilidad)
+            # 1. Copiar MARO v2.30
             shutil.copy2(source_ex5, os.path.join(target, "MARO.ex5"))
             shutil.copy2(source_ex5, os.path.join(target, "maro.ex5"))
             if os.path.exists(source_mq5):
                 shutil.copy2(source_mq5, os.path.join(target, "MARO.mq5"))
-            print(f"  [OK] Desplegado en: {target}")
+                shutil.copy2(source_mq5, os.path.join(target, "maro.mq5"))
+
+            # 2. Copiar smart+IA v2.30
+            if os.path.exists(source_smart_ex5):
+                shutil.copy2(source_smart_ex5, os.path.join(target, "smart+IA.ex5"))
+                shutil.copy2(source_smart_ex5, os.path.join(target, "smart_IA.ex5"))
+            if os.path.exists(source_smart_mq5):
+                shutil.copy2(source_smart_mq5, os.path.join(target, "smart+IA.mq5"))
+                shutil.copy2(source_smart_mq5, os.path.join(target, "smart_IA.mq5"))
+
+            # 3. Copiar TelegramNotifier.mqh en Experts e Include
+            if os.path.exists(source_telegram):
+                shutil.copy2(source_telegram, os.path.join(target, "TelegramNotifier.mqh"))
+                target_mql5 = os.path.dirname(target)
+                target_include = os.path.join(target_mql5, "Include")
+                if os.path.exists(target_include):
+                    shutil.copy2(source_telegram, os.path.join(target_include, "TelegramNotifier.mqh"))
+
+            print(f"  [OK] Desplegado (MARO + smart+IA) en: {target}")
             count_ok += 1
         except Exception as e:
             print(f"  [!] Error copiando a {target}: {e}")
