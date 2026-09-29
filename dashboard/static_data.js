@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-29T18:14:28.599030Z",
+  generated_at: "2026-09-29T18:44:41.175600Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -21,40 +21,15 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 29263904,
     "server": "VantageMarkets-Live 5",
-    "balance": 236.65,
-    "equity": 293.35,
-    "margin": 264.46,
-    "margin_free": 28.89,
-    "floating": 6.7,
-    "positions_count": 2,
+    "balance": 247.95,
+    "equity": 297.95,
+    "margin": 0.0,
+    "margin_free": 297.95,
+    "floating": 0.0,
+    "positions_count": 0,
     "dynamic_lot": 0.02,
     "next_lot_balance": 300.0,
-    "positions": [
-      {
-        "ticket": 211103160,
-        "symbol": "GBPUSD",
-        "type": "BUY",
-        "volume": 0.1,
-        "open_price": 1.32279,
-        "current_price": 1.3226200000000001,
-        "sl": 0.0,
-        "tp": 1.3243800000000001,
-        "profit": -1.7,
-        "time": "2026-09-29 10:27:34"
-      },
-      {
-        "ticket": 211117654,
-        "symbol": "GBPUSD",
-        "type": "BUY",
-        "volume": 0.1,
-        "open_price": 1.32178,
-        "current_price": 1.3226200000000001,
-        "sl": 0.0,
-        "tp": 1.32442,
-        "profit": 8.4,
-        "time": "2026-09-29 10:47:38"
-      }
-    ],
+    "positions": [],
     "strategy": "MARO HECTOR"
   },
   "account_vantage": {
@@ -62,15 +37,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61587621,
     "server": "Pepperstone-Demo",
-    "balance": 1056.0,
-    "equity": 1056.0,
-    "margin": 0.0,
-    "margin_free": 1056.0,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 1054.25,
+    "equity": 1063.25,
+    "margin": 330.83,
+    "margin_free": 732.42,
+    "floating": 9.0,
+    "positions_count": 1,
     "dynamic_lot": 0.02,
     "next_lot_balance": 1100.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 391939337,
+        "symbol": "GBPUSD",
+        "type": "SELL",
+        "volume": 0.5,
+        "open_price": 1.32332,
+        "current_price": 1.32314,
+        "sl": 1.3392,
+        "tp": 1.32173,
+        "profit": 9.0,
+        "time": "2026-09-29 14:42:00"
+      }
+    ],
     "strategy": "BOT-1000 (MARO)"
   },
   "account_pepperstone": {
@@ -10803,6 +10791,50 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE",
       "strategy": "BOT-1000 (MARO)",
       "comment": "[sl 1.32058]"
+    },
+    {
+      "time": "2026-09-29 14:16:27",
+      "date": "2026-09-29",
+      "hour": "14:16:27",
+      "month": "2026-09",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 1.32285,
+      "profit": 0.6,
+      "raw_profit": 0.6,
+      "commission": 0.0,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 195450908,
+      "order": 211239785,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "MARO HECTOR",
+      "comment": ""
+    },
+    {
+      "time": "2026-09-29 14:16:28",
+      "date": "2026-09-29",
+      "hour": "14:16:28",
+      "month": "2026-09",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 1.32285,
+      "profit": 10.7,
+      "raw_profit": 10.7,
+      "commission": 0.0,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 195450918,
+      "order": 211239807,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "MARO HECTOR",
+      "comment": ""
     }
   ],
   "trades": [
@@ -21519,6 +21551,50 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE",
       "strategy": "BOT-1000 (MARO)",
       "comment": "[sl 1.32058]"
+    },
+    {
+      "time": "2026-09-29 14:16:27",
+      "date": "2026-09-29",
+      "hour": "14:16:27",
+      "month": "2026-09",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 1.32285,
+      "profit": 0.6,
+      "raw_profit": 0.6,
+      "commission": 0.0,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 195450908,
+      "order": 211239785,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "MARO HECTOR",
+      "comment": ""
+    },
+    {
+      "time": "2026-09-29 14:16:28",
+      "date": "2026-09-29",
+      "hour": "14:16:28",
+      "month": "2026-09",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 1.32285,
+      "profit": 10.7,
+      "raw_profit": 10.7,
+      "commission": 0.0,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 195450918,
+      "order": 211239807,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "MARO HECTOR",
+      "comment": ""
     }
   ],
   "monthly_analytics": {
@@ -26358,12 +26434,12 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-05": 200.0
       },
-      "total_wins": 101,
+      "total_wins": 103,
       "total_losses": 55,
-      "total_trades": 156,
-      "win_rate": 64.7,
-      "total_profit_usd": 76.65,
-      "total_return_pct": 38.32,
+      "total_trades": 158,
+      "win_rate": 65.2,
+      "total_profit_usd": 87.95,
+      "total_return_pct": 43.97,
       "monthly_series": [
         {
           "month": "2026-06",
@@ -26400,13 +26476,13 @@ window.STATIC_DASHBOARD_DATA = {
         },
         {
           "month": "2026-09",
-          "profit_usd": 48.88,
-          "profit_pct": 24.44,
+          "profit_usd": 60.18,
+          "profit_pct": 30.09,
           "deposit_usd": 200.0,
-          "wins": 28,
+          "wins": 30,
           "losses": 13,
-          "total_trades": 41,
-          "win_rate": 68.3,
+          "total_trades": 43,
+          "win_rate": 69.8,
           "commission_swap_usd": 0.0
         }
       ],
@@ -29856,6 +29932,50 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "HECTOR",
             "strategy": "MARO HECTOR",
             "comment": ""
+          },
+          {
+            "time": "2026-09-29 14:16:27",
+            "date": "2026-09-29",
+            "hour": "14:16:27",
+            "month": "2026-09",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.1,
+            "volume": 0.1,
+            "price": 1.32285,
+            "profit": 0.6,
+            "raw_profit": 0.6,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 195450908,
+            "order": 211239785,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "MARO HECTOR",
+            "comment": ""
+          },
+          {
+            "time": "2026-09-29 14:16:28",
+            "date": "2026-09-29",
+            "hour": "14:16:28",
+            "month": "2026-09",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.1,
+            "volume": 0.1,
+            "price": 1.32285,
+            "profit": 10.7,
+            "raw_profit": 10.7,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 195450918,
+            "order": 211239807,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "MARO HECTOR",
+            "comment": ""
           }
         ]
       }
@@ -32487,5 +32607,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-09-29 11:14:28"
+  "last_sync": "2026-09-29 11:44:41"
 };
