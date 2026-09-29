@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-29T14:44:26.791213Z",
+  generated_at: "2026-09-29T15:14:28.093590Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -22,11 +22,11 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 29263904,
     "server": "VantageMarkets-Live 5",
     "balance": 236.65,
-    "equity": 281.55,
-    "margin": 132.28,
-    "margin_free": 149.27,
-    "floating": -5.1,
-    "positions_count": 1,
+    "equity": 254.95,
+    "margin": 264.46,
+    "margin_free": -9.51,
+    "floating": -31.7,
+    "positions_count": 2,
     "dynamic_lot": 0.02,
     "next_lot_balance": 300.0,
     "positions": [
@@ -36,11 +36,23 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.1,
         "open_price": 1.32279,
-        "current_price": 1.3222800000000001,
+        "current_price": 1.3207,
         "sl": 0.0,
-        "tp": 1.32455,
-        "profit": -5.1,
+        "tp": 1.32282,
+        "profit": -20.9,
         "time": "2026-09-29 10:27:34"
+      },
+      {
+        "ticket": 211117654,
+        "symbol": "GBPUSD",
+        "type": "BUY",
+        "volume": 0.1,
+        "open_price": 1.32178,
+        "current_price": 1.3207,
+        "sl": 0.0,
+        "tp": 1.3229,
+        "profit": -10.8,
+        "time": "2026-09-29 10:47:38"
       }
     ],
     "strategy": "MARO HECTOR"
@@ -32409,5 +32421,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-09-29 07:44:26"
+  "last_sync": "2026-09-29 08:14:27"
 };
