@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-29T15:44:32.407309Z",
+  generated_at: "2026-09-29T16:14:25.684327Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -22,10 +22,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 29263904,
     "server": "VantageMarkets-Live 5",
     "balance": 236.65,
-    "equity": 246.95,
+    "equity": 254.95,
     "margin": 264.46,
-    "margin_free": -17.51,
-    "floating": -39.7,
+    "margin_free": -9.51,
+    "floating": -31.7,
     "positions_count": 2,
     "dynamic_lot": 0.02,
     "next_lot_balance": 300.0,
@@ -36,10 +36,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.1,
         "open_price": 1.32279,
-        "current_price": 1.3203,
+        "current_price": 1.3207,
         "sl": 0.0,
         "tp": 1.32282,
-        "profit": -24.9,
+        "profit": -20.9,
         "time": "2026-09-29 10:27:34"
       },
       {
@@ -48,10 +48,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.1,
         "open_price": 1.32178,
-        "current_price": 1.3203,
+        "current_price": 1.3207,
         "sl": 0.0,
         "tp": 1.32282,
-        "profit": -14.8,
+        "profit": -10.8,
         "time": "2026-09-29 10:47:38"
       }
     ],
@@ -62,15 +62,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61587621,
     "server": "Pepperstone-Demo",
-    "balance": 1054.5,
-    "equity": 1054.5,
-    "margin": 0.0,
-    "margin_free": 1054.5,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 1052.75,
+    "equity": 1066.75,
+    "margin": 330.12,
+    "margin_free": 736.63,
+    "floating": 14.0,
+    "positions_count": 1,
     "dynamic_lot": 0.02,
     "next_lot_balance": 1100.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 391783895,
+        "symbol": "GBPUSD",
+        "type": "BUY",
+        "volume": 0.5,
+        "open_price": 1.3204799999999999,
+        "current_price": 1.32076,
+        "sl": 1.30463,
+        "tp": 1.32206,
+        "profit": 14.0,
+        "time": "2026-09-29 11:45:00"
+      }
+    ],
     "strategy": "BOT-1000 (MARO)"
   },
   "account_pepperstone": {
@@ -32421,5 +32434,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-09-29 08:44:32"
+  "last_sync": "2026-09-29 09:14:25"
 };
