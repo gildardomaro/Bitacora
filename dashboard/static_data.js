@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-29T22:44:43.079702Z",
+  generated_at: "2026-09-29T23:14:26.993101Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -53,10 +53,10 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 2214.6,
-    "equity": 2214.6,
+    "balance": 2265.64,
+    "equity": 2265.64,
     "margin": 0.0,
-    "margin_free": 2214.6,
+    "margin_free": 2265.64,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.04,
@@ -10866,6 +10866,50 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[sl 4177.98]"
+    },
+    {
+      "time": "2026-09-29 19:00:18",
+      "date": "2026-09-29",
+      "hour": "19:00:18",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.22,
+      "volume": 0.22,
+      "price": 4180.09,
+      "profit": 20.79,
+      "raw_profit": 21.56,
+      "commission": -0.77,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 307020537,
+      "order": 392038667,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[tp 4180.09]"
+    },
+    {
+      "time": "2026-09-29 19:12:31",
+      "date": "2026-09-29",
+      "hour": "19:12:31",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.22,
+      "volume": 0.22,
+      "price": 4181.94,
+      "profit": 31.79,
+      "raw_profit": 32.56,
+      "commission": -0.77,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 307024484,
+      "order": 392043768,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[tp 4181.94]"
     }
   ],
   "trades": [
@@ -21670,6 +21714,50 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[sl 4177.98]"
+    },
+    {
+      "time": "2026-09-29 19:00:18",
+      "date": "2026-09-29",
+      "hour": "19:00:18",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.22,
+      "volume": 0.22,
+      "price": 4180.09,
+      "profit": 20.79,
+      "raw_profit": 21.56,
+      "commission": -0.77,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 307020537,
+      "order": 392038667,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[tp 4180.09]"
+    },
+    {
+      "time": "2026-09-29 19:12:31",
+      "date": "2026-09-29",
+      "hour": "19:12:31",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.22,
+      "volume": 0.22,
+      "price": 4181.94,
+      "profit": 31.79,
+      "raw_profit": 32.56,
+      "commission": -0.77,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 307024484,
+      "order": 392043768,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[tp 4181.94]"
     }
   ],
   "monthly_analytics": {
@@ -30695,23 +30783,23 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 2000.0
       },
-      "total_wins": 71,
+      "total_wins": 73,
       "total_losses": 20,
-      "total_trades": 91,
-      "win_rate": 78.0,
-      "total_profit_usd": 279.93,
-      "total_return_pct": 14.0,
+      "total_trades": 93,
+      "win_rate": 78.5,
+      "total_profit_usd": 332.51,
+      "total_return_pct": 16.63,
       "monthly_series": [
         {
           "month": "2026-09",
-          "profit_usd": 279.93,
-          "profit_pct": 14.0,
+          "profit_usd": 332.51,
+          "profit_pct": 16.63,
           "deposit_usd": 2000.0,
-          "wins": 71,
+          "wins": 73,
           "losses": 20,
-          "total_trades": 91,
-          "win_rate": 78.0,
-          "commission_swap_usd": -81.77
+          "total_trades": 93,
+          "win_rate": 78.5,
+          "commission_swap_usd": -83.31
         }
       ],
       "months_available": [
@@ -32721,10 +32809,54 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "smart+IA (SMC Oro)",
             "comment": "[sl 4177.98]"
+          },
+          {
+            "time": "2026-09-29 19:00:18",
+            "date": "2026-09-29",
+            "hour": "19:00:18",
+            "month": "2026-09",
+            "symbol": "XAUUSD",
+            "type": "SELL",
+            "lot": 0.22,
+            "volume": 0.22,
+            "price": 4180.09,
+            "profit": 20.79,
+            "raw_profit": 21.56,
+            "commission": -0.77,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 307020537,
+            "order": 392038667,
+            "account": "SMART+IA",
+            "terminal": "PEPPERSTONE",
+            "strategy": "smart+IA (SMC Oro)",
+            "comment": "[tp 4180.09]"
+          },
+          {
+            "time": "2026-09-29 19:12:31",
+            "date": "2026-09-29",
+            "hour": "19:12:31",
+            "month": "2026-09",
+            "symbol": "XAUUSD",
+            "type": "SELL",
+            "lot": 0.22,
+            "volume": 0.22,
+            "price": 4181.94,
+            "profit": 31.79,
+            "raw_profit": 32.56,
+            "commission": -0.77,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 307024484,
+            "order": 392043768,
+            "account": "SMART+IA",
+            "terminal": "PEPPERSTONE",
+            "strategy": "smart+IA (SMC Oro)",
+            "comment": "[tp 4181.94]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-09-29 15:44:43"
+  "last_sync": "2026-09-29 16:14:26"
 };
