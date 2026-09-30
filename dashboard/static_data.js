@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-30T01:44:27.522819Z",
+  generated_at: "2026-09-30T02:14:27.230963Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -69,10 +69,10 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 26207178,
     "server": "VantageMarkets-Demo",
-    "balance": 1010.6,
-    "equity": 1010.6,
+    "balance": 1022.6,
+    "equity": 1022.6,
     "margin": 0.0,
-    "margin_free": 1010.6,
+    "margin_free": 1022.6,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.02,
@@ -11322,6 +11322,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE05",
       "strategy": "MARO & NAVI",
       "comment": "[tp 4170.99]"
+    },
+    {
+      "time": "2026-09-29 22:11:39",
+      "date": "2026-09-29",
+      "hour": "22:11:39",
+      "month": "2026-09",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 4177.26,
+      "profit": 12.3,
+      "raw_profit": 12.6,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1685759304,
+      "order": 2110343354,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[tp 4177.26]"
     }
   ],
   "trades": [
@@ -22566,6 +22588,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE05",
       "strategy": "MARO & NAVI",
       "comment": "[tp 4170.99]"
+    },
+    {
+      "time": "2026-09-29 22:11:39",
+      "date": "2026-09-29",
+      "hour": "22:11:39",
+      "month": "2026-09",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 4177.26,
+      "profit": 12.3,
+      "raw_profit": 12.6,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1685759304,
+      "order": 2110343354,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[tp 4177.26]"
     }
   ],
   "monthly_analytics": {
@@ -33806,23 +33850,23 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 1000.0
       },
-      "total_wins": 9,
+      "total_wins": 10,
       "total_losses": 3,
-      "total_trades": 12,
-      "win_rate": 75.0,
-      "total_profit_usd": 14.2,
-      "total_return_pct": 1.42,
+      "total_trades": 13,
+      "win_rate": 76.9,
+      "total_profit_usd": 26.5,
+      "total_return_pct": 2.65,
       "monthly_series": [
         {
           "month": "2026-09",
-          "profit_usd": 14.2,
-          "profit_pct": 1.42,
+          "profit_usd": 26.5,
+          "profit_pct": 2.65,
           "deposit_usd": 1000.0,
-          "wins": 9,
+          "wins": 10,
           "losses": 3,
-          "total_trades": 12,
-          "win_rate": 75.0,
-          "commission_swap_usd": -3.6
+          "total_trades": 13,
+          "win_rate": 76.9,
+          "commission_swap_usd": -3.9
         }
       ],
       "months_available": [
@@ -34094,10 +34138,32 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "VANTAGE05",
             "strategy": "MARO & NAVI",
             "comment": "[tp 4170.99]"
+          },
+          {
+            "time": "2026-09-29 22:11:39",
+            "date": "2026-09-29",
+            "hour": "22:11:39",
+            "month": "2026-09",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.1,
+            "volume": 0.1,
+            "price": 4177.26,
+            "profit": 12.3,
+            "raw_profit": 12.6,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 1685759304,
+            "order": 2110343354,
+            "account": "VANTAGE05",
+            "terminal": "VANTAGE05",
+            "strategy": "MARO & NAVI",
+            "comment": "[tp 4177.26]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-09-29 18:44:27"
+  "last_sync": "2026-09-29 19:14:27"
 };
