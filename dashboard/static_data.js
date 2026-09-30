@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-30T17:14:40.957976Z",
+  generated_at: "2026-09-30T17:44:26.745974Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -69,10 +69,10 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 26207178,
     "server": "VantageMarkets-Demo",
-    "balance": 995.1,
-    "equity": 995.1,
+    "balance": 1008.1,
+    "equity": 1008.1,
     "margin": 0.0,
-    "margin_free": 995.1,
+    "margin_free": 1008.1,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.02,
@@ -11630,6 +11630,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[sl 4152.67]"
+    },
+    {
+      "time": "2026-09-30 13:29:17",
+      "date": "2026-09-30",
+      "hour": "13:29:17",
+      "month": "2026-09",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 4155.13,
+      "profit": 13.3,
+      "raw_profit": 13.6,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1689115598,
+      "order": 2114978067,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[tp 4155.13]"
     }
   ],
   "trades": [
@@ -23182,6 +23204,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[sl 4152.67]"
+    },
+    {
+      "time": "2026-09-30 13:29:17",
+      "date": "2026-09-30",
+      "hour": "13:29:17",
+      "month": "2026-09",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 4155.13,
+      "profit": 13.3,
+      "raw_profit": 13.6,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1689115598,
+      "order": 2114978067,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[tp 4155.13]"
     }
   ],
   "monthly_analytics": {
@@ -34576,23 +34620,23 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 1000.0
       },
-      "total_wins": 13,
+      "total_wins": 14,
       "total_losses": 6,
-      "total_trades": 19,
-      "win_rate": 68.4,
-      "total_profit_usd": 0.8,
-      "total_return_pct": 0.08,
+      "total_trades": 20,
+      "win_rate": 70.0,
+      "total_profit_usd": 14.1,
+      "total_return_pct": 1.41,
       "monthly_series": [
         {
           "month": "2026-09",
-          "profit_usd": 0.8,
-          "profit_pct": 0.08,
+          "profit_usd": 14.1,
+          "profit_pct": 1.41,
           "deposit_usd": 1000.0,
-          "wins": 13,
+          "wins": 14,
           "losses": 6,
-          "total_trades": 19,
-          "win_rate": 68.4,
-          "commission_swap_usd": -5.7
+          "total_trades": 20,
+          "win_rate": 70.0,
+          "commission_swap_usd": -6.0
         }
       ],
       "months_available": [
@@ -35018,10 +35062,32 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "VANTAGE05",
             "strategy": "MARO & NAVI",
             "comment": "[sl 4159.96]"
+          },
+          {
+            "time": "2026-09-30 13:29:17",
+            "date": "2026-09-30",
+            "hour": "13:29:17",
+            "month": "2026-09",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.1,
+            "volume": 0.1,
+            "price": 4155.13,
+            "profit": 13.3,
+            "raw_profit": 13.6,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 1689115598,
+            "order": 2114978067,
+            "account": "VANTAGE05",
+            "terminal": "VANTAGE05",
+            "strategy": "MARO & NAVI",
+            "comment": "[tp 4155.13]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-09-30 10:14:40"
+  "last_sync": "2026-09-30 10:44:26"
 };
