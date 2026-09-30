@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-09-30T16:47:39.213616Z",
+  generated_at: "2026-09-30T17:14:40.957976Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -53,10 +53,10 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 2222.3,
-    "equity": 2222.3,
+    "balance": 2222.96,
+    "equity": 2222.96,
     "margin": 0.0,
-    "margin_free": 2222.3,
+    "margin_free": 2222.96,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.04,
@@ -11608,6 +11608,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[sl 4160.10]"
+    },
+    {
+      "time": "2026-09-30 13:12:20",
+      "date": "2026-09-30",
+      "hour": "13:12:20",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "BUY",
+      "lot": 0.22,
+      "volume": 0.22,
+      "price": 4152.67,
+      "profit": 1.43,
+      "raw_profit": 2.2,
+      "commission": -0.77,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 307779244,
+      "order": 392914281,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[sl 4152.67]"
     }
   ],
   "trades": [
@@ -23138,6 +23160,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[sl 4160.10]"
+    },
+    {
+      "time": "2026-09-30 13:12:20",
+      "date": "2026-09-30",
+      "hour": "13:12:20",
+      "month": "2026-09",
+      "symbol": "XAUUSD",
+      "type": "BUY",
+      "lot": 0.22,
+      "volume": 0.22,
+      "price": 4152.67,
+      "profit": 1.43,
+      "raw_profit": 2.2,
+      "commission": -0.77,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 307779244,
+      "order": 392914281,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[sl 4152.67]"
     }
   ],
   "monthly_analytics": {
@@ -32185,23 +32229,23 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 2000.0
       },
-      "total_wins": 82,
+      "total_wins": 83,
       "total_losses": 22,
-      "total_trades": 104,
-      "win_rate": 78.8,
-      "total_profit_usd": 297.64,
-      "total_return_pct": 14.88,
+      "total_trades": 105,
+      "win_rate": 79.0,
+      "total_profit_usd": 299.07,
+      "total_return_pct": 14.95,
       "monthly_series": [
         {
           "month": "2026-09",
-          "profit_usd": 297.64,
-          "profit_pct": 14.88,
+          "profit_usd": 299.07,
+          "profit_pct": 14.95,
           "deposit_usd": 2000.0,
-          "wins": 82,
+          "wins": 83,
           "losses": 22,
-          "total_trades": 104,
-          "win_rate": 78.8,
-          "commission_swap_usd": -91.78
+          "total_trades": 105,
+          "win_rate": 79.0,
+          "commission_swap_usd": -92.55
         }
       ],
       "months_available": [
@@ -34497,6 +34541,28 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "smart+IA (SMC Oro)",
             "comment": "[sl 4160.10]"
+          },
+          {
+            "time": "2026-09-30 13:12:20",
+            "date": "2026-09-30",
+            "hour": "13:12:20",
+            "month": "2026-09",
+            "symbol": "XAUUSD",
+            "type": "BUY",
+            "lot": 0.22,
+            "volume": 0.22,
+            "price": 4152.67,
+            "profit": 1.43,
+            "raw_profit": 2.2,
+            "commission": -0.77,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 307779244,
+            "order": 392914281,
+            "account": "SMART+IA",
+            "terminal": "PEPPERSTONE",
+            "strategy": "smart+IA (SMC Oro)",
+            "comment": "[sl 4152.67]"
           }
         ]
       }
@@ -34957,5 +35023,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-09-30 09:47:39"
+  "last_sync": "2026-09-30 10:14:40"
 };
