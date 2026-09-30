@@ -301,13 +301,15 @@ function startDashboard() {
       "PEPPERSTONE": "🦅 smart+IA SMC (Oro Demo)",
       "REAL1000": "💎 Vantage REAL (REAL1000)",
       "HECTOR": "🛡️ Vantage REAL (HECTOR)",
-      "VANTAGE": "📊 Vantage DEMO (BOT-1000)"
+      "VANTAGE": "📊 Vantage DEMO (BOT-1000)",
+      "VANTAGE05": "🚀 Vantage DEMO (26207178)"
     };
     const termServers = {
       "PEPPERSTONE": "Pepperstone-Demo (61595338)",
       "REAL1000": "VantageMarkets-Live 5 (27497962)",
       "HECTOR": "VantageMarkets-Live 5 (29263904)",
-      "VANTAGE": "Pepperstone-Demo (61587621)"
+      "VANTAGE": "Pepperstone-Demo (61587621)",
+      "VANTAGE05": "VantageMarkets-Demo (26207178)"
     };
 
     if (dom.panelAccountPill) dom.panelAccountPill.textContent = termNames[state.activeTerminal] || analytics.name;
@@ -546,6 +548,8 @@ function startDashboard() {
         acc = window.STATIC_DASHBOARD_DATA.account_real1000;
       } else if (state.activeTerminal === 'HECTOR') {
         acc = window.STATIC_DASHBOARD_DATA.account_hector;
+      } else if (state.activeTerminal === 'VANTAGE05') {
+        acc = window.STATIC_DASHBOARD_DATA.account_vantage05;
       } else {
         acc = window.STATIC_DASHBOARD_DATA.account_vantage;
       }
