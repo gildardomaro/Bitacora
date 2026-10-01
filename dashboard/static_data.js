@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-01T20:10:10.423499Z",
+  generated_at: "2026-10-01T20:14:26.512804Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -22,10 +22,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 29263904,
     "server": "VantageMarkets-Live 5",
     "balance": 247.95,
-    "equity": 291.7,
+    "equity": 288.9,
     "margin": 264.02,
-    "margin_free": 27.68,
-    "floating": -6.25,
+    "margin_free": 24.88,
+    "floating": -9.05,
     "positions_count": 4,
     "dynamic_lot": 0.02,
     "next_lot_balance": 300.0,
@@ -36,10 +36,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.32078,
-        "current_price": 1.31978,
+        "current_price": 1.31964,
         "sl": 0.0,
         "tp": 1.32088,
-        "profit": -5.0,
+        "profit": -5.7,
         "time": "2026-10-01 11:30:35"
       },
       {
@@ -48,10 +48,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.32053,
-        "current_price": 1.31978,
+        "current_price": 1.31964,
         "sl": 0.0,
         "tp": 1.32087,
-        "profit": -3.75,
+        "profit": -4.45,
         "time": "2026-10-01 11:31:00"
       },
       {
@@ -60,10 +60,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.32022,
-        "current_price": 1.31978,
+        "current_price": 1.31964,
         "sl": 0.0,
         "tp": 1.32086,
-        "profit": -2.2,
+        "profit": -2.9,
         "time": "2026-10-01 11:31:25"
       },
       {
@@ -72,10 +72,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.31884,
-        "current_price": 1.31978,
+        "current_price": 1.31964,
         "sl": 0.0,
         "tp": 1.32088,
-        "profit": 4.7,
+        "profit": 4.0,
         "time": "2026-10-01 11:34:24"
       }
     ],
@@ -43878,5 +43878,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-01 13:10:10"
+  "last_sync": "2026-10-01 13:14:26"
 };
