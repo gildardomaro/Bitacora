@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-01T21:44:29.003700Z",
+  generated_at: "2026-10-01T22:14:27.794720Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -22,10 +22,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 29263904,
     "server": "VantageMarkets-Live 5",
     "balance": 247.95,
-    "equity": 286.38,
+    "equity": 282.98,
     "margin": 264.02,
-    "margin_free": 22.36,
-    "floating": -10.65,
+    "margin_free": 18.96,
+    "floating": -14.05,
     "positions_count": 4,
     "dynamic_lot": 0.02,
     "next_lot_balance": 300.0,
@@ -36,10 +36,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.32078,
-        "current_price": 1.31956,
+        "current_price": 1.31939,
         "sl": 0.0,
         "tp": 1.32088,
-        "profit": -6.1,
+        "profit": -6.95,
         "time": "2026-10-01 11:30:35"
       },
       {
@@ -48,10 +48,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.32053,
-        "current_price": 1.31956,
+        "current_price": 1.31939,
         "sl": 0.0,
         "tp": 1.32087,
-        "profit": -4.85,
+        "profit": -5.7,
         "time": "2026-10-01 11:31:00"
       },
       {
@@ -60,10 +60,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.32022,
-        "current_price": 1.31956,
+        "current_price": 1.31939,
         "sl": 0.0,
         "tp": 1.32086,
-        "profit": -3.3,
+        "profit": -4.15,
         "time": "2026-10-01 11:31:25"
       },
       {
@@ -72,10 +72,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.05,
         "open_price": 1.31884,
-        "current_price": 1.31956,
+        "current_price": 1.31939,
         "sl": 0.0,
         "tp": 1.32088,
-        "profit": 3.6,
+        "profit": 2.75,
         "time": "2026-10-01 11:34:24"
       }
     ],
@@ -102,15 +102,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 2187.74,
-    "equity": 2187.74,
-    "margin": 0.0,
-    "margin_free": 2187.74,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 2187.0,
+    "equity": 2188.05,
+    "margin": 438.21,
+    "margin_free": 1749.84,
+    "floating": 1.05,
+    "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 2200.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 394032478,
+        "symbol": "XAUUSD",
+        "type": "SELL",
+        "volume": 0.21,
+        "open_price": 4173.42,
+        "current_price": 4173.37,
+        "sl": 4175.18,
+        "tp": 4172.17,
+        "profit": 1.05,
+        "time": "2026-10-01 18:14:04"
+      }
+    ],
     "strategy": "smart+IA (SMC Oro)"
   },
   "account_vantage05": {
@@ -44208,5 +44221,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-01 14:44:28"
+  "last_sync": "2026-10-01 15:14:27"
 };
