@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-04T21:14:25.932398Z",
+  generated_at: "2026-10-04T21:44:26.921770Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -50047,5 +50047,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-04 14:14:25"
+  "last_sync": "2026-10-04 14:44:26"
 };
