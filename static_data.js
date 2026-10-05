@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-05T14:44:26.275717Z",
+  generated_at: "2026-10-05T15:14:27.705516Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -53,10 +53,10 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 2303.97,
-    "equity": 2303.97,
+    "balance": 2304.65,
+    "equity": 2304.65,
     "margin": 0.0,
-    "margin_free": 2303.97,
+    "margin_free": 2304.65,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.05,
@@ -69,10 +69,10 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 26207178,
     "server": "VantageMarkets-Demo",
-    "balance": 1092.92,
-    "equity": 1092.92,
+    "balance": 1093.32,
+    "equity": 1093.32,
     "margin": 0.0,
-    "margin_free": 1092.92,
+    "margin_free": 1093.32,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.02,
@@ -18252,6 +18252,50 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE05",
       "strategy": "MARO & NAVI",
       "comment": "[tp 4141.56]"
+    },
+    {
+      "time": "2026-10-05 10:56:16",
+      "date": "2026-10-05",
+      "hour": "10:56:16",
+      "month": "2026-10",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.23,
+      "volume": 0.23,
+      "price": 4145.01,
+      "profit": 1.49,
+      "raw_profit": 2.3,
+      "commission": -0.81,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 310422158,
+      "order": 396519457,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[sl 4145.01]"
+    },
+    {
+      "time": "2026-10-05 10:56:17",
+      "date": "2026-10-05",
+      "hour": "10:56:17",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 4144.92,
+      "profit": 0.7,
+      "raw_profit": 1.0,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1705999395,
+      "order": 2138278891,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[sl 4144.92]"
     }
   ],
   "trades": [
@@ -36426,6 +36470,50 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE05",
       "strategy": "MARO & NAVI",
       "comment": "[tp 4141.56]"
+    },
+    {
+      "time": "2026-10-05 10:56:16",
+      "date": "2026-10-05",
+      "hour": "10:56:16",
+      "month": "2026-10",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.23,
+      "volume": 0.23,
+      "price": 4145.01,
+      "profit": 1.49,
+      "raw_profit": 2.3,
+      "commission": -0.81,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 310422158,
+      "order": 396519457,
+      "account": "SMART+IA",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA (SMC Oro)",
+      "comment": "[sl 4145.01]"
+    },
+    {
+      "time": "2026-10-05 10:56:17",
+      "date": "2026-10-05",
+      "hour": "10:56:17",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 4144.92,
+      "profit": 0.7,
+      "raw_profit": 1.0,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1705999395,
+      "order": 2138278891,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[sl 4144.92]"
     }
   ],
   "monthly_analytics": {
@@ -45611,12 +45699,12 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 2000.0
       },
-      "total_wins": 175,
+      "total_wins": 176,
       "total_losses": 43,
-      "total_trades": 218,
-      "win_rate": 80.3,
-      "total_profit_usd": 464.99,
-      "total_return_pct": 23.25,
+      "total_trades": 219,
+      "win_rate": 80.4,
+      "total_profit_usd": 466.48,
+      "total_return_pct": 23.32,
       "monthly_series": [
         {
           "month": "2026-09",
@@ -45631,14 +45719,14 @@ window.STATIC_DASHBOARD_DATA = {
         },
         {
           "month": "2026-10",
-          "profit_usd": 142.49,
-          "profit_pct": 7.12,
+          "profit_usd": 143.98,
+          "profit_pct": 7.2,
           "deposit_usd": 2000.0,
-          "wins": 82,
+          "wins": 83,
           "losses": 20,
-          "total_trades": 102,
-          "win_rate": 80.4,
-          "commission_swap_usd": -76.44
+          "total_trades": 103,
+          "win_rate": 80.6,
+          "commission_swap_usd": -77.25
         }
       ],
       "months_available": [
@@ -50445,6 +50533,28 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "smart+IA (SMC Oro)",
             "comment": "[sl 4136.28]"
+          },
+          {
+            "time": "2026-10-05 10:56:16",
+            "date": "2026-10-05",
+            "hour": "10:56:16",
+            "month": "2026-10",
+            "symbol": "XAUUSD",
+            "type": "SELL",
+            "lot": 0.23,
+            "volume": 0.23,
+            "price": 4145.01,
+            "profit": 1.49,
+            "raw_profit": 2.3,
+            "commission": -0.81,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 310422158,
+            "order": 396519457,
+            "account": "SMART+IA",
+            "terminal": "PEPPERSTONE",
+            "strategy": "smart+IA (SMC Oro)",
+            "comment": "[sl 4145.01]"
           }
         ]
       }
@@ -50458,12 +50568,12 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 1000.0
       },
-      "total_wins": 144,
+      "total_wins": 145,
       "total_losses": 58,
-      "total_trades": 202,
-      "win_rate": 71.3,
-      "total_profit_usd": 153.1,
-      "total_return_pct": 15.31,
+      "total_trades": 203,
+      "win_rate": 71.4,
+      "total_profit_usd": 153.8,
+      "total_return_pct": 15.38,
       "monthly_series": [
         {
           "month": "2026-09",
@@ -50478,14 +50588,14 @@ window.STATIC_DASHBOARD_DATA = {
         },
         {
           "month": "2026-10",
-          "profit_usd": 94.2,
-          "profit_pct": 9.42,
+          "profit_usd": 94.9,
+          "profit_pct": 9.49,
           "deposit_usd": 1000.0,
-          "wins": 110,
+          "wins": 111,
           "losses": 47,
-          "total_trades": 157,
-          "win_rate": 70.1,
-          "commission_swap_usd": -46.68
+          "total_trades": 158,
+          "win_rate": 70.3,
+          "commission_swap_usd": -46.98
         }
       ],
       "months_available": [
@@ -54940,10 +55050,32 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "VANTAGE05",
             "strategy": "MARO & NAVI",
             "comment": "[tp 4141.56]"
+          },
+          {
+            "time": "2026-10-05 10:56:17",
+            "date": "2026-10-05",
+            "hour": "10:56:17",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.1,
+            "volume": 0.1,
+            "price": 4144.92,
+            "profit": 0.7,
+            "raw_profit": 1.0,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 1705999395,
+            "order": 2138278891,
+            "account": "VANTAGE05",
+            "terminal": "VANTAGE05",
+            "strategy": "MARO & NAVI",
+            "comment": "[sl 4144.92]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-10-05 07:44:26"
+  "last_sync": "2026-10-05 08:14:27"
 };
