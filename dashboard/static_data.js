@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-05T22:14:26.153389Z",
+  generated_at: "2026-10-05T22:44:26.264886Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -53,15 +53,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 2179.98,
-    "equity": 2179.98,
-    "margin": 0.0,
-    "margin_free": 2179.98,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 2179.24,
+    "equity": 2172.1,
+    "margin": 435.19,
+    "margin_free": 1736.91,
+    "floating": -7.14,
+    "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 2200.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 396784342,
+        "symbol": "XAUUSD",
+        "type": "BUY",
+        "volume": 0.21,
+        "open_price": 4144.65,
+        "current_price": 4144.31,
+        "sl": 4143.66,
+        "tp": 4146.04,
+        "profit": -7.14,
+        "time": "2026-10-05 18:42:00"
+      }
+    ],
     "strategy": "smart+IA (SMC Oro)"
   },
   "account_vantage05": {
@@ -69,15 +82,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 26207178,
     "server": "VantageMarkets-Demo",
-    "balance": 1091.82,
-    "equity": 1091.82,
-    "margin": 0.0,
-    "margin_free": 1091.82,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 1091.52,
+    "equity": 1086.12,
+    "margin": 138.16,
+    "margin_free": 947.96,
+    "floating": -5.4,
+    "positions_count": 1,
     "dynamic_lot": 0.02,
     "next_lot_balance": 1100.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 2139937947,
+        "symbol": "XAUUSD+",
+        "type": "BUY",
+        "volume": 0.1,
+        "open_price": 4144.83,
+        "current_price": 4144.29,
+        "sl": 4143.93,
+        "tp": 4146.12,
+        "profit": -5.4,
+        "time": "2026-10-05 18:42:01"
+      }
+    ],
     "strategy": "MARO & NAVI"
   },
   "real_trades": [
@@ -56265,5 +56291,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-05 15:14:26"
+  "last_sync": "2026-10-05 15:44:26"
 };
