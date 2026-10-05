@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-05T14:14:25.061370Z",
+  generated_at: "2026-10-05T14:44:26.275717Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -69,10 +69,10 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 26207178,
     "server": "VantageMarkets-Demo",
-    "balance": 1079.02,
-    "equity": 1079.02,
+    "balance": 1092.92,
+    "equity": 1092.92,
     "margin": 0.0,
-    "margin_free": 1079.02,
+    "margin_free": 1092.92,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.02,
@@ -18230,6 +18230,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE05",
       "strategy": "MARO & NAVI",
       "comment": "[sl 4136.19]"
+    },
+    {
+      "time": "2026-10-05 10:43:27",
+      "date": "2026-10-05",
+      "hour": "10:43:27",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 4141.56,
+      "profit": 14.2,
+      "raw_profit": 14.5,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1705932819,
+      "order": 2138183223,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[tp 4141.56]"
     }
   ],
   "trades": [
@@ -36382,6 +36404,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "VANTAGE05",
       "strategy": "MARO & NAVI",
       "comment": "[sl 4136.19]"
+    },
+    {
+      "time": "2026-10-05 10:43:27",
+      "date": "2026-10-05",
+      "hour": "10:43:27",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.1,
+      "volume": 0.1,
+      "price": 4141.56,
+      "profit": 14.2,
+      "raw_profit": 14.5,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1705932819,
+      "order": 2138183223,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[tp 4141.56]"
     }
   ],
   "monthly_analytics": {
@@ -50414,12 +50458,12 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 1000.0
       },
-      "total_wins": 143,
+      "total_wins": 144,
       "total_losses": 58,
-      "total_trades": 201,
-      "win_rate": 71.1,
-      "total_profit_usd": 138.9,
-      "total_return_pct": 13.89,
+      "total_trades": 202,
+      "win_rate": 71.3,
+      "total_profit_usd": 153.1,
+      "total_return_pct": 15.31,
       "monthly_series": [
         {
           "month": "2026-09",
@@ -50434,14 +50478,14 @@ window.STATIC_DASHBOARD_DATA = {
         },
         {
           "month": "2026-10",
-          "profit_usd": 80.0,
-          "profit_pct": 8.0,
+          "profit_usd": 94.2,
+          "profit_pct": 9.42,
           "deposit_usd": 1000.0,
-          "wins": 109,
+          "wins": 110,
           "losses": 47,
-          "total_trades": 156,
-          "win_rate": 69.9,
-          "commission_swap_usd": -46.38
+          "total_trades": 157,
+          "win_rate": 70.1,
+          "commission_swap_usd": -46.68
         }
       ],
       "months_available": [
@@ -54874,10 +54918,32 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "VANTAGE05",
             "strategy": "MARO & NAVI",
             "comment": "[sl 4136.19]"
+          },
+          {
+            "time": "2026-10-05 10:43:27",
+            "date": "2026-10-05",
+            "hour": "10:43:27",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.1,
+            "volume": 0.1,
+            "price": 4141.56,
+            "profit": 14.2,
+            "raw_profit": 14.5,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 1705932819,
+            "order": 2138183223,
+            "account": "VANTAGE05",
+            "terminal": "VANTAGE05",
+            "strategy": "MARO & NAVI",
+            "comment": "[tp 4141.56]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-10-05 07:14:24"
+  "last_sync": "2026-10-05 07:44:26"
 };
