@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-06T12:44:25.789250Z",
+  generated_at: "2026-10-06T13:14:26.171716Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -38,10 +38,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 61587621,
     "server": "Pepperstone-Demo",
     "balance": 1171.56,
-    "equity": 1118.52,
+    "equity": 1095.06,
     "margin": 338.27,
-    "margin_free": 780.25,
-    "floating": -53.04,
+    "margin_free": 756.79,
+    "floating": -76.5,
     "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
@@ -52,10 +52,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.51,
         "open_price": 1.32656,
-        "current_price": 1.3276,
+        "current_price": 1.32806,
         "sl": 1.34246,
         "tp": 1.32495,
-        "profit": -53.04,
+        "profit": -76.5,
         "time": "2026-10-06 07:30:00"
       }
     ],
@@ -83,10 +83,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 26207178,
     "server": "VantageMarkets-Demo",
     "balance": 1190.04,
-    "equity": 1134.45,
+    "equity": 1112.01,
     "margin": 225.52,
-    "margin_free": 908.93,
-    "floating": -55.59,
+    "margin_free": 886.49,
+    "floating": -78.03,
     "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
@@ -97,10 +97,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.51,
         "open_price": 1.32657,
-        "current_price": 1.32766,
+        "current_price": 1.3281,
         "sl": 1.34249,
         "tp": 1.32498,
-        "profit": -55.59,
+        "profit": -78.03,
         "time": "2026-10-06 07:30:00"
       }
     ],
@@ -57611,5 +57611,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-06 05:44:25"
+  "last_sync": "2026-10-06 06:14:26"
 };
