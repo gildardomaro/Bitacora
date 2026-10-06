@@ -298,14 +298,14 @@ function startDashboard() {
 
     // Actualizar badges del panel superior
     const termNames = {
-      "PEPPERSTONE": "🦅 smart+IA SMC (Oro Demo)",
+      "PEPPERSTONE": "🦅 Pepperstone REAL (MARO y smart+IA)",
       "REAL1000": "💎 Vantage REAL (REAL1000)",
       "HECTOR": "🛡️ Vantage REAL (HECTOR)",
       "VANTAGE": "📊 Vantage DEMO (BOT-1000)",
       "VANTAGE05": "🚀 Vantage DEMO (26207178)"
     };
     const termServers = {
-      "PEPPERSTONE": "Pepperstone-Demo (61595338)",
+      "PEPPERSTONE": "PepperstoneBS-MT5-Live01 (51571487)",
       "REAL1000": "VantageMarkets-Live 5 (27497962)",
       "HECTOR": "VantageMarkets-Live 5 (29263904)",
       "VANTAGE": "Pepperstone-Demo (61587621)",

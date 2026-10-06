@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-06T16:14:39.696954Z",
+  generated_at: "2026-10-06T16:44:27.694082Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -38,10 +38,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 61587621,
     "server": "Pepperstone-Demo",
     "balance": 1171.56,
-    "equity": 1161.36,
+    "equity": 1133.31,
     "margin": 338.27,
-    "margin_free": 823.09,
-    "floating": -10.2,
+    "margin_free": 795.04,
+    "floating": -38.25,
     "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
@@ -52,17 +52,17 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.51,
         "open_price": 1.32656,
-        "current_price": 1.32676,
+        "current_price": 1.32731,
         "sl": 1.34246,
         "tp": 1.32495,
-        "profit": -10.2,
+        "profit": -38.25,
         "time": "2026-10-06 07:30:00"
       }
     ],
     "strategy": "BOT-1000 (MARO)"
   },
   "account_pepperstone": {
-    "terminal": "smart+IA (Oro Demo)",
+    "terminal": "Pepperstone REAL (MARO y smart+IA)",
     "connected": true,
     "login": 51571487,
     "server": "PepperstoneBS-MT5-Live01",
@@ -72,10 +72,10 @@ window.STATIC_DASHBOARD_DATA = {
     "margin_free": 3000.0,
     "floating": 0.0,
     "positions_count": 0,
-    "dynamic_lot": 0.12,
+    "dynamic_lot": 0.02,
     "next_lot_balance": 3100.0,
     "positions": [],
-    "strategy": "smart+IA (SMC Oro)"
+    "strategy": "MARO y smart+IA"
   },
   "account_vantage05": {
     "terminal": "Vantage DEMO (26207178)",
@@ -83,10 +83,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 26207178,
     "server": "VantageMarkets-Demo",
     "balance": 1190.04,
-    "equity": 1178.82,
+    "equity": 1151.79,
     "margin": 225.52,
-    "margin_free": 953.3,
-    "floating": -11.22,
+    "margin_free": 926.27,
+    "floating": -38.25,
     "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
@@ -97,10 +97,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.51,
         "open_price": 1.32657,
-        "current_price": 1.32679,
+        "current_price": 1.32732,
         "sl": 1.34249,
         "tp": 1.32498,
-        "profit": -11.22,
+        "profit": -38.25,
         "time": "2026-10-06 07:30:00"
       }
     ],
@@ -36940,9 +36940,9 @@ window.STATIC_DASHBOARD_DATA = {
     },
     "PEPPERSTONE": {
       "terminal_key": "PEPPERSTONE",
-      "name": "smart+IA (Oro Demo)",
+      "name": "Pepperstone REAL (MARO y smart+IA)",
       "symbol": "XAUUSD",
-      "base_capital": 2000.0,
+      "base_capital": 3000.0,
       "total_deposit_usd": 3000.0,
       "deposits_by_month": {
         "2026-10": 3000.0
@@ -41872,5 +41872,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-06 09:14:39"
+  "last_sync": "2026-10-06 09:44:27"
 };
