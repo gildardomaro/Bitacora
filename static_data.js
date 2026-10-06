@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-06T11:14:25.929760Z",
+  generated_at: "2026-10-06T11:44:25.932989Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -37,15 +37,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61587621,
     "server": "Pepperstone-Demo",
-    "balance": 1173.35,
-    "equity": 1173.35,
-    "margin": 0.0,
-    "margin_free": 1173.35,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 1171.56,
+    "equity": 1106.28,
+    "margin": 338.27,
+    "margin_free": 768.01,
+    "floating": -65.28,
+    "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 397244838,
+        "symbol": "GBPUSD",
+        "type": "SELL",
+        "volume": 0.51,
+        "open_price": 1.32656,
+        "current_price": 1.3278400000000001,
+        "sl": 1.34246,
+        "tp": 1.32495,
+        "profit": -65.28,
+        "time": "2026-10-06 07:30:00"
+      }
+    ],
     "strategy": "BOT-1000 (MARO)"
   },
   "account_pepperstone": {
@@ -69,15 +82,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 26207178,
     "server": "VantageMarkets-Demo",
-    "balance": 1191.57,
-    "equity": 1191.57,
-    "margin": 0.0,
-    "margin_free": 1191.57,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 1190.04,
+    "equity": 1123.23,
+    "margin": 225.52,
+    "margin_free": 897.71,
+    "floating": -66.81,
+    "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 2143933585,
+        "symbol": "GBPUSD+",
+        "type": "SELL",
+        "volume": 0.51,
+        "open_price": 1.32657,
+        "current_price": 1.32788,
+        "sl": 1.34249,
+        "tp": 1.32498,
+        "profit": -66.81,
+        "time": "2026-10-06 07:30:00"
+      }
+    ],
     "strategy": "MARO & NAVI"
   },
   "real_trades": [
@@ -57585,5 +57611,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-06 04:14:25"
+  "last_sync": "2026-10-06 04:44:25"
 };
