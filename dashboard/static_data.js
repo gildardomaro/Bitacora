@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-06T04:14:25.972588Z",
+  generated_at: "2026-10-06T04:44:25.718135Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -53,15 +53,28 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61595338,
     "server": "Pepperstone-Demo",
-    "balance": 2175.3,
-    "equity": 2175.3,
-    "margin": 0.0,
-    "margin_free": 2175.3,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 2174.56,
+    "equity": 2185.69,
+    "margin": 432.84,
+    "margin_free": 1752.85,
+    "floating": 11.13,
+    "positions_count": 1,
     "dynamic_lot": 0.03,
     "next_lot_balance": 2200.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 396999200,
+        "symbol": "XAUUSD",
+        "type": "SELL",
+        "volume": 0.21,
+        "open_price": 4122.31,
+        "current_price": 4121.78,
+        "sl": 4122.21,
+        "tp": 4121.03,
+        "profit": 11.13,
+        "time": "2026-10-06 00:44:19"
+      }
+    ],
     "strategy": "smart+IA (SMC Oro)"
   },
   "account_vantage05": {
@@ -57189,5 +57202,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-05 21:14:25"
+  "last_sync": "2026-10-05 21:44:25"
 };
