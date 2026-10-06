@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-06T06:44:25.749260Z",
+  generated_at: "2026-10-06T07:14:25.900654Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -37,28 +37,15 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 61587621,
     "server": "Pepperstone-Demo",
-    "balance": 1095.6,
-    "equity": 1130.1,
-    "margin": 330.04,
-    "margin_free": 800.06,
-    "floating": 34.5,
-    "positions_count": 1,
-    "dynamic_lot": 0.02,
-    "next_lot_balance": 1100.0,
-    "positions": [
-      {
-        "ticket": 397048755,
-        "symbol": "GBPUSD",
-        "type": "BUY",
-        "volume": 0.5,
-        "open_price": 1.32016,
-        "current_price": 1.32085,
-        "sl": 1.30433,
-        "tp": 1.32175,
-        "profit": 34.5,
-        "time": "2026-10-06 02:15:00"
-      }
-    ],
+    "balance": 1173.35,
+    "equity": 1173.35,
+    "margin": 0.0,
+    "margin_free": 1173.35,
+    "floating": 0.0,
+    "positions_count": 0,
+    "dynamic_lot": 0.03,
+    "next_lot_balance": 1200.0,
+    "positions": [],
     "strategy": "BOT-1000 (MARO)"
   },
   "account_pepperstone": {
@@ -82,28 +69,15 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 26207178,
     "server": "VantageMarkets-Demo",
-    "balance": 1112.52,
-    "equity": 1146.69,
-    "margin": 224.43,
-    "margin_free": 922.26,
-    "floating": 34.17,
-    "positions_count": 1,
+    "balance": 1191.57,
+    "equity": 1191.57,
+    "margin": 0.0,
+    "margin_free": 1191.57,
+    "floating": 0.0,
+    "positions_count": 0,
     "dynamic_lot": 0.03,
     "next_lot_balance": 1200.0,
-    "positions": [
-      {
-        "ticket": 2142047316,
-        "symbol": "GBPUSD+",
-        "type": "BUY",
-        "volume": 0.51,
-        "open_price": 1.32015,
-        "current_price": 1.3208199999999999,
-        "sl": 1.30431,
-        "tp": 1.32173,
-        "profit": 34.17,
-        "time": "2026-10-06 02:15:00"
-      }
-    ],
+    "positions": [],
     "strategy": "MARO & NAVI"
   },
   "real_trades": [
@@ -19114,6 +19088,50 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[tp 4121.52]"
+    },
+    {
+      "time": "2026-10-06 03:00:05",
+      "date": "2026-10-06",
+      "hour": "03:00:05",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.5,
+      "volume": 0.5,
+      "price": 1.32175,
+      "profit": 77.75,
+      "raw_profit": 79.5,
+      "commission": -1.75,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 310784293,
+      "order": 397073092,
+      "account": "BOT-1000",
+      "terminal": "VANTAGE",
+      "strategy": "BOT-1000 (MARO)",
+      "comment": "[tp 1.32175]"
+    },
+    {
+      "time": "2026-10-06 03:00:05",
+      "date": "2026-10-06",
+      "hour": "03:00:05",
+      "month": "2026-10",
+      "symbol": "GBPUSD+",
+      "type": "SELL",
+      "lot": 0.51,
+      "volume": 0.51,
+      "price": 1.32173,
+      "profit": 79.05,
+      "raw_profit": 80.58,
+      "commission": -1.53,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1708672239,
+      "order": 2142339188,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[tp 1.32173]"
     }
   ],
   "trades": [
@@ -38124,6 +38142,50 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA (SMC Oro)",
       "comment": "[tp 4121.52]"
+    },
+    {
+      "time": "2026-10-06 03:00:05",
+      "date": "2026-10-06",
+      "hour": "03:00:05",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.5,
+      "volume": 0.5,
+      "price": 1.32175,
+      "profit": 77.75,
+      "raw_profit": 79.5,
+      "commission": -1.75,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 310784293,
+      "order": 397073092,
+      "account": "BOT-1000",
+      "terminal": "VANTAGE",
+      "strategy": "BOT-1000 (MARO)",
+      "comment": "[tp 1.32175]"
+    },
+    {
+      "time": "2026-10-06 03:00:05",
+      "date": "2026-10-06",
+      "hour": "03:00:05",
+      "month": "2026-10",
+      "symbol": "GBPUSD+",
+      "type": "SELL",
+      "lot": 0.51,
+      "volume": 0.51,
+      "price": 1.32173,
+      "profit": 79.05,
+      "raw_profit": 80.58,
+      "commission": -1.53,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 1708672239,
+      "order": 2142339188,
+      "account": "VANTAGE05",
+      "terminal": "VANTAGE05",
+      "strategy": "MARO & NAVI",
+      "comment": "[tp 1.32173]"
     }
   ],
   "monthly_analytics": {
@@ -46620,12 +46682,12 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 1000.0
       },
-      "total_wins": 23,
+      "total_wins": 24,
       "total_losses": 6,
-      "total_trades": 29,
-      "win_rate": 79.3,
-      "total_profit_usd": 111.59,
-      "total_return_pct": 11.16,
+      "total_trades": 30,
+      "win_rate": 80.0,
+      "total_profit_usd": 189.34,
+      "total_return_pct": 18.93,
       "monthly_series": [
         {
           "month": "2026-09",
@@ -46640,14 +46702,14 @@ window.STATIC_DASHBOARD_DATA = {
         },
         {
           "month": "2026-10",
-          "profit_usd": 74.25,
-          "profit_pct": 7.42,
+          "profit_usd": 152.0,
+          "profit_pct": 15.2,
           "deposit_usd": 1000.0,
-          "wins": 1,
+          "wins": 2,
           "losses": 0,
-          "total_trades": 1,
+          "total_trades": 2,
           "win_rate": 100.0,
-          "commission_swap_usd": -1.75
+          "commission_swap_usd": -3.5
         }
       ],
       "months_available": [
@@ -47296,6 +47358,28 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "VANTAGE",
             "strategy": "BOT-1000 (MARO)",
             "comment": "[tp 1.32123]"
+          },
+          {
+            "time": "2026-10-06 03:00:05",
+            "date": "2026-10-06",
+            "hour": "03:00:05",
+            "month": "2026-10",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.5,
+            "volume": 0.5,
+            "price": 1.32175,
+            "profit": 77.75,
+            "raw_profit": 79.5,
+            "commission": -1.75,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 310784293,
+            "order": 397073092,
+            "account": "BOT-1000",
+            "terminal": "VANTAGE",
+            "strategy": "BOT-1000 (MARO)",
+            "comment": "[tp 1.32175]"
           }
         ]
       }
@@ -52596,12 +52680,12 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-09": 1000.0
       },
-      "total_wins": 157,
+      "total_wins": 158,
       "total_losses": 63,
-      "total_trades": 220,
-      "win_rate": 71.4,
-      "total_profit_usd": 179.66,
-      "total_return_pct": 17.97,
+      "total_trades": 221,
+      "win_rate": 71.5,
+      "total_profit_usd": 258.71,
+      "total_return_pct": 25.87,
       "monthly_series": [
         {
           "month": "2026-09",
@@ -52616,14 +52700,14 @@ window.STATIC_DASHBOARD_DATA = {
         },
         {
           "month": "2026-10",
-          "profit_usd": 120.76,
-          "profit_pct": 12.08,
+          "profit_usd": 199.81,
+          "profit_pct": 19.98,
           "deposit_usd": 1000.0,
-          "wins": 123,
+          "wins": 124,
           "losses": 52,
-          "total_trades": 175,
-          "win_rate": 70.3,
-          "commission_swap_usd": -52.11
+          "total_trades": 176,
+          "win_rate": 70.5,
+          "commission_swap_usd": -53.64
         }
       ],
       "months_available": [
@@ -57474,10 +57558,32 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "VANTAGE05",
             "strategy": "MARO & NAVI",
             "comment": "[tp 4131.44]"
+          },
+          {
+            "time": "2026-10-06 03:00:05",
+            "date": "2026-10-06",
+            "hour": "03:00:05",
+            "month": "2026-10",
+            "symbol": "GBPUSD+",
+            "type": "SELL",
+            "lot": 0.51,
+            "volume": 0.51,
+            "price": 1.32173,
+            "profit": 79.05,
+            "raw_profit": 80.58,
+            "commission": -1.53,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 1708672239,
+            "order": 2142339188,
+            "account": "VANTAGE05",
+            "terminal": "VANTAGE05",
+            "strategy": "MARO & NAVI",
+            "comment": "[tp 1.32173]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-10-05 23:44:25"
+  "last_sync": "2026-10-06 00:14:25"
 };
