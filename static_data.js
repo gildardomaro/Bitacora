@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-07T13:44:26.227624Z",
+  generated_at: "2026-10-07T14:14:25.645840Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -54,10 +54,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 51571487,
     "server": "PepperstoneBS-MT5-Live01",
     "balance": 3029.66,
-    "equity": 2951.66,
+    "equity": 2982.86,
     "margin": 528.28,
-    "margin_free": 2423.38,
-    "floating": -78.0,
+    "margin_free": 2454.58,
+    "floating": -46.8,
     "positions_count": 2,
     "dynamic_lot": 0.02,
     "next_lot_balance": 3100.0,
@@ -68,10 +68,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.3,
         "open_price": 1.32243,
-        "current_price": 1.31973,
+        "current_price": 1.32012,
         "sl": 1.30655,
         "tp": 1.32266,
-        "profit": -81.0,
+        "profit": -69.3,
         "time": "2026-10-07 06:30:00"
       },
       {
@@ -80,10 +80,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.5,
         "open_price": 1.31967,
-        "current_price": 1.31973,
+        "current_price": 1.32012,
         "sl": 0.0,
         "tp": 1.32247,
-        "profit": 3.0,
+        "profit": 22.5,
         "time": "2026-10-07 08:47:47"
       }
     ],
@@ -95,10 +95,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 26207178,
     "server": "VantageMarkets-Demo",
     "balance": 1266.71,
-    "equity": 1003.59,
+    "equity": 1024.39,
     "margin": 229.63,
-    "margin_free": 773.96,
-    "floating": -263.12,
+    "margin_free": 794.76,
+    "floating": -242.32,
     "positions_count": 1,
     "dynamic_lot": 0.04,
     "next_lot_balance": 1300.0,
@@ -109,10 +109,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.52,
         "open_price": 1.32477,
-        "current_price": 1.31971,
+        "current_price": 1.3201100000000001,
         "sl": 1.30887,
         "tp": 1.32636,
-        "profit": -263.12,
+        "profit": -242.32,
         "time": "2026-10-07 00:30:00"
       }
     ],
@@ -43353,5 +43353,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-07 06:44:26"
+  "last_sync": "2026-10-07 07:14:25"
 };
