@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-07T11:44:24.827777Z",
+  generated_at: "2026-10-07T12:14:26.172840Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -53,12 +53,12 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 51571487,
     "server": "PepperstoneBS-MT5-Live01",
-    "balance": 3006.71,
-    "equity": 2948.81,
-    "margin": 198.36,
-    "margin_free": 2750.45,
-    "floating": -57.9,
-    "positions_count": 1,
+    "balance": 3006.36,
+    "equity": 2943.66,
+    "margin": 404.4,
+    "margin_free": 2539.26,
+    "floating": -62.7,
+    "positions_count": 2,
     "dynamic_lot": 0.02,
     "next_lot_balance": 3100.0,
     "positions": [
@@ -68,11 +68,23 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.3,
         "open_price": 1.32243,
-        "current_price": 1.3205,
+        "current_price": 1.32028,
         "sl": 1.30655,
         "tp": 1.32401,
-        "profit": -57.9,
+        "profit": -64.5,
         "time": "2026-10-07 06:30:00"
+      },
+      {
+        "ticket": 336740010,
+        "symbol": "XAUUSD",
+        "type": "SELL",
+        "volume": 0.1,
+        "open_price": 4120.83,
+        "current_price": 4120.65,
+        "sl": 4122.7,
+        "tp": 4119.55,
+        "profit": 1.8,
+        "time": "2026-10-07 08:13:37"
       }
     ],
     "strategy": "MARO y smart+IA"
@@ -83,10 +95,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 26207178,
     "server": "VantageMarkets-Demo",
     "balance": 1266.71,
-    "equity": 1044.15,
+    "equity": 1032.19,
     "margin": 229.63,
-    "margin_free": 814.52,
-    "floating": -222.56,
+    "margin_free": 802.56,
+    "floating": -234.52,
     "positions_count": 1,
     "dynamic_lot": 0.04,
     "next_lot_balance": 1300.0,
@@ -97,10 +109,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.52,
         "open_price": 1.32477,
-        "current_price": 1.32049,
+        "current_price": 1.32026,
         "sl": 1.30887,
         "tp": 1.32636,
-        "profit": -222.56,
+        "profit": -234.52,
         "time": "2026-10-07 00:30:00"
       }
     ],
@@ -43209,5 +43221,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-07 04:44:24"
+  "last_sync": "2026-10-07 05:14:26"
 };
