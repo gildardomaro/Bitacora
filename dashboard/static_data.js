@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  generated_at: "2026-10-07T06:14:26.346157Z",
+  generated_at: "2026-10-07T06:44:25.289333Z",
   "account_real1000": {
     "terminal": "Vantage REAL (REAL1000)",
     "connected": true,
@@ -70,10 +70,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 26207178,
     "server": "VantageMarkets-Demo",
     "balance": 1266.71,
-    "equity": 1253.19,
+    "equity": 1259.95,
     "margin": 229.63,
-    "margin_free": 1023.56,
-    "floating": -13.52,
+    "margin_free": 1030.32,
+    "floating": -6.76,
     "positions_count": 1,
     "dynamic_lot": 0.04,
     "next_lot_balance": 1300.0,
@@ -84,10 +84,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "BUY",
         "volume": 0.52,
         "open_price": 1.32477,
-        "current_price": 1.32451,
+        "current_price": 1.32464,
         "sl": 1.30887,
         "tp": 1.32636,
-        "profit": -13.52,
+        "profit": -6.76,
         "time": "2026-10-07 00:30:00"
       }
     ],
@@ -42998,5 +42998,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-06 23:14:26"
+  "last_sync": "2026-10-06 23:44:25"
 };
