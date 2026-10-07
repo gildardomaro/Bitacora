@@ -298,7 +298,7 @@ function startDashboard() {
 
     // Actualizar badges del panel superior
     const termNames = {
-      "PEPPERSTONE": "🦅 Pepperstone REAL (MARO y smart+IA)",
+      "PEPPERSTONE": "🦅 Pepperstone DEMO (smart+IA y MARO)",
       "REAL1000": "💎 Vantage REAL (REAL1000)",
       "HECTOR": "🛡️ Vantage REAL (HECTOR)",
       "VANTAGE": "📊 Vantage DEMO (BOT-1000)",

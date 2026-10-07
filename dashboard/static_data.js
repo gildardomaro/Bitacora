@@ -1,7 +1,7 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-07T19:44:26.324978Z",
+  "generated_at": "2026-10-07T19:52:39.393956Z",
   "account_pepperstone": {
-    "terminal": "Pepperstone REAL (MARO y smart+IA)",
+    "terminal": "Pepperstone DEMO (smart+IA y MARO)",
     "connected": true,
     "login": 51571487,
     "server": "PepperstoneBS-MT5-Live01",
@@ -14,7 +14,7 @@ window.STATIC_DASHBOARD_DATA = {
     "dynamic_lot": 0.03,
     "next_lot_balance": 3200.0,
     "positions": [],
-    "strategy": "MARO y smart+IA"
+    "strategy": "smart+IA y MARO"
   },
   "real_trades": [
     {
@@ -34,9 +34,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294524813,
       "order": 336443915,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4156.99]"
     },
     {
@@ -56,9 +56,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294534588,
       "order": 336454453,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4165.11]"
     },
     {
@@ -78,9 +78,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294547598,
       "order": 336468372,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": ""
     },
     {
@@ -100,9 +100,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294553021,
       "order": 336501921,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4175.04]"
     },
     {
@@ -122,9 +122,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294558037,
       "order": 336516325,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4168.74]"
     },
     {
@@ -144,9 +144,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294570229,
       "order": 336529906,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": ""
     },
     {
@@ -166,9 +166,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294572993,
       "order": 336533502,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4165.75]"
     },
     {
@@ -188,9 +188,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294573399,
       "order": 336533939,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4165.39]"
     },
     {
@@ -210,9 +210,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294586516,
       "order": 336548115,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4160.75]"
     },
     {
@@ -232,9 +232,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294598084,
       "order": 336560780,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4153.78]"
     },
     {
@@ -254,9 +254,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294600703,
       "order": 336563472,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4148.50]"
     },
     {
@@ -276,9 +276,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294601548,
       "order": 336564348,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4147.25]"
     },
     {
@@ -298,9 +298,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294635963,
       "order": 336601732,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4137.79]"
     },
     {
@@ -320,9 +320,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294637369,
       "order": 336603185,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4139.29]"
     },
     {
@@ -342,9 +342,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294642532,
       "order": 336608370,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4133.16]"
     },
     {
@@ -364,9 +364,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294707543,
       "order": 336676591,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4125.42]"
     },
     {
@@ -386,9 +386,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294727577,
       "order": 336697438,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4116.53]"
     },
     {
@@ -408,9 +408,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294757808,
       "order": 336729026,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4117.33]"
     },
     {
@@ -430,9 +430,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294768289,
       "order": 336740266,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4119.55]"
     },
     {
@@ -452,9 +452,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294770471,
       "order": 336742504,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4117.42]"
     },
     {
@@ -474,9 +474,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294859291,
       "order": 336832302,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": ""
     },
     {
@@ -496,9 +496,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294859292,
       "order": 336832303,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": ""
     },
     {
@@ -518,9 +518,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294907565,
       "order": 336883216,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4110.66]"
     },
     {
@@ -540,9 +540,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294909107,
       "order": 336884748,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4108.37]"
     },
     {
@@ -562,9 +562,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294919609,
       "order": 336895662,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4122.14]"
     }
   ],
@@ -586,9 +586,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294524813,
       "order": 336443915,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4156.99]"
     },
     {
@@ -608,9 +608,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294534588,
       "order": 336454453,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4165.11]"
     },
     {
@@ -630,9 +630,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294547598,
       "order": 336468372,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": ""
     },
     {
@@ -652,9 +652,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294553021,
       "order": 336501921,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4175.04]"
     },
     {
@@ -674,9 +674,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294558037,
       "order": 336516325,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4168.74]"
     },
     {
@@ -696,9 +696,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294570229,
       "order": 336529906,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": ""
     },
     {
@@ -718,9 +718,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294572993,
       "order": 336533502,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4165.75]"
     },
     {
@@ -740,9 +740,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294573399,
       "order": 336533939,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4165.39]"
     },
     {
@@ -762,9 +762,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294586516,
       "order": 336548115,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4160.75]"
     },
     {
@@ -784,9 +784,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294598084,
       "order": 336560780,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4153.78]"
     },
     {
@@ -806,9 +806,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294600703,
       "order": 336563472,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4148.50]"
     },
     {
@@ -828,9 +828,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294601548,
       "order": 336564348,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4147.25]"
     },
     {
@@ -850,9 +850,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294635963,
       "order": 336601732,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4137.79]"
     },
     {
@@ -872,9 +872,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294637369,
       "order": 336603185,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4139.29]"
     },
     {
@@ -894,9 +894,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294642532,
       "order": 336608370,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4133.16]"
     },
     {
@@ -916,9 +916,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294707543,
       "order": 336676591,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4125.42]"
     },
     {
@@ -938,9 +938,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294727577,
       "order": 336697438,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4116.53]"
     },
     {
@@ -960,9 +960,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294757808,
       "order": 336729026,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4117.33]"
     },
     {
@@ -982,9 +982,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294768289,
       "order": 336740266,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4119.55]"
     },
     {
@@ -1004,9 +1004,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294770471,
       "order": 336742504,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4117.42]"
     },
     {
@@ -1026,9 +1026,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "LOSS",
       "ticket": 294859291,
       "order": 336832302,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": ""
     },
     {
@@ -1048,9 +1048,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294859292,
       "order": 336832303,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": ""
     },
     {
@@ -1070,9 +1070,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294907565,
       "order": 336883216,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4110.66]"
     },
     {
@@ -1092,9 +1092,9 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294909107,
       "order": 336884748,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[sl 4108.37]"
     },
     {
@@ -1114,70 +1114,16 @@ window.STATIC_DASHBOARD_DATA = {
       "result": "WIN",
       "ticket": 294919609,
       "order": 336895662,
-      "account": "PEPPERSTONE_REAL",
+      "account": "PEPPERSTONE",
       "terminal": "PEPPERSTONE",
-      "strategy": "MARO y smart+IA",
+      "strategy": "smart+IA y MARO",
       "comment": "[tp 4122.14]"
     }
   ],
   "monthly_analytics": {
-    "REAL1000": {
-      "terminal_key": "REAL1000",
-      "name": "Vantage REAL (REAL1000)",
-      "symbol": "GBPUSD",
-      "base_capital": 2000.0,
-      "total_deposit_usd": 2000.0,
-      "deposits_by_month": {},
-      "total_wins": 0,
-      "total_losses": 0,
-      "total_trades": 0,
-      "win_rate": 0.0,
-      "total_profit_usd": 0,
-      "total_return_pct": 0.0,
-      "monthly_series": [],
-      "months_available": [],
-      "current_month": "2026-10",
-      "all_trades_by_month": {}
-    },
-    "HECTOR": {
-      "terminal_key": "HECTOR",
-      "name": "Vantage REAL (HECTOR)",
-      "symbol": "GBPUSD",
-      "base_capital": 200.0,
-      "total_deposit_usd": 200.0,
-      "deposits_by_month": {},
-      "total_wins": 0,
-      "total_losses": 0,
-      "total_trades": 0,
-      "win_rate": 0.0,
-      "total_profit_usd": 0,
-      "total_return_pct": 0.0,
-      "monthly_series": [],
-      "months_available": [],
-      "current_month": "2026-10",
-      "all_trades_by_month": {}
-    },
-    "VANTAGE": {
-      "terminal_key": "VANTAGE",
-      "name": "BOT-1000 (MARO Demo)",
-      "symbol": "GBPUSD",
-      "base_capital": 1000.0,
-      "total_deposit_usd": 1000.0,
-      "deposits_by_month": {},
-      "total_wins": 0,
-      "total_losses": 0,
-      "total_trades": 0,
-      "win_rate": 0.0,
-      "total_profit_usd": 0,
-      "total_return_pct": 0.0,
-      "monthly_series": [],
-      "months_available": [],
-      "current_month": "2026-10",
-      "all_trades_by_month": {}
-    },
     "PEPPERSTONE": {
       "terminal_key": "PEPPERSTONE",
-      "name": "Pepperstone REAL (MARO y smart+IA)",
+      "name": "Pepperstone DEMO (smart+IA y MARO)",
       "symbol": "XAUUSD",
       "base_capital": 3000.0,
       "total_deposit_usd": 3000.0,
@@ -1226,9 +1172,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "LOSS",
             "ticket": 294524813,
             "order": 336443915,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4156.99]"
           },
           {
@@ -1248,9 +1194,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294534588,
             "order": 336454453,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4165.11]"
           },
           {
@@ -1270,9 +1216,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294547598,
             "order": 336468372,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": ""
           },
           {
@@ -1292,9 +1238,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "LOSS",
             "ticket": 294553021,
             "order": 336501921,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4175.04]"
           },
           {
@@ -1314,9 +1260,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294558037,
             "order": 336516325,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4168.74]"
           },
           {
@@ -1336,9 +1282,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294570229,
             "order": 336529906,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": ""
           },
           {
@@ -1358,9 +1304,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294572993,
             "order": 336533502,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[tp 4165.75]"
           },
           {
@@ -1380,9 +1326,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294573399,
             "order": 336533939,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4165.39]"
           },
           {
@@ -1402,9 +1348,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "LOSS",
             "ticket": 294586516,
             "order": 336548115,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4160.75]"
           },
           {
@@ -1424,9 +1370,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294598084,
             "order": 336560780,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4153.78]"
           },
           {
@@ -1446,9 +1392,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294600703,
             "order": 336563472,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[tp 4148.50]"
           },
           {
@@ -1468,9 +1414,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294601548,
             "order": 336564348,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[tp 4147.25]"
           },
           {
@@ -1490,9 +1436,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294635963,
             "order": 336601732,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[tp 4137.79]"
           },
           {
@@ -1512,9 +1458,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "LOSS",
             "ticket": 294637369,
             "order": 336603185,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4139.29]"
           },
           {
@@ -1534,9 +1480,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "LOSS",
             "ticket": 294642532,
             "order": 336608370,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4133.16]"
           },
           {
@@ -1556,9 +1502,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "LOSS",
             "ticket": 294707543,
             "order": 336676591,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4125.42]"
           },
           {
@@ -1578,9 +1524,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "LOSS",
             "ticket": 294727577,
             "order": 336697438,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4116.53]"
           },
           {
@@ -1600,9 +1546,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294757808,
             "order": 336729026,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4117.33]"
           },
           {
@@ -1622,9 +1568,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294768289,
             "order": 336740266,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[tp 4119.55]"
           },
           {
@@ -1644,9 +1590,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294770471,
             "order": 336742504,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[tp 4117.42]"
           },
           {
@@ -1666,9 +1612,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "LOSS",
             "ticket": 294859291,
             "order": 336832302,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": ""
           },
           {
@@ -1688,9 +1634,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294859292,
             "order": 336832303,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": ""
           },
           {
@@ -1710,9 +1656,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294907565,
             "order": 336883216,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[tp 4110.66]"
           },
           {
@@ -1732,9 +1678,9 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294909107,
             "order": 336884748,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[sl 4108.37]"
           },
           {
@@ -1754,32 +1700,14 @@ window.STATIC_DASHBOARD_DATA = {
             "result": "WIN",
             "ticket": 294919609,
             "order": 336895662,
-            "account": "PEPPERSTONE_REAL",
+            "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
-            "strategy": "MARO y smart+IA",
+            "strategy": "smart+IA y MARO",
             "comment": "[tp 4122.14]"
           }
         ]
       }
-    },
-    "VANTAGE05": {
-      "terminal_key": "VANTAGE05",
-      "name": "Vantage DEMO (26207178)",
-      "symbol": "GBPUSD",
-      "base_capital": 1000.0,
-      "total_deposit_usd": 1000.0,
-      "deposits_by_month": {},
-      "total_wins": 0,
-      "total_losses": 0,
-      "total_trades": 0,
-      "win_rate": 0.0,
-      "total_profit_usd": 0,
-      "total_return_pct": 0.0,
-      "monthly_series": [],
-      "months_available": [],
-      "current_month": "2026-10",
-      "all_trades_by_month": {}
     }
   },
-  "last_sync": "2026-10-07 12:44:26"
+  "last_sync": "2026-10-07 12:52:39"
 };
