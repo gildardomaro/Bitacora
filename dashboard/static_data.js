@@ -1,14 +1,14 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-07T23:14:25.202687Z",
+  "generated_at": "2026-10-07T23:44:26.527278Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
     "login": 51571487,
     "server": "PepperstoneBS-MT5-Live01",
-    "balance": 3195.36,
-    "equity": 3195.36,
+    "balance": 3159.96,
+    "equity": 3159.96,
     "margin": 0.0,
-    "margin_free": 3195.36,
+    "margin_free": 3159.96,
     "floating": 0.0,
     "positions_count": 0,
     "dynamic_lot": 0.03,
@@ -588,6 +588,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[tp 4103.83]"
+    },
+    {
+      "time": "2026-10-07 19:24:26",
+      "date": "2026-10-07",
+      "hour": "19:24:26",
+      "month": "2026-10",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.3,
+      "volume": 0.3,
+      "price": 4108.87,
+      "profit": -34.35,
+      "raw_profit": -33.3,
+      "commission": -1.05,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 294971855,
+      "order": 336952722,
+      "account": "PEPPERSTONE",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA y MARO",
+      "comment": "[sl 4108.90]"
     }
   ],
   "trades": [
@@ -1162,6 +1184,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[tp 4103.83]"
+    },
+    {
+      "time": "2026-10-07 19:24:26",
+      "date": "2026-10-07",
+      "hour": "19:24:26",
+      "month": "2026-10",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.3,
+      "volume": 0.3,
+      "price": 4108.87,
+      "profit": -34.35,
+      "raw_profit": -33.3,
+      "commission": -1.05,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 294971855,
+      "order": 336952722,
+      "account": "PEPPERSTONE",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA y MARO",
+      "comment": "[sl 4108.90]"
     }
   ],
   "monthly_analytics": {
@@ -1175,22 +1219,22 @@ window.STATIC_DASHBOARD_DATA = {
         "2026-10": 3000.0
       },
       "total_wins": 18,
-      "total_losses": 8,
-      "total_trades": 26,
-      "win_rate": 69.2,
-      "total_profit_usd": 213.5,
-      "total_return_pct": 7.12,
+      "total_losses": 9,
+      "total_trades": 27,
+      "win_rate": 66.7,
+      "total_profit_usd": 179.15,
+      "total_return_pct": 5.97,
       "monthly_series": [
         {
           "month": "2026-10",
-          "profit_usd": 213.5,
-          "profit_pct": 7.12,
+          "profit_usd": 179.15,
+          "profit_pct": 5.97,
           "deposit_usd": 3000.0,
           "wins": 18,
-          "losses": 8,
-          "total_trades": 26,
-          "win_rate": 69.2,
-          "commission_swap_usd": -18.14
+          "losses": 9,
+          "total_trades": 27,
+          "win_rate": 66.7,
+          "commission_swap_usd": -19.19
         }
       ],
       "months_available": [
@@ -1770,10 +1814,32 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "smart+IA y MARO",
             "comment": "[tp 4103.83]"
+          },
+          {
+            "time": "2026-10-07 19:24:26",
+            "date": "2026-10-07",
+            "hour": "19:24:26",
+            "month": "2026-10",
+            "symbol": "XAUUSD",
+            "type": "SELL",
+            "lot": 0.3,
+            "volume": 0.3,
+            "price": 4108.87,
+            "profit": -34.35,
+            "raw_profit": -33.3,
+            "commission": -1.05,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 294971855,
+            "order": 336952722,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "smart+IA y MARO",
+            "comment": "[sl 4108.90]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-10-07 16:14:25"
+  "last_sync": "2026-10-07 16:44:26"
 };
