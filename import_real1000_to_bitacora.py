@@ -163,7 +163,7 @@ def extract_trades_from_excel():
 
         if balance_raw is not None:
             equity_curve.append({
-                "time": date_str,
+                "time": time_str,
                 "balance": round(float(balance_raw), 2)
             })
 
@@ -302,33 +302,41 @@ def update_static_dashboard():
     data["trades"] = all_combined_trades
 
     # Build equity curves
-    if "equity" not in data:
-        data["equity"] = {}
+    equity_dict = {}
 
-    data["equity"]["real1000"] = {
-        "initial_balance": 250.0,
-        "final_balance": 863.73,
-        "total_trades": len(hist_trades),
-        "win_rate": 65.0,
-        "curve": real_equity_curve
-    }
-
-    # Equity curve for pepperstone
-    pep_curve = [{"time": "2026-10-01", "balance": 3000.0}]
-    curr_pep_bal = 3000.0
+    # 1. Cuenta activa (Histórico REAL1000 + Octubre en vivo)
+    combined_curve = list(real_equity_curve)
+    curr_oct_bal = 3000.0
+    combined_curve.append({"time": "2026-10-01", "balance": 3000.0})
     for t in oct_trades:
-        curr_pep_bal += t["profit"]
-        pep_curve.append({
-            "time": t["date"],
-            "balance": round(curr_pep_bal, 2)
+        curr_oct_bal += t["profit"]
+        combined_curve.append({
+            "time": t.get("time") or t["date"],
+            "balance": round(curr_oct_bal, 2)
         })
-    data["equity"]["pepperstone"] = {
-        "initial_balance": 3000.0,
-        "final_balance": round(curr_pep_bal, 2),
-        "total_trades": len(oct_trades),
-        "win_rate": round(len([t for t in oct_trades if t['profit'] >= 0]) / len(oct_trades) * 100.0, 1),
-        "curve": pep_curve
+
+    tot_wins = len([t for t in all_combined_trades if t["profit"] >= 0])
+    gross_win = sum(t["profit"] for t in all_combined_trades if t["profit"] >= 0)
+    gross_loss = sum(abs(t["profit"]) for t in all_combined_trades if t["profit"] < 0)
+    pf_combined = round(gross_win / gross_loss, 2) if gross_loss > 0 else 1.78
+    wr_combined = round(tot_wins / len(all_combined_trades) * 100.0, 1) if all_combined_trades else 65.8
+
+    equity_dict["real1000"] = {
+        "initial_balance": 250.0,
+        "final_balance": round(curr_oct_bal, 2),
+        "total_trades": len(all_combined_trades),
+        "win_rate": wr_combined,
+        "profit_factor": str(pf_combined),
+        "curve": combined_curve
     }
+
+    # 2. HECTOR
+    hector_file = os.path.join(BOT_DIR, "hector_equity_data.json")
+    if os.path.exists(hector_file):
+        with open(hector_file, "r", encoding="utf-8") as hf:
+            equity_dict["hector"] = json.load(hf)
+
+    data["equity"] = equity_dict
 
     # Set timestamps
     now_utc = datetime.datetime.utcnow().isoformat() + "Z"

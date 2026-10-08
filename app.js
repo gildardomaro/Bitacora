@@ -689,33 +689,31 @@ function startDashboard() {
     }
 
     if (state.equityStrategy === 'real1000') {
-      dom.statProfitFactor.textContent = '1.70';
-      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'REAL1000 (Vantage Real $250 -> $2,133.86 | WR 65.0%)';
+      dom.statProfitFactor.textContent = current.profit_factor || '1.78';
+      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'Pepperstone-01 (smart+IA y MARO | Histórico REAL1000 + Octubre en Vivo)';
     } else if (state.equityStrategy === 'hector') {
-      dom.statProfitFactor.textContent = '1.51';
-      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'HECTOR (Vantage Real $200 -> $210.61 | WR 65.5%)';
-    } else if (state.equityStrategy === 'bot1000') {
-      dom.statProfitFactor.textContent = '5.92';
-      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'BOT-1000 (Vantage Demo $1,000 -> $1,104.35 | WR 93.3%)';
-    } else if (state.equityStrategy === 'gold_m30') {
-      dom.statProfitFactor.textContent = '1.49';
-      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'smart+IA (SMC Oro 59.7% WR)';
+      dom.statProfitFactor.textContent = current.profit_factor || '1.81';
+      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'HECTOR (Vantage Real $200 -> $287.95 | +44.0% Net | WR 65.8%)';
     } else {
-      dom.statProfitFactor.textContent = '1.23';
-      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'MARO (GBPUSD 92.8% WR)';
+      dom.statProfitFactor.textContent = current.profit_factor || '1.50';
+      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'Estrategia Cuantitativa';
     }
 
-    // Mapear datos para TradingView Area Series
-    const seenTimes = new Set();
+    // Mapear datos para TradingView Area Series con timestamps crecientes
     const areaData = [];
-    current.curve.forEach(c => {
-      if (!seenTimes.has(c.time)) {
-        seenTimes.add(c.time);
-        areaData.push({ time: c.time, value: c.balance });
+    let lastTime = 0;
+    const sortedCurve = [...current.curve].sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
+
+    sortedCurve.forEach(c => {
+      let tSec = Math.floor(new Date(c.time).getTime() / 1000);
+      if (isNaN(tSec)) return;
+      if (tSec <= lastTime) {
+        tSec = lastTime + 1;
       }
+      lastTime = tSec;
+      areaData.push({ time: tSec, value: c.balance });
     });
 
-    areaData.sort((a, b) => new Date(a.time) - new Date(b.time));
     equityAreaSeries.setData(areaData);
     equityChart.timeScale().fitContent();
   }
@@ -921,10 +919,7 @@ function startDashboard() {
   // Toggle de estrategia / cuenta en Curva de Equidad
   const equityButtons = [
     { btn: dom.btnShowReal1000, key: 'real1000' },
-    { btn: dom.btnShowHector, key: 'hector' },
-    { btn: dom.btnShowBot1000, key: 'bot1000' },
-    { btn: dom.btnShowGold, key: 'gold_m30' },
-    { btn: dom.btnShowMaro, key: 'maro_m15' }
+    { btn: dom.btnShowHector, key: 'hector' }
   ];
 
   equityButtons.forEach(item => {
