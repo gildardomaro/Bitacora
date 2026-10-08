@@ -231,13 +231,14 @@ def update_static_dashboard():
     sorted_months = sorted(list(by_month.keys()))
     print("Meses disponibles en la cuenta:", sorted_months)
 
-    # Deposits / Base capital per month
+    # Referencias de Capital exactas de la tabla GRAFICO de la bitácora:
+    # Mayo: $250, Junio: $500, Julio: $1,000, Agosto: $1,000, Septiembre: $2,000, Octubre: $3,000
     deposits_by_month = {
         "2026-05": 250.0,
-        "2026-06": 313.42,
-        "2026-07": 452.07,
-        "2026-08": 436.78,
-        "2026-09": 499.59,
+        "2026-06": 500.0,
+        "2026-07": 1000.0,
+        "2026-08": 1000.0,
+        "2026-09": 2000.0,
         "2026-10": 3000.0
     }
 

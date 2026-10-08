@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-08T19:30:16.657888Z",
+  "generated_at": "2026-10-08T19:37:46.386061Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -13281,10 +13281,10 @@ window.STATIC_DASHBOARD_DATA = {
       "total_deposit_usd": 3000.0,
       "deposits_by_month": {
         "2026-05": 250.0,
-        "2026-06": 313.42,
-        "2026-07": 452.07,
-        "2026-08": 436.78,
-        "2026-09": 499.59,
+        "2026-06": 500.0,
+        "2026-07": 1000.0,
+        "2026-08": 1000.0,
+        "2026-09": 2000.0,
         "2026-10": 3000.0
       },
       "total_wins": 177,
@@ -13308,8 +13308,8 @@ window.STATIC_DASHBOARD_DATA = {
         {
           "month": "2026-06",
           "profit_usd": 139.64,
-          "profit_pct": 44.55,
-          "deposit_usd": 313.42,
+          "profit_pct": 27.93,
+          "deposit_usd": 500.0,
           "wins": 40,
           "losses": 20,
           "total_trades": 60,
@@ -13319,8 +13319,8 @@ window.STATIC_DASHBOARD_DATA = {
         {
           "month": "2026-07",
           "profit_usd": -15.94,
-          "profit_pct": -3.53,
-          "deposit_usd": 452.07,
+          "profit_pct": -1.59,
+          "deposit_usd": 1000.0,
           "wins": 24,
           "losses": 25,
           "total_trades": 49,
@@ -13330,8 +13330,8 @@ window.STATIC_DASHBOARD_DATA = {
         {
           "month": "2026-08",
           "profit_usd": 67.72,
-          "profit_pct": 15.5,
-          "deposit_usd": 436.78,
+          "profit_pct": 6.77,
+          "deposit_usd": 1000.0,
           "wins": 33,
           "losses": 18,
           "total_trades": 51,
@@ -13341,8 +13341,8 @@ window.STATIC_DASHBOARD_DATA = {
         {
           "month": "2026-09",
           "profit_usd": 362.25,
-          "profit_pct": 72.51,
-          "deposit_usd": 499.59,
+          "profit_pct": 18.11,
+          "deposit_usd": 2000.0,
           "wins": 28,
           "losses": 9,
           "total_trades": 37,
@@ -20012,7 +20012,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-08 12:30:16",
+  "last_sync": "2026-10-08 12:37:46",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
