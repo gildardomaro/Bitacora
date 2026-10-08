@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-08T19:44:26.470686Z",
+  "generated_at": "2026-10-08T19:54:26.802049Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -8212,7 +8212,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-08 12:44:26",
+  "last_sync": "2026-10-08 12:54:26",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
