@@ -338,6 +338,21 @@ def update_static_dashboard():
 
     data["equity"] = equity_dict
 
+    # 3. Radar Institucional y Calendario OANDA
+    radar_cache = os.path.join(BOT_DIR, "radar_data_cache.json")
+    if os.path.exists(radar_cache):
+        try:
+            with open(radar_cache, "r", encoding="utf-8") as rf:
+                data["radar"] = json.load(rf)
+        except Exception:
+            pass
+    else:
+        try:
+            from oanda_market_radar import generate_full_radar_payload
+            data["radar"] = generate_full_radar_payload()
+        except Exception:
+            pass
+
     # Set timestamps
     now_utc = datetime.datetime.utcnow().isoformat() + "Z"
     now_local = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")

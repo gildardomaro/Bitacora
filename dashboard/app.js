@@ -812,8 +812,13 @@ function startDashboard() {
   }
 
   // =========================================================================
-  // RADAR INSTITUCIONAL 5:00 AM (PESTAÑA 4)
   // =========================================================================
+  // RADAR INSTITUCIONAL & LIQUIDEZ OANDA v20 + CALENDARIO (PESTAÑA 4)
+  // =========================================================================
+  let radarDataCache = null;
+  let activeRadarFilter = 'ALL';
+  let activeCalFilter = 'ALL';
+
   async function loadMarketRadar() {
     try {
       let data = null;
@@ -830,63 +835,213 @@ function startDashboard() {
       }
 
       if (!data || !data.assets || !dom.radarGridContainer) return;
+      radarDataCache = data;
 
-      dom.radarGridContainer.innerHTML = '';
-      data.assets.forEach(a => {
-        const isBull = a.bias === 'BULLISH';
-        const pBuy = a.prob_buy;
-        const pSell = a.prob_sell;
+      // Actualizar badges
+      const syncBadge = document.getElementById('radarLastSyncBadge');
+      if (syncBadge && data.last_sync) {
+        syncBadge.textContent = `⏱️ OANDA Live: ${data.last_sync.split(' ')[1] || data.last_sync}`;
+      }
+      const newsCountSpan = document.getElementById('newsTotalCount');
+      if (newsCountSpan && data.calendar) {
+        newsCountSpan.textContent = data.calendar.length;
+      }
 
-        const card = document.createElement('div');
-        card.className = `radar-card ${isBull ? 'bullish-glow' : 'bearish-glow'}`;
-        card.innerHTML = `
-          <div class="radar-card-header">
-            <div>
-              <div class="radar-asset-title">${a.name}</div>
-              <small style="font-family:var(--font-mono); color:var(--text-muted);">${a.symbol} Cotización: ${a.price.toFixed(a.symbol.includes('XAU') ? 2 : 5)}</small>
-            </div>
-            <span class="radar-bias-pill ${isBull ? 'badge win' : 'badge loss'}">${isBull ? 'SESGO COMPRA' : 'SESGO VENTA'}</span>
-          </div>
-
-          <div class="prob-bar-wrapper">
-            <div class="prob-labels">
-              <span class="green">🟢 Compra: ${pBuy}%</span>
-              <span class="red">🔴 Venta: ${pSell}%</span>
-            </div>
-            <div class="prob-track">
-              <div class="prob-fill" style="width: ${pBuy}%;"></div>
-            </div>
-          </div>
-
-          <div class="multi-tf-row">
-            <div class="tf-box">
-              <span>H4</span>
-              <strong class="${a.trend_h4.includes('ALCISTA') ? 'green' : 'red'}">${a.trend_h4.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
-            </div>
-            <div class="tf-box">
-              <span>H1</span>
-              <strong class="${a.trend_h1.includes('ALCISTA') ? 'green' : 'red'}">${a.trend_h1.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
-            </div>
-            <div class="tf-box">
-              <span>M15</span>
-              <strong class="${a.trend_m15.includes('ALCISTA') ? 'green' : 'red'}">${a.trend_m15.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
-            </div>
-            <div class="tf-box">
-              <span>Zona</span>
-              <strong class="accent">${a.zone.includes('DESCUENTO') ? 'DESCUENTO' : 'PREMIUM'}</strong>
-            </div>
-          </div>
-
-          <div style="font-size:12px; color:var(--text-secondary); background:rgba(0,0,0,0.25); padding:10px; border-radius:6px;">
-            <strong>📰 Análisis Macro / Noticias:</strong>
-            <p style="margin-top:4px; font-size:11px; color:var(--text-muted);">${a.news_bias}</p>
-          </div>
-        `;
-        dom.radarGridContainer.appendChild(card);
-      });
+      renderRadarAssetCards();
+      renderEconomicCalendar();
+      setupRadarFilterListeners();
     } catch (err) {
       console.warn('Aviso cargando radar:', err);
     }
+  }
+
+  function renderRadarAssetCards() {
+    if (!radarDataCache || !radarDataCache.assets || !dom.radarGridContainer) return;
+    dom.radarGridContainer.innerHTML = '';
+
+    const filteredAssets = activeRadarFilter === 'ALL' || activeRadarFilter === 'CALENDAR'
+      ? radarDataCache.assets
+      : radarDataCache.assets.filter(a => a.symbol === activeRadarFilter || a.raw_symbol === activeRadarFilter || a.display.includes(activeRadarFilter));
+
+    filteredAssets.forEach(a => {
+      const isBull = a.bias === 'BULLISH';
+      const isBear = a.bias === 'BEARISH';
+      const pBuy = a.prob_buy || 50;
+      const pSell = a.prob_sell || 50;
+      const rs = a.retail_sentiment || { long_pct: 50, short_pct: 50, longs_in_loss: 0, shorts_in_loss: 0, summary: '' };
+      const ob = a.order_book || { top_bsl: [], top_ssl: [], bsl_target: 0, ssl_target: 0 };
+      const smc = a.technical_smc || { trend_h4: '--', trend_h1: '--', trend_m15: '--', zone: '--' };
+
+      const card = document.createElement('div');
+      card.className = `radar-card ${isBull ? 'bullish-glow' : (isBear ? 'bearish-glow' : '')}`;
+      card.innerHTML = `
+        <div class="radar-card-header">
+          <div>
+            <div class="radar-asset-title">${a.icon || '📊'} ${a.name || a.symbol}</div>
+            <small style="font-family:var(--font-mono); color:var(--text-muted);">
+              Cotización OANDA: <strong style="color:#fff;">${a.price.toFixed(a.symbol.includes('XAU') ? 2 : 5)}</strong> | Spread: <span style="color:var(--color-cyan);">${a.spread_pips} pips</span>
+            </small>
+          </div>
+          <span class="radar-bias-pill ${isBull ? 'badge win' : (isBear ? 'badge loss' : 'badge')}">${a.bias_desc || (isBull ? 'SESGO COMPRA' : 'SESGO VENTA')}</span>
+        </div>
+
+        <!-- 1. Sentimiento Minorista OANDA (Position Book) -->
+        <div class="oanda-sentiment-box">
+          <div class="sentiment-header">
+            <span>👥 Sentimiento Minorista OANDA (Position Book)</span>
+            <span style="font-family:var(--font-mono); font-size:11px; color:var(--color-gold);">CONTRARIAN SMART MONEY</span>
+          </div>
+          <div class="sentiment-bar-track">
+            <div class="sentiment-fill-long" style="width: ${rs.long_pct}%;" title="Compradores minoristas: ${rs.long_pct}%"></div>
+            <div class="sentiment-fill-short" style="width: ${rs.short_pct}%;" title="Vendedores minoristas: ${rs.short_pct}%"></div>
+          </div>
+          <div class="sentiment-legend">
+            <span class="green">🟢 Longs: ${rs.long_pct}%</span>
+            <span class="red">🔴 Shorts: ${rs.short_pct}%</span>
+          </div>
+          <p class="sentiment-summary-note">💡 ${rs.summary}</p>
+          <div class="trapped-row">
+            <span>⚠️ Compras atrapadas en pérdida: <strong>${rs.longs_in_loss}%</strong></span>
+            <span>⚠️ Ventas atrapadas en pérdida: <strong>${rs.shorts_in_loss}%</strong></span>
+          </div>
+        </div>
+
+        <!-- 2. Piscinas de Liquidez Institucional (Order Book) -->
+        <div class="liquidity-pools-box">
+          <div class="sentiment-header">
+            <span>💧 Piscinas de Liquidez OANDA (Order Book)</span>
+            <span style="font-size:11px; color:var(--color-cyan);">STOP HUNTS PROBABLES</span>
+          </div>
+          <div class="pool-targets-row">
+            <div class="pool-target-card bsl">
+              <div class="pool-label">
+                <span>🎯 BSL (Buy Stops)</span>
+                <span class="green">+${ob.top_bsl && ob.top_bsl[0] ? ob.top_bsl[0].dist_pips : 0}p</span>
+              </div>
+              <div class="pool-price green">${ob.bsl_target.toFixed(a.symbol.includes('XAU') ? 2 : 5)}</div>
+              <div class="pool-density">Densidad: ${ob.top_bsl && ob.top_bsl[0] ? ob.top_bsl[0].density_pct : 0}% de órdenes</div>
+            </div>
+            <div class="pool-target-card ssl">
+              <div class="pool-label">
+                <span>🎯 SSL (Sell Stops)</span>
+                <span class="red">-${ob.top_ssl && ob.top_ssl[0] ? ob.top_ssl[0].dist_pips : 0}p</span>
+              </div>
+              <div class="pool-price red">${ob.ssl_target.toFixed(a.symbol.includes('XAU') ? 2 : 5)}</div>
+              <div class="pool-density">Densidad: ${ob.top_ssl && ob.top_ssl[0] ? ob.top_ssl[0].density_pct : 0}% de órdenes</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Matriz Multitemporal & SMC -->
+        <div class="multi-tf-row">
+          <div class="tf-box">
+            <span>H4</span>
+            <strong class="${smc.trend_h4.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_h4.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+          </div>
+          <div class="tf-box">
+            <span>H1</span>
+            <strong class="${smc.trend_h1.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_h1.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+          </div>
+          <div class="tf-box">
+            <span>M15</span>
+            <strong class="${smc.trend_m15.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_m15.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+          </div>
+          <div class="tf-box">
+            <span>Zona SMC</span>
+            <strong class="accent">${smc.zone.includes('DESCUENTO') ? 'DESCUENTO' : 'PREMIUM'}</strong>
+          </div>
+        </div>
+
+        <!-- 4. Probabilidad Ponderada Final -->
+        <div class="prob-bar-wrapper">
+          <div class="prob-labels">
+            <span class="green">🟢 Probabilidad Compra: ${pBuy}%</span>
+            <span class="red">🔴 Probabilidad Venta: ${pSell}%</span>
+          </div>
+          <div class="prob-track">
+            <div class="prob-fill" style="width: ${pBuy}%;"></div>
+          </div>
+        </div>
+      `;
+      dom.radarGridContainer.appendChild(card);
+    });
+  }
+
+  function renderEconomicCalendar() {
+    if (!radarDataCache || !radarDataCache.calendar) return;
+    const tbody = document.getElementById('calendarTableBody');
+    if (!tbody) return;
+
+    const events = radarDataCache.calendar;
+    const countAll = document.getElementById('calCountAll');
+    const countHigh = document.getElementById('calCountHigh');
+    if (countAll) countAll.textContent = events.length;
+    if (countHigh) countHigh.textContent = events.filter(e => e.impact === 'High').length;
+
+    let filtered = events;
+    if (activeCalFilter === 'HIGH') {
+      filtered = events.filter(e => e.impact === 'High');
+    } else if (activeCalFilter === 'USD' || activeCalFilter === 'GBP' || activeCalFilter === 'AUD') {
+      filtered = events.filter(e => e.currency === activeCalFilter);
+    }
+
+    tbody.innerHTML = '';
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="text-center" style="color:var(--text-muted); padding:16px;">No hay eventos para el filtro seleccionado.</td></tr>';
+      return;
+    }
+
+    filtered.forEach(ev => {
+      const isHigh = ev.impact === 'High';
+      const isMed = ev.impact === 'Medium';
+      const badgeCls = isHigh ? 'badge-impact-high' : (isMed ? 'badge-impact-medium' : 'badge-impact-low');
+      const impactLabel = isHigh ? '🔴 Alto' : (isMed ? '🟡 Medio' : '⚪ Bajo');
+
+      let timeFmt = ev.datetime_raw || '--';
+      try {
+        if (ev.datetime_raw) {
+          const d = new Date(ev.datetime_raw);
+          timeFmt = d.toLocaleDateString('es-MX', { weekday: 'short', day: '2-digit', month: 'short' }) + ' ' + d.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: false });
+        }
+      } catch (ex) {}
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="font-family:var(--font-mono); font-size:11px; white-space:nowrap;">${timeFmt}</td>
+        <td><span class="currency-badge">${ev.currency}</span></td>
+        <td><span class="${badgeCls}">${impactLabel}</span></td>
+        <td style="font-weight:600; color:var(--text-primary);">${ev.title}</td>
+        <td style="font-family:var(--font-mono); color:var(--color-cyan);">${ev.forecast}</td>
+        <td style="font-family:var(--font-mono); color:var(--text-muted);">${ev.previous}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function setupRadarFilterListeners() {
+    document.querySelectorAll('[data-radar-filter]').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('[data-radar-filter]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeRadarFilter = btn.getAttribute('data-radar-filter');
+        
+        const calPanel = document.getElementById('radarCalendarPanel');
+        if (activeRadarFilter === 'CALENDAR') {
+          if (calPanel) calPanel.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          renderRadarAssetCards();
+        }
+      };
+    });
+
+    document.querySelectorAll('[data-cal-filter]').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('[data-cal-filter]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCalFilter = btn.getAttribute('data-cal-filter');
+        renderEconomicCalendar();
+      };
+    });
   }
 
   // =========================================================================

@@ -1,0 +1,7 @@
+{
+  "api_token": "a2b781db6966dceb70368ff1f3b95f43-37cd79091463655c7588182a72a65899",
+  "account_id": "101-001-40640336-001",
+  "account_type": "practice",
+  "base_url": "https://api-fxpractice.oanda.com/v3",
+  "instruments": ["GBP_USD", "XAU_USD", "AUD_USD"]
+}
