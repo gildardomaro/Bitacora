@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-08T07:44:26.892719Z",
+  "generated_at": "2026-10-08T08:14:27.024238Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -1973,5 +1973,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-08 00:44:26"
+  "last_sync": "2026-10-08 01:14:26"
 };
