@@ -840,7 +840,7 @@ function startDashboard() {
       // Actualizar badges
       const syncBadge = document.getElementById('radarLastSyncBadge');
       if (syncBadge && data.last_sync) {
-        syncBadge.textContent = `⏱️ OANDA Live: ${data.last_sync.split(' ')[1] || data.last_sync}`;
+        syncBadge.textContent = `⏱️ Live: ${data.last_sync.split(' ')[1] || data.last_sync}`;
       }
       const newsCountSpan = document.getElementById('newsTotalCount');
       if (newsCountSpan && data.calendar) {
@@ -879,16 +879,16 @@ function startDashboard() {
           <div>
             <div class="radar-asset-title">${a.icon || '📊'} ${a.name || a.symbol}</div>
             <small style="font-family:var(--font-mono); color:var(--text-muted);">
-              Cotización OANDA: <strong style="color:#fff;">${a.price.toFixed(a.symbol.includes('XAU') ? 2 : 5)}</strong> | Spread: <span style="color:var(--color-cyan);">${a.spread_pips} pips</span>
+              Cotización en Vivo: <strong style="color:#fff;">${a.price.toFixed(a.symbol.includes('XAU') ? 2 : 5)}</strong> | Spread: <span style="color:var(--color-cyan);">${a.spread_pips} pips</span>
             </small>
           </div>
           <span class="radar-bias-pill ${isBull ? 'badge win' : (isBear ? 'badge loss' : 'badge')}">${a.bias_desc || (isBull ? 'SESGO COMPRA' : 'SESGO VENTA')}</span>
         </div>
 
-        <!-- 1. Sentimiento Minorista OANDA (Position Book) -->
+        <!-- 1. Sentimiento Minorista vs Institucional (Position Book) -->
         <div class="oanda-sentiment-box">
           <div class="sentiment-header">
-            <span>👥 Sentimiento Minorista OANDA (Position Book)</span>
+            <span>👥 Sentimiento Minorista vs Institucional (Order Flow)</span>
             <span style="font-family:var(--font-mono); font-size:11px; color:var(--color-gold);">CONTRARIAN SMART MONEY</span>
           </div>
           <div class="sentiment-bar-track">
@@ -909,7 +909,7 @@ function startDashboard() {
         <!-- 2. Piscinas de Liquidez Institucional (Order Book) -->
         <div class="liquidity-pools-box">
           <div class="sentiment-header">
-            <span>💧 Piscinas de Liquidez OANDA (Order Book)</span>
+            <span>💧 Piscinas de Liquidez Institucional (Order Book)</span>
             <span style="font-size:11px; color:var(--color-cyan);">STOP HUNTS PROBABLES</span>
           </div>
           <div class="pool-targets-row">

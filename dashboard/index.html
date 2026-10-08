@@ -152,7 +152,7 @@
         <span class="tab-icon">📑</span> Bitácora & Posiciones Reales
       </button>
       <button class="tab-btn" data-tab="tab-radar">
-        <span class="tab-icon">📡</span> Radar Institucional & Liquidez OANDA
+        <span class="tab-icon">📡</span> Radar Institucional de Mercado
       </button>
     </nav>
 
@@ -396,18 +396,19 @@
         </div>
       </section>
 
-      <!-- PESTAÑA 4: RADAR INSTITUCIONAL & LIQUIDEZ OANDA v20 -->
+      <!-- PESTAÑA 4: RADAR INSTITUCIONAL DE MERCADO -->
       <section id="tab-radar" class="tab-pane">
         <div class="radar-container">
           <div class="radar-header">
             <div class="radar-header-top">
               <div>
-                <h2 class="section-title">📡 Radar de Inteligencia Institucional & Liquidez OANDA v20</h2>
+                <h2 class="section-title">📡 Radar de Inteligencia Institucional & Order Flow</h2>
                 <p class="section-desc">Order Book (BSL/SSL), Sentimiento Retail Contrario, Zonas SMC y Calendario de Noticias en Vivo</p>
               </div>
               <div class="radar-status-badges">
-                <span class="status-badge live" id="oandaStatusBadge"><span class="pulse-dot"></span> API OANDA v20 Live</span>
+                <span class="status-badge live" id="oandaStatusBadge"><span class="pulse-dot"></span> Flujo Institucional Live</span>
                 <span class="status-badge sync-timer" id="radarLastSyncBadge">⏱️ Actualizado: --:--</span>
+                <a href="../radar/" target="_blank" class="status-badge" style="background:rgba(0,229,255,0.15); border:1px solid var(--color-cyan); color:#fff; text-decoration:none;" title="Abrir radar público">🌐 Abrir /radar/</a>
               </div>
             </div>
 
@@ -421,9 +422,9 @@
             </div>
           </div>
 
-          <!-- Grid de Activos Analizados con OANDA -->
+          <!-- Grid de Activos Analizados -->
           <div class="radar-grid" id="radarGridContainer">
-            <div class="loading-placeholder">Cargando inteligencia institucional de OANDA y calendario macroeconómico...</div>
+            <div class="loading-placeholder">Cargando inteligencia institucional y calendario macroeconómico...</div>
           </div>
 
           <!-- Sección de Calendario Macroeconómico de Noticias -->

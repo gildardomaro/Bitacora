@@ -173,6 +173,7 @@ def git_push():
         "app.js",
         "auth.js",
         "styles.css",
+        "radar/",
         "VER_DASHBOARD_LOCAL.html"
     ]
     rc, out, err = run_git(["add"] + files_to_stage)

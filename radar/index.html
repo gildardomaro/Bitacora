@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radar Institucional de Mercado & Liquidez — MARO Consultores</title>
+  <meta name="description" content="Radar Institucional en vivo: Order Book, Piscinas de Liquidez BSL/SSL, Sentimiento Minorista y Calendario Macroeconómico.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Estilos específicos para la vista pública independiente del radar */
+    body {
+      background: #06090e;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .public-radar-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+    .public-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 20px 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      margin-bottom: 24px;
+    }
+    .public-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .public-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      object-fit: cover;
+    }
+    .public-title-group h1 {
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0;
+      background: linear-gradient(135deg, #fff 30%, var(--color-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .public-title-group p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 4px 0 0;
+    }
+    .public-header-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-portal {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+    .btn-portal:hover {
+      background: rgba(0, 229, 255, 0.15);
+      border-color: var(--color-cyan);
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.25);
+    }
+    .radar-summary-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .strip-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .strip-card span {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .strip-card strong {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="public-radar-wrapper">
+    <!-- CABECERA PÚBLICA (SIN CONTRASEÑA) -->
+    <header class="public-header">
+      <div class="public-brand">
+        <img src="../logo_maro.jpg" alt="MARO Consultores" class="public-logo" onerror="this.style.display='none'">
+        <div class="public-title-group">
+          <h1>📡 RADAR INSTITUCIONAL & ORDER FLOW</h1>
+          <p>Mesa Cuantitativa MARO Consultores — Análisis en Vivo de Liquidez, Sentimiento y Calendario Macroeconómico</p>
+        </div>
+      </div>
+
+      <div class="public-header-controls">
+        <span class="status-badge live" id="liveBadge"><span class="pulse-dot"></span> Flujo en Vivo</span>
+        <span class="status-badge sync-timer" id="clockBadge">🕒 --:--:--</span>
+        <a href="../" class="btn-portal" title="Acceso a la Bitácora General de Operaciones">📊 Bitácora General</a>
+      </div>
+    </header>
+
+    <!-- FRANJA RESUMEN RÁPIDO DE MERCADO -->
+    <div class="radar-summary-strip">
+      <div class="strip-card">
+        <div>
+          <span>💷 GBP/USD</span>
+          <div id="stripPriceGBP" style="color:#fff; font-family:var(--font-mono); font-size:15px; font-weight:700; margin-top:2px;">--</div>
+        </div>
+        <div id="stripBiasGBP" class="badge">--</div>
+      </div>
+      <div class="strip-card">
+        <div>
+          <span>🥇 XAU/USD (Oro)</span>
+          <div id="stripPriceXAU" style="color:#fff; font-family:var(--font-mono); font-size:15px; font-weight:700; margin-top:2px;">--</div>
+        </div>
+        <div id="stripBiasXAU" class="badge">--</div>
+      </div>
+      <div class="strip-card">
+        <div>
+          <span>🦘 AUD/USD</span>
+          <div id="stripPriceAUD" style="color:#fff; font-family:var(--font-mono); font-size:15px; font-weight:700; margin-top:2px;">--</div>
+        </div>
+        <div id="stripBiasAUD" class="badge">--</div>
+      </div>
+      <div class="strip-card">
+        <div>
+          <span>📅 Eventos Semanales</span>
+          <div id="stripNewsCount" style="color:var(--color-cyan); font-family:var(--font-mono); font-size:15px; font-weight:700; margin-top:2px;">--</div>
+        </div>
+        <div id="stripNewsHigh" class="badge-impact-high">0 Alto Impacto</div>
+      </div>
+    </div>
+
+    <!-- NAVEGACIÓN Y FILTROS -->
+    <div class="radar-header" style="margin-bottom: 20px;">
+      <div class="radar-header-top">
+        <div>
+          <h2 class="section-title">Análisis de Liquidez y Posicionamiento</h2>
+          <p class="section-desc">Selecciona un activo específico o consulta el calendario macroeconómico de alta volatilidad</p>
+        </div>
+        <div class="radar-status-badges">
+          <span class="status-badge sync-timer" id="radarSyncTime">⏱️ Sinc: En Vivo</span>
+        </div>
+      </div>
+
+      <div class="radar-nav-filters">
+        <button class="radar-filter-btn active" data-radar-filter="ALL">🌐 Todos los Activos</button>
+        <button class="radar-filter-btn" data-radar-filter="GBP/USD">💷 GBP/USD</button>
+        <button class="radar-filter-btn" data-radar-filter="XAU/USD">🥇 XAU/USD (Oro)</button>
+        <button class="radar-filter-btn" data-radar-filter="AUD/USD">🦘 AUD/USD</button>
+        <button class="radar-filter-btn" data-radar-filter="CALENDAR">📅 Calendario Macroeconómico</button>
+      </div>
+    </div>
+
+    <!-- GRID DE TARJETAS DE ACTIVOS -->
+    <div class="radar-grid" id="publicRadarGrid">
+      <div class="loading-placeholder">Cargando datos institucionales y ordenes de liquidez...</div>
+    </div>
+
+    <!-- CALENDARIO MACROECONÓMICO -->
+    <div class="radar-calendar-panel" id="publicCalendarPanel">
+      <div class="calendar-header-bar">
+        <div class="calendar-title-group">
+          <h3 class="card-title">📅 Calendario Macroeconómico de Noticias (FairEconomy / ForexFactory)</h3>
+          <p class="card-subtitle">Eventos de impacto para GBP, USD, AUD y mercado global</p>
+        </div>
+        <div class="calendar-filter-pills">
+          <button class="cal-pill active" data-cal-filter="ALL">Todos (<span id="countAll">0</span>)</button>
+          <button class="cal-pill" data-cal-filter="HIGH">🔴 Alto Impacto (<span id="countHigh">0</span>)</button>
+          <button class="cal-pill" data-cal-filter="USD">🇺🇸 USD</button>
+          <button class="cal-pill" data-cal-filter="GBP">🇬🇧 GBP</button>
+          <button class="cal-pill" data-cal-filter="AUD">🇦🇺 AUD</button>
+        </div>
+      </div>
+
+      <div class="calendar-table-wrapper" style="overflow-x: auto;">
+        <table class="custom-table calendar-table">
+          <thead>
+            <tr>
+              <th>Fecha / Hora</th>
+              <th>Divisa</th>
+              <th>Impacto</th>
+              <th>Evento / Noticia</th>
+              <th>Pronóstico</th>
+              <th>Previo</th>
+            </tr>
+          </thead>
+          <tbody id="publicCalendarBody">
+            <tr><td colspan="6" class="text-center">Cargando eventos del calendario...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT DE LÓGICA DE DATOS INDEPENDIENTE (SIN PASSWORD) -->
+  <script>
+    (function () {
+      let radarData = null;
+      let activeFilter = 'ALL';
+      let activeCal = 'ALL';
+
+      // Reloj local
+      function updateClock() {
+        const el = document.getElementById('clockBadge');
+        if (el) {
+          const now = new Date();
+          el.textContent = '🕒 ' + now.toLocaleTimeString('es-MX', { hour12: false });
+        }
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+
+      // Cargar datos estáticos o desde API
+      async function loadData() {
+        if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar) {
+          radarData = window.STATIC_DASHBOARD_DATA.radar;
+        } else {
+          try {
+            const res = await fetch('../api/radar');
+            radarData = await res.json();
+          } catch (e) {
+            console.warn('Error cargando API radar:', e);
+          }
+        }
+
+        if (!radarData || !radarData.assets) {
+          // Intentar cargar static_data.js si no estaba en ventana
+          const s = document.createElement('script');
+          s.src = '../static_data.js?v=' + Date.now();
+          s.onload = () => {
+            if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar) {
+              radarData = window.STATIC_DASHBOARD_DATA.radar;
+              renderUI();
+            }
+          };
+          document.body.appendChild(s);
+          return;
+        }
+
+        renderUI();
+      }
+
+      function renderUI() {
+        if (!radarData || !radarData.assets) return;
+
+        // Actualizar franja de resumen
+        const gbp = radarData.assets.find(a => a.symbol.includes('GBP'));
+        const xau = radarData.assets.find(a => a.symbol.includes('XAU'));
+        const aud = radarData.assets.find(a => a.symbol.includes('AUD'));
+
+        if (gbp) {
+          document.getElementById('stripPriceGBP').textContent = gbp.price.toFixed(5);
+          const b = document.getElementById('stripBiasGBP');
+          b.textContent = gbp.bias === 'BULLISH' ? 'COMPRA' : (gbp.bias === 'BEARISH' ? 'VENTA' : 'RANGO');
+          b.className = 'badge ' + (gbp.bias === 'BULLISH' ? 'win' : (gbp.bias === 'BEARISH' ? 'loss' : ''));
+        }
+        if (xau) {
+          document.getElementById('stripPriceXAU').textContent = '$' + xau.price.toFixed(2);
+          const b = document.getElementById('stripBiasXAU');
+          b.textContent = xau.bias === 'BULLISH' ? 'COMPRA' : (xau.bias === 'BEARISH' ? 'VENTA' : 'RANGO');
+          b.className = 'badge ' + (xau.bias === 'BULLISH' ? 'win' : (xau.bias === 'BEARISH' ? 'loss' : ''));
+        }
+        if (aud) {
+          document.getElementById('stripPriceAUD').textContent = aud.price.toFixed(5);
+          const b = document.getElementById('stripBiasAUD');
+          b.textContent = aud.bias === 'BULLISH' ? 'COMPRA' : (aud.bias === 'BEARISH' ? 'VENTA' : 'RANGO');
+          b.className = 'badge ' + (aud.bias === 'BULLISH' ? 'win' : (aud.bias === 'BEARISH' ? 'loss' : ''));
+        }
+
+        if (radarData.calendar) {
+          document.getElementById('stripNewsCount').textContent = radarData.calendar.length + ' Noticias';
+          const hiCount = radarData.calendar.filter(e => e.impact === 'High').length;
+          document.getElementById('stripNewsHigh').textContent = hiCount + ' Alto Impacto';
+        }
+
+        if (radarData.last_sync) {
+          document.getElementById('radarSyncTime').textContent = '⏱️ ' + (radarData.last_sync.split(' ')[1] || radarData.last_sync);
+        }
+
+        renderCards();
+        renderCalendar();
+      }
+
+      function renderCards() {
+        const grid = document.getElementById('publicRadarGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        const list = activeFilter === 'ALL' || activeFilter === 'CALENDAR'
+          ? radarData.assets
+          : radarData.assets.filter(a => a.symbol === activeFilter || a.display.includes(activeFilter));
+
+        list.forEach(a => {
+          const isBull = a.bias === 'BULLISH';
+          const isBear = a.bias === 'BEARISH';
+          const pBuy = a.prob_buy || 50;
+          const pSell = a.prob_sell || 50;
+          const rs = a.retail_sentiment || { long_pct: 50, short_pct: 50, longs_in_loss: 0, shorts_in_loss: 0, summary: '' };
+          const ob = a.order_book || { top_bsl: [], top_ssl: [], bsl_target: 0, ssl_target: 0 };
+          const smc = a.technical_smc || { trend_h4: '--', trend_h1: '--', trend_m15: '--', zone: '--' };
+
+          const card = document.createElement('div');
+          card.className = `radar-card ${isBull ? 'bullish-glow' : (isBear ? 'bearish-glow' : '')}`;
+          card.innerHTML = `
+            <div class="radar-card-header">
+              <div>
+                <div class="radar-asset-title">${a.icon || '📊'} ${a.name || a.symbol}</div>
+                <small style="font-family:var(--font-mono); color:var(--text-muted);">
+                  Cotización en Vivo: <strong style="color:#fff;">${a.price.toFixed(a.symbol.includes('XAU') ? 2 : 5)}</strong> | Spread: <span style="color:var(--color-cyan);">${a.spread_pips} pips</span>
+                </small>
+              </div>
+              <span class="radar-bias-pill ${isBull ? 'badge win' : (isBear ? 'badge loss' : 'badge')}">${a.bias_desc || (isBull ? 'SESGO COMPRA' : 'SESGO VENTA')}</span>
+            </div>
+
+            <div class="oanda-sentiment-box">
+              <div class="sentiment-header">
+                <span>👥 Sentimiento Minorista vs Institucional (Order Flow)</span>
+                <span style="font-family:var(--font-mono); font-size:11px; color:var(--color-gold);">CONTRARIAN SMART MONEY</span>
+              </div>
+              <div class="sentiment-bar-track">
+                <div class="sentiment-fill-long" style="width: ${rs.long_pct}%;"></div>
+                <div class="sentiment-fill-short" style="width: ${rs.short_pct}%;"></div>
+              </div>
+              <div class="sentiment-legend">
+                <span class="green">🟢 Longs: ${rs.long_pct}%</span>
+                <span class="red">🔴 Shorts: ${rs.short_pct}%</span>
+              </div>
+              <p class="sentiment-summary-note">💡 ${rs.summary}</p>
+              <div class="trapped-row">
+                <span>⚠️ Compras atrapadas en pérdida: <strong>${rs.longs_in_loss}%</strong></span>
+                <span>⚠️ Ventas atrapadas en pérdida: <strong>${rs.shorts_in_loss}%</strong></span>
+              </div>
+            </div>
+
+            <div class="liquidity-pools-box">
+              <div class="sentiment-header">
+                <span>💧 Piscinas de Liquidez Institucional (Order Book)</span>
+                <span style="font-size:11px; color:var(--color-cyan);">STOP HUNTS PROBABLES</span>
+              </div>
+              <div class="pool-targets-row">
+                <div class="pool-target-card bsl">
+                  <div class="pool-label">
+                    <span>🎯 BSL (Buy Stops)</span>
+                    <span class="green">+${ob.top_bsl && ob.top_bsl[0] ? ob.top_bsl[0].dist_pips : 0}p</span>
+                  </div>
+                  <div class="pool-price green">${ob.bsl_target.toFixed(a.symbol.includes('XAU') ? 2 : 5)}</div>
+                  <div class="pool-density">Densidad: ${ob.top_bsl && ob.top_bsl[0] ? ob.top_bsl[0].density_pct : 0}% de órdenes</div>
+                </div>
+                <div class="pool-target-card ssl">
+                  <div class="pool-label">
+                    <span>🎯 SSL (Sell Stops)</span>
+                    <span class="red">-${ob.top_ssl && ob.top_ssl[0] ? ob.top_ssl[0].dist_pips : 0}p</span>
+                  </div>
+                  <div class="pool-price red">${ob.ssl_target.toFixed(a.symbol.includes('XAU') ? 2 : 5)}</div>
+                  <div class="pool-density">Densidad: ${ob.top_ssl && ob.top_ssl[0] ? ob.top_ssl[0].density_pct : 0}% de órdenes</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="multi-tf-row">
+              <div class="tf-box">
+                <span>H4</span>
+                <strong class="${smc.trend_h4.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_h4.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+              </div>
+              <div class="tf-box">
+                <span>H1</span>
+                <strong class="${smc.trend_h1.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_h1.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+              </div>
+              <div class="tf-box">
+                <span>M15</span>
+                <strong class="${smc.trend_m15.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_m15.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+              </div>
+              <div class="tf-box">
+                <span>Zona SMC</span>
+                <strong class="accent">${smc.zone.includes('DESCUENTO') ? 'DESCUENTO' : 'PREMIUM'}</strong>
+              </div>
+            </div>
+
+            <div class="prob-bar-wrapper">
+              <div class="prob-labels">
+                <span class="green">🟢 Probabilidad Compra: ${pBuy}%</span>
+                <span class="red">🔴 Probabilidad Venta: ${pSell}%</span>
+              </div>
+              <div class="prob-track">
+                <div class="prob-fill" style="width: ${pBuy}%;"></div>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      function renderCalendar() {
+        if (!radarData || !radarData.calendar) return;
+        const tbody = document.getElementById('publicCalendarBody');
+        if (!tbody) return;
+
+        const events = radarData.calendar;
+        document.getElementById('countAll').textContent = events.length;
+        document.getElementById('countHigh').textContent = events.filter(e => e.impact === 'High').length;
+
+        let filtered = events;
+        if (activeCal === 'HIGH') {
+          filtered = events.filter(e => e.impact === 'High');
+        } else if (activeCal === 'USD' || activeCal === 'GBP' || activeCal === 'AUD') {
+          filtered = events.filter(e => e.currency === activeCal);
+        }
+
+        tbody.innerHTML = '';
+        if (filtered.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" class="text-center" style="padding:16px; color:var(--text-muted);">Sin eventos para este filtro.</td></tr>';
+          return;
+        }
+
+        filtered.forEach(ev => {
+          const isHigh = ev.impact === 'High';
+          const isMed = ev.impact === 'Medium';
+          const badgeCls = isHigh ? 'badge-impact-high' : (isMed ? 'badge-impact-medium' : 'badge-impact-low');
+          const impactLabel = isHigh ? '🔴 Alto' : (isMed ? '🟡 Medio' : '⚪ Bajo');
+
+          let timeFmt = ev.datetime_raw || '--';
+          try {
+            if (ev.datetime_raw) {
+              const d = new Date(ev.datetime_raw);
+              timeFmt = d.toLocaleDateString('es-MX', { weekday: 'short', day: '2-digit', month: 'short' }) + ' ' + d.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', hour12: false });
+            }
+          } catch (ex) {}
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td style="font-family:var(--font-mono); font-size:11px; white-space:nowrap;">${timeFmt}</td>
+            <td><span class="currency-badge">${ev.currency}</span></td>
+            <td><span class="${badgeCls}">${impactLabel}</span></td>
+            <td style="font-weight:600; color:var(--text-primary);">${ev.title}</td>
+            <td style="font-family:var(--font-mono); color:var(--color-cyan);">${ev.forecast}</td>
+            <td style="font-family:var(--font-mono); color:var(--text-muted);">${ev.previous}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Event listeners para filtros de activo
+      document.querySelectorAll('[data-radar-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-radar-filter]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeFilter = btn.getAttribute('data-radar-filter');
+          const cp = document.getElementById('publicCalendarPanel');
+          if (activeFilter === 'CALENDAR' && cp) {
+            cp.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            renderCards();
+          }
+        });
+      });
+
+      // Event listeners para filtros de calendario
+      document.querySelectorAll('[data-cal-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-cal-filter]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCal = btn.getAttribute('data-cal-filter');
+          renderCalendar();
+        });
+      });
+
+      // Arranque
+      loadData();
+    })();
+  </script>
+</body>
+</html>
