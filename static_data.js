@@ -1,19 +1,44 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-08T14:14:27.084560Z",
+  "generated_at": "2026-10-08T14:44:27.404439Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
     "login": 51571487,
     "server": "PepperstoneBS-MT5-Live01",
-    "balance": 3254.66,
-    "equity": 3254.66,
-    "margin": 0.0,
-    "margin_free": 3254.66,
-    "floating": 0.0,
-    "positions_count": 0,
+    "balance": 3251.86,
+    "equity": 3268.56,
+    "margin": 529.66,
+    "margin_free": 2738.9,
+    "floating": 16.7,
+    "positions_count": 2,
     "dynamic_lot": 0.04,
     "next_lot_balance": 3300.0,
-    "positions": [],
+    "positions": [
+      {
+        "ticket": 337240212,
+        "symbol": "GBPUSD",
+        "type": "SELL",
+        "volume": 0.3,
+        "open_price": 1.32362,
+        "current_price": 1.32393,
+        "sl": 1.33951,
+        "tp": 1.32225,
+        "profit": -9.3,
+        "time": "2026-10-08 10:30:00"
+      },
+      {
+        "ticket": 337246146,
+        "symbol": "GBPUSD",
+        "type": "SELL",
+        "volume": 0.5,
+        "open_price": 1.32445,
+        "current_price": 1.32393,
+        "sl": 0.0,
+        "tp": 0.0,
+        "profit": 26.0,
+        "time": "2026-10-08 10:38:05"
+      }
+    ],
     "strategy": "smart+IA y MARO"
   },
   "real_trades": [
@@ -2039,5 +2064,5 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-08 07:14:26"
+  "last_sync": "2026-10-08 07:44:27"
 };
