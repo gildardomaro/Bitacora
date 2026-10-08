@@ -68,6 +68,7 @@ function startDashboard() {
     statNetReturn: document.getElementById('statNetReturn'),
     statProfitFactor: document.getElementById('statProfitFactor'),
     statTotalTrades: document.getElementById('statTotalTrades'),
+    statEquityWinRate: document.getElementById('statEquityWinRate'),
     kpiStrategyName: document.getElementById('kpiStrategyName'),
     btnShowReal1000: document.getElementById('btnShowReal1000'),
     btnShowHector: document.getElementById('btnShowHector'),
