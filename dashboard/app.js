@@ -68,6 +68,7 @@ function startDashboard() {
     statNetReturn: document.getElementById('statNetReturn'),
     statProfitFactor: document.getElementById('statProfitFactor'),
     statTotalTrades: document.getElementById('statTotalTrades'),
+    statEquityWinRate: document.getElementById('statEquityWinRate'),
     kpiStrategyName: document.getElementById('kpiStrategyName'),
     btnShowReal1000: document.getElementById('btnShowReal1000'),
     btnShowHector: document.getElementById('btnShowHector'),
@@ -346,7 +347,7 @@ function startDashboard() {
     if (!monthData) return;
 
     const pct = monthData.profit_pct;
-    const pctStr = `${pct >= 0 ? '+' : ''}${pct.toFixed(1)}%`;
+    const pctStr = `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`;
     const isCurrentMonth = monthData.month === currentMonth;
     const monthLabel = isCurrentMonth ? 'mes actual' : monthData.month;
 
@@ -683,7 +684,9 @@ function startDashboard() {
     const netPct = ((current.final_balance - current.initial_balance) / current.initial_balance) * 100;
     dom.statNetReturn.textContent = `${netPct >= 0 ? '+' : ''}${netPct.toLocaleString('en-US', { maximumFractionDigits: 1 })}%`;
     dom.statTotalTrades.textContent = current.total_trades.toLocaleString();
-    dom.kpiWinRate.textContent = `${current.win_rate}%`;
+    if (dom.statEquityWinRate) {
+      dom.statEquityWinRate.textContent = `${current.win_rate}%`;
+    }
 
     if (state.equityStrategy === 'real1000') {
       dom.statProfitFactor.textContent = '1.70';
