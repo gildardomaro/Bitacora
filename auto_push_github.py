@@ -20,7 +20,7 @@ import json
 BOT_DIR    = os.path.dirname(os.path.abspath(__file__))
 DASH_DIR   = os.path.join(BOT_DIR, "dashboard")
 STATIC_JS  = os.path.join(DASH_DIR, "static_data.js")
-INTERVAL   = 30 * 60          # 30 minutos en segundos
+INTERVAL   = 5 * 60           # 5 minutos en segundos (300s)
 GIT_REMOTE = "origin"
 GIT_BRANCH = "main"
 # ──────────────────────────────────────────────────────────────────────────────
@@ -115,11 +115,11 @@ def add_timestamp_to_static_data():
         content = f.read()
 
     ts = datetime.datetime.utcnow().isoformat() + "Z"
-    new_field = f'  generated_at: "{ts}",'
+    new_field = f'  "generated_at": "{ts}",'
 
-    if "generated_at:" in content:
+    if '"generated_at":' in content or 'generated_at:' in content:
         import re
-        content = re.sub(r'  generated_at: ".*?",', new_field, content)
+        content = re.sub(r'  "?generated_at"?: ".*?",', new_field, content)
     else:
         # Insertar despues de la primera llave de apertura del objeto raiz
         content = content.replace(

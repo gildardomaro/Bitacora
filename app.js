@@ -952,7 +952,7 @@ function startDashboard() {
   // =========================================================================
   // TEMPORIZADOR Y SINCRONIZACIÓN / REFRESH (ACTIVO EN HTTP Y EN ARCHIVO LOCAL)
   // =========================================================================
-  const SYNC_INTERVAL_SEC = 30 * 60; // 30 minutos
+  const SYNC_INTERVAL_SEC = 5 * 60; // 5 minutos
   let syncSecondsLeft = SYNC_INTERVAL_SEC;
 
   function formatCountdown(sec) {
@@ -1040,10 +1040,10 @@ function startDashboard() {
   if (dom.syncTimerBadge) {
     dom.syncTimerBadge.style.cursor = isGitHubPages ? 'default' : 'pointer';
     dom.syncTimerBadge.title = isGitHubPages
-      ? 'Los datos se actualizan automáticamente desde la PC local cada 30 min'
+      ? 'Los datos se actualizan automáticamente desde la PC local cada 5 min'
       : isFileMode
-        ? 'Clic para refrescar datos desde static_data.js (Auto-actualiza cada 30 min)'
-        : 'Clic para sincronizar en vivo con MT5 (Auto-actualiza cada 30 min)';
+        ? 'Clic para refrescar datos desde static_data.js (Auto-actualiza cada 5 min)'
+        : 'Clic para sincronizar en vivo con MT5 (Auto-actualiza cada 5 min)';
     if (!isGitHubPages) {
       dom.syncTimerBadge.addEventListener('click', () => {
         triggerFullDataRefresh();
@@ -1051,7 +1051,7 @@ function startDashboard() {
     }
   }
 
-  // Intervalo de 1 segundo para el reloj del temporizador de 30 minutos (siempre activo)
+  // Intervalo de 1 segundo para el reloj del temporizador de 5 minutos (siempre activo)
   setInterval(() => {
     syncSecondsLeft--;
     if (syncSecondsLeft <= 0) {
