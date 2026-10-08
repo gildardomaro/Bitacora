@@ -1,18 +1,18 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-08T01:14:25.515938Z",
+  "generated_at": "2026-10-08T01:44:26.619610Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
     "login": 51571487,
     "server": "PepperstoneBS-MT5-Live01",
-    "balance": 3199.86,
-    "equity": 3199.86,
+    "balance": 3236.16,
+    "equity": 3236.16,
     "margin": 0.0,
-    "margin_free": 3199.86,
+    "margin_free": 3236.16,
     "floating": 0.0,
     "positions_count": 0,
-    "dynamic_lot": 0.03,
-    "next_lot_balance": 3200.0,
+    "dynamic_lot": 0.04,
+    "next_lot_balance": 3300.0,
     "positions": [],
     "strategy": "smart+IA y MARO"
   },
@@ -632,6 +632,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[tp 4118.57]"
+    },
+    {
+      "time": "2026-10-07 21:40:00",
+      "date": "2026-10-07",
+      "hour": "21:40:00",
+      "month": "2026-10",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.3,
+      "volume": 0.3,
+      "price": 4133.23,
+      "profit": 37.35,
+      "raw_profit": 38.4,
+      "commission": -1.05,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 295006116,
+      "order": 336993985,
+      "account": "PEPPERSTONE",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA y MARO",
+      "comment": "[tp 4133.24]"
     }
   ],
   "trades": [
@@ -1250,6 +1272,28 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[tp 4118.57]"
+    },
+    {
+      "time": "2026-10-07 21:40:00",
+      "date": "2026-10-07",
+      "hour": "21:40:00",
+      "month": "2026-10",
+      "symbol": "XAUUSD",
+      "type": "SELL",
+      "lot": 0.3,
+      "volume": 0.3,
+      "price": 4133.23,
+      "profit": 37.35,
+      "raw_profit": 38.4,
+      "commission": -1.05,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 295006116,
+      "order": 336993985,
+      "account": "PEPPERSTONE",
+      "terminal": "PEPPERSTONE",
+      "strategy": "smart+IA y MARO",
+      "comment": "[tp 4133.24]"
     }
   ],
   "monthly_analytics": {
@@ -1262,23 +1306,23 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-10": 3000.0
       },
-      "total_wins": 19,
+      "total_wins": 20,
       "total_losses": 9,
-      "total_trades": 28,
-      "win_rate": 67.9,
-      "total_profit_usd": 220.1,
-      "total_return_pct": 7.34,
+      "total_trades": 29,
+      "win_rate": 69.0,
+      "total_profit_usd": 257.45,
+      "total_return_pct": 8.58,
       "monthly_series": [
         {
           "month": "2026-10",
-          "profit_usd": 220.1,
-          "profit_pct": 7.34,
+          "profit_usd": 257.45,
+          "profit_pct": 8.58,
           "deposit_usd": 3000.0,
-          "wins": 19,
+          "wins": 20,
           "losses": 9,
-          "total_trades": 28,
-          "win_rate": 67.9,
-          "commission_swap_usd": -20.24
+          "total_trades": 29,
+          "win_rate": 69.0,
+          "commission_swap_usd": -21.29
         }
       ],
       "months_available": [
@@ -1902,10 +1946,32 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "smart+IA y MARO",
             "comment": "[tp 4118.57]"
+          },
+          {
+            "time": "2026-10-07 21:40:00",
+            "date": "2026-10-07",
+            "hour": "21:40:00",
+            "month": "2026-10",
+            "symbol": "XAUUSD",
+            "type": "SELL",
+            "lot": 0.3,
+            "volume": 0.3,
+            "price": 4133.23,
+            "profit": 37.35,
+            "raw_profit": 38.4,
+            "commission": -1.05,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 295006116,
+            "order": 336993985,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "smart+IA y MARO",
+            "comment": "[tp 4133.24]"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-10-07 18:14:25"
+  "last_sync": "2026-10-07 18:44:26"
 };
