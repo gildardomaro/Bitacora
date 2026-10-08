@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-08T20:22:25.594994Z",
+  "generated_at": "2026-10-08T20:24:40.811538Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -13276,23 +13276,23 @@ window.STATIC_DASHBOARD_DATA = {
     "PEPPERSTONE": {
       "terminal_key": "PEPPERSTONE",
       "name": "Pepperstone-01 (smart+IA y MARO)",
-      "symbol": "XAUUSD / GBPUSD",
+      "symbol": "XAUUSD",
       "base_capital": 3000.0,
-      "total_deposit_usd": 3000.0,
+      "total_deposit_usd": 7750.0,
       "deposits_by_month": {
+        "2026-10": 3000.0,
         "2026-05": 250.0,
         "2026-06": 500.0,
         "2026-07": 1000.0,
         "2026-08": 1000.0,
-        "2026-09": 2000.0,
-        "2026-10": 3000.0
+        "2026-09": 2000.0
       },
       "total_wins": 177,
       "total_losses": 92,
       "total_trades": 269,
       "win_rate": 65.8,
       "total_profit_usd": 957.85,
-      "total_return_pct": 31.93,
+      "total_return_pct": 12.36,
       "monthly_series": [
         {
           "month": "2026-05",
@@ -13473,31 +13473,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "[tp 1.33891]"
           },
           {
-            "time": "2026-05-15 19:10:52",
-            "date": "2026-05-15",
-            "hour": "19:10:52",
-            "month": "2026-05",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.02,
-            "volume": 0.02,
-            "price": 1.33246,
-            "price_open": 1.33195,
-            "sl": 0.0,
-            "tp": 1.3333,
-            "profit": 1.02,
-            "raw_profit": 1.02,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000011,
-            "order": 200000011,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000011"
-          },
-          {
             "time": "2026-05-15 19:10:53",
             "date": "2026-05-15",
             "hour": "19:10:53",
@@ -13523,29 +13498,29 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000010"
           },
           {
-            "time": "2026-05-18 18:09:02",
-            "date": "2026-05-18",
-            "hour": "18:09:02",
+            "time": "2026-05-15 19:10:52",
+            "date": "2026-05-15",
+            "hour": "19:10:52",
             "month": "2026-05",
             "symbol": "GBPUSD",
             "type": "BUY",
             "lot": 0.02,
             "volume": 0.02,
-            "price": 1.33907,
-            "price_open": 1.33832,
+            "price": 1.33246,
+            "price_open": 1.33195,
             "sl": 0.0,
-            "tp": 0.0,
-            "profit": 1.5,
-            "raw_profit": 1.5,
+            "tp": 1.3333,
+            "profit": 1.02,
+            "raw_profit": 1.02,
             "commission": 0.0,
             "swap": 0.0,
             "result": "WIN",
-            "ticket": 200000015,
-            "order": 200000015,
+            "ticket": 200000011,
+            "order": 200000011,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000015"
+            "comment": "REAL1000 #200000011"
           },
           {
             "time": "2026-05-18 18:09:03",
@@ -13623,129 +13598,54 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000014"
           },
           {
-            "time": "2026-05-18 21:43:55",
+            "time": "2026-05-18 18:09:02",
             "date": "2026-05-18",
-            "hour": "21:43:55",
+            "hour": "18:09:02",
             "month": "2026-05",
             "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.05,
-            "volume": 0.05,
-            "price": 1.34102,
-            "price_open": 1.34223,
+            "type": "BUY",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 1.33907,
+            "price_open": 1.33832,
             "sl": 0.0,
-            "tp": 1.34058,
-            "profit": 6.05,
-            "raw_profit": 6.05,
+            "tp": 0.0,
+            "profit": 1.5,
+            "raw_profit": 1.5,
             "commission": 0.0,
             "swap": 0.0,
             "result": "WIN",
-            "ticket": 200000019,
-            "order": 200000019,
+            "ticket": 200000015,
+            "order": 200000015,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "[tp 1.34102]"
+            "comment": "REAL1000 #200000015"
           },
           {
-            "time": "2026-05-18 21:54:38",
-            "date": "2026-05-18",
-            "hour": "21:54:38",
-            "month": "2026-05",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.05,
-            "volume": 0.05,
-            "price": 1.34074,
-            "price_open": 1.34077,
-            "sl": 0.0,
-            "tp": 1.34058,
-            "profit": 0.15,
-            "raw_profit": 0.15,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000018,
-            "order": 200000018,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "[tp 1.34074]"
-          },
-          {
-            "time": "2026-05-19 04:06:34",
+            "time": "2026-05-19 05:13:50",
             "date": "2026-05-19",
-            "hour": "04:06:34",
+            "hour": "05:13:50",
             "month": "2026-05",
             "symbol": "GBPUSD",
             "type": "SELL",
             "lot": 0.02,
             "volume": 0.02,
-            "price": 1.34182,
-            "price_open": 1.34362,
+            "price": 1.3413,
+            "price_open": 1.33918,
             "sl": 0.0,
-            "tp": 1.34105,
-            "profit": 3.6,
-            "raw_profit": 3.62,
+            "tp": 1.33884,
+            "profit": -4.24,
+            "raw_profit": -4.22,
             "commission": 0.0,
             "swap": -0.02,
-            "result": "WIN",
-            "ticket": 200000022,
-            "order": 200000022,
+            "result": "LOSS",
+            "ticket": 200000016,
+            "order": 200000016,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000022"
-          },
-          {
-            "time": "2026-05-19 04:06:39",
-            "date": "2026-05-19",
-            "hour": "04:06:39",
-            "month": "2026-05",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.02,
-            "volume": 0.02,
-            "price": 1.34183,
-            "price_open": 1.34309,
-            "sl": 0.0,
-            "tp": 1.34105,
-            "profit": 2.52,
-            "raw_profit": 2.54,
-            "commission": 0.0,
-            "swap": -0.02,
-            "result": "WIN",
-            "ticket": 200000021,
-            "order": 200000021,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000021"
-          },
-          {
-            "time": "2026-05-19 04:06:43",
-            "date": "2026-05-19",
-            "hour": "04:06:43",
-            "month": "2026-05",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.02,
-            "volume": 0.02,
-            "price": 1.34183,
-            "price_open": 1.34237,
-            "sl": 0.0,
-            "tp": 1.34105,
-            "profit": 1.08,
-            "raw_profit": 1.1,
-            "commission": 0.0,
-            "swap": -0.02,
-            "result": "WIN",
-            "ticket": 200000020,
-            "order": 200000020,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000020"
+            "comment": "REAL1000 #200000016"
           },
           {
             "time": "2026-05-19 05:13:46",
@@ -13773,29 +13673,129 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000017"
           },
           {
-            "time": "2026-05-19 05:13:50",
+            "time": "2026-05-18 21:54:38",
+            "date": "2026-05-18",
+            "hour": "21:54:38",
+            "month": "2026-05",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 1.34074,
+            "price_open": 1.34077,
+            "sl": 0.0,
+            "tp": 1.34058,
+            "profit": 0.15,
+            "raw_profit": 0.15,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200000018,
+            "order": 200000018,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "[tp 1.34074]"
+          },
+          {
+            "time": "2026-05-18 21:43:55",
+            "date": "2026-05-18",
+            "hour": "21:43:55",
+            "month": "2026-05",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 1.34102,
+            "price_open": 1.34223,
+            "sl": 0.0,
+            "tp": 1.34058,
+            "profit": 6.05,
+            "raw_profit": 6.05,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200000019,
+            "order": 200000019,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "[tp 1.34102]"
+          },
+          {
+            "time": "2026-05-19 04:06:43",
             "date": "2026-05-19",
-            "hour": "05:13:50",
+            "hour": "04:06:43",
             "month": "2026-05",
             "symbol": "GBPUSD",
             "type": "SELL",
             "lot": 0.02,
             "volume": 0.02,
-            "price": 1.3413,
-            "price_open": 1.33918,
+            "price": 1.34183,
+            "price_open": 1.34237,
             "sl": 0.0,
-            "tp": 1.33884,
-            "profit": -4.24,
-            "raw_profit": -4.22,
+            "tp": 1.34105,
+            "profit": 1.08,
+            "raw_profit": 1.1,
             "commission": 0.0,
             "swap": -0.02,
-            "result": "LOSS",
-            "ticket": 200000016,
-            "order": 200000016,
+            "result": "WIN",
+            "ticket": 200000020,
+            "order": 200000020,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000016"
+            "comment": "REAL1000 #200000020"
+          },
+          {
+            "time": "2026-05-19 04:06:39",
+            "date": "2026-05-19",
+            "hour": "04:06:39",
+            "month": "2026-05",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 1.34183,
+            "price_open": 1.34309,
+            "sl": 0.0,
+            "tp": 1.34105,
+            "profit": 2.52,
+            "raw_profit": 2.54,
+            "commission": 0.0,
+            "swap": -0.02,
+            "result": "WIN",
+            "ticket": 200000021,
+            "order": 200000021,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000021"
+          },
+          {
+            "time": "2026-05-19 04:06:34",
+            "date": "2026-05-19",
+            "hour": "04:06:34",
+            "month": "2026-05",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 1.34182,
+            "price_open": 1.34362,
+            "sl": 0.0,
+            "tp": 1.34105,
+            "profit": 3.6,
+            "raw_profit": 3.62,
+            "commission": 0.0,
+            "swap": -0.02,
+            "result": "WIN",
+            "ticket": 200000022,
+            "order": 200000022,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000022"
           },
           {
             "time": "2026-05-19 19:32:04",
@@ -13998,56 +13998,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000030"
           },
           {
-            "time": "2026-05-26 01:02:34",
-            "date": "2026-05-26",
-            "hour": "01:02:34",
-            "month": "2026-05",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.1,
-            "volume": 0.1,
-            "price": 1.35032,
-            "price_open": 1.35082,
-            "sl": 0.0,
-            "tp": 1.35004,
-            "profit": 5.0,
-            "raw_profit": 5.15,
-            "commission": 0.0,
-            "swap": -0.15,
-            "result": "WIN",
-            "ticket": 200000034,
-            "order": 200000034,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "[tp 1.35032]"
-          },
-          {
-            "time": "2026-05-26 01:02:35",
-            "date": "2026-05-26",
-            "hour": "01:02:35",
-            "month": "2026-05",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.05,
-            "volume": 0.05,
-            "price": 1.35032,
-            "price_open": 1.35053,
-            "sl": 0.0,
-            "tp": 1.35004,
-            "profit": 1.05,
-            "raw_profit": 1.12,
-            "commission": 0.0,
-            "swap": -0.07,
-            "result": "WIN",
-            "ticket": 200000033,
-            "order": 200000033,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "[tp 1.35032]"
-          },
-          {
             "time": "2026-05-26 01:02:36",
             "date": "2026-05-26",
             "hour": "01:02:36",
@@ -14098,29 +14048,54 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "[tp 1.35032]"
           },
           {
-            "time": "2026-05-26 23:04:35",
+            "time": "2026-05-26 01:02:35",
             "date": "2026-05-26",
-            "hour": "23:04:35",
+            "hour": "01:02:35",
             "month": "2026-05",
             "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.06,
-            "volume": 0.06,
-            "price": 1.34504,
-            "price_open": 1.34503,
+            "type": "SELL",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 1.35032,
+            "price_open": 1.35053,
             "sl": 0.0,
-            "tp": 1.34626,
-            "profit": 0.06,
-            "raw_profit": 0.06,
+            "tp": 1.35004,
+            "profit": 1.05,
+            "raw_profit": 1.12,
             "commission": 0.0,
-            "swap": 0.0,
+            "swap": -0.07,
             "result": "WIN",
-            "ticket": 200000037,
-            "order": 200000037,
+            "ticket": 200000033,
+            "order": 200000033,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000037"
+            "comment": "[tp 1.35032]"
+          },
+          {
+            "time": "2026-05-26 01:02:34",
+            "date": "2026-05-26",
+            "hour": "01:02:34",
+            "month": "2026-05",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.1,
+            "volume": 0.1,
+            "price": 1.35032,
+            "price_open": 1.35082,
+            "sl": 0.0,
+            "tp": 1.35004,
+            "profit": 5.0,
+            "raw_profit": 5.15,
+            "commission": 0.0,
+            "swap": -0.15,
+            "result": "WIN",
+            "ticket": 200000034,
+            "order": 200000034,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "[tp 1.35032]"
           },
           {
             "time": "2026-05-27 02:33:13",
@@ -14173,6 +14148,31 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000036"
           },
           {
+            "time": "2026-05-26 23:04:35",
+            "date": "2026-05-26",
+            "hour": "23:04:35",
+            "month": "2026-05",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.06,
+            "volume": 0.06,
+            "price": 1.34504,
+            "price_open": 1.34503,
+            "sl": 0.0,
+            "tp": 1.34626,
+            "profit": 0.06,
+            "raw_profit": 0.06,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200000037,
+            "order": 200000037,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000037"
+          },
+          {
             "time": "2026-05-27 02:33:13",
             "date": "2026-05-27",
             "hour": "02:33:13",
@@ -14223,31 +14223,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000039"
           },
           {
-            "time": "2026-05-27 22:33:25",
-            "date": "2026-05-27",
-            "hour": "22:33:25",
-            "month": "2026-05",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.06,
-            "volume": 0.06,
-            "price": 0.0,
-            "price_open": 1.34291,
-            "sl": 1.34383,
-            "tp": 0.0,
-            "profit": -3.9,
-            "raw_profit": -3.9,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000041,
-            "order": 200000041,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000041"
-          },
-          {
             "time": "2026-05-27 22:33:26",
             "date": "2026-05-27",
             "hour": "22:33:26",
@@ -14271,6 +14246,31 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "REAL1000 #200000040"
+          },
+          {
+            "time": "2026-05-27 22:33:25",
+            "date": "2026-05-27",
+            "hour": "22:33:25",
+            "month": "2026-05",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.06,
+            "volume": 0.06,
+            "price": 0.0,
+            "price_open": 1.34291,
+            "sl": 1.34383,
+            "tp": 0.0,
+            "profit": -3.9,
+            "raw_profit": -3.9,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000041,
+            "order": 200000041,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000041"
           },
           {
             "time": "2026-05-28 21:43:01",
@@ -14298,31 +14298,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000042"
           },
           {
-            "time": "2026-05-28 21:43:01",
-            "date": "2026-05-28",
-            "hour": "21:43:01",
-            "month": "2026-05",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.1,
-            "volume": 0.1,
-            "price": 0.0,
-            "price_open": 1.34446,
-            "sl": 1.34883,
-            "tp": 1.34337,
-            "profit": 7.0,
-            "raw_profit": 7.0,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000044,
-            "order": 200000044,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000044"
-          },
-          {
             "time": "2026-05-28 21:43:02",
             "date": "2026-05-28",
             "hour": "21:43:02",
@@ -14346,6 +14321,31 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "REAL1000 #200000043"
+          },
+          {
+            "time": "2026-05-28 21:43:01",
+            "date": "2026-05-28",
+            "hour": "21:43:01",
+            "month": "2026-05",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.1,
+            "volume": 0.1,
+            "price": 0.0,
+            "price_open": 1.34446,
+            "sl": 1.34883,
+            "tp": 1.34337,
+            "profit": 7.0,
+            "raw_profit": 7.0,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200000044,
+            "order": 200000044,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000044"
           }
         ],
         "2026-06": [
@@ -14775,31 +14775,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000061"
           },
           {
-            "time": "2026-06-08 03:58:15",
-            "date": "2026-06-08",
-            "hour": "03:58:15",
-            "month": "2026-06",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.06,
-            "volume": 0.06,
-            "price": 1.33473,
-            "price_open": 1.33473,
-            "sl": 0.0,
-            "tp": 1.33539,
-            "profit": 0.0,
-            "raw_profit": 0.04,
-            "commission": 0.0,
-            "swap": -0.04,
-            "result": "WIN",
-            "ticket": 200000063,
-            "order": 200000063,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000063"
-          },
-          {
             "time": "2026-06-08 03:58:17",
             "date": "2026-06-08",
             "hour": "03:58:17",
@@ -14823,6 +14798,31 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "REAL1000 #200000062"
+          },
+          {
+            "time": "2026-06-08 03:58:15",
+            "date": "2026-06-08",
+            "hour": "03:58:15",
+            "month": "2026-06",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.06,
+            "volume": 0.06,
+            "price": 1.33473,
+            "price_open": 1.33473,
+            "sl": 0.0,
+            "tp": 1.33539,
+            "profit": 0.0,
+            "raw_profit": 0.04,
+            "commission": 0.0,
+            "swap": -0.04,
+            "result": "WIN",
+            "ticket": 200000063,
+            "order": 200000063,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000063"
           },
           {
             "time": "2026-06-08 03:58:17",
@@ -15150,31 +15150,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000076"
           },
           {
-            "time": "2026-06-11 17:33:01",
-            "date": "2026-06-11",
-            "hour": "17:33:01",
-            "month": "2026-06",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.02,
-            "volume": 0.02,
-            "price": 1.33334,
-            "price_open": 1.3334,
-            "sl": 0.0,
-            "tp": 0.0,
-            "profit": 0.12,
-            "raw_profit": 0.12,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000081,
-            "order": 200000081,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000081"
-          },
-          {
             "time": "2026-06-11 20:30:17",
             "date": "2026-06-11",
             "hour": "20:30:17",
@@ -15250,6 +15225,56 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "[tp 1.33552]"
           },
           {
+            "time": "2026-06-11 20:30:23",
+            "date": "2026-06-11",
+            "hour": "20:30:23",
+            "month": "2026-06",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 1.33553,
+            "price_open": 1.33355,
+            "sl": 0.0,
+            "tp": 0.0,
+            "profit": 3.96,
+            "raw_profit": 3.96,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200000080,
+            "order": 200000080,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000080"
+          },
+          {
+            "time": "2026-06-11 17:33:01",
+            "date": "2026-06-11",
+            "hour": "17:33:01",
+            "month": "2026-06",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 1.33334,
+            "price_open": 1.3334,
+            "sl": 0.0,
+            "tp": 0.0,
+            "profit": 0.12,
+            "raw_profit": 0.12,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200000081,
+            "order": 200000081,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000081"
+          },
+          {
             "time": "2026-06-11 20:30:19",
             "date": "2026-06-11",
             "hour": "20:30:19",
@@ -15323,31 +15348,6 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "[tp 1.33551]"
-          },
-          {
-            "time": "2026-06-11 20:30:23",
-            "date": "2026-06-11",
-            "hour": "20:30:23",
-            "month": "2026-06",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.02,
-            "volume": 0.02,
-            "price": 1.33553,
-            "price_open": 1.33355,
-            "sl": 0.0,
-            "tp": 0.0,
-            "profit": 3.96,
-            "raw_profit": 3.96,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000080,
-            "order": 200000080,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000080"
           },
           {
             "time": "2026-06-15 04:12:13",
@@ -15550,54 +15550,79 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000092"
           },
           {
-            "time": "2026-06-19 08:54:38",
+            "time": "2026-06-19 08:54:43",
             "date": "2026-06-19",
-            "hour": "08:54:38",
-            "month": "2026-06",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 1.0,
-            "volume": 1.0,
-            "price": 1.3198,
-            "price_open": 1.31887,
-            "sl": 0.0,
-            "tp": 1.32303,
-            "profit": 93.0,
-            "raw_profit": 93.0,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000099,
-            "order": 200000099,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "ESTUPIDECES",
-            "comment": "REAL1000 #200000099"
-          },
-          {
-            "time": "2026-06-19 08:54:39",
-            "date": "2026-06-19",
-            "hour": "08:54:39",
+            "hour": "08:54:43",
             "month": "2026-06",
             "symbol": "GBPUSD",
             "type": "BUY",
             "lot": 0.07,
             "volume": 0.07,
             "price": 1.31981,
-            "price_open": 1.31952,
+            "price_open": 1.3229,
             "sl": 0.0,
-            "tp": 0.0,
-            "profit": 2.03,
-            "raw_profit": 2.09,
+            "tp": 1.32302,
+            "profit": -21.63,
+            "raw_profit": -21.57,
             "commission": -0.06,
             "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000098,
-            "order": 200000098,
+            "result": "LOSS",
+            "ticket": 200000093,
+            "order": 200000093,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000098"
+            "comment": "REAL1000 #200000093"
+          },
+          {
+            "time": "2026-06-19 08:54:42",
+            "date": "2026-06-19",
+            "hour": "08:54:42",
+            "month": "2026-06",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.07,
+            "volume": 0.07,
+            "price": 1.31982,
+            "price_open": 1.32232,
+            "sl": 0.0,
+            "tp": 1.32301,
+            "profit": -17.5,
+            "raw_profit": -17.44,
+            "commission": -0.06,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000094,
+            "order": 200000094,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000094"
+          },
+          {
+            "time": "2026-06-19 08:54:41",
+            "date": "2026-06-19",
+            "hour": "08:54:41",
+            "month": "2026-06",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.07,
+            "volume": 0.07,
+            "price": 1.3198,
+            "price_open": 1.32192,
+            "sl": 0.0,
+            "tp": 1.32299,
+            "profit": -14.84,
+            "raw_profit": -14.78,
+            "commission": -0.06,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000095,
+            "order": 200000095,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000095"
           },
           {
             "time": "2026-06-19 08:54:40",
@@ -15650,79 +15675,54 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000097"
           },
           {
-            "time": "2026-06-19 08:54:41",
+            "time": "2026-06-19 08:54:39",
             "date": "2026-06-19",
-            "hour": "08:54:41",
-            "month": "2026-06",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.07,
-            "volume": 0.07,
-            "price": 1.3198,
-            "price_open": 1.32192,
-            "sl": 0.0,
-            "tp": 1.32299,
-            "profit": -14.84,
-            "raw_profit": -14.78,
-            "commission": -0.06,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000095,
-            "order": 200000095,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000095"
-          },
-          {
-            "time": "2026-06-19 08:54:42",
-            "date": "2026-06-19",
-            "hour": "08:54:42",
-            "month": "2026-06",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.07,
-            "volume": 0.07,
-            "price": 1.31982,
-            "price_open": 1.32232,
-            "sl": 0.0,
-            "tp": 1.32301,
-            "profit": -17.5,
-            "raw_profit": -17.44,
-            "commission": -0.06,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000094,
-            "order": 200000094,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000094"
-          },
-          {
-            "time": "2026-06-19 08:54:43",
-            "date": "2026-06-19",
-            "hour": "08:54:43",
+            "hour": "08:54:39",
             "month": "2026-06",
             "symbol": "GBPUSD",
             "type": "BUY",
             "lot": 0.07,
             "volume": 0.07,
             "price": 1.31981,
-            "price_open": 1.3229,
+            "price_open": 1.31952,
             "sl": 0.0,
-            "tp": 1.32302,
-            "profit": -21.63,
-            "raw_profit": -21.57,
+            "tp": 0.0,
+            "profit": 2.03,
+            "raw_profit": 2.09,
             "commission": -0.06,
             "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000093,
-            "order": 200000093,
+            "result": "WIN",
+            "ticket": 200000098,
+            "order": 200000098,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000093"
+            "comment": "REAL1000 #200000098"
+          },
+          {
+            "time": "2026-06-19 08:54:38",
+            "date": "2026-06-19",
+            "hour": "08:54:38",
+            "month": "2026-06",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 1.0,
+            "volume": 1.0,
+            "price": 1.3198,
+            "price_open": 1.31887,
+            "sl": 0.0,
+            "tp": 1.32303,
+            "profit": 93.0,
+            "raw_profit": 93.0,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200000099,
+            "order": 200000099,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "ESTUPIDECES",
+            "comment": "REAL1000 #200000099"
           },
           {
             "time": "2026-06-22 00:00:00",
@@ -15952,31 +15952,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000108"
           },
           {
-            "time": "2026-07-07 03:32:44",
-            "date": "2026-07-07",
-            "hour": "03:32:44",
-            "month": "2026-07",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.5,
-            "volume": 0.5,
-            "price": 1.3393,
-            "price_open": 1.33988,
-            "sl": 1.33985,
-            "tp": 0.0,
-            "profit": 29.0,
-            "raw_profit": 29.0,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000117,
-            "order": 200000117,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000117"
-          },
-          {
             "time": "2026-07-07 07:52:14",
             "date": "2026-07-07",
             "hour": "07:52:14",
@@ -16127,6 +16102,31 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000114"
           },
           {
+            "time": "2026-07-07 07:52:20",
+            "date": "2026-07-07",
+            "hour": "07:52:20",
+            "month": "2026-07",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 1.33938,
+            "price_open": 1.33949,
+            "sl": 0.0,
+            "tp": 0.0,
+            "profit": 0.55,
+            "raw_profit": 0.6,
+            "commission": -0.05,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200000115,
+            "order": 200000115,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000115"
+          },
+          {
             "time": "2026-07-07 07:52:17",
             "date": "2026-07-07",
             "hour": "07:52:17",
@@ -16152,29 +16152,29 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000116"
           },
           {
-            "time": "2026-07-07 07:52:20",
+            "time": "2026-07-07 03:32:44",
             "date": "2026-07-07",
-            "hour": "07:52:20",
+            "hour": "03:32:44",
             "month": "2026-07",
             "symbol": "GBPUSD",
             "type": "SELL",
-            "lot": 0.05,
-            "volume": 0.05,
-            "price": 1.33938,
-            "price_open": 1.33949,
-            "sl": 0.0,
+            "lot": 0.5,
+            "volume": 0.5,
+            "price": 1.3393,
+            "price_open": 1.33988,
+            "sl": 1.33985,
             "tp": 0.0,
-            "profit": 0.55,
-            "raw_profit": 0.6,
-            "commission": -0.05,
+            "profit": 29.0,
+            "raw_profit": 29.0,
+            "commission": 0.0,
             "swap": 0.0,
             "result": "WIN",
-            "ticket": 200000115,
-            "order": 200000115,
+            "ticket": 200000117,
+            "order": 200000117,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000115"
+            "comment": "REAL1000 #200000117"
           },
           {
             "time": "2026-07-08 18:15:25",
@@ -16202,31 +16202,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "[tp 1.33594]"
           },
           {
-            "time": "2026-07-09 18:59:26",
-            "date": "2026-07-09",
-            "hour": "18:59:26",
-            "month": "2026-07",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.05,
-            "volume": 0.05,
-            "price": 1.3408,
-            "price_open": 1.3405,
-            "sl": 0.0,
-            "tp": 1.33965,
-            "profit": -1.5,
-            "raw_profit": -1.5,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000120,
-            "order": 200000120,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000120"
-          },
-          {
             "time": "2026-07-09 20:30:39",
             "date": "2026-07-09",
             "hour": "20:30:39",
@@ -16250,6 +16225,31 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "[sl 1.34159]"
+          },
+          {
+            "time": "2026-07-09 18:59:26",
+            "date": "2026-07-09",
+            "hour": "18:59:26",
+            "month": "2026-07",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 1.3408,
+            "price_open": 1.3405,
+            "sl": 0.0,
+            "tp": 1.33965,
+            "profit": -1.5,
+            "raw_profit": -1.5,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000120,
+            "order": 200000120,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000120"
           },
           {
             "time": "2026-07-09 20:30:40",
@@ -16352,6 +16352,31 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "[sl 1.34080]"
           },
           {
+            "time": "2026-07-14 23:36:51",
+            "date": "2026-07-14",
+            "hour": "23:36:51",
+            "month": "2026-07",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.11,
+            "volume": 0.11,
+            "price": 1.33867,
+            "price_open": 1.3408,
+            "sl": 0.0,
+            "tp": 1.34091,
+            "profit": -23.43,
+            "raw_profit": -23.43,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000125,
+            "order": 200000125,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000125"
+          },
+          {
             "time": "2026-07-14 18:51:17",
             "date": "2026-07-14",
             "hour": "18:51:17",
@@ -16375,6 +16400,31 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "[sl 1.33803]"
+          },
+          {
+            "time": "2026-07-14 22:55:13",
+            "date": "2026-07-14",
+            "hour": "22:55:13",
+            "month": "2026-07",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.1,
+            "volume": 0.1,
+            "price": 1.33885,
+            "price_open": 1.33894,
+            "sl": 0.0,
+            "tp": 1.33958,
+            "profit": -0.9,
+            "raw_profit": -0.9,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000127,
+            "order": 200000127,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000127"
           },
           {
             "time": "2026-07-14 22:20:18",
@@ -16450,56 +16500,6 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "REAL1000 #200000130"
-          },
-          {
-            "time": "2026-07-14 22:55:13",
-            "date": "2026-07-14",
-            "hour": "22:55:13",
-            "month": "2026-07",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.1,
-            "volume": 0.1,
-            "price": 1.33885,
-            "price_open": 1.33894,
-            "sl": 0.0,
-            "tp": 1.33958,
-            "profit": -0.9,
-            "raw_profit": -0.9,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000127,
-            "order": 200000127,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000127"
-          },
-          {
-            "time": "2026-07-14 23:36:51",
-            "date": "2026-07-14",
-            "hour": "23:36:51",
-            "month": "2026-07",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.11,
-            "volume": 0.11,
-            "price": 1.33867,
-            "price_open": 1.3408,
-            "sl": 0.0,
-            "tp": 1.34091,
-            "profit": -23.43,
-            "raw_profit": -23.43,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000125,
-            "order": 200000125,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000125"
           },
           {
             "time": "2026-07-14 23:36:51",
@@ -16727,29 +16727,29 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000139"
           },
           {
-            "time": "2026-07-22 22:52:01",
+            "time": "2026-07-22 22:52:04",
             "date": "2026-07-22",
-            "hour": "22:52:01",
+            "hour": "22:52:04",
             "month": "2026-07",
             "symbol": "GBPUSD",
             "type": "BUY",
             "lot": 0.11,
             "volume": 0.11,
             "price": 1.33705,
-            "price_open": 1.33702,
-            "sl": 1.33583,
-            "tp": 0.0,
-            "profit": 0.33,
-            "raw_profit": 0.33,
+            "price_open": 1.33769,
+            "sl": 1.3358,
+            "tp": 1.33902,
+            "profit": -7.04,
+            "raw_profit": -7.04,
             "commission": 0.0,
             "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000142,
-            "order": 200000142,
+            "result": "LOSS",
+            "ticket": 200000140,
+            "order": 200000140,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000142"
+            "comment": "REAL1000 #200000140"
           },
           {
             "time": "2026-07-22 22:52:03",
@@ -16777,79 +16777,29 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000141"
           },
           {
-            "time": "2026-07-22 22:52:04",
+            "time": "2026-07-22 22:52:01",
             "date": "2026-07-22",
-            "hour": "22:52:04",
+            "hour": "22:52:01",
             "month": "2026-07",
             "symbol": "GBPUSD",
             "type": "BUY",
             "lot": 0.11,
             "volume": 0.11,
             "price": 1.33705,
-            "price_open": 1.33769,
-            "sl": 1.3358,
-            "tp": 1.33902,
-            "profit": -7.04,
-            "raw_profit": -7.04,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000140,
-            "order": 200000140,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000140"
-          },
-          {
-            "time": "2026-07-23 17:45:56",
-            "date": "2026-07-23",
-            "hour": "17:45:56",
-            "month": "2026-07",
-            "symbol": "GBPUSD",
-            "type": "SELL",
-            "lot": 0.12,
-            "volume": 0.12,
-            "price": 1.33186,
-            "price_open": 1.33173,
-            "sl": 0.0,
+            "price_open": 1.33702,
+            "sl": 1.33583,
             "tp": 0.0,
-            "profit": -1.56,
-            "raw_profit": -1.56,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000145,
-            "order": 200000145,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000145"
-          },
-          {
-            "time": "2026-07-23 19:11:36",
-            "date": "2026-07-23",
-            "hour": "19:11:36",
-            "month": "2026-07",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.12,
-            "volume": 0.12,
-            "price": 1.33156,
-            "price_open": 1.33141,
-            "sl": 0.0,
-            "tp": 1.33297,
-            "profit": 1.8,
-            "raw_profit": 1.8,
+            "profit": 0.33,
+            "raw_profit": 0.33,
             "commission": 0.0,
             "swap": 0.0,
             "result": "WIN",
-            "ticket": 200000146,
-            "order": 200000146,
+            "ticket": 200000142,
+            "order": 200000142,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000146"
+            "comment": "REAL1000 #200000142"
           },
           {
             "time": "2026-07-23 19:34:52",
@@ -16900,6 +16850,56 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "REAL1000 #200000144"
+          },
+          {
+            "time": "2026-07-23 17:45:56",
+            "date": "2026-07-23",
+            "hour": "17:45:56",
+            "month": "2026-07",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.12,
+            "volume": 0.12,
+            "price": 1.33186,
+            "price_open": 1.33173,
+            "sl": 0.0,
+            "tp": 0.0,
+            "profit": -1.56,
+            "raw_profit": -1.56,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000145,
+            "order": 200000145,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000145"
+          },
+          {
+            "time": "2026-07-23 19:11:36",
+            "date": "2026-07-23",
+            "hour": "19:11:36",
+            "month": "2026-07",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.12,
+            "volume": 0.12,
+            "price": 1.33156,
+            "price_open": 1.33141,
+            "sl": 0.0,
+            "tp": 1.33297,
+            "profit": 1.8,
+            "raw_profit": 1.8,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200000146,
+            "order": 200000146,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000146"
           },
           {
             "time": "2026-07-23 19:34:52",
@@ -17027,31 +17027,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000151"
           },
           {
-            "time": "2026-07-31 06:01:08",
-            "date": "2026-07-31",
-            "hour": "06:01:08",
-            "month": "2026-07",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.11,
-            "volume": 0.11,
-            "price": 1.34489,
-            "price_open": 1.3458,
-            "sl": 1.34444,
-            "tp": 1.34686,
-            "profit": -10.01,
-            "raw_profit": -10.01,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000153,
-            "order": 200000153,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "[sl 1.34489]"
-          },
-          {
             "time": "2026-07-31 06:01:09",
             "date": "2026-07-31",
             "hour": "06:01:09",
@@ -17075,6 +17050,31 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "[sl 1.34490]"
+          },
+          {
+            "time": "2026-07-31 06:01:08",
+            "date": "2026-07-31",
+            "hour": "06:01:08",
+            "month": "2026-07",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.11,
+            "volume": 0.11,
+            "price": 1.34489,
+            "price_open": 1.3458,
+            "sl": 1.34444,
+            "tp": 1.34686,
+            "profit": -10.01,
+            "raw_profit": -10.01,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000153,
+            "order": 200000153,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "[sl 1.34489]"
           }
         ],
         "2026-08": [
@@ -17754,31 +17754,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000180"
           },
           {
-            "time": "2026-08-18 04:48:33",
-            "date": "2026-08-18",
-            "hour": "04:48:33",
-            "month": "2026-08",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.13,
-            "volume": 0.13,
-            "price": 1.35459,
-            "price_open": 1.35468,
-            "sl": 1.35355,
-            "tp": 1.35569,
-            "profit": -1.17,
-            "raw_profit": -1.17,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000182,
-            "order": 200000182,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000182"
-          },
-          {
             "time": "2026-08-18 04:48:34",
             "date": "2026-08-18",
             "hour": "04:48:34",
@@ -17802,6 +17777,31 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "REAL1000 #200000181"
+          },
+          {
+            "time": "2026-08-18 04:48:33",
+            "date": "2026-08-18",
+            "hour": "04:48:33",
+            "month": "2026-08",
+            "symbol": "GBPUSD",
+            "type": "BUY",
+            "lot": 0.13,
+            "volume": 0.13,
+            "price": 1.35459,
+            "price_open": 1.35468,
+            "sl": 1.35355,
+            "tp": 1.35569,
+            "profit": -1.17,
+            "raw_profit": -1.17,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000182,
+            "order": 200000182,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000182"
           },
           {
             "time": "2026-08-18 21:59:43",
@@ -18179,31 +18179,6 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000197"
           },
           {
-            "time": "2026-08-26 18:43:34",
-            "date": "2026-08-26",
-            "hour": "18:43:34",
-            "month": "2026-08",
-            "symbol": "GBPUSD",
-            "type": "BUY",
-            "lot": 0.13,
-            "volume": 0.13,
-            "price": 1.35974,
-            "price_open": 1.35897,
-            "sl": 1.35904,
-            "tp": 1.35987,
-            "profit": 10.01,
-            "raw_profit": 10.01,
-            "commission": 0.0,
-            "swap": 0.0,
-            "result": "WIN",
-            "ticket": 200000199,
-            "order": 200000199,
-            "account": "PEPPERSTONE",
-            "terminal": "PEPPERSTONE",
-            "strategy": "Manual (SMC + NexTrade)",
-            "comment": "[tp 1.35974]"
-          },
-          {
             "time": "2026-08-26 18:44:17",
             "date": "2026-08-26",
             "hour": "18:44:17",
@@ -18229,29 +18204,29 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "REAL1000 #200000198"
           },
           {
-            "time": "2026-08-27 18:01:26",
-            "date": "2026-08-27",
-            "hour": "18:01:26",
+            "time": "2026-08-26 18:43:34",
+            "date": "2026-08-26",
+            "hour": "18:43:34",
             "month": "2026-08",
-            "symbol": "EURUSD",
+            "symbol": "GBPUSD",
             "type": "BUY",
             "lot": 0.13,
             "volume": 0.13,
-            "price": 1.16455,
-            "price_open": 1.16468,
-            "sl": 0.0,
-            "tp": 0.0,
-            "profit": -1.69,
-            "raw_profit": -1.69,
+            "price": 1.35974,
+            "price_open": 1.35897,
+            "sl": 1.35904,
+            "tp": 1.35987,
+            "profit": 10.01,
+            "raw_profit": 10.01,
             "commission": 0.0,
             "swap": 0.0,
-            "result": "LOSS",
-            "ticket": 200000201,
-            "order": 200000201,
+            "result": "WIN",
+            "ticket": 200000199,
+            "order": 200000199,
             "account": "PEPPERSTONE",
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
-            "comment": "REAL1000 #200000201"
+            "comment": "[tp 1.35974]"
           },
           {
             "time": "2026-08-27 18:36:28",
@@ -18277,6 +18252,31 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "PEPPERSTONE",
             "strategy": "Manual (SMC + NexTrade)",
             "comment": "REAL1000 #200000200"
+          },
+          {
+            "time": "2026-08-27 18:01:26",
+            "date": "2026-08-27",
+            "hour": "18:01:26",
+            "month": "2026-08",
+            "symbol": "EURUSD",
+            "type": "BUY",
+            "lot": 0.13,
+            "volume": 0.13,
+            "price": 1.16455,
+            "price_open": 1.16468,
+            "sl": 0.0,
+            "tp": 0.0,
+            "profit": -1.69,
+            "raw_profit": -1.69,
+            "commission": 0.0,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200000201,
+            "order": 200000201,
+            "account": "PEPPERSTONE",
+            "terminal": "PEPPERSTONE",
+            "strategy": "Manual (SMC + NexTrade)",
+            "comment": "REAL1000 #200000201"
           },
           {
             "time": "2026-08-27 18:50:15",
@@ -20012,7 +20012,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-08 13:22:25",
+  "last_sync": "2026-10-08 13:24:40",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -20026,379 +20026,379 @@ window.STATIC_DASHBOARD_DATA = {
           "balance": 250.0
         },
         {
-          "time": "2026-05-15 04:26:19",
+          "time": "2026-05-14 00:00:00",
           "balance": 243.0
         },
         {
-          "time": "2026-05-15 13:52:26",
+          "time": "2026-05-14 00:00:00",
           "balance": 243.26
         },
         {
-          "time": "2026-05-15 13:52:26",
+          "time": "2026-05-14 00:00:00",
           "balance": 245.88
         },
         {
-          "time": "2026-05-15 13:52:26",
+          "time": "2026-05-14 00:00:00",
           "balance": 250.48
         },
         {
-          "time": "2026-05-15 19:10:53",
+          "time": "2026-05-15 00:00:00",
           "balance": 250.8
         },
         {
-          "time": "2026-05-15 19:10:52",
+          "time": "2026-05-15 00:00:00",
           "balance": 251.82
         },
         {
-          "time": "2026-05-18 18:09:03",
+          "time": "2026-05-18 00:00:00",
           "balance": 249.88
         },
         {
-          "time": "2026-05-18 18:09:03",
+          "time": "2026-05-18 00:00:00",
           "balance": 250.0
         },
         {
-          "time": "2026-05-18 18:09:05",
+          "time": "2026-05-18 00:00:00",
           "balance": 250.76
         },
         {
-          "time": "2026-05-18 18:09:02",
+          "time": "2026-05-18 00:00:00",
           "balance": 252.26
         },
         {
-          "time": "2026-05-19 05:13:50",
+          "time": "2026-05-18 00:00:00",
           "balance": 248.0
         },
         {
-          "time": "2026-05-19 05:13:46",
+          "time": "2026-05-18 00:00:00",
           "balance": 244.74
         },
         {
-          "time": "2026-05-18 21:54:38",
+          "time": "2026-05-18 00:00:00",
           "balance": 244.89
         },
         {
-          "time": "2026-05-18 21:43:55",
+          "time": "2026-05-18 00:00:00",
           "balance": 250.94
         },
         {
-          "time": "2026-05-19 04:06:43",
+          "time": "2026-05-18 00:00:00",
           "balance": 252.0
         },
         {
-          "time": "2026-05-19 04:06:39",
+          "time": "2026-05-18 00:00:00",
           "balance": 254.5
         },
         {
-          "time": "2026-05-19 04:06:34",
+          "time": "2026-05-18 00:00:00",
           "balance": 258.08
         },
         {
-          "time": "2026-05-19 19:32:04",
+          "time": "2026-05-19 00:00:00",
           "balance": 259.16
         },
         {
-          "time": "2026-05-19 19:32:04",
+          "time": "2026-05-19 00:00:00",
           "balance": 261.06
         },
         {
-          "time": "2026-05-19 22:44:04",
+          "time": "2026-05-19 00:00:00",
           "balance": 261.15
         },
         {
-          "time": "2026-05-19 22:44:05",
+          "time": "2026-05-19 00:00:00",
           "balance": 261.43
         },
         {
-          "time": "2026-05-20 18:15:50",
+          "time": "2026-05-20 00:00:00",
           "balance": 272.98
         },
         {
-          "time": "2026-05-20 18:15:51",
+          "time": "2026-05-20 00:00:00",
           "balance": 290.03
         },
         {
-          "time": "2026-05-22 17:56:56",
+          "time": "2026-05-22 00:00:00",
           "balance": 291.27
         },
         {
-          "time": "2026-05-22 17:56:56",
+          "time": "2026-05-22 00:00:00",
           "balance": 295.87
         },
         {
-          "time": "2026-05-26 01:02:36",
+          "time": "2026-05-25 00:00:00",
           "balance": 295.9
         },
         {
-          "time": "2026-05-26 01:02:37",
+          "time": "2026-05-25 00:00:00",
           "balance": 294.58
         },
         {
-          "time": "2026-05-26 01:02:35",
+          "time": "2026-05-25 00:00:00",
           "balance": 295.56
         },
         {
-          "time": "2026-05-26 01:02:34",
+          "time": "2026-05-25 00:00:00",
           "balance": 300.41
         },
         {
-          "time": "2026-05-27 02:33:13",
+          "time": "2026-05-26 00:00:00",
           "balance": 296.11
         },
         {
-          "time": "2026-05-27 02:33:13",
+          "time": "2026-05-26 00:00:00",
           "balance": 295.35
         },
         {
-          "time": "2026-05-26 23:04:35",
+          "time": "2026-05-26 00:00:00",
           "balance": 295.41
         },
         {
-          "time": "2026-05-27 02:33:13",
+          "time": "2026-05-26 00:00:00",
           "balance": 304.07
         },
         {
-          "time": "2026-05-27 18:07:28",
+          "time": "2026-05-27 00:00:00",
           "balance": 310.25
         },
         {
-          "time": "2026-05-27 22:33:26",
+          "time": "2026-05-27 00:00:00",
           "balance": 308.03
         },
         {
-          "time": "2026-05-27 22:33:25",
+          "time": "2026-05-27 00:00:00",
           "balance": 304.13
         },
         {
-          "time": "2026-05-28 21:43:01",
+          "time": "2026-05-28 00:00:00",
           "balance": 302.39
         },
         {
-          "time": "2026-05-28 21:43:02",
+          "time": "2026-05-28 00:00:00",
           "balance": 305.79
         },
         {
-          "time": "2026-05-28 21:43:01",
+          "time": "2026-05-28 00:00:00",
           "balance": 312.79
         },
         {
-          "time": "2026-06-01 04:04:55",
+          "time": "2026-06-01 00:00:00",
           "balance": 313.42
         },
         {
-          "time": "2026-06-01 19:24:39",
+          "time": "2026-06-01 00:00:00",
           "balance": 313.31
         },
         {
-          "time": "2026-06-01 19:32:55",
+          "time": "2026-06-01 00:00:00",
           "balance": 313.38
         },
         {
-          "time": "2026-06-01 19:33:58",
+          "time": "2026-06-01 00:00:00",
           "balance": 313.19
         },
         {
-          "time": "2026-06-01 19:39:25",
+          "time": "2026-06-01 00:00:00",
           "balance": 313.27
         },
         {
-          "time": "2026-06-01 19:44:22",
+          "time": "2026-06-01 00:00:00",
           "balance": 313.14
         },
         {
-          "time": "2026-06-01 23:57:33",
+          "time": "2026-06-01 00:00:00",
           "balance": 313.32
         },
         {
-          "time": "2026-06-02 03:59:47",
+          "time": "2026-06-01 00:00:00",
           "balance": 313.35
         },
         {
-          "time": "2026-06-02 03:59:47",
+          "time": "2026-06-01 00:00:00",
           "balance": 317.58
         },
         {
-          "time": "2026-06-02 19:39:26",
+          "time": "2026-06-02 00:00:00",
           "balance": 317.98
         },
         {
-          "time": "2026-06-02 19:43:00",
+          "time": "2026-06-02 00:00:00",
           "balance": 323.23
         },
         {
-          "time": "2026-06-03 08:50:00",
+          "time": "2026-06-03 00:00:00",
           "balance": 325.83
         },
         {
-          "time": "2026-06-03 08:50:00",
+          "time": "2026-06-03 00:00:00",
           "balance": 316.31
         },
         {
-          "time": "2026-06-03 08:50:00",
+          "time": "2026-06-03 00:00:00",
           "balance": 311.17
         },
         {
-          "time": "2026-06-04 09:25:00",
+          "time": "2026-06-04 00:00:00",
           "balance": 310.42
         },
         {
-          "time": "2026-06-04 09:25:00",
+          "time": "2026-06-04 00:00:00",
           "balance": 312.42
         },
         {
-          "time": "2026-06-04 09:25:00",
+          "time": "2026-06-04 00:00:00",
           "balance": 316.27
         },
         {
-          "time": "2026-06-08 03:58:17",
+          "time": "2026-06-07 00:00:00",
           "balance": 312.51
         },
         {
-          "time": "2026-06-08 03:58:15",
+          "time": "2026-06-07 00:00:00",
           "balance": 312.47
         },
         {
-          "time": "2026-06-08 03:58:17",
+          "time": "2026-06-07 00:00:00",
           "balance": 316.99
         },
         {
-          "time": "2026-06-08 03:58:18",
+          "time": "2026-06-07 00:00:00",
           "balance": 330.37
         },
         {
-          "time": "2026-06-09 04:22:46",
+          "time": "2026-06-08 00:00:00",
           "balance": 329.78
         },
         {
-          "time": "2026-06-09 04:22:47",
+          "time": "2026-06-08 00:00:00",
           "balance": 331.09
         },
         {
-          "time": "2026-06-09 04:22:48",
+          "time": "2026-06-08 00:00:00",
           "balance": 334.19
         },
         {
-          "time": "2026-06-09 18:26:03",
+          "time": "2026-06-08 00:00:00",
           "balance": 338.84
         },
         {
-          "time": "2026-06-10 06:43:10",
+          "time": "2026-06-09 00:00:00",
           "balance": 345.38
         },
         {
-          "time": "2026-06-10 16:31:43",
+          "time": "2026-06-10 00:00:00",
           "balance": 350.68
         },
         {
-          "time": "2026-06-11 09:53:19",
+          "time": "2026-06-11 00:00:00",
           "balance": 339.18
         },
         {
-          "time": "2026-06-11 09:53:19",
+          "time": "2026-06-11 00:00:00",
           "balance": 331.48
         },
         {
-          "time": "2026-06-11 09:53:19",
+          "time": "2026-06-11 00:00:00",
           "balance": 328.18
         },
         {
-          "time": "2026-06-11 09:53:19",
+          "time": "2026-06-11 00:00:00",
           "balance": 332.68
         },
         {
-          "time": "2026-06-11 09:53:19",
+          "time": "2026-06-11 00:00:00",
           "balance": 343.28
         },
         {
-          "time": "2026-06-11 20:30:17",
+          "time": "2026-06-11 00:00:00",
           "balance": 342.03
         },
         {
-          "time": "2026-06-11 20:30:18",
+          "time": "2026-06-11 00:00:00",
           "balance": 344.33
         },
         {
-          "time": "2026-06-11 20:30:19",
+          "time": "2026-06-11 00:00:00",
           "balance": 349.58
         },
         {
-          "time": "2026-06-11 20:30:23",
+          "time": "2026-06-11 00:00:00",
           "balance": 353.54
         },
         {
-          "time": "2026-06-11 17:33:01",
+          "time": "2026-06-11 00:00:00",
           "balance": 353.66
         },
         {
-          "time": "2026-06-11 20:30:19",
+          "time": "2026-06-11 00:00:00",
           "balance": 364.41
         },
         {
-          "time": "2026-06-11 20:30:20",
+          "time": "2026-06-11 00:00:00",
           "balance": 374.86
         },
         {
-          "time": "2026-06-11 20:30:21",
+          "time": "2026-06-11 00:00:00",
           "balance": 387.61
         },
         {
-          "time": "2026-06-15 04:12:13",
+          "time": "2026-06-15 00:00:00",
           "balance": 392.36
         },
         {
-          "time": "2026-06-15 18:33:20",
+          "time": "2026-06-15 00:00:00",
           "balance": 393.96
         },
         {
-          "time": "2026-06-15 18:33:20",
+          "time": "2026-06-15 00:00:00",
           "balance": 398.6
         },
         {
-          "time": "2026-06-15 20:27:54",
+          "time": "2026-06-15 00:00:00",
           "balance": 398.15
         },
         {
-          "time": "2026-06-15 20:29:30",
+          "time": "2026-06-15 00:00:00",
           "balance": 397.4
         },
         {
-          "time": "2026-06-15 21:30:14",
+          "time": "2026-06-15 00:00:00",
           "balance": 398.0
         },
         {
-          "time": "2026-06-16 18:25:34",
+          "time": "2026-06-16 00:00:00",
           "balance": 400.48
         },
         {
-          "time": "2026-06-16 19:41:07",
+          "time": "2026-06-16 00:00:00",
           "balance": 403.28
         },
         {
-          "time": "2026-06-19 08:54:43",
+          "time": "2026-06-18 00:00:00",
           "balance": 381.59
         },
         {
-          "time": "2026-06-19 08:54:42",
+          "time": "2026-06-18 00:00:00",
           "balance": 364.03
         },
         {
-          "time": "2026-06-19 08:54:41",
+          "time": "2026-06-18 00:00:00",
           "balance": 349.13
         },
         {
-          "time": "2026-06-19 08:54:40",
+          "time": "2026-06-18 00:00:00",
           "balance": 337.59
         },
         {
-          "time": "2026-06-19 08:54:40",
+          "time": "2026-06-18 00:00:00",
           "balance": 330.25
         },
         {
-          "time": "2026-06-19 08:54:39",
+          "time": "2026-06-18 00:00:00",
           "balance": 332.22
         },
         {
-          "time": "2026-06-19 08:54:38",
+          "time": "2026-06-18 00:00:00",
           "balance": 425.22
         },
         {
@@ -20406,567 +20406,567 @@ window.STATIC_DASHBOARD_DATA = {
           "balance": 428.77
         },
         {
-          "time": "2026-06-30 03:53:13",
+          "time": "2026-06-29 00:00:00",
           "balance": 425.08
         },
         {
-          "time": "2026-06-30 03:53:13",
+          "time": "2026-06-29 00:00:00",
           "balance": 427.87
         },
         {
-          "time": "2026-06-30 03:53:13",
+          "time": "2026-06-29 00:00:00",
           "balance": 437.38
         },
         {
-          "time": "2026-06-30 03:53:13",
+          "time": "2026-06-29 00:00:00",
           "balance": 451.37
         },
         {
-          "time": "2026-07-02 06:10:52",
+          "time": "2026-07-02 00:00:00",
           "balance": 452.07
         },
         {
-          "time": "2026-07-02 06:11:10",
+          "time": "2026-07-02 00:00:00",
           "balance": 456.52
         },
         {
-          "time": "2026-07-02 19:23:00",
+          "time": "2026-07-02 00:00:00",
           "balance": 459.42
         },
         {
-          "time": "2026-07-03 22:29:53",
+          "time": "2026-07-03 00:00:00",
           "balance": 458.77
         },
         {
-          "time": "2026-07-07 07:52:14",
+          "time": "2026-07-06 17:44:04",
           "balance": 435.67
         },
         {
-          "time": "2026-07-07 07:52:14",
+          "time": "2026-07-06 18:00:04",
           "balance": 416.22
         },
         {
-          "time": "2026-07-07 07:52:15",
+          "time": "2026-07-06 18:55:27",
           "balance": 401.47
         },
         {
-          "time": "2026-07-07 07:52:16",
+          "time": "2026-07-06 19:25:36",
           "balance": 390.42
         },
         {
-          "time": "2026-07-07 07:52:16",
+          "time": "2026-07-06 20:00:26",
           "balance": 381.12
         },
         {
-          "time": "2026-07-07 07:52:17",
+          "time": "2026-07-06 20:27:31",
           "balance": 373.92
         },
         {
-          "time": "2026-07-07 07:52:20",
+          "time": "2026-07-06 21:57:25",
           "balance": 374.42
         },
         {
-          "time": "2026-07-07 07:52:17",
+          "time": "2026-07-06 21:58:31",
           "balance": 374.7
         },
         {
-          "time": "2026-07-07 03:32:44",
+          "time": "2026-07-07 02:25:57",
           "balance": 403.7
         },
         {
-          "time": "2026-07-08 18:15:25",
+          "time": "2026-07-08 18:00:16",
           "balance": 409.05
         },
         {
-          "time": "2026-07-09 20:30:39",
+          "time": "2026-07-09 17:43:58",
           "balance": 399.6
         },
         {
-          "time": "2026-07-09 18:59:26",
+          "time": "2026-07-09 18:58:09",
           "balance": 398.1
         },
         {
-          "time": "2026-07-09 20:30:40",
+          "time": "2026-07-09 19:18:09",
           "balance": 394.6
         },
         {
-          "time": "2026-07-09 20:30:40",
+          "time": "2026-07-09 19:18:09",
           "balance": 391.1
         },
         {
-          "time": "2026-07-13 22:50:17",
+          "time": "2026-07-13 22:10:07",
           "balance": 391.43
         },
         {
-          "time": "2026-07-14 18:04:20",
+          "time": "2026-07-14 17:52:39",
           "balance": 390.66
         },
         {
-          "time": "2026-07-14 23:36:51",
+          "time": "2026-07-14 18:06:48",
           "balance": 367.23
         },
         {
-          "time": "2026-07-14 18:51:17",
+          "time": "2026-07-14 18:30:14",
           "balance": 346.11
         },
         {
-          "time": "2026-07-14 22:55:13",
+          "time": "2026-07-14 18:48:41",
           "balance": 345.21
         },
         {
-          "time": "2026-07-14 22:20:18",
+          "time": "2026-07-14 18:58:26",
           "balance": 345.41
         },
         {
-          "time": "2026-07-14 22:20:19",
+          "time": "2026-07-14 19:06:26",
           "balance": 350.01
         },
         {
-          "time": "2026-07-14 22:20:20",
+          "time": "2026-07-14 19:06:39",
           "balance": 354.52
         },
         {
-          "time": "2026-07-14 23:36:51",
+          "time": "2026-07-14 20:18:28",
           "balance": 370.12
         },
         {
-          "time": "2026-07-15 22:02:38",
+          "time": "2026-07-15 21:40:01",
           "balance": 377.52
         },
         {
-          "time": "2026-07-15 22:32:42",
+          "time": "2026-07-15 22:18:30",
           "balance": 405.02
         },
         {
-          "time": "2026-07-16 08:10:08",
+          "time": "2026-07-15 23:14:05",
           "balance": 404.38
         },
         {
-          "time": "2026-07-16 18:11:34",
+          "time": "2026-07-16 17:57:03",
           "balance": 407.38
         },
         {
-          "time": "2026-07-17 03:53:44",
+          "time": "2026-07-17 03:34:27",
           "balance": 404.38
         },
         {
-          "time": "2026-07-17 21:44:48",
+          "time": "2026-07-17 18:11:36",
           "balance": 409.08
         },
         {
-          "time": "2026-07-20 16:45:15",
+          "time": "2026-07-20 16:24:38",
           "balance": 395.77
         },
         {
-          "time": "2026-07-21 19:57:54",
+          "time": "2026-07-21 18:00:35",
           "balance": 407.43
         },
         {
-          "time": "2026-07-22 22:52:04",
+          "time": "2026-07-22 17:55:34",
           "balance": 400.39
         },
         {
-          "time": "2026-07-22 22:52:03",
+          "time": "2026-07-22 18:40:28",
           "balance": 397.31
         },
         {
-          "time": "2026-07-22 22:52:01",
+          "time": "2026-07-22 19:25:08",
           "balance": 397.64
         },
         {
-          "time": "2026-07-23 19:34:52",
+          "time": "2026-07-23 17:40:09",
           "balance": 384.88
         },
         {
-          "time": "2026-07-23 19:34:52",
+          "time": "2026-07-23 17:42:38",
           "balance": 377.51
         },
         {
-          "time": "2026-07-23 17:45:56",
+          "time": "2026-07-23 17:45:25",
           "balance": 375.95
         },
         {
-          "time": "2026-07-23 19:11:36",
+          "time": "2026-07-23 17:55:05",
           "balance": 377.75
         },
         {
-          "time": "2026-07-23 19:34:52",
+          "time": "2026-07-23 18:31:45",
           "balance": 414.87
         },
         {
-          "time": "2026-07-27 20:25:20",
+          "time": "2026-07-27 00:00:00",
           "balance": 437.2
         },
         {
-          "time": "2026-07-29 05:28:47",
+          "time": "2026-07-28 21:42:25",
           "balance": 438.65
         },
         {
-          "time": "2026-07-29 05:28:47",
+          "time": "2026-07-29 02:15:02",
           "balance": 447.45
         },
         {
-          "time": "2026-07-29 17:41:03",
+          "time": "2026-07-29 16:48:19",
           "balance": 461.64
         },
         {
-          "time": "2026-07-31 06:01:09",
+          "time": "2026-07-31 02:46:18",
           "balance": 444.92
         },
         {
-          "time": "2026-07-31 06:01:08",
+          "time": "2026-07-31 04:27:15",
           "balance": 434.91
         },
         {
-          "time": "2026-08-03 21:53:11",
+          "time": "2026-08-03 18:10:44",
           "balance": 436.78
         },
         {
-          "time": "2026-08-03 21:53:11",
+          "time": "2026-08-03 20:58:25",
           "balance": 448.11
         },
         {
-          "time": "2026-08-04 23:57:58",
+          "time": "2026-08-04 19:58:06",
           "balance": 437.33
         },
         {
-          "time": "2026-08-04 23:57:58",
+          "time": "2026-08-04 22:15:02",
           "balance": 430.73
         },
         {
-          "time": "2026-08-06 06:24:20",
+          "time": "2026-08-06 04:59:13",
           "balance": 435.93
         },
         {
-          "time": "2026-08-06 18:20:32",
+          "time": "2026-08-06 18:00:22",
           "balance": 448.8
         },
         {
-          "time": "2026-08-07 18:16:53",
+          "time": "2026-08-07 18:05:41",
           "balance": 462.84
         },
         {
-          "time": "2026-08-10 17:07:49",
+          "time": "2026-08-10 16:25:01",
           "balance": 477.4
         },
         {
-          "time": "2026-08-11 06:18:30",
+          "time": "2026-08-11 01:50:46",
           "balance": 475.71
         },
         {
-          "time": "2026-08-11 06:18:30",
+          "time": "2026-08-11 05:57:17",
           "balance": 480.13
         },
         {
-          "time": "2026-08-11 19:01:22",
+          "time": "2026-08-11 15:59:30",
           "balance": 492.74
         },
         {
-          "time": "2026-08-12 04:43:36",
+          "time": "2026-08-12 04:16:37",
           "balance": 492.89
         },
         {
-          "time": "2026-08-12 16:34:04",
+          "time": "2026-08-12 15:48:40",
           "balance": 490.29
         },
         {
-          "time": "2026-08-12 16:34:05",
+          "time": "2026-08-12 16:16:01",
           "balance": 493.41
         },
         {
-          "time": "2026-08-12 17:31:10",
+          "time": "2026-08-12 17:22:20",
           "balance": 473.13
         },
         {
-          "time": "2026-08-13 09:12:33",
+          "time": "2026-08-13 07:30:01",
           "balance": 473.43
         },
         {
-          "time": "2026-08-13 09:12:33",
+          "time": "2026-08-13 08:33:44",
           "balance": 445.43
         },
         {
-          "time": "2026-08-14 20:01:35",
+          "time": "2026-08-14 18:09:54",
           "balance": 460.88
         },
         {
-          "time": "2026-08-17 20:51:15",
+          "time": "2026-08-17 01:03:37",
           "balance": 435.98
         },
         {
-          "time": "2026-08-17 20:51:15",
+          "time": "2026-08-17 01:36:02",
           "balance": 426.08
         },
         {
-          "time": "2026-08-17 20:51:15",
+          "time": "2026-08-17 02:00:30",
           "balance": 420.18
         },
         {
-          "time": "2026-08-17 20:51:15",
+          "time": "2026-08-17 03:04:01",
           "balance": 417.08
         },
         {
-          "time": "2026-08-17 20:51:15",
+          "time": "2026-08-17 03:42:26",
           "balance": 415.38
         },
         {
-          "time": "2026-08-17 20:51:15",
+          "time": "2026-08-17 04:43:30",
           "balance": 416.18
         },
         {
-          "time": "2026-08-17 20:51:15",
+          "time": "2026-08-17 05:32:16",
           "balance": 418.68
         },
         {
-          "time": "2026-08-17 20:51:15",
+          "time": "2026-08-17 07:15:17",
           "balance": 424.78
         },
         {
-          "time": "2026-08-17 20:51:15",
+          "time": "2026-08-17 16:16:13",
           "balance": 439.18
         },
         {
-          "time": "2026-08-18 04:48:34",
+          "time": "2026-08-18 03:05:07",
           "balance": 428.0
         },
         {
-          "time": "2026-08-18 04:48:33",
+          "time": "2026-08-18 03:33:13",
           "balance": 426.83
         },
         {
-          "time": "2026-08-18 21:59:43",
+          "time": "2026-08-18 17:05:17",
           "balance": 435.54
         },
         {
-          "time": "2026-08-19 21:01:30",
+          "time": "2026-08-19 20:20:38",
           "balance": 440.87
         },
         {
-          "time": "2026-08-20 02:46:32",
+          "time": "2026-08-20 02:00:13",
           "balance": 442.95
         },
         {
-          "time": "2026-08-20 17:06:26",
+          "time": "2026-08-20 16:30:01",
           "balance": 453.35
         },
         {
-          "time": "2026-08-20 18:56:44",
+          "time": "2026-08-20 18:33:15",
           "balance": 453.6
         },
         {
-          "time": "2026-08-21 17:30:21",
+          "time": "2026-08-21 15:43:50",
           "balance": 473.7
         },
         {
-          "time": "2026-08-24 20:37:46",
+          "time": "2026-08-24 17:55:03",
           "balance": 480.2
         },
         {
-          "time": "2026-08-25 08:13:39",
+          "time": "2026-08-25 04:02:55",
           "balance": 484.95
         },
         {
-          "time": "2026-08-26 04:35:36",
+          "time": "2026-08-25 17:31:49",
           "balance": 465.83
         },
         {
-          "time": "2026-08-26 04:35:36",
+          "time": "2026-08-25 19:10:01",
           "balance": 452.69
         },
         {
-          "time": "2026-08-26 04:35:36",
+          "time": "2026-08-25 20:42:00",
           "balance": 446.18
         },
         {
-          "time": "2026-08-26 04:35:36",
+          "time": "2026-08-25 21:12:02",
           "balance": 445.39
         },
         {
-          "time": "2026-08-26 04:35:36",
+          "time": "2026-08-25 22:15:07",
           "balance": 447.33
         },
         {
-          "time": "2026-08-26 04:35:36",
+          "time": "2026-08-25 22:19:56",
           "balance": 453.17
         },
         {
-          "time": "2026-08-26 04:35:36",
+          "time": "2026-08-25 23:08:49",
           "balance": 463.04
         },
         {
-          "time": "2026-08-26 18:44:17",
+          "time": "2026-08-26 17:32:30",
           "balance": 464.94
         },
         {
-          "time": "2026-08-26 18:43:34",
+          "time": "2026-08-26 17:33:54",
           "balance": 474.95
         },
         {
-          "time": "2026-08-27 18:36:28",
+          "time": "2026-08-27 17:44:31",
           "balance": 475.86
         },
         {
-          "time": "2026-08-27 18:01:26",
+          "time": "2026-08-27 18:00:20",
           "balance": 474.17
         },
         {
-          "time": "2026-08-27 18:50:15",
+          "time": "2026-08-27 18:01:43",
           "balance": 485.09
         },
         {
-          "time": "2026-08-28 19:53:53",
+          "time": "2026-08-28 19:26:14",
           "balance": 492.29
         },
         {
-          "time": "2026-09-01 03:30:24",
+          "time": "2026-08-31 19:19:37",
           "balance": 501.48
         },
         {
-          "time": "2026-09-07 18:54:17",
+          "time": "2026-09-07 17:54:56",
           "balance": 499.59
         },
         {
-          "time": "2026-09-07 19:02:09",
+          "time": "2026-09-07 18:00:00",
           "balance": 510.72
         },
         {
-          "time": "2026-09-08 18:31:38",
+          "time": "2026-09-08 17:40:01",
           "balance": 522.69
         },
         {
-          "time": "2026-09-09 21:32:15",
+          "time": "2026-09-09 19:52:09",
           "balance": 523.32
         },
         {
-          "time": "2026-09-09 21:32:16",
+          "time": "2026-09-09 20:08:10",
           "balance": 529.83
         },
         {
-          "time": "2026-09-09 21:32:17",
+          "time": "2026-09-09 20:25:12",
           "balance": 540.96
         },
         {
-          "time": "2026-09-10 17:05:08",
+          "time": "2026-09-10 15:59:30",
           "balance": 562.96
         },
         {
-          "time": "2026-09-14 10:17:46",
+          "time": "2026-09-14 00:00:00",
           "balance": 567.64
         },
         {
-          "time": "2026-09-14 11:05:40",
+          "time": "2026-09-14 00:00:00",
           "balance": 575.64
         },
         {
-          "time": "2026-09-14 11:05:40",
+          "time": "2026-09-14 00:00:00",
           "balance": 590.44
         },
         {
-          "time": "2026-09-14 11:05:40",
+          "time": "2026-09-14 00:00:00",
           "balance": 612.24
         },
         {
-          "time": "2026-09-16 10:14:00",
+          "time": "2026-09-16 00:00:00",
           "balance": 635.34
         },
         {
-          "time": "2026-09-17 12:43:04",
+          "time": "2026-09-17 00:00:00",
           "balance": 630.3
         },
         {
-          "time": "2026-09-17 12:43:04",
+          "time": "2026-09-17 00:00:00",
           "balance": 636.18
         },
         {
-          "time": "2026-09-17 12:43:04",
+          "time": "2026-09-17 00:00:00",
           "balance": 652.77
         },
         {
-          "time": "2026-09-18 08:34:41",
+          "time": "2026-09-18 00:00:00",
           "balance": 671.13
         },
         {
-          "time": "2026-09-18 10:29:45",
+          "time": "2026-09-18 00:00:00",
           "balance": 693.18
         },
         {
-          "time": "2026-09-18 16:52:27",
+          "time": "2026-09-18 00:00:00",
           "balance": 682.05
         },
         {
-          "time": "2026-09-18 16:52:32",
+          "time": "2026-09-18 00:00:00",
           "balance": 681.17
         },
         {
-          "time": "2026-09-21 15:32:45",
+          "time": "2026-09-21 00:00:00",
           "balance": 678.23
         },
         {
-          "time": "2026-09-21 15:32:45",
+          "time": "2026-09-21 00:00:00",
           "balance": 682.85
         },
         {
-          "time": "2026-09-21 15:32:45",
+          "time": "2026-09-21 00:00:00",
           "balance": 693.98
         },
         {
-          "time": "2026-09-21 15:32:50",
+          "time": "2026-09-21 00:00:00",
           "balance": 696.29
         },
         {
-          "time": "2026-09-21 15:32:50",
+          "time": "2026-09-21 00:00:00",
           "balance": 702.38
         },
         {
-          "time": "2026-09-21 15:32:51",
+          "time": "2026-09-21 00:00:00",
           "balance": 701.75
         },
         {
-          "time": "2026-09-22 14:11:04",
+          "time": "2026-09-22 00:00:00",
           "balance": 721.7
         },
         {
-          "time": "2026-09-22 14:11:04",
+          "time": "2026-09-22 00:00:00",
           "balance": 744.59
         },
         {
-          "time": "2026-09-23 09:45:29",
+          "time": "2026-09-23 00:00:00",
           "balance": 745.01
         },
         {
-          "time": "2026-09-23 10:34:10",
+          "time": "2026-09-23 00:00:00",
           "balance": 751.52
         },
         {
-          "time": "2026-09-23 10:34:10",
+          "time": "2026-09-23 00:00:00",
           "balance": 769.58
         },
         {
-          "time": "2026-09-23 10:53:31",
+          "time": "2026-09-23 00:00:00",
           "balance": 795.08
         },
         {
-          "time": "2026-09-23 10:53:32",
+          "time": "2026-09-23 00:00:00",
           "balance": 840.08
         },
         {
-          "time": "2026-09-23 23:00:51",
+          "time": "2026-09-23 00:00:00",
           "balance": 854.28
         },
         {
-          "time": "2026-09-24 09:02:32",
+          "time": "2026-09-24 00:00:00",
           "balance": 881.58
         },
         {
-          "time": "2026-09-25 00:14:35",
+          "time": "2026-09-24 00:00:00",
           "balance": 872.13
         },
         {
-          "time": "2026-09-25 00:14:35",
+          "time": "2026-09-24 00:00:00",
           "balance": 866.46
         },
         {
-          "time": "2026-09-25 00:14:35",
+          "time": "2026-09-24 00:00:00",
           "balance": 863.73
         },
         {
