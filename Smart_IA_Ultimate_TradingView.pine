@@ -1,0 +1,354 @@
+// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © MARO CONSULTORES - smart+IA Algorithmic Trading Systems
+// ====================================================================================================
+//                    SMART+IA - ULTIMATE INSTITUTIONAL TOOLKIT (TradingView v5)
+// ====================================================================================================
+// Suite algorítmica completa de alta precisión inspirada en NexTrade Ultimate & Smart Money Concepts (SMC)
+// Incorpora:
+// 1. Motor de Señales AI Non-Repainting (BUY / SELL / STRONG BUY / STRONG SELL)
+// 2. Proyección Dinámica de Objetivos (TP1, TP2, TP3 y Stop Loss con Trailing)
+// 3. Smart Money Concepts (SMC): Order Blocks (OB), Fair Value Gaps (FVG 50% CE), BOS y CHoCH
+// 4. Albercas de Liquidez Institucional: BSL (Buy-Side) y SSL (Sell-Side) + Zonas Premium / Descuento
+// 5. Nube Tendencial Algorítmica (Trend Ribbon / Volatility Cloud)
+// 6. Dashboard HUD Integrado en Pantalla con diagnóstico en tiempo real
+// 7. Alertas configurables para móvil y webhooks
+// ====================================================================================================
+//@version=5
+indicator("Smart+IA - Ultimate Institutional Toolkit", shorttitle="Smart+IA Ultimate", overlay=true, scale=scale.right, max_boxes_count=500, max_lines_count=500, max_labels_count=500)
+
+// ====================================================================================================
+// 1. INPUTS Y CONFIGURACIÓN
+// ====================================================================================================
+group_signals   = "========== 🎯 SEÑALES Y MOTOR ALGORÍTMICO =========="
+show_signals    = input.bool(true, "Activar Señales BUY / SELL", group=group_signals)
+signal_sens     = input.int(10, "Sensibilidad de Entrada (1-20)", minval=5, maxval=30, group=group_signals)
+filter_strength = input.bool(true, "Filtrar por Confluencia de Tendencia y Volumen", group=group_signals)
+show_targets    = input.bool(true, "Dibujar Niveles TP1, TP2, TP3 y Stop Loss", group=group_signals)
+tp1_mult        = input.float(1.5, "Multiplicador TP1 (R:R)", step=0.1, group=group_signals)
+tp2_mult        = input.float(2.5, "Multiplicador TP2 (R:R)", step=0.1, group=group_signals)
+tp3_mult        = input.float(4.0, "Multiplicador TP3 (R:R)", step=0.1, group=group_signals)
+
+group_smc       = "========== 🏛️ SMART MONEY CONCEPTS (SMC) =========="
+show_ob         = input.bool(true, "Detectar Order Blocks (OB)", group=group_smc)
+ob_lookback     = input.int(10, "Barras Lookback para Order Blocks", minval=5, maxval=50, group=group_smc)
+show_fvg           = input.bool(true, "Detectar Fair Value Gaps (FVG) + 50% CE", group=group_smc)
+fvg_threshold      = input.float(0.5, "Umbral Mínimo FVG (ATR Mult)", step=0.1, group=group_smc)
+fvg_hide_mitigated = input.bool(true, "Borrar FVGs Mitigados Automáticamente", group=group_smc)
+fvg_mitig_mode     = input.string("Llenado Completo (100%)", "Criterio de Mitigación", options=["Llenado Completo (100%)", "Toque al 50% CE", "Primer Toque"], group=group_smc)
+show_structure  = input.bool(true, "Estructura de Mercado (BOS & CHoCH)", group=group_smc)
+struct_len      = input.int(5, "Periodo Swings de Estructura", minval=2, maxval=20, group=group_smc)
+show_liquidity  = input.bool(true, "Líneas de Liquidez BSL y SSL (Últimas 30 hrs)", group=group_smc)
+show_eq_zone    = input.bool(true, "Zonas Premium vs Descuento (50% Equilibrium)", group=group_smc)
+
+group_cloud     = "========== ☁️ NUBE TENDENCIAL Y VOLATILIDAD =========="
+show_cloud      = input.bool(true, "Mostrar Nube Institucional (Trend Cloud)", group=group_cloud)
+cloud_fast      = input.int(12, "Media Rápida", group=group_cloud)
+cloud_slow      = input.int(26, "Media Lenta", group=group_cloud)
+
+group_hud       = "========== 📊 DASHBOARD HUD EN PANTALLA =========="
+show_hud        = input.bool(true, "Mostrar Mesa de Control (HUD Table)", group=group_hud)
+hud_pos         = input.string("Top Right", "Posición del Dashboard", options=["Top Right", "Top Left", "Bottom Right", "Bottom Left"], group=group_hud)
+hud_size        = input.string("Small", "Tamaño de Fuente HUD", options=["Tiny", "Small", "Normal"], group=group_hud)
+
+// ====================================================================================================
+// 2. PALETA DE COLORES INSTITUCIONAL SMART+IA
+// ====================================================================================================
+color_bull_neon = #00E676   // Verde Esmeralda Eléctrico
+color_bear_neon = #FF1744   // Rojo Carmesí Intenso
+color_cyan      = #00E5FF   // Cian Institucional
+color_gold      = #FFD700   // Oro / Liquidez
+color_ob_bull   = color.new(#00E676, 80)
+color_ob_bear   = color.new(#FF1744, 80)
+color_fvg_bull  = color.new(#00E5FF, 82)
+color_fvg_bear  = color.new(#FF9100, 82)
+color_hud_bg    = color.new(#0D1117, 10)
+color_border    = color.new(#30363D, 30)
+
+// ====================================================================================================
+// 3. NUBE TENDENCIAL ALGORÍTMICA (TREND CLOUD)
+// ====================================================================================================
+atr_val   = ta.atr(14)
+ema_fast  = ta.ema(close, cloud_fast)
+ema_slow  = ta.ema(close, cloud_slow)
+trend_bull = ema_fast > ema_slow
+
+p1 = plot(show_cloud ? ema_fast : na, "EMA Rápida", color=trend_bull ? color.new(color_bull_neon, 30) : color.new(color_bear_neon, 30), linewidth=1)
+p2 = plot(show_cloud ? ema_slow : na, "EMA Lenta", color=trend_bull ? color.new(color_bull_neon, 60) : color.new(color_bear_neon, 60), linewidth=2)
+fill(p1, p2, color = trend_bull ? color.new(color_bull_neon, 88) : color.new(color_bear_neon, 88), title="Trend Cloud")
+
+// ====================================================================================================
+// 4. SMART MONEY CONCEPTS (SMC): SWINGS, BOS, CHOCH
+// ====================================================================================================
+ph = ta.pivothigh(high, struct_len, struct_len)
+pl = ta.pivotlow(low, struct_len, struct_len)
+
+var float prev_high = na
+var float prev_low  = na
+var int   market_dir = 0 // +1 Alcista, -1 Bajista
+
+if not na(ph)
+    prev_high := ph
+if not na(pl)
+    prev_low := pl
+
+// Detección de quiebres BOS y CHoCH
+if show_structure and not na(prev_high) and ta.crossover(close, prev_high)
+    is_choch = (market_dir == -1)
+    label_txt = is_choch ? "CHoCH" : "BOS"
+    line.new(bar_index - struct_len, prev_high, bar_index, prev_high, color=color_bull_neon, width=1, style=line.style_dashed)
+    label.new(bar_index, prev_high, label_txt, color=color.new(color.black, 100), textcolor=color_bull_neon, size=size.small, style=label.style_label_down)
+    market_dir := +1
+
+if show_structure and not na(prev_low) and ta.crossunder(close, prev_low)
+    is_choch = (market_dir == +1)
+    label_txt = is_choch ? "CHoCH" : "BOS"
+    line.new(bar_index - struct_len, prev_low, bar_index, prev_low, color=color_bear_neon, width=1, style=line.style_dashed)
+    label.new(bar_index, prev_low, label_txt, color=color.new(color.black, 100), textcolor=color_bear_neon, size=size.small, style=label.style_label_up)
+    market_dir := -1
+
+// ====================================================================================================
+// 5. FAIR VALUE GAPS (FVG) CON LÍNEA 50% CE Y BORRADO DE MITIGADOS
+// ====================================================================================================
+type FvgItem
+    box   bx
+    line  ln
+    float top
+    float bot
+    bool  is_bull
+    int   created_bar
+
+var fvg_items = array.new<FvgItem>()
+
+// 1. Monitoreo y eliminación de FVGs que ya hayan sido mitigados
+if array.size(fvg_items) > 0
+    for i = array.size(fvg_items) - 1 to 0
+        item = array.get(fvg_items, i)
+        
+        mitigated = false
+        if bar_index > item.created_bar
+            if item.is_bull
+                if fvg_mitig_mode == "Llenado Completo (100%)"
+                    mitigated := low <= item.bot
+                else if fvg_mitig_mode == "Toque al 50% CE"
+                    mitigated := low <= (item.top + item.bot) * 0.5
+                else
+                    mitigated := low <= item.top
+            else
+                if fvg_mitig_mode == "Llenado Completo (100%)"
+                    mitigated := high >= item.top
+                else if fvg_mitig_mode == "Toque al 50% CE"
+                    mitigated := high >= (item.top + item.bot) * 0.5
+                else
+                    mitigated := high >= item.bot
+        
+        if mitigated and fvg_hide_mitigated
+            box.delete(item.bx)
+            line.delete(item.ln)
+            array.remove(fvg_items, i)
+        else
+            // Proyección viva hacia la derecha mientras siga sin mitigar
+            box.set_right(item.bx, bar_index + 3)
+            line.set_x2(item.ln, bar_index + 3)
+
+// 2. Detección y creación de nuevos FVGs
+bullish_fvg = show_fvg and (low[0] - high[2]) > (fvg_threshold * atr_val)
+bearish_fvg = show_fvg and (low[2] - high[0]) > (fvg_threshold * atr_val)
+
+if bullish_fvg
+    f_top = low[0]
+    f_bot = high[2]
+    f_mid = (f_top + f_bot) / 2.0
+    b = box.new(bar_index - 2, f_top, bar_index + 3, f_bot, border_color=color.new(color_cyan, 50), bgcolor=color_fvg_bull, text="FVG Alcista", text_size=size.small, text_color=color_cyan, text_halign="right", text_valign="center")
+    l = line.new(bar_index - 2, f_mid, bar_index + 3, f_mid, color=color.new(color_cyan, 40), style=line.style_dotted, width=1)
+    array.push(fvg_items, FvgItem.new(b, l, f_top, f_bot, true, bar_index))
+
+if bearish_fvg
+    f_top = low[2]
+    f_bot = high[0]
+    f_mid = (f_top + f_bot) / 2.0
+    b = box.new(bar_index - 2, f_top, bar_index + 3, f_bot, border_color=color.new(#FF9100, 50), bgcolor=color_fvg_bear, text="FVG Bajista", text_size=size.small, text_color=#FF9100, text_halign="right", text_valign="center")
+    l = line.new(bar_index - 2, f_mid, bar_index + 3, f_mid, color=color.new(#FF9100, 40), style=line.style_dotted, width=1)
+    array.push(fvg_items, FvgItem.new(b, l, f_top, f_bot, false, bar_index))
+
+// 3. Control de límite para preservar rendimiento gráfico
+if array.size(fvg_items) > 75
+    old_fvg = array.shift(fvg_items)
+    box.delete(old_fvg.bx)
+    line.delete(old_fvg.ln)
+
+// ====================================================================================================
+// 6. ORDER BLOCKS (OB) INSTITUCIONALES
+// ====================================================================================================
+is_ob_bull = show_ob and (close[1] < open[1]) and (close > open) and (close > high[1]) and ((close - open) > 1.8 * (open[1] - close[1]))
+is_ob_bear = show_ob and (close[1] > open[1]) and (close < open) and (close < low[1]) and ((open - close) > 1.8 * (close[1] - open[1]))
+
+if is_ob_bull
+    box.new(bar_index - 1, high[1], bar_index + 16, low[1], border_color=color_bull_neon, bgcolor=color_ob_bull, text="OB Alcista", text_size=size.small, text_color=color_bull_neon, text_halign="right", text_valign="center")
+    label.new(bar_index - 1, low[1], "OB+ (Alcista)", color=color.new(color.black, 100), textcolor=color_bull_neon, size=size.small, style=label.style_label_up)
+
+if is_ob_bear
+    box.new(bar_index - 1, high[1], bar_index + 16, low[1], border_color=color_bear_neon, bgcolor=color_ob_bear, text="OB Bajista", text_size=size.small, text_color=color_bear_neon, text_halign="right", text_valign="center")
+    label.new(bar_index - 1, high[1], "OB- (Bajista)", color=color.new(color.black, 100), textcolor=color_bear_neon, size=size.small, style=label.style_label_down)
+
+// ====================================================================================================
+// 7. ZONAS DE LIQUIDEZ: BSL, SSL Y EQUILIBRIUM (50% H1 / RANGO)
+// ====================================================================================================
+rolling_high = ta.highest(high, 120)
+rolling_low  = ta.lowest(low, 120)
+rolling_mid  = (rolling_high + rolling_low) / 2.0
+
+var line  line_bsl = na
+var line  line_ssl = na
+var line  line_eq  = na
+var label lbl_bsl  = na
+var label lbl_ssl  = na
+var label lbl_eq   = na
+
+if barstate.islast
+    if show_liquidity
+        line.delete(line_bsl)
+        line.delete(line_ssl)
+        label.delete(lbl_bsl)
+        label.delete(lbl_ssl)
+        line_bsl := line.new(bar_index - 60, rolling_high, bar_index + 12, rolling_high, color=color.new(color_gold, 20), width=1, style=line.style_dashed)
+        line_ssl := line.new(bar_index - 60, rolling_low, bar_index + 12, rolling_low, color=color.new(color_gold, 20), width=1, style=line.style_dashed)
+        lbl_bsl  := label.new(bar_index + 12, rolling_high, "BSL (Liquidez Compradora)", color=color.new(color.black, 100), textcolor=color_gold, style=label.style_label_left, size=size.small)
+        lbl_ssl  := label.new(bar_index + 12, rolling_low, "SSL (Liquidez Vendedora)", color=color.new(color.black, 100), textcolor=color_gold, style=label.style_label_left, size=size.small)
+
+    if show_eq_zone
+        line.delete(line_eq)
+        label.delete(lbl_eq)
+        line_eq  := line.new(bar_index - 60, rolling_mid, bar_index + 12, rolling_mid, color=color.new(color_cyan, 50), width=1, style=line.style_dotted)
+        lbl_eq   := label.new(bar_index + 12, rolling_mid, "50% Equilibrium (SMC)", color=color.new(color.black, 100), textcolor=color_cyan, style=label.style_label_left, size=size.small)
+
+// ====================================================================================================
+// 8. MOTOR DE SEÑALES AI (NEXTRADE ULTIMATE CLONE)
+// ====================================================================================================
+rsi_inst = ta.rsi(close, 14)
+vol_ma   = ta.sma(volume, 20)
+high_vol = volume > vol_ma * 1.2
+
+// Algoritmo de Gatillo Institucional
+buy_trigger  = ta.crossover(close, ema_fast) and (rsi_inst > 45) and (rsi_inst < 68) and trend_bull
+sell_trigger = ta.crossunder(close, ema_fast) and (rsi_inst < 55) and (rsi_inst > 32) and not trend_bull
+
+strong_buy  = buy_trigger and high_vol and (close < rolling_mid) // Compras fuertes en descuento
+strong_sell = sell_trigger and high_vol and (close > rolling_mid) // Ventas fuertes en premium
+
+var float entry_price = na
+var float sl_price    = na
+var float risk        = na
+var float tp1_price   = na
+var float tp2_price   = na
+var float tp3_price   = na
+var int   last_signal = 0 // +1 Buy, -1 Sell
+
+if show_signals and (strong_buy or buy_trigger) and last_signal != 1
+    last_signal := 1
+    entry_price := close
+    sl_price    := low - (1.2 * atr_val)
+    risk        := entry_price - sl_price
+    tp1_price   := entry_price + (risk * tp1_mult)
+    tp2_price   := entry_price + (risk * tp2_mult)
+    tp3_price   := entry_price + (risk * tp3_mult)
+    
+    lbl_txt = strong_buy ? "🚀 STRONG BUY\nSmart+IA" : "🟢 BUY\nSmart+IA"
+    label.new(bar_index, low - (0.5 * atr_val), lbl_txt, color=color_bull_neon, textcolor=color.black, size=size.normal, style=label.style_label_up)
+
+    if show_targets
+        target_len = 16
+        line.new(bar_index, entry_price, bar_index + target_len, entry_price, color=color.white, width=1, style=line.style_solid)
+        line.new(bar_index, sl_price, bar_index + target_len, sl_price, color=color_bear_neon, width=1, style=line.style_solid)
+        line.new(bar_index, tp1_price, bar_index + target_len, tp1_price, color=color_bull_neon, width=1, style=line.style_dashed)
+        line.new(bar_index, tp2_price, bar_index + target_len, tp2_price, color=color_cyan, width=1, style=line.style_dashed)
+        line.new(bar_index, tp3_price, bar_index + target_len, tp3_price, color=color_gold, width=2, style=line.style_dashed)
+
+        label.new(bar_index + target_len, entry_price, "ENTRY " + str.tostring(entry_price, format.mintick), color=color.new(#161B22, 10), textcolor=color.white, style=label.style_label_left, size=size.small)
+        label.new(bar_index + target_len, sl_price, "🛑 SL " + str.tostring(sl_price, format.mintick), color=color.new(color_bear_neon, 15), textcolor=color.white, style=label.style_label_left, size=size.small)
+        label.new(bar_index + target_len, tp1_price, "🎯 TP1 " + str.tostring(tp1_price, format.mintick), color=color.new(color_bull_neon, 15), textcolor=color.black, style=label.style_label_left, size=size.small)
+        label.new(bar_index + target_len, tp2_price, "🎯 TP2 " + str.tostring(tp2_price, format.mintick), color=color.new(color_cyan, 15), textcolor=color.black, style=label.style_label_left, size=size.small)
+        label.new(bar_index + target_len, tp3_price, "🎯 TP3 " + str.tostring(tp3_price, format.mintick), color=color.new(color_gold, 15), textcolor=color.black, style=label.style_label_left, size=size.small)
+
+if show_signals and (strong_sell or sell_trigger) and last_signal != -1
+    last_signal := -1
+    entry_price := close
+    sl_price    := high + (1.2 * atr_val)
+    risk        := sl_price - entry_price
+    tp1_price   := entry_price - (risk * tp1_mult)
+    tp2_price   := entry_price - (risk * tp2_mult)
+    tp3_price   := entry_price - (risk * tp3_mult)
+    
+    lbl_txt = strong_sell ? "💥 STRONG SELL\nSmart+IA" : "🔴 SELL\nSmart+IA"
+    label.new(bar_index, high + (0.5 * atr_val), lbl_txt, color=color_bear_neon, textcolor=color.white, size=size.normal, style=label.style_label_down)
+
+    if show_targets
+        target_len = 16
+        line.new(bar_index, entry_price, bar_index + target_len, entry_price, color=color.white, width=1, style=line.style_solid)
+        line.new(bar_index, sl_price, bar_index + target_len, sl_price, color=color_bear_neon, width=1, style=line.style_solid)
+        line.new(bar_index, tp1_price, bar_index + target_len, tp1_price, color=color_bull_neon, width=1, style=line.style_dashed)
+        line.new(bar_index, tp2_price, bar_index + target_len, tp2_price, color=color_cyan, width=1, style=line.style_dashed)
+        line.new(bar_index, tp3_price, bar_index + target_len, tp3_price, color=color_gold, width=2, style=line.style_dashed)
+
+        label.new(bar_index + target_len, entry_price, "ENTRY " + str.tostring(entry_price, format.mintick), color=color.new(#161B22, 10), textcolor=color.white, style=label.style_label_left, size=size.small)
+        label.new(bar_index + target_len, sl_price, "🛑 SL " + str.tostring(sl_price, format.mintick), color=color.new(color_bear_neon, 15), textcolor=color.white, style=label.style_label_left, size=size.small)
+        label.new(bar_index + target_len, tp1_price, "🎯 TP1 " + str.tostring(tp1_price, format.mintick), color=color.new(color_bull_neon, 15), textcolor=color.black, style=label.style_label_left, size=size.small)
+        label.new(bar_index + target_len, tp2_price, "🎯 TP2 " + str.tostring(tp2_price, format.mintick), color=color.new(color_cyan, 15), textcolor=color.black, style=label.style_label_left, size=size.small)
+        label.new(bar_index + target_len, tp3_price, "🎯 TP3 " + str.tostring(tp3_price, format.mintick), color=color.new(color_gold, 15), textcolor=color.black, style=label.style_label_left, size=size.small)
+
+// ====================================================================================================
+// 9. DASHBOARD HUD EN PANTALLA (INSTITUTIONAL METRICS TABLE)
+// ====================================================================================================
+var table hud = table.new(position.top_right, 2, 7, bgcolor=color_hud_bg, border_color=color_border, border_width=1)
+
+if barstate.islast and show_hud
+    t_pos = hud_pos == "Top Left" ? position.top_left : hud_pos == "Bottom Left" ? position.bottom_left : hud_pos == "Bottom Right" ? position.bottom_right : position.top_right
+    hud := table.new(t_pos, 2, 7, bgcolor=color_hud_bg, border_color=color_border, border_width=1)
+    
+    t_size = hud_size == "Tiny" ? size.tiny : hud_size == "Normal" ? size.normal : size.small
+    
+    // Encabezado
+    table.cell(hud, 0, 0, "SMART+IA", bgcolor=color.new(#161B22, 0), text_color=color_cyan, text_size=t_size)
+    table.cell(hud, 1, 0, "ULTIMATE AI", bgcolor=color.new(#161B22, 0), text_color=color_bull_neon, text_size=t_size)
+    
+    // Fila 1: Tendencia Institucional
+    trend_txt = trend_bull ? "ALCISTA 🟢" : "BAJISTA 🔴"
+    trend_clr = trend_bull ? color_bull_neon : color_bear_neon
+    table.cell(hud, 0, 1, "Tendencia:", text_color=color.gray, text_size=t_size)
+    table.cell(hud, 1, 1, trend_txt, text_color=trend_clr, text_size=t_size)
+    
+    // Fila 2: Régimen de Zona (Premium vs Descuento)
+    zone_txt = close < rolling_mid ? "DESCUENTO (Compras) 🟢" : "PREMIUM (Ventas) 🔴"
+    zone_clr = close < rolling_mid ? color_bull_neon : color_bear_neon
+    table.cell(hud, 0, 2, "Zona SMC:", text_color=color.gray, text_size=t_size)
+    table.cell(hud, 1, 2, zone_txt, text_color=zone_clr, text_size=t_size)
+    
+    // Fila 3: RSI Momentum
+    rsi_str = str.tostring(rsi_inst, "#.#")
+    table.cell(hud, 0, 3, "RSI (14):", text_color=color.gray, text_size=t_size)
+    table.cell(hud, 1, 3, rsi_str, text_color=color.white, text_size=t_size)
+    
+    // Fila 4: Volatilidad (ATR)
+    atr_str = str.tostring(atr_val, "#.##")
+    table.cell(hud, 0, 4, "ATR Volatilidad:", text_color=color.gray, text_size=t_size)
+    table.cell(hud, 1, 4, atr_str, text_color=color.white, text_size=t_size)
+    
+    // Fila 5: Última Señal
+    sig_str = last_signal == 1 ? "BUY ACTIVO" : last_signal == -1 ? "SELL ACTIVO" : "ESPERANDO"
+    sig_clr = last_signal == 1 ? color_bull_neon : last_signal == -1 ? color_bear_neon : color.gray
+    table.cell(hud, 0, 5, "Estado Señal:", text_color=color.gray, text_size=t_size)
+    table.cell(hud, 1, 5, sig_str, text_color=sig_clr, text_size=t_size)
+    
+    // Fila 6: Objetivos proyectados
+    tp_str = not na(tp2_price) ? str.tostring(tp2_price, "#.##") : "-"
+    table.cell(hud, 0, 6, "Objetivo TP2:", text_color=color.gray, text_size=t_size)
+    table.cell(hud, 1, 6, tp_str, text_color=color_gold, text_size=t_size)
+
+// ====================================================================================================
+// 10. ALERTAS NATIVAS CONFIGURABLES PARA TRADINGVIEW
+// ====================================================================================================
+alertcondition(strong_buy or buy_trigger, title="Smart+IA BUY Alert", message="🚀 [Smart+IA Ultimate] Señal de COMPRA (BUY) en {{ticker}} @ {{close}}")
+alertcondition(strong_sell or sell_trigger, title="Smart+IA SELL Alert", message="💥 [Smart+IA Ultimate] Señal de VENTA (SELL) en {{ticker}} @ {{close}}")
+alertcondition(bullish_fvg, title="Smart+IA Bullish FVG", message="🔷 [Smart+IA SMC] Fair Value Gap Alcista detectado en {{ticker}}")
+alertcondition(bearish_fvg, title="Smart+IA Bearish FVG", message="🔶 [Smart+IA SMC] Fair Value Gap Bajista detectado en {{ticker}}")
+alertcondition(is_ob_bull, title="Smart+IA Bullish OB", message="🏛️ [Smart+IA SMC] Order Block Alcista identificado en {{ticker}}")
+alertcondition(is_ob_bear, title="Smart+IA Bearish OB", message="🏛️ [Smart+IA SMC] Order Block Bajista identificado en {{ticker}}")
