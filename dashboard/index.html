@@ -152,7 +152,7 @@
         <span class="tab-icon">📑</span> Bitácora & Posiciones Reales
       </button>
       <button class="tab-btn" data-tab="tab-radar">
-        <span class="tab-icon">📡</span> Radar Institucional (5:00 AM)
+        <span class="tab-icon">📡</span> Radar Institucional & Liquidez OANDA
       </button>
     </nav>
 
@@ -396,16 +396,69 @@
         </div>
       </section>
 
-      <!-- PESTAÑA 4: RADAR INSTITUCIONAL 5:00 AM -->
+      <!-- PESTAÑA 4: RADAR INSTITUCIONAL & LIQUIDEZ OANDA v20 -->
       <section id="tab-radar" class="tab-pane">
         <div class="radar-container">
           <div class="radar-header">
-            <h2 class="section-title">Radar de Inteligencia de Mercado (5:00 AM)</h2>
-            <p class="section-desc">Diagnóstico institucional multi-activo: GBP/USD, Oro y AUD/USD con noticias macro y SMC</p>
+            <div class="radar-header-top">
+              <div>
+                <h2 class="section-title">📡 Radar de Inteligencia Institucional & Liquidez OANDA v20</h2>
+                <p class="section-desc">Order Book (BSL/SSL), Sentimiento Retail Contrario, Zonas SMC y Calendario de Noticias en Vivo</p>
+              </div>
+              <div class="radar-status-badges">
+                <span class="status-badge live" id="oandaStatusBadge"><span class="pulse-dot"></span> API OANDA v20 Live</span>
+                <span class="status-badge sync-timer" id="radarLastSyncBadge">⏱️ Actualizado: --:--</span>
+              </div>
+            </div>
+
+            <!-- Filtros Rápidos de Navegación del Radar -->
+            <div class="radar-nav-filters">
+              <button class="radar-filter-btn active" data-radar-filter="ALL">🌐 Todos los Activos</button>
+              <button class="radar-filter-btn" data-radar-filter="GBP/USD">💷 GBP/USD</button>
+              <button class="radar-filter-btn" data-radar-filter="XAU/USD">🥇 XAU/USD (Oro)</button>
+              <button class="radar-filter-btn" data-radar-filter="AUD/USD">🦘 AUD/USD</button>
+              <button class="radar-filter-btn" data-radar-filter="CALENDAR">📅 Calendario Macroeconómico (<span id="newsTotalCount">0</span>)</button>
+            </div>
           </div>
 
+          <!-- Grid de Activos Analizados con OANDA -->
           <div class="radar-grid" id="radarGridContainer">
-            <div class="loading-placeholder">Consultando inteligencia de mercado en MetaTrader...</div>
+            <div class="loading-placeholder">Cargando inteligencia institucional de OANDA y calendario macroeconómico...</div>
+          </div>
+
+          <!-- Sección de Calendario Macroeconómico de Noticias -->
+          <div class="radar-calendar-panel" id="radarCalendarPanel">
+            <div class="calendar-header-bar">
+              <div class="calendar-title-group">
+                <h3 class="card-title">📅 Calendario Macroeconómico de la Semana (ForexFactory)</h3>
+                <p class="card-subtitle">Eventos de alta y media volatilidad para GBP, USD, AUD y mercado global</p>
+              </div>
+              <div class="calendar-filter-pills">
+                <button class="cal-pill active" data-cal-filter="ALL">Todos (<span id="calCountAll">0</span>)</button>
+                <button class="cal-pill" data-cal-filter="HIGH">🔴 Alto Impacto (<span id="calCountHigh">0</span>)</button>
+                <button class="cal-pill" data-cal-filter="USD">🇺🇸 USD</button>
+                <button class="cal-pill" data-cal-filter="GBP">🇬🇧 GBP</button>
+                <button class="cal-pill" data-cal-filter="AUD">🇦🇺 AUD</button>
+              </div>
+            </div>
+
+            <div class="calendar-table-wrapper" style="overflow-x: auto;">
+              <table class="custom-table calendar-table">
+                <thead>
+                  <tr>
+                    <th>Fecha / Hora</th>
+                    <th>Divisa</th>
+                    <th>Impacto</th>
+                    <th>Evento / Noticia</th>
+                    <th>Pronóstico (Forecast)</th>
+                    <th>Previo (Previous)</th>
+                  </tr>
+                </thead>
+                <tbody id="calendarTableBody">
+                  <tr><td colspan="6" class="text-center">Cargando eventos macroeconómicos...</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
