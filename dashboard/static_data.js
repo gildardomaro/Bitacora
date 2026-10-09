@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-09T16:19:35.485713Z",
+  "generated_at": "2026-10-09T16:24:34.897606Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -21134,7 +21134,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-09 09:19:35",
+  "last_sync": "2026-10-09 09:24:34",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -22946,8 +22946,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-09T16:19:35.399175Z",
-    "last_sync": "2026-10-09 09:19:35",
+    "timestamp": "2026-10-09T16:24:34.822962Z",
+    "last_sync": "2026-10-09 09:24:34",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -22955,9 +22955,9 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.3224,
-        "bid": 1.32212,
-        "ask": 1.32268,
+        "price": 1.32256,
+        "bid": 1.32228,
+        "ask": 1.32284,
         "spread_pips": 5.6,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
@@ -22966,8 +22966,8 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 59.0,
           "short_pct": 41.0,
-          "longs_in_loss": 22.1,
-          "shorts_in_loss": 25.4,
+          "longs_in_loss": 21.8,
+          "shorts_in_loss": 25.7,
           "summary": "Minoristas 59.0% Comprados vs 41.0% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
@@ -22976,20 +22976,20 @@ window.STATIC_DASHBOARD_DATA = {
           "top_bsl": [
             {
               "price": 1.325,
-              "density_pct": 0.26,
-              "dist_pips": 26.0,
+              "density_pct": 0.25,
+              "dist_pips": 24.4,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.324,
-              "density_pct": 0.21,
-              "dist_pips": 16.0,
+              "density_pct": 0.22,
+              "dist_pips": 14.4,
               "label": "Buy Stops / BSL"
             },
             {
-              "price": 1.3255,
-              "density_pct": 0.17,
-              "dist_pips": 31.0,
+              "price": 1.3235,
+              "density_pct": 0.18,
+              "dist_pips": 9.4,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -22997,19 +22997,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.3175,
               "density_pct": 0.23,
-              "dist_pips": 49.0,
+              "dist_pips": 50.6,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3,
               "density_pct": 0.22,
-              "dist_pips": 224.0,
+              "dist_pips": 225.6,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.318,
               "density_pct": 0.18,
-              "dist_pips": 44.0,
+              "dist_pips": 45.6,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -23032,10 +23032,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 4191.1,
-        "bid": 4190.29,
-        "ask": 4191.91,
-        "spread_pips": 162.0,
+        "price": 4188.89,
+        "bid": 4188.12,
+        "ask": 4189.66,
+        "spread_pips": 154.0,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 51,
@@ -23043,30 +23043,30 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 72.7,
           "short_pct": 27.3,
-          "longs_in_loss": 11.2,
-          "shorts_in_loss": 21.8,
+          "longs_in_loss": 11.7,
+          "shorts_in_loss": 21.6,
           "summary": "Minoristas 72.7% Comprados vs 27.3% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 56.5,
-          "order_short_pct": 43.5,
+          "order_long_pct": 56.9,
+          "order_short_pct": 43.1,
           "top_bsl": [
             {
               "price": 4203.5,
               "density_pct": 0.24,
-              "dist_pips": 1240.0,
+              "dist_pips": 1461.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4222.5,
               "density_pct": 0.24,
-              "dist_pips": 3140.0,
+              "dist_pips": 3361.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4313.0,
               "density_pct": 0.18,
-              "dist_pips": 12190.0,
+              "dist_pips": 12411.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -23074,19 +23074,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4108.5,
               "density_pct": 0.26,
-              "dist_pips": 8260.0,
+              "dist_pips": 8039.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 4128.0,
               "density_pct": 0.18,
-              "dist_pips": 6310.0,
+              "dist_pips": 6089.0,
               "label": "Sell Stops / SSL"
             },
             {
-              "price": 4177.5,
+              "price": 4175.0,
               "density_pct": 0.14,
-              "dist_pips": 1360.0,
+              "dist_pips": 1389.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -23109,14 +23109,14 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.69771,
-        "bid": 0.69724,
-        "ask": 0.69818,
+        "price": 0.69768,
+        "bid": 0.69721,
+        "ask": 0.69815,
         "spread_pips": 9.4,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 47,
-        "prob_sell": 53,
+        "prob_buy": 44,
+        "prob_sell": 56,
         "retail_sentiment": {
           "long_pct": 62.9,
           "short_pct": 37.1,
@@ -23130,40 +23130,40 @@ window.STATIC_DASHBOARD_DATA = {
           "top_bsl": [
             {
               "price": 0.699,
-              "density_pct": 0.27,
-              "dist_pips": 12.9,
+              "density_pct": 0.28,
+              "dist_pips": 13.2,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.6985,
               "density_pct": 0.21,
-              "dist_pips": 7.9,
+              "dist_pips": 8.2,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.6995,
-              "density_pct": 0.2,
-              "dist_pips": 17.9,
+              "density_pct": 0.19,
+              "dist_pips": 18.2,
               "label": "Buy Stops / BSL"
             }
           ],
           "top_ssl": [
             {
               "price": 0.696,
-              "density_pct": 0.75,
-              "dist_pips": 17.1,
+              "density_pct": 0.77,
+              "dist_pips": 16.8,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.6955,
-              "density_pct": 0.25,
-              "dist_pips": 22.1,
+              "density_pct": 0.26,
+              "dist_pips": 21.8,
               "label": "Sell Stops / SSL"
             },
             {
-              "price": 0.695,
+              "price": 0.6965,
               "density_pct": 0.17,
-              "dist_pips": 27.1,
+              "dist_pips": 11.8,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -23173,7 +23173,7 @@ window.STATIC_DASHBOARD_DATA = {
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
           "trend_h1": "ALCISTA 🟢",
-          "trend_m15": "ALCISTA 🟢",
+          "trend_m15": "BAJISTA 🔴",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
           "h1_high": 0.69881,
           "h1_low": 0.69329,
