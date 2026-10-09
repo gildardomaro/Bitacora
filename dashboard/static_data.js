@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-09T21:19:38.920646Z",
+  "generated_at": "2026-10-09T21:24:37.586483Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -21134,7 +21134,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-09 14:19:38",
+  "last_sync": "2026-10-09 14:24:37",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -22946,8 +22946,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-09T21:19:38.828142Z",
-    "last_sync": "2026-10-09 14:19:38",
+    "timestamp": "2026-10-09T21:24:37.496653Z",
+    "last_sync": "2026-10-09 14:24:37",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -22976,7 +22976,7 @@ window.STATIC_DASHBOARD_DATA = {
           "top_bsl": [
             {
               "price": 1.325,
-              "density_pct": 0.22,
+              "density_pct": 0.21,
               "dist_pips": 16.0,
               "label": "Buy Stops / BSL"
             },
@@ -23048,12 +23048,12 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 72.7% Comprados vs 27.3% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 58.0,
-          "order_short_pct": 42.0,
+          "order_long_pct": 57.8,
+          "order_short_pct": 42.2,
           "top_bsl": [
             {
               "price": 4204.0,
-              "density_pct": 0.35,
+              "density_pct": 0.33,
               "dist_pips": 935.0,
               "label": "Buy Stops / BSL"
             },
@@ -23130,7 +23130,7 @@ window.STATIC_DASHBOARD_DATA = {
           "top_bsl": [
             {
               "price": 0.7,
-              "density_pct": 0.55,
+              "density_pct": 0.54,
               "dist_pips": 15.7,
               "label": "Buy Stops / BSL"
             },
@@ -23142,7 +23142,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 0.699,
-              "density_pct": 0.29,
+              "density_pct": 0.27,
               "dist_pips": 5.7,
               "label": "Buy Stops / BSL"
             }
