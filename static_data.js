@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-11T12:04:50.116777Z",
+  "generated_at": "2026-10-11T12:09:35.995405Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -21134,7 +21134,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-11 05:04:50",
+  "last_sync": "2026-10-11 05:09:35",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -22946,8 +22946,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-11T12:04:50.052364Z",
-    "last_sync": "2026-10-11 05:04:50",
+    "timestamp": "2026-10-11T12:09:35.924896Z",
+    "last_sync": "2026-10-11 05:09:35",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -23017,7 +23017,7 @@ window.STATIC_DASHBOARD_DATA = {
           "ssl_target": 1.3
         },
         "technical_smc": {
-          "trend_h4": "NEUTRAL ⚪",
+          "trend_h4": "ALCISTA 🟢",
           "trend_h1": "ALCISTA 🟢",
           "trend_m15": "BAJISTA 🔴",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
@@ -23095,12 +23095,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
-          "trend_h1": "NEUTRAL ⚪",
+          "trend_h1": "ALCISTA 🟢",
           "trend_m15": "ALCISTA 🟢",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 4194.65,
-          "h1_low": 4194.65,
-          "h1_equilibrium": 4194.65
+          "h1_high": 4207.48,
+          "h1_low": 4105.5,
+          "h1_equilibrium": 4156.49
         }
       },
       {
@@ -23172,12 +23172,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
-          "trend_h1": "NEUTRAL ⚪",
+          "trend_h1": "ALCISTA 🟢",
           "trend_m15": "ALCISTA 🟢",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 0.69843,
-          "h1_low": 0.69843,
-          "h1_equilibrium": 0.69843
+          "h1_high": 0.69888,
+          "h1_low": 0.69329,
+          "h1_equilibrium": 0.69608
         }
       }
     ],
