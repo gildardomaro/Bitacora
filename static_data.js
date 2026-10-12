@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-12T21:39:39.040905Z",
+  "generated_at": "2026-10-12T21:44:35.904430Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -22586,7 +22586,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-12 14:39:38",
+  "last_sync": "2026-10-12 14:44:35",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -24462,8 +24462,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-12T21:39:38.948573Z",
-    "last_sync": "2026-10-12 14:39:38",
+    "timestamp": "2026-10-12T21:44:35.824891Z",
+    "last_sync": "2026-10-12 14:44:35",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -24471,10 +24471,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.32096,
-        "bid": 1.32038,
-        "ask": 1.32154,
-        "spread_pips": 11.6,
+        "price": 1.32092,
+        "bid": 1.32041,
+        "ask": 1.32142,
+        "spread_pips": 10.1,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 48,
@@ -24487,25 +24487,25 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 59.1% Comprados vs 40.9% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
-          "order_long_pct": 46.5,
-          "order_short_pct": 53.5,
+          "order_long_pct": 46.4,
+          "order_short_pct": 53.6,
           "top_bsl": [
             {
-              "price": 1.331,
+              "price": 1.33,
               "density_pct": 0.16,
-              "dist_pips": 100.4,
+              "dist_pips": 90.8,
               "label": "Buy Stops / BSL"
             },
             {
-              "price": 1.33,
-              "density_pct": 0.14,
-              "dist_pips": 90.4,
+              "price": 1.331,
+              "density_pct": 0.16,
+              "dist_pips": 100.8,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.332,
               "density_pct": 0.14,
-              "dist_pips": 110.4,
+              "dist_pips": 110.8,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -24513,23 +24513,23 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.3195,
               "density_pct": 0.28,
-              "dist_pips": 14.6,
+              "dist_pips": 14.2,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.318,
-              "density_pct": 0.23,
-              "dist_pips": 29.6,
+              "density_pct": 0.24,
+              "dist_pips": 29.2,
               "label": "Sell Stops / SSL"
             },
             {
-              "price": 1.3,
-              "density_pct": 0.22,
-              "dist_pips": 209.6,
+              "price": 1.3175,
+              "density_pct": 0.23,
+              "dist_pips": 34.2,
               "label": "Sell Stops / SSL"
             }
           ],
-          "bsl_target": 1.331,
+          "bsl_target": 1.33,
           "ssl_target": 1.3195
         },
         "technical_smc": {
@@ -24625,10 +24625,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.69592,
-        "bid": 0.69522,
-        "ask": 0.69663,
-        "spread_pips": 14.1,
+        "price": 0.69584,
+        "bid": 0.69527,
+        "ask": 0.69641,
+        "spread_pips": 11.4,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 41,
@@ -24647,44 +24647,44 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.6985,
               "density_pct": 0.21,
-              "dist_pips": 25.8,
+              "dist_pips": 26.6,
+              "label": "Buy Stops / BSL"
+            },
+            {
+              "price": 0.6965,
+              "density_pct": 0.17,
+              "dist_pips": 6.6,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.7,
               "density_pct": 0.17,
-              "dist_pips": 40.8,
-              "label": "Buy Stops / BSL"
-            },
-            {
-              "price": 0.6965,
-              "density_pct": 0.16,
-              "dist_pips": 5.8,
+              "dist_pips": 41.6,
               "label": "Buy Stops / BSL"
             }
           ],
           "top_ssl": [
             {
+              "price": 0.6945,
+              "density_pct": 0.13,
+              "dist_pips": 13.4,
+              "label": "Sell Stops / SSL"
+            },
+            {
               "price": 0.695,
-              "density_pct": 0.19,
-              "dist_pips": 9.2,
+              "density_pct": 0.13,
+              "dist_pips": 8.4,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.6895,
               "density_pct": 0.12,
-              "dist_pips": 64.2,
-              "label": "Sell Stops / SSL"
-            },
-            {
-              "price": 0.6945,
-              "density_pct": 0.12,
-              "dist_pips": 14.2,
+              "dist_pips": 63.4,
               "label": "Sell Stops / SSL"
             }
           ],
           "bsl_target": 0.6985,
-          "ssl_target": 0.695
+          "ssl_target": 0.6945
         },
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
@@ -24807,7 +24807,7 @@ window.STATIC_DASHBOARD_DATA = {
         "currency": "USD",
         "impact": "Low",
         "datetime_raw": "2026-10-13T10:00:00-04:00",
-        "forecast": "3.96M",
+        "forecast": "3.95M",
         "previous": "3.98M"
       },
       {
@@ -24879,7 +24879,7 @@ window.STATIC_DASHBOARD_DATA = {
         "currency": "EUR",
         "impact": "Low",
         "datetime_raw": "2026-10-14T02:00:00-04:00",
-        "forecast": "0.7%",
+        "forecast": "0.6%",
         "previous": "0.9%"
       },
       {
@@ -24979,7 +24979,7 @@ window.STATIC_DASHBOARD_DATA = {
           "currency": "AUD",
           "impact": "High",
           "datetime_raw": "2026-10-14T20:30:00-04:00",
-          "forecast": "20.0K",
+          "forecast": "19.6K",
           "previous": "39.5K"
         }
       ],
