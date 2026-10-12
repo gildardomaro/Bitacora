@@ -174,10 +174,13 @@ function startDashboard() {
               label: function(context) {
                 const idx = context.dataIndex;
                 const item = series[idx];
-                const baseCap = state.monthlyAnalytics ? state.monthlyAnalytics.base_capital : 0;
+                const baseCap = item.deposit_usd || (state.monthlyAnalytics ? state.monthlyAnalytics.base_capital : 0);
+                const commSwap = Number(item.commission_swap_usd || 0);
+                const commStr = commSwap !== 0 ? `-$${Math.abs(commSwap).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD` : '$0.00 USD';
                 return [
-                  ` Rendimiento: ${item.profit_pct >= 0 ? '+' : ''}${item.profit_pct.toFixed(2)}% (s/ Cap. Inicial $${baseCap})`,
+                  ` Rendimiento Neto: ${item.profit_pct >= 0 ? '+' : ''}${item.profit_pct.toFixed(2)}% (s/ Cap. $${Number(baseCap).toLocaleString('en-US')})`,
                   ` Beneficio Neto: ${item.profit_usd >= 0 ? '+' : ''}$${item.profit_usd.toLocaleString('en-US', { minimumFractionDigits: 2 })} USD`,
+                  ` Comisión / Swap Broker: ${commStr}`,
                   ` Operaciones: ${item.total_trades} (${item.wins}W / ${item.losses}L)`,
                   ` Win Rate: ${item.win_rate}%`
                 ];
@@ -480,7 +483,10 @@ function startDashboard() {
     });
 
     if (dom.extractMonthTrades) dom.extractMonthTrades.textContent = tradesToDisplay.length.toString();
-    if (dom.extractMonthCosts) dom.extractMonthCosts.textContent = `$${totalCosts.toFixed(2)} USD`;
+    if (dom.extractMonthCosts) {
+      const costSign = totalCosts < 0 ? '-' : '';
+      dom.extractMonthCosts.textContent = `${costSign}$${Math.abs(totalCosts).toFixed(2)} USD`;
+    }
     if (dom.extractMonthProfit) {
       dom.extractMonthProfit.textContent = `${totalProfit >= 0 ? '+' : ''}$${totalProfit.toFixed(2)} USD`;
       dom.extractMonthProfit.className = totalProfit >= 0 ? 'green' : 'red';
@@ -502,7 +508,8 @@ function startDashboard() {
     reversedTrades.forEach(t => {
       const isWin = t.result === 'WIN' || t.profit >= 0;
       const isBuy = (t.type || 'BUY').toUpperCase() === 'BUY';
-      const costs = (Number(t.commission || 0) + Number(t.swap || 0)).toFixed(2);
+      const costs = Number(t.commission || 0) + Number(t.swap || 0);
+      const costStr = costs !== 0 ? `-$${Math.abs(costs).toFixed(2)}` : '$0.00';
       const priceStr = t.price ? t.price.toFixed(t.symbol && t.symbol.includes('XAU') ? 2 : 5) : '-';
 
       const tr = document.createElement('tr');
@@ -513,7 +520,7 @@ function startDashboard() {
         <td><span class="badge ${isBuy ? 'buy' : 'sell'}">${t.type || 'BUY'}</span></td>
         <td style="font-family:var(--font-mono);">${Number(t.volume || t.lot || 0).toFixed(2)}</td>
         <td style="font-family:var(--font-mono);">${priceStr}</td>
-        <td style="font-family:var(--font-mono); color:var(--text-muted);">$${costs}</td>
+        <td style="font-family:var(--font-mono); color:var(--text-muted);">${costStr}</td>
         <td class="${isWin ? 'green' : 'red'}" style="font-weight:700; font-family:var(--font-mono);">${t.profit >= 0 ? '+' : ''}$${Number(t.profit).toFixed(2)} USD</td>
         <td><span class="badge ${isWin ? 'win' : 'loss'}">${isWin ? 'WIN' : 'LOSS'}</span></td>
       `;

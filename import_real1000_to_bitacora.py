@@ -97,10 +97,10 @@ def extract_trades_from_excel():
         if r <= 204 and month_str == "2026-09":
             month_str = "2026-08"
 
-        profit = float(profit_raw) if profit_raw is not None else 0.0
+        gross_profit = float(profit_raw) if profit_raw is not None else 0.0
         swap = float(swap_raw) if swap_raw is not None else 0.0
         comm = float(comm_raw) if comm_raw is not None else 0.0
-        raw_profit = profit - (swap + comm)
+        net_profit = round(gross_profit + swap + comm, 2)
 
         symbol = str(inst_raw or "GBPUSD").replace("/", "").strip().upper()
         order_type = str(tipo_raw or "BUY").strip().upper()
@@ -147,11 +147,11 @@ def extract_trades_from_excel():
             "price_open": price_in,
             "sl": float(sl_raw) if sl_raw is not None else 0.0,
             "tp": float(tp_raw) if tp_raw is not None else 0.0,
-            "profit": round(profit, 2),
-            "raw_profit": round(raw_profit, 2),
+            "profit": net_profit,
+            "raw_profit": round(gross_profit, 2),
             "commission": round(comm, 2),
             "swap": round(swap, 2),
-            "result": "WIN" if profit >= 0 else "LOSS",
+            "result": "WIN" if net_profit >= 0 else "LOSS",
             "ticket": ticket_num,
             "order": ticket_num,
             "account": "PEPPERSTONE",
