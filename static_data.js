@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-13T15:24:49.652786Z",
+  "generated_at": "2026-10-13T15:29:33.078946Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -11,7 +11,7 @@ window.STATIC_DASHBOARD_DATA = {
     "margin_free": 3295.01,
     "floating": 0.0,
     "positions_count": 0,
-    "dynamic_lot": 0.04,
+    "dynamic_lot": 0.32,
     "next_lot_balance": 3300.0,
     "positions": [],
     "strategy": "smart+IA y MARO"
@@ -7118,6 +7118,30 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": ""
     },
     {
+      "time": "2026-10-11 18:44:48",
+      "date": "2026-10-11",
+      "hour": "18:44:48",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4187.06,
+      "price_open": 4187.85,
+      "profit": -4.25,
+      "raw_profit": -3.95,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200414373,
+      "order": 216455124,
+      "position_id": 216454287,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4187.06]"
+    },
+    {
       "time": "2026-10-11 18:45:48",
       "date": "2026-10-11",
       "hour": "18:45:48",
@@ -7166,6 +7190,30 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": "[sl 4187.14]"
     },
     {
+      "time": "2026-10-11 18:51:49",
+      "date": "2026-10-11",
+      "hour": "18:51:49",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4186.21,
+      "price_open": 4187.65,
+      "profit": 6.9,
+      "raw_profit": 7.2,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200415960,
+      "order": 216456257,
+      "position_id": 216455653,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[tp 4186.21]"
+    },
+    {
       "time": "2026-10-11 19:01:47",
       "date": "2026-10-11",
       "hour": "19:01:47",
@@ -7190,6 +7238,54 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": "smart+IA Sniper"
     },
     {
+      "time": "2026-10-11 19:05:06",
+      "date": "2026-10-11",
+      "hour": "19:05:06",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4186.35,
+      "price_open": 4186.05,
+      "profit": 1.2,
+      "raw_profit": 1.5,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200419512,
+      "order": 216460383,
+      "position_id": 216458678,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4186.35]"
+    },
+    {
+      "time": "2026-10-11 19:37:46",
+      "date": "2026-10-11",
+      "hour": "19:37:46",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4198.08,
+      "price_open": 4197.96,
+      "profit": 0.3,
+      "raw_profit": 0.6,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200431296,
+      "order": 216472401,
+      "position_id": 216472074,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4198.26]"
+    },
+    {
       "time": "2026-10-11 19:38:19",
       "date": "2026-10-11",
       "hour": "19:38:19",
@@ -7212,6 +7308,54 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[sl 4196.90]"
+    },
+    {
+      "time": "2026-10-11 19:40:39",
+      "date": "2026-10-11",
+      "hour": "19:40:39",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4198.37,
+      "price_open": 4197.61,
+      "profit": -4.1,
+      "raw_profit": -3.8,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200432251,
+      "order": 216473394,
+      "position_id": 216473353,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4198.37]"
+    },
+    {
+      "time": "2026-10-11 19:52:22",
+      "date": "2026-10-11",
+      "hour": "19:52:22",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4191.76,
+      "price_open": 4193.05,
+      "profit": 6.15,
+      "raw_profit": 6.45,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200436972,
+      "order": 216478306,
+      "position_id": 216477933,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[tp 4191.76]"
     },
     {
       "time": "2026-10-11 20:21:29",
@@ -7502,6 +7646,30 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": ""
     },
     {
+      "time": "2026-10-12 18:45:29",
+      "date": "2026-10-12",
+      "hour": "18:45:29",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.01,
+      "volume": 0.01,
+      "price": 4171.34,
+      "price_open": 4172.29,
+      "profit": -1.01,
+      "raw_profit": -0.95,
+      "commission": -0.06,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200888308,
+      "order": 216956584,
+      "position_id": 216956266,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4171.34]"
+    },
+    {
       "time": "2026-10-12 18:45:32",
       "date": "2026-10-12",
       "hour": "18:45:32",
@@ -7524,6 +7692,30 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[sl 4171.12]"
+    },
+    {
+      "time": "2026-10-12 19:06:15",
+      "date": "2026-10-12",
+      "hour": "19:06:15",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4168.66,
+      "price_open": 4168.96,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200894300,
+      "order": 216962723,
+      "position_id": 216962080,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4168.66]"
     },
     {
       "time": "2026-10-12 19:27:06",
@@ -7550,6 +7742,126 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": "[sl 4172.56]"
     },
     {
+      "time": "2026-10-12 19:27:07",
+      "date": "2026-10-12",
+      "hour": "19:27:07",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4172.51,
+      "price_open": 4173.96,
+      "profit": -3.02,
+      "raw_profit": -2.9,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200901300,
+      "order": 216969816,
+      "position_id": 216969205,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4172.73]"
+    },
+    {
+      "time": "2026-10-12 19:34:06",
+      "date": "2026-10-12",
+      "hour": "19:34:06",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4173.84,
+      "price_open": 4173.54,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200904364,
+      "order": 216972976,
+      "position_id": 216972325,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4173.84]"
+    },
+    {
+      "time": "2026-10-12 19:50:51",
+      "date": "2026-10-12",
+      "hour": "19:50:51",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4174.08,
+      "price_open": 4173.3,
+      "profit": -1.68,
+      "raw_profit": -1.56,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200907446,
+      "order": 216976154,
+      "position_id": 216975535,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4174.08]"
+    },
+    {
+      "time": "2026-10-12 20:15:34",
+      "date": "2026-10-12",
+      "hour": "20:15:34",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4164.6,
+      "price_open": 4162.83,
+      "profit": -3.66,
+      "raw_profit": -3.54,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200925224,
+      "order": 216993968,
+      "position_id": 216992743,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4164.14]"
+    },
+    {
+      "time": "2026-10-12 20:23:33",
+      "date": "2026-10-12",
+      "hour": "20:23:33",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4167.55,
+      "price_open": 4167.25,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200933997,
+      "order": 217002754,
+      "position_id": 217001987,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4167.55]"
+    },
+    {
       "time": "2026-10-12 20:35:26",
       "date": "2026-10-12",
       "hour": "20:35:26",
@@ -7574,6 +7886,126 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": "[sl 4164.87]"
     },
     {
+      "time": "2026-10-12 20:35:26",
+      "date": "2026-10-12",
+      "hour": "20:35:26",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4164.89,
+      "price_open": 4162.51,
+      "profit": -4.88,
+      "raw_profit": -4.76,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200941250,
+      "order": 217010245,
+      "position_id": 217009246,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4164.70]"
+    },
+    {
+      "time": "2026-10-12 20:46:10",
+      "date": "2026-10-12",
+      "hour": "20:46:10",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4162.87,
+      "price_open": 4162.28,
+      "profit": -1.3,
+      "raw_profit": -1.18,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200946306,
+      "order": 217015474,
+      "position_id": 217015424,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4162.87]"
+    },
+    {
+      "time": "2026-10-12 20:59:53",
+      "date": "2026-10-12",
+      "hour": "20:59:53",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4157.02,
+      "price_open": 4157.32,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200955391,
+      "order": 217024644,
+      "position_id": 217024415,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4157.02]"
+    },
+    {
+      "time": "2026-10-12 21:03:24",
+      "date": "2026-10-12",
+      "hour": "21:03:24",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4160.57,
+      "price_open": 4159.22,
+      "profit": 2.58,
+      "raw_profit": 2.7,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200961280,
+      "order": 217031076,
+      "position_id": 217029568,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[tp 4160.57]"
+    },
+    {
+      "time": "2026-10-12 21:10:31",
+      "date": "2026-10-12",
+      "hour": "21:10:31",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4162.48,
+      "price_open": 4162.18,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200966923,
+      "order": 217037013,
+      "position_id": 217036838,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4162.48]"
+    },
+    {
       "time": "2026-10-12 21:51:57",
       "date": "2026-10-12",
       "hour": "21:51:57",
@@ -7596,6 +8028,30 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[sl 4155.11]"
+    },
+    {
+      "time": "2026-10-13 01:50:13",
+      "date": "2026-10-13",
+      "hour": "01:50:13",
+      "month": "2026-10",
+      "symbol": "GBPUSD+",
+      "type": "BUY",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.32232,
+      "price_open": 1.32074,
+      "profit": 4.43,
+      "raw_profit": 4.74,
+      "commission": -0.18,
+      "swap": -0.13,
+      "result": "WIN",
+      "ticket": 201098058,
+      "order": 217173545,
+      "position_id": 216885509,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[tp 1.32232]"
     },
     {
       "time": "2026-10-13 08:56:45",
@@ -14772,6 +15228,30 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": ""
     },
     {
+      "time": "2026-10-11 18:44:48",
+      "date": "2026-10-11",
+      "hour": "18:44:48",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4187.06,
+      "price_open": 4187.85,
+      "profit": -4.25,
+      "raw_profit": -3.95,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200414373,
+      "order": 216455124,
+      "position_id": 216454287,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4187.06]"
+    },
+    {
       "time": "2026-10-11 18:45:48",
       "date": "2026-10-11",
       "hour": "18:45:48",
@@ -14820,6 +15300,30 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": "[sl 4187.14]"
     },
     {
+      "time": "2026-10-11 18:51:49",
+      "date": "2026-10-11",
+      "hour": "18:51:49",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4186.21,
+      "price_open": 4187.65,
+      "profit": 6.9,
+      "raw_profit": 7.2,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200415960,
+      "order": 216456257,
+      "position_id": 216455653,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[tp 4186.21]"
+    },
+    {
       "time": "2026-10-11 19:01:47",
       "date": "2026-10-11",
       "hour": "19:01:47",
@@ -14844,6 +15348,54 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": "smart+IA Sniper"
     },
     {
+      "time": "2026-10-11 19:05:06",
+      "date": "2026-10-11",
+      "hour": "19:05:06",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4186.35,
+      "price_open": 4186.05,
+      "profit": 1.2,
+      "raw_profit": 1.5,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200419512,
+      "order": 216460383,
+      "position_id": 216458678,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4186.35]"
+    },
+    {
+      "time": "2026-10-11 19:37:46",
+      "date": "2026-10-11",
+      "hour": "19:37:46",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4198.08,
+      "price_open": 4197.96,
+      "profit": 0.3,
+      "raw_profit": 0.6,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200431296,
+      "order": 216472401,
+      "position_id": 216472074,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4198.26]"
+    },
+    {
       "time": "2026-10-11 19:38:19",
       "date": "2026-10-11",
       "hour": "19:38:19",
@@ -14866,6 +15418,54 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[sl 4196.90]"
+    },
+    {
+      "time": "2026-10-11 19:40:39",
+      "date": "2026-10-11",
+      "hour": "19:40:39",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4198.37,
+      "price_open": 4197.61,
+      "profit": -4.1,
+      "raw_profit": -3.8,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200432251,
+      "order": 216473394,
+      "position_id": 216473353,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4198.37]"
+    },
+    {
+      "time": "2026-10-11 19:52:22",
+      "date": "2026-10-11",
+      "hour": "19:52:22",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.05,
+      "volume": 0.05,
+      "price": 4191.76,
+      "price_open": 4193.05,
+      "profit": 6.15,
+      "raw_profit": 6.45,
+      "commission": -0.3,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200436972,
+      "order": 216478306,
+      "position_id": 216477933,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[tp 4191.76]"
     },
     {
       "time": "2026-10-11 20:21:29",
@@ -15156,6 +15756,30 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": ""
     },
     {
+      "time": "2026-10-12 18:45:29",
+      "date": "2026-10-12",
+      "hour": "18:45:29",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.01,
+      "volume": 0.01,
+      "price": 4171.34,
+      "price_open": 4172.29,
+      "profit": -1.01,
+      "raw_profit": -0.95,
+      "commission": -0.06,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200888308,
+      "order": 216956584,
+      "position_id": 216956266,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4171.34]"
+    },
+    {
       "time": "2026-10-12 18:45:32",
       "date": "2026-10-12",
       "hour": "18:45:32",
@@ -15178,6 +15802,30 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[sl 4171.12]"
+    },
+    {
+      "time": "2026-10-12 19:06:15",
+      "date": "2026-10-12",
+      "hour": "19:06:15",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4168.66,
+      "price_open": 4168.96,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200894300,
+      "order": 216962723,
+      "position_id": 216962080,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4168.66]"
     },
     {
       "time": "2026-10-12 19:27:06",
@@ -15204,6 +15852,126 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": "[sl 4172.56]"
     },
     {
+      "time": "2026-10-12 19:27:07",
+      "date": "2026-10-12",
+      "hour": "19:27:07",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4172.51,
+      "price_open": 4173.96,
+      "profit": -3.02,
+      "raw_profit": -2.9,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200901300,
+      "order": 216969816,
+      "position_id": 216969205,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4172.73]"
+    },
+    {
+      "time": "2026-10-12 19:34:06",
+      "date": "2026-10-12",
+      "hour": "19:34:06",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4173.84,
+      "price_open": 4173.54,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200904364,
+      "order": 216972976,
+      "position_id": 216972325,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4173.84]"
+    },
+    {
+      "time": "2026-10-12 19:50:51",
+      "date": "2026-10-12",
+      "hour": "19:50:51",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4174.08,
+      "price_open": 4173.3,
+      "profit": -1.68,
+      "raw_profit": -1.56,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200907446,
+      "order": 216976154,
+      "position_id": 216975535,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4174.08]"
+    },
+    {
+      "time": "2026-10-12 20:15:34",
+      "date": "2026-10-12",
+      "hour": "20:15:34",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4164.6,
+      "price_open": 4162.83,
+      "profit": -3.66,
+      "raw_profit": -3.54,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200925224,
+      "order": 216993968,
+      "position_id": 216992743,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4164.14]"
+    },
+    {
+      "time": "2026-10-12 20:23:33",
+      "date": "2026-10-12",
+      "hour": "20:23:33",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4167.55,
+      "price_open": 4167.25,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200933997,
+      "order": 217002754,
+      "position_id": 217001987,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4167.55]"
+    },
+    {
       "time": "2026-10-12 20:35:26",
       "date": "2026-10-12",
       "hour": "20:35:26",
@@ -15228,6 +15996,126 @@ window.STATIC_DASHBOARD_DATA = {
       "comment": "[sl 4164.87]"
     },
     {
+      "time": "2026-10-12 20:35:26",
+      "date": "2026-10-12",
+      "hour": "20:35:26",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4164.89,
+      "price_open": 4162.51,
+      "profit": -4.88,
+      "raw_profit": -4.76,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200941250,
+      "order": 217010245,
+      "position_id": 217009246,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4164.70]"
+    },
+    {
+      "time": "2026-10-12 20:46:10",
+      "date": "2026-10-12",
+      "hour": "20:46:10",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4162.87,
+      "price_open": 4162.28,
+      "profit": -1.3,
+      "raw_profit": -1.18,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 200946306,
+      "order": 217015474,
+      "position_id": 217015424,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4162.87]"
+    },
+    {
+      "time": "2026-10-12 20:59:53",
+      "date": "2026-10-12",
+      "hour": "20:59:53",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "SELL",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4157.02,
+      "price_open": 4157.32,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200955391,
+      "order": 217024644,
+      "position_id": 217024415,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4157.02]"
+    },
+    {
+      "time": "2026-10-12 21:03:24",
+      "date": "2026-10-12",
+      "hour": "21:03:24",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4160.57,
+      "price_open": 4159.22,
+      "profit": 2.58,
+      "raw_profit": 2.7,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200961280,
+      "order": 217031076,
+      "position_id": 217029568,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[tp 4160.57]"
+    },
+    {
+      "time": "2026-10-12 21:10:31",
+      "date": "2026-10-12",
+      "hour": "21:10:31",
+      "month": "2026-10",
+      "symbol": "XAUUSD+",
+      "type": "BUY",
+      "lot": 0.02,
+      "volume": 0.02,
+      "price": 4162.48,
+      "price_open": 4162.18,
+      "profit": 0.48,
+      "raw_profit": 0.6,
+      "commission": -0.12,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 200966923,
+      "order": 217037013,
+      "position_id": 217036838,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[sl 4162.48]"
+    },
+    {
       "time": "2026-10-12 21:51:57",
       "date": "2026-10-12",
       "hour": "21:51:57",
@@ -15250,6 +16138,30 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "PEPPERSTONE",
       "strategy": "smart+IA y MARO",
       "comment": "[sl 4155.11]"
+    },
+    {
+      "time": "2026-10-13 01:50:13",
+      "date": "2026-10-13",
+      "hour": "01:50:13",
+      "month": "2026-10",
+      "symbol": "GBPUSD+",
+      "type": "BUY",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.32232,
+      "price_open": 1.32074,
+      "profit": 4.43,
+      "raw_profit": 4.74,
+      "commission": -0.18,
+      "swap": -0.13,
+      "result": "WIN",
+      "ticket": 201098058,
+      "order": 217173545,
+      "position_id": 216885509,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "[tp 1.32232]"
     },
     {
       "time": "2026-10-13 08:56:45",
@@ -23088,9 +24000,522 @@ window.STATIC_DASHBOARD_DATA = {
           }
         ]
       }
+    },
+    "HECTOR": {
+      "terminal_key": "HECTOR",
+      "name": "Héctor (Vantage 35126659)",
+      "symbol": "GBPUSD",
+      "base_capital": 250.0,
+      "total_deposit_usd": 251.98,
+      "deposits_by_month": {
+        "2026-10": 251.98
+      },
+      "total_wins": 11,
+      "total_losses": 8,
+      "total_trades": 19,
+      "win_rate": 57.9,
+      "total_profit_usd": 0.06,
+      "total_return_pct": 0.02,
+      "monthly_series": [
+        {
+          "month": "2026-10",
+          "profit_usd": 0.06,
+          "profit_pct": 0.02,
+          "deposit_usd": 251.98,
+          "wins": 11,
+          "losses": 8,
+          "total_trades": 19,
+          "win_rate": 57.9,
+          "commission_swap_usd": -3.49
+        }
+      ],
+      "months_available": [
+        "2026-10"
+      ],
+      "current_month": "2026-10",
+      "all_trades_by_month": {
+        "2026-10": [
+          {
+            "time": "2026-10-11 18:44:48",
+            "date": "2026-10-11",
+            "hour": "18:44:48",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "BUY",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 4187.06,
+            "price_open": 4187.85,
+            "profit": -4.25,
+            "raw_profit": -3.95,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200414373,
+            "order": 216455124,
+            "position_id": 216454287,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4187.06]"
+          },
+          {
+            "time": "2026-10-11 18:51:49",
+            "date": "2026-10-11",
+            "hour": "18:51:49",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 4186.21,
+            "price_open": 4187.65,
+            "profit": 6.9,
+            "raw_profit": 7.2,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200415960,
+            "order": 216456257,
+            "position_id": 216455653,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[tp 4186.21]"
+          },
+          {
+            "time": "2026-10-11 19:05:06",
+            "date": "2026-10-11",
+            "hour": "19:05:06",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "BUY",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 4186.35,
+            "price_open": 4186.05,
+            "profit": 1.2,
+            "raw_profit": 1.5,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200419512,
+            "order": 216460383,
+            "position_id": 216458678,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4186.35]"
+          },
+          {
+            "time": "2026-10-11 19:37:46",
+            "date": "2026-10-11",
+            "hour": "19:37:46",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "BUY",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 4198.08,
+            "price_open": 4197.96,
+            "profit": 0.3,
+            "raw_profit": 0.6,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200431296,
+            "order": 216472401,
+            "position_id": 216472074,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4198.26]"
+          },
+          {
+            "time": "2026-10-11 19:40:39",
+            "date": "2026-10-11",
+            "hour": "19:40:39",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 4198.37,
+            "price_open": 4197.61,
+            "profit": -4.1,
+            "raw_profit": -3.8,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200432251,
+            "order": 216473394,
+            "position_id": 216473353,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4198.37]"
+          },
+          {
+            "time": "2026-10-11 19:52:22",
+            "date": "2026-10-11",
+            "hour": "19:52:22",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.05,
+            "volume": 0.05,
+            "price": 4191.76,
+            "price_open": 4193.05,
+            "profit": 6.15,
+            "raw_profit": 6.45,
+            "commission": -0.3,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200436972,
+            "order": 216478306,
+            "position_id": 216477933,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[tp 4191.76]"
+          },
+          {
+            "time": "2026-10-13 01:50:13",
+            "date": "2026-10-13",
+            "hour": "01:50:13",
+            "month": "2026-10",
+            "symbol": "GBPUSD+",
+            "type": "BUY",
+            "lot": 0.03,
+            "volume": 0.03,
+            "price": 1.32232,
+            "price_open": 1.32074,
+            "profit": 4.43,
+            "raw_profit": 4.74,
+            "commission": -0.18,
+            "swap": -0.13,
+            "result": "WIN",
+            "ticket": 201098058,
+            "order": 217173545,
+            "position_id": 216885509,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[tp 1.32232]"
+          },
+          {
+            "time": "2026-10-12 18:45:29",
+            "date": "2026-10-12",
+            "hour": "18:45:29",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "BUY",
+            "lot": 0.01,
+            "volume": 0.01,
+            "price": 4171.34,
+            "price_open": 4172.29,
+            "profit": -1.01,
+            "raw_profit": -0.95,
+            "commission": -0.06,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200888308,
+            "order": 216956584,
+            "position_id": 216956266,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4171.34]"
+          },
+          {
+            "time": "2026-10-12 19:06:15",
+            "date": "2026-10-12",
+            "hour": "19:06:15",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4168.66,
+            "price_open": 4168.96,
+            "profit": 0.48,
+            "raw_profit": 0.6,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200894300,
+            "order": 216962723,
+            "position_id": 216962080,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4168.66]"
+          },
+          {
+            "time": "2026-10-12 19:27:07",
+            "date": "2026-10-12",
+            "hour": "19:27:07",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "BUY",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4172.51,
+            "price_open": 4173.96,
+            "profit": -3.02,
+            "raw_profit": -2.9,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200901300,
+            "order": 216969816,
+            "position_id": 216969205,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4172.73]"
+          },
+          {
+            "time": "2026-10-12 19:34:06",
+            "date": "2026-10-12",
+            "hour": "19:34:06",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "BUY",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4173.84,
+            "price_open": 4173.54,
+            "profit": 0.48,
+            "raw_profit": 0.6,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200904364,
+            "order": 216972976,
+            "position_id": 216972325,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4173.84]"
+          },
+          {
+            "time": "2026-10-12 19:50:51",
+            "date": "2026-10-12",
+            "hour": "19:50:51",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4174.08,
+            "price_open": 4173.3,
+            "profit": -1.68,
+            "raw_profit": -1.56,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200907446,
+            "order": 216976154,
+            "position_id": 216975535,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4174.08]"
+          },
+          {
+            "time": "2026-10-12 20:15:34",
+            "date": "2026-10-12",
+            "hour": "20:15:34",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4164.6,
+            "price_open": 4162.83,
+            "profit": -3.66,
+            "raw_profit": -3.54,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200925224,
+            "order": 216993968,
+            "position_id": 216992743,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4164.14]"
+          },
+          {
+            "time": "2026-10-12 20:23:33",
+            "date": "2026-10-12",
+            "hour": "20:23:33",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "BUY",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4167.55,
+            "price_open": 4167.25,
+            "profit": 0.48,
+            "raw_profit": 0.6,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200933997,
+            "order": 217002754,
+            "position_id": 217001987,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4167.55]"
+          },
+          {
+            "time": "2026-10-12 20:35:26",
+            "date": "2026-10-12",
+            "hour": "20:35:26",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4164.89,
+            "price_open": 4162.51,
+            "profit": -4.88,
+            "raw_profit": -4.76,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200941250,
+            "order": 217010245,
+            "position_id": 217009246,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4164.70]"
+          },
+          {
+            "time": "2026-10-12 20:46:10",
+            "date": "2026-10-12",
+            "hour": "20:46:10",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4162.87,
+            "price_open": 4162.28,
+            "profit": -1.3,
+            "raw_profit": -1.18,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 200946306,
+            "order": 217015474,
+            "position_id": 217015424,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4162.87]"
+          },
+          {
+            "time": "2026-10-12 20:59:53",
+            "date": "2026-10-12",
+            "hour": "20:59:53",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "SELL",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4157.02,
+            "price_open": 4157.32,
+            "profit": 0.48,
+            "raw_profit": 0.6,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200955391,
+            "order": 217024644,
+            "position_id": 217024415,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4157.02]"
+          },
+          {
+            "time": "2026-10-12 21:03:24",
+            "date": "2026-10-12",
+            "hour": "21:03:24",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "BUY",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4160.57,
+            "price_open": 4159.22,
+            "profit": 2.58,
+            "raw_profit": 2.7,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200961280,
+            "order": 217031076,
+            "position_id": 217029568,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[tp 4160.57]"
+          },
+          {
+            "time": "2026-10-12 21:10:31",
+            "date": "2026-10-12",
+            "hour": "21:10:31",
+            "month": "2026-10",
+            "symbol": "XAUUSD+",
+            "type": "BUY",
+            "lot": 0.02,
+            "volume": 0.02,
+            "price": 4162.48,
+            "price_open": 4162.18,
+            "profit": 0.48,
+            "raw_profit": 0.6,
+            "commission": -0.12,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 200966923,
+            "order": 217037013,
+            "position_id": 217036838,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "[sl 4162.48]"
+          }
+        ]
+      }
+    },
+    "TITO": {
+      "terminal_key": "TITO",
+      "name": "Tito (Pepperstone-03 51580714)",
+      "symbol": "XAUUSD",
+      "base_capital": 1000.0,
+      "total_deposit_usd": 1000.0,
+      "deposits_by_month": {
+        "2026-10": 1000.0
+      },
+      "total_wins": 0,
+      "total_losses": 0,
+      "total_trades": 0,
+      "win_rate": 0.0,
+      "total_profit_usd": 0,
+      "total_return_pct": 0.0,
+      "monthly_series": [],
+      "months_available": [],
+      "current_month": "2026-10",
+      "all_trades_by_month": {}
     }
   },
-  "last_sync": "2026-10-13 08:24:49",
+  "last_sync": "2026-10-13 08:29:32",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -24346,656 +25771,111 @@ window.STATIC_DASHBOARD_DATA = {
       ]
     },
     "hector": {
-      "initial_balance": 200.0,
-      "final_balance": 287.95,
-      "total_trades": 158,
-      "wins": 104,
-      "losses": 54,
-      "win_rate": 65.8,
-      "profit_factor": "1.81",
+      "initial_balance": 251.98,
+      "final_balance": 252.04,
+      "total_trades": 19,
+      "win_rate": 57.9,
+      "profit_factor": "1.0",
       "curve": [
         {
-          "time": "2026-06-01",
-          "balance": 200.0
+          "time": "2026-10-05 19:28:34",
+          "balance": 251.98
         },
         {
-          "time": "2026-06-01 20:04:33",
-          "balance": 200.05
+          "time": "2026-10-11 18:44:48",
+          "balance": 247.73
         },
         {
-          "time": "2026-06-01 20:13:02",
-          "balance": 200.02
+          "time": "2026-10-11 18:51:49",
+          "balance": 254.63
         },
         {
-          "time": "2026-06-01 21:01:49",
-          "balance": 201.69
+          "time": "2026-10-11 19:05:06",
+          "balance": 255.83
         },
         {
-          "time": "2026-06-02 17:53:22",
-          "balance": 201.77
+          "time": "2026-10-11 19:37:46",
+          "balance": 256.13
         },
         {
-          "time": "2026-06-02 19:00:25",
-          "balance": 203.83
+          "time": "2026-10-11 19:40:39",
+          "balance": 252.03
         },
         {
-          "time": "2026-06-03 17:57:09",
-          "balance": 204.87
+          "time": "2026-10-11 19:52:22",
+          "balance": 258.18
         },
         {
-          "time": "2026-06-04 17:54:46",
-          "balance": 204.57
+          "time": "2026-10-12 18:45:29",
+          "balance": 257.17
         },
         {
-          "time": "2026-06-04 18:26:32",
-          "balance": 205.33
+          "time": "2026-10-12 19:06:15",
+          "balance": 257.65
         },
         {
-          "time": "2026-06-04 18:45:46",
-          "balance": 206.85
+          "time": "2026-10-12 19:27:07",
+          "balance": 254.63
         },
         {
-          "time": "2026-06-08 17:45:08",
-          "balance": 206.51
+          "time": "2026-10-12 19:34:06",
+          "balance": 255.11
         },
         {
-          "time": "2026-06-08 22:00:27",
-          "balance": 206.99
+          "time": "2026-10-12 19:50:51",
+          "balance": 253.43
         },
         {
-          "time": "2026-06-09 02:43:03",
-          "balance": 208.21
+          "time": "2026-10-12 20:15:34",
+          "balance": 249.77
         },
         {
-          "time": "2026-06-09 03:15:39",
-          "balance": 210.05
+          "time": "2026-10-12 20:23:33",
+          "balance": 250.25
         },
         {
-          "time": "2026-06-09 15:54:40",
-          "balance": 212.65
+          "time": "2026-10-12 20:35:26",
+          "balance": 245.37
         },
         {
-          "time": "2026-06-10 06:41:47",
-          "balance": 212.38
+          "time": "2026-10-12 20:46:10",
+          "balance": 244.07
         },
         {
-          "time": "2026-06-10 16:10:25",
-          "balance": 214.38
+          "time": "2026-10-12 20:59:53",
+          "balance": 244.55
         },
         {
-          "time": "2026-06-11 04:40:08",
-          "balance": 216.2
+          "time": "2026-10-12 21:03:24",
+          "balance": 247.13
         },
         {
-          "time": "2026-06-11 16:53:36",
-          "balance": 215.64
+          "time": "2026-10-12 21:10:31",
+          "balance": 247.61
         },
         {
-          "time": "2026-06-11 17:02:40",
-          "balance": 216.62
-        },
-        {
-          "time": "2026-06-11 17:09:14",
-          "balance": 218.66
-        },
-        {
-          "time": "2026-06-11 17:18:28",
-          "balance": 221.82
-        },
-        {
-          "time": "2026-06-11 17:32:37",
-          "balance": 225.86
-        },
-        {
-          "time": "2026-06-11 17:50:39",
-          "balance": 231.04
-        },
-        {
-          "time": "2026-06-15 03:49:50",
-          "balance": 232.9
-        },
-        {
-          "time": "2026-06-15 16:49:37",
-          "balance": 233.44
-        },
-        {
-          "time": "2026-06-15 17:51:08",
-          "balance": 235.09
-        },
-        {
-          "time": "2026-06-15 20:25:29",
-          "balance": 234.93
-        },
-        {
-          "time": "2026-06-15 20:26:46",
-          "balance": 234.68
-        },
-        {
-          "time": "2026-06-15 20:42:47",
-          "balance": 234.85
-        },
-        {
-          "time": "2026-06-16 18:04:02",
-          "balance": 235.69
-        },
-        {
-          "time": "2026-06-16 19:27:01",
-          "balance": 236.65
-        },
-        {
-          "time": "2026-06-18 17:44:45",
-          "balance": 239.17
-        },
-        {
-          "time": "2026-06-18 20:17:56",
-          "balance": 238.17
-        },
-        {
-          "time": "2026-06-19 17:52:42",
-          "balance": 238.77
-        },
-        {
-          "time": "2026-06-22 20:37:31",
-          "balance": 240.17
-        },
-        {
-          "time": "2026-06-29 14:54:02",
-          "balance": 237.07
-        },
-        {
-          "time": "2026-06-29 18:05:24",
-          "balance": 237.41
-        },
-        {
-          "time": "2026-06-29 19:09:35",
-          "balance": 239.75
-        },
-        {
-          "time": "2026-06-29 23:04:04",
-          "balance": 242.93
-        },
-        {
-          "time": "2026-07-02 05:03:55",
-          "balance": 243.13
-        },
-        {
-          "time": "2026-07-02 05:22:46",
-          "balance": 244.87
-        },
-        {
-          "time": "2026-07-02 17:35:17",
-          "balance": 245.99
-        },
-        {
-          "time": "2026-07-03 19:21:52",
-          "balance": 245.69
-        },
-        {
-          "time": "2026-07-06 17:44:03",
-          "balance": 236.41
-        },
-        {
-          "time": "2026-07-06 18:00:03",
-          "balance": 228.59
-        },
-        {
-          "time": "2026-07-06 18:55:27",
-          "balance": 222.63
-        },
-        {
-          "time": "2026-07-06 19:25:35",
-          "balance": 218.17
-        },
-        {
-          "time": "2026-07-06 20:00:26",
-          "balance": 214.41
-        },
-        {
-          "time": "2026-07-06 20:27:31",
-          "balance": 211.49
-        },
-        {
-          "time": "2026-07-06 21:58:31",
-          "balance": 211.62
-        },
-        {
-          "time": "2026-07-08 18:00:15",
-          "balance": 213.76
-        },
-        {
-          "time": "2026-07-09 17:43:58",
-          "balance": 209.94
-        },
-        {
-          "time": "2026-07-09 18:58:09",
-          "balance": 209.32
-        },
-        {
-          "time": "2026-07-09 19:18:09",
-          "balance": 207.9
-        },
-        {
-          "time": "2026-07-13 22:10:07",
-          "balance": 207.94
-        },
-        {
-          "time": "2026-07-14 17:52:39",
-          "balance": 207.96
-        },
-        {
-          "time": "2026-07-14 18:06:48",
-          "balance": 203.64
-        },
-        {
-          "time": "2026-07-14 18:30:13",
-          "balance": 199.84
-        },
-        {
-          "time": "2026-07-14 19:06:39",
-          "balance": 201.22
-        },
-        {
-          "time": "2026-07-15 21:57:14",
-          "balance": 201.94
-        },
-        {
-          "time": "2026-07-15 23:14:12",
-          "balance": 205.13
-        },
-        {
-          "time": "2026-07-16 08:28:12",
-          "balance": 212.07
-        },
-        {
-          "time": "2026-07-16 17:56:25",
-          "balance": 212.63
-        },
-        {
-          "time": "2026-07-17 03:33:55",
-          "balance": 211.59
-        },
-        {
-          "time": "2026-07-17 18:11:14",
-          "balance": 212.65
-        },
-        {
-          "time": "2026-07-20 16:24:38",
-          "balance": 210.19
-        },
-        {
-          "time": "2026-07-21 18:00:35",
-          "balance": 212.31
-        },
-        {
-          "time": "2026-07-22 06:21:28",
-          "balance": 210.21
-        },
-        {
-          "time": "2026-07-22 17:55:34",
-          "balance": 208.89
-        },
-        {
-          "time": "2026-07-22 18:40:27",
-          "balance": 208.29
-        },
-        {
-          "time": "2026-07-22 19:25:08",
-          "balance": 208.31
-        },
-        {
-          "time": "2026-07-23 06:06:36",
-          "balance": 208.43
-        },
-        {
-          "time": "2026-07-23 17:40:09",
-          "balance": 206.63
-        },
-        {
-          "time": "2026-07-23 17:42:38",
-          "balance": 205.83
-        },
-        {
-          "time": "2026-07-23 17:45:25",
-          "balance": 205.49
-        },
-        {
-          "time": "2026-07-23 17:55:05",
-          "balance": 205.75
-        },
-        {
-          "time": "2026-07-23 18:31:45",
-          "balance": 213.4
-        },
-        {
-          "time": "2026-07-27 17:47:50",
-          "balance": 217.4
-        },
-        {
-          "time": "2026-07-29 16:48:19",
-          "balance": 219.98
-        },
-        {
-          "time": "2026-07-31 00:00:00",
-          "balance": 216.9
-        },
-        {
-          "time": "2026-07-31 00:00:00",
-          "balance": 214.98
-        },
-        {
-          "time": "2026-08-03 18:10:44",
-          "balance": 215.18
-        },
-        {
-          "time": "2026-08-03 20:58:25",
-          "balance": 217.14
-        },
-        {
-          "time": "2026-08-04 19:58:05",
-          "balance": 215.14
-        },
-        {
-          "time": "2026-08-04 22:15:01",
-          "balance": 213.9
-        },
-        {
-          "time": "2026-08-06 18:00:22",
-          "balance": 215.72
-        },
-        {
-          "time": "2026-08-07 18:05:40",
-          "balance": 217.84
-        },
-        {
-          "time": "2026-08-10 16:25:01",
-          "balance": 220.04
-        },
-        {
-          "time": "2026-08-11 01:50:46",
-          "balance": 219.74
-        },
-        {
-          "time": "2026-08-11 05:57:16",
-          "balance": 220.38
-        },
-        {
-          "time": "2026-08-11 16:00:11",
-          "balance": 222.16
-        },
-        {
-          "time": "2026-08-12 15:48:40",
-          "balance": 221.74
-        },
-        {
-          "time": "2026-08-12 16:16:01",
-          "balance": 222.2
-        },
-        {
-          "time": "2026-08-12 17:22:20",
-          "balance": 219.0
-        },
-        {
-          "time": "2026-08-13 07:36:12",
-          "balance": 221.4
-        },
-        {
-          "time": "2026-08-14 18:40:00",
-          "balance": 223.42
-        },
-        {
-          "time": "2026-08-18 03:05:06",
-          "balance": 221.64
-        },
-        {
-          "time": "2026-08-18 03:33:13",
-          "balance": 221.42
-        },
-        {
-          "time": "2026-08-18 17:05:17",
-          "balance": 222.72
-        },
-        {
-          "time": "2026-08-19 20:20:37",
-          "balance": 223.5
-        },
-        {
-          "time": "2026-08-20 02:00:13",
-          "balance": 223.76
-        },
-        {
-          "time": "2026-08-20 16:30:01",
-          "balance": 225.34
-        },
-        {
-          "time": "2026-08-21 22:19:42",
-          "balance": 225.66
-        },
-        {
-          "time": "2026-08-24 17:55:01",
-          "balance": 226.68
-        },
-        {
-          "time": "2026-08-25 17:31:49",
-          "balance": 223.7
-        },
-        {
-          "time": "2026-08-25 19:10:01",
-          "balance": 221.66
-        },
-        {
-          "time": "2026-08-25 20:42:00",
-          "balance": 220.64
-        },
-        {
-          "time": "2026-08-25 21:12:02",
-          "balance": 220.48
-        },
-        {
-          "time": "2026-08-25 22:15:07",
-          "balance": 220.74
-        },
-        {
-          "time": "2026-08-25 22:19:56",
-          "balance": 221.6
-        },
-        {
-          "time": "2026-08-25 23:08:49",
-          "balance": 223.08
-        },
-        {
-          "time": "2026-08-26 17:33:54",
-          "balance": 224.6
-        },
-        {
-          "time": "2026-08-27 17:44:05",
-          "balance": 224.64
-        },
-        {
-          "time": "2026-08-27 18:00:00",
-          "balance": 226.36
-        },
-        {
-          "time": "2026-08-31 00:00:00",
-          "balance": 227.77
-        },
-        {
-          "time": "2026-09-01 00:00:00",
-          "balance": 229.79
-        },
-        {
-          "time": "2026-09-01 19:56:27",
-          "balance": 229.94
-        },
-        {
-          "time": "2026-09-01 20:19:46",
-          "balance": 232.09
-        },
-        {
-          "time": "2026-09-02 17:56:44",
-          "balance": 229.23
-        },
-        {
-          "time": "2026-09-02 20:12:05",
-          "balance": 228.51
-        },
-        {
-          "time": "2026-09-02 20:20:43",
-          "balance": 228.77
-        },
-        {
-          "time": "2026-09-02 22:48:14",
-          "balance": 229.41
-        },
-        {
-          "time": "2026-09-03 17:23:05",
-          "balance": 226.39
-        },
-        {
-          "time": "2026-09-03 19:53:57",
-          "balance": 225.71
-        },
-        {
-          "time": "2026-09-03 19:54:35",
-          "balance": 226.71
-        },
-        {
-          "time": "2026-09-03 19:56:24",
-          "balance": 227.85
-        },
-        {
-          "time": "2026-09-04 17:55:19",
-          "balance": 228.49
-        },
-        {
-          "time": "2026-09-04 17:57:13",
-          "balance": 230.09
-        },
-        {
-          "time": "2026-09-07 17:54:56",
-          "balance": 229.87
-        },
-        {
-          "time": "2026-09-07 17:59:59",
-          "balance": 230.89
-        },
-        {
-          "time": "2026-09-08 17:40:01",
-          "balance": 231.97
-        },
-        {
-          "time": "2026-09-09 19:52:09",
-          "balance": 231.91
-        },
-        {
-          "time": "2026-09-09 20:08:10",
-          "balance": 232.51
-        },
-        {
-          "time": "2026-09-09 20:25:12",
-          "balance": 233.53
-        },
-        {
-          "time": "2026-09-10 15:59:30",
-          "balance": 243.53
-        },
-        {
-          "time": "2026-09-14 00:00:00",
-          "balance": 245.81
-        },
-        {
-          "time": "2026-09-14 00:00:00",
-          "balance": 245.81
-        },
-        {
-          "time": "2026-09-15 00:00:00",
-          "balance": 241.21
-        },
-        {
-          "time": "2026-09-16 00:00:00",
-          "balance": 250.61
-        },
-        {
-          "time": "2026-09-17 00:00:00",
-          "balance": 250.09
-        },
-        {
-          "time": "2026-09-17 00:00:00",
-          "balance": 250.59
-        },
-        {
-          "time": "2026-09-17 00:00:00",
-          "balance": 252.13
-        },
-        {
-          "time": "2026-09-18 00:00:00",
-          "balance": 257.33
-        },
-        {
-          "time": "2026-09-18 00:00:00",
-          "balance": 251.83
-        },
-        {
-          "time": "2026-09-21 00:00:00",
-          "balance": 250.13
-        },
-        {
-          "time": "2026-09-21 00:00:00",
-          "balance": 251.13
-        },
-        {
-          "time": "2026-09-21 00:00:00",
-          "balance": 252.15
-        },
-        {
-          "time": "2026-09-22 00:00:00",
-          "balance": 256.8
-        },
-        {
-          "time": "2026-09-22 00:00:00",
-          "balance": 262.3
-        },
-        {
-          "time": "2026-09-23 00:00:00",
-          "balance": 262.7
-        },
-        {
-          "time": "2026-09-23 00:00:00",
-          "balance": 264.1
-        },
-        {
-          "time": "2026-09-23 00:00:00",
-          "balance": 268.35
-        },
-        {
-          "time": "2026-09-24 00:00:00",
-          "balance": 281.15
-        },
-        {
-          "time": "2026-09-24 00:00:00",
-          "balance": 278.85
-        },
-        {
-          "time": "2026-09-24 00:00:00",
-          "balance": 277.4
-        },
-        {
-          "time": "2026-09-24 00:00:00",
-          "balance": 276.65
-        },
-        {
-          "time": "2026-09-29 00:00:00",
-          "balance": 277.25
-        },
+          "time": "2026-10-13 01:50:13",
+          "balance": 252.04
+        }
+      ]
+    },
+    "tito": {
+      "initial_balance": 1000.0,
+      "final_balance": 1000.0,
+      "total_trades": 0,
+      "win_rate": 100.0,
+      "profit_factor": "1.0",
+      "curve": [
         {
-          "time": "2026-09-29 00:00:00",
-          "balance": 287.95
+          "time": "2026-10-13 10:50:43",
+          "balance": 1000.0
         }
       ]
     }
   },
   "radar": {
-    "timestamp": "2026-10-13T15:24:49.589555Z",
-    "last_sync": "2026-10-13 08:24:49",
+    "timestamp": "2026-10-13T15:29:32.977771Z",
+    "last_sync": "2026-10-13 08:29:32",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -25003,10 +25883,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.32486,
-        "bid": 1.32459,
-        "ask": 1.32513,
-        "spread_pips": 5.4,
+        "price": 1.32465,
+        "bid": 1.32437,
+        "ask": 1.32493,
+        "spread_pips": 5.6,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 51,
@@ -25025,19 +25905,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.326,
               "density_pct": 0.29,
-              "dist_pips": 11.4,
+              "dist_pips": 13.5,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.3265,
               "density_pct": 0.27,
-              "dist_pips": 16.4,
+              "dist_pips": 18.5,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.3255,
               "density_pct": 0.22,
-              "dist_pips": 6.4,
+              "dist_pips": 8.5,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -25045,19 +25925,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.323,
               "density_pct": 0.24,
-              "dist_pips": 18.6,
+              "dist_pips": 16.5,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3,
               "density_pct": 0.22,
-              "dist_pips": 248.6,
+              "dist_pips": 246.5,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3175,
               "density_pct": 0.2,
-              "dist_pips": 73.6,
+              "dist_pips": 71.5,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -25080,10 +25960,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 4165.83,
-        "bid": 4164.96,
-        "ask": 4166.7,
-        "spread_pips": 174.0,
+        "price": 4160.32,
+        "bid": 4159.49,
+        "ask": 4161.14,
+        "spread_pips": 165.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 45,
@@ -25091,8 +25971,8 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 72.2,
           "short_pct": 27.8,
-          "longs_in_loss": 13.1,
-          "shorts_in_loss": 20.4,
+          "longs_in_loss": 13.4,
+          "shorts_in_loss": 20.2,
           "summary": "Minoristas 72.2% Comprados vs 27.8% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
@@ -25102,19 +25982,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4180.0,
               "density_pct": 0.35,
-              "dist_pips": 1417.0,
+              "dist_pips": 1968.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4173.5,
               "density_pct": 0.26,
-              "dist_pips": 767.0,
+              "dist_pips": 1318.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4197.0,
               "density_pct": 0.26,
-              "dist_pips": 3117.0,
+              "dist_pips": 3668.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -25122,19 +26002,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4150.5,
               "density_pct": 0.28,
-              "dist_pips": 1533.0,
+              "dist_pips": 982.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 4133.0,
               "density_pct": 0.26,
-              "dist_pips": 3283.0,
+              "dist_pips": 2732.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 4153.5,
               "density_pct": 0.26,
-              "dist_pips": 1233.0,
+              "dist_pips": 682.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -25157,10 +26037,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.69846,
-        "bid": 0.69799,
-        "ask": 0.69893,
-        "spread_pips": 9.4,
+        "price": 0.6983,
+        "bid": 0.69784,
+        "ask": 0.69877,
+        "spread_pips": 9.3,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 47,
@@ -25179,19 +26059,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.6995,
               "density_pct": 0.23,
-              "dist_pips": 10.4,
+              "dist_pips": 12.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.7,
               "density_pct": 0.2,
-              "dist_pips": 15.4,
+              "dist_pips": 17.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.6985,
               "density_pct": 0.19,
-              "dist_pips": 0.4,
+              "dist_pips": 2.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -25199,19 +26079,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.6945,
               "density_pct": 0.27,
-              "dist_pips": 39.6,
+              "dist_pips": 38.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.697,
               "density_pct": 0.24,
-              "dist_pips": 14.6,
+              "dist_pips": 13.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.6935,
               "density_pct": 0.15,
-              "dist_pips": 49.6,
+              "dist_pips": 48.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -25518,5 +26398,37 @@ window.STATIC_DASHBOARD_DATA = {
       "dxy_bias": "Neutral",
       "provider": "Mesa Cuantitativa & FairEconomy"
     }
+  },
+  "account_hector": {
+    "terminal": "Héctor (Vantage 35126659)",
+    "connected": true,
+    "login": 35126659,
+    "server": "VantageMarkets-Live 5",
+    "balance": 252.04,
+    "equity": 302.04,
+    "margin": 0.0,
+    "margin_free": 302.04,
+    "floating": 0.0,
+    "positions_count": 0,
+    "dynamic_lot": 0.02,
+    "next_lot_balance": 350.0,
+    "positions": [],
+    "strategy": "smart+IA / MARO"
+  },
+  "account_tito": {
+    "terminal": "Tito (Pepperstone-03 51580714)",
+    "connected": true,
+    "login": 51580714,
+    "server": "PepperstoneBS-MT5-Live01",
+    "balance": 1000.0,
+    "equity": 1000.0,
+    "margin": 0.0,
+    "margin_free": 1000.0,
+    "floating": 0.0,
+    "positions_count": 0,
+    "dynamic_lot": 0.1,
+    "next_lot_balance": 1100.0,
+    "positions": [],
+    "strategy": "smart+IA y MARO"
   }
 };

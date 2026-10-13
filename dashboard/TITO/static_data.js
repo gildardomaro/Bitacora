@@ -1,0 +1,651 @@
+window.STATIC_DASHBOARD_DATA = {
+  "generated_at": "2026-10-13T15:24:49.652786Z",
+  "account_pepperstone": {
+    "terminal": "Tito (Pepperstone-03 51580714)",
+    "connected": true,
+    "login": 51580714,
+    "server": "PepperstoneBS-MT5-Live01",
+    "balance": 1000.0,
+    "equity": 1000.0,
+    "margin": 0.0,
+    "margin_free": 1000.0,
+    "floating": 0.0,
+    "positions_count": 0,
+    "dynamic_lot": 0.1,
+    "next_lot_balance": 1100.0,
+    "positions": [],
+    "strategy": "smart+IA y MARO"
+  },
+  "real_trades": [],
+  "trades": [],
+  "monthly_analytics": {
+    "TITO": {
+      "terminal_key": "TITO",
+      "name": "Tito (Pepperstone-03 51580714)",
+      "symbol": "XAUUSD",
+      "base_capital": 1000.0,
+      "total_deposit_usd": 1000.0,
+      "deposits_by_month": {
+        "2026-10": 1000.0
+      },
+      "total_wins": 0,
+      "total_losses": 0,
+      "total_trades": 0,
+      "win_rate": 0.0,
+      "total_profit_usd": 0,
+      "total_return_pct": 0.0,
+      "monthly_series": [],
+      "months_available": [],
+      "current_month": "2026-10",
+      "all_trades_by_month": {}
+    },
+    "PEPPERSTONE": {
+      "terminal_key": "TITO",
+      "name": "Tito (Pepperstone-03 51580714)",
+      "symbol": "XAUUSD",
+      "base_capital": 1000.0,
+      "total_deposit_usd": 1000.0,
+      "deposits_by_month": {
+        "2026-10": 1000.0
+      },
+      "total_wins": 0,
+      "total_losses": 0,
+      "total_trades": 0,
+      "win_rate": 0.0,
+      "total_profit_usd": 0,
+      "total_return_pct": 0.0,
+      "monthly_series": [],
+      "months_available": [],
+      "current_month": "2026-10",
+      "all_trades_by_month": {}
+    }
+  },
+  "last_sync": "2026-10-13 08:29:32",
+  "equity": {
+    "real1000": {
+      "initial_balance": 1000.0,
+      "final_balance": 1000.0,
+      "total_trades": 0,
+      "win_rate": 100.0,
+      "profit_factor": "1.0",
+      "curve": [
+        {
+          "time": "2026-10-13 10:50:43",
+          "balance": 1000.0
+        }
+      ]
+    },
+    "tito": {
+      "initial_balance": 1000.0,
+      "final_balance": 1000.0,
+      "total_trades": 0,
+      "win_rate": 100.0,
+      "profit_factor": "1.0",
+      "curve": [
+        {
+          "time": "2026-10-13 10:50:43",
+          "balance": 1000.0
+        }
+      ]
+    }
+  },
+  "radar": {
+    "timestamp": "2026-10-13T15:29:32.977771Z",
+    "last_sync": "2026-10-13 08:29:32",
+    "assets": [
+      {
+        "symbol": "GBP/USD",
+        "raw_symbol": "GBP_USD",
+        "name": "GBP/USD (Libra / Dólar)",
+        "display": "GBP/USD",
+        "icon": "💷",
+        "price": 1.32465,
+        "bid": 1.32437,
+        "ask": 1.32493,
+        "spread_pips": 5.6,
+        "bias": "NEUTRAL",
+        "bias_desc": "MERCADO EN RANGO / NEUTRAL",
+        "prob_buy": 51,
+        "prob_sell": 49,
+        "retail_sentiment": {
+          "long_pct": 59.1,
+          "short_pct": 40.9,
+          "longs_in_loss": 20.8,
+          "shorts_in_loss": 26.4,
+          "summary": "Minoristas 59.1% Comprados vs 40.9% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
+        },
+        "order_book": {
+          "order_long_pct": 46.4,
+          "order_short_pct": 53.6,
+          "top_bsl": [
+            {
+              "price": 1.326,
+              "density_pct": 0.29,
+              "dist_pips": 13.5,
+              "label": "Buy Stops / BSL"
+            },
+            {
+              "price": 1.3265,
+              "density_pct": 0.27,
+              "dist_pips": 18.5,
+              "label": "Buy Stops / BSL"
+            },
+            {
+              "price": 1.3255,
+              "density_pct": 0.22,
+              "dist_pips": 8.5,
+              "label": "Buy Stops / BSL"
+            }
+          ],
+          "top_ssl": [
+            {
+              "price": 1.323,
+              "density_pct": 0.24,
+              "dist_pips": 16.5,
+              "label": "Sell Stops / SSL"
+            },
+            {
+              "price": 1.3,
+              "density_pct": 0.22,
+              "dist_pips": 246.5,
+              "label": "Sell Stops / SSL"
+            },
+            {
+              "price": 1.3175,
+              "density_pct": 0.2,
+              "dist_pips": 71.5,
+              "label": "Sell Stops / SSL"
+            }
+          ],
+          "bsl_target": 1.326,
+          "ssl_target": 1.323
+        },
+        "technical_smc": {
+          "trend_h4": "ALCISTA 🟢",
+          "trend_h1": "ALCISTA 🟢",
+          "trend_m15": "ALCISTA 🟢",
+          "zone": "PREMIUM 🔴 (Busca Ventas)",
+          "h1_high": 1.32616,
+          "h1_low": 1.32017,
+          "h1_equilibrium": 1.32316
+        }
+      },
+      {
+        "symbol": "XAU/USD",
+        "raw_symbol": "XAU_USD",
+        "name": "XAU/USD (Oro / Dólar)",
+        "display": "XAU/USD (Oro)",
+        "icon": "🥇",
+        "price": 4160.32,
+        "bid": 4159.49,
+        "ask": 4161.14,
+        "spread_pips": 165.0,
+        "bias": "BEARISH",
+        "bias_desc": "SESGO INSTITUCIONAL VENTA",
+        "prob_buy": 45,
+        "prob_sell": 55,
+        "retail_sentiment": {
+          "long_pct": 72.2,
+          "short_pct": 27.8,
+          "longs_in_loss": 13.4,
+          "shorts_in_loss": 20.2,
+          "summary": "Minoristas 72.2% Comprados vs 27.8% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+        },
+        "order_book": {
+          "order_long_pct": 58.6,
+          "order_short_pct": 41.4,
+          "top_bsl": [
+            {
+              "price": 4180.0,
+              "density_pct": 0.35,
+              "dist_pips": 1968.0,
+              "label": "Buy Stops / BSL"
+            },
+            {
+              "price": 4173.5,
+              "density_pct": 0.26,
+              "dist_pips": 1318.0,
+              "label": "Buy Stops / BSL"
+            },
+            {
+              "price": 4197.0,
+              "density_pct": 0.26,
+              "dist_pips": 3668.0,
+              "label": "Buy Stops / BSL"
+            }
+          ],
+          "top_ssl": [
+            {
+              "price": 4150.5,
+              "density_pct": 0.28,
+              "dist_pips": 982.0,
+              "label": "Sell Stops / SSL"
+            },
+            {
+              "price": 4133.0,
+              "density_pct": 0.26,
+              "dist_pips": 2732.0,
+              "label": "Sell Stops / SSL"
+            },
+            {
+              "price": 4153.5,
+              "density_pct": 0.26,
+              "dist_pips": 682.0,
+              "label": "Sell Stops / SSL"
+            }
+          ],
+          "bsl_target": 4180.0,
+          "ssl_target": 4150.5
+        },
+        "technical_smc": {
+          "trend_h4": "BAJISTA 🔴",
+          "trend_h1": "BAJISTA 🔴",
+          "trend_m15": "BAJISTA 🔴",
+          "zone": "DESCUENTO 🟢 (Busca Compras)",
+          "h1_high": 4217.4,
+          "h1_low": 4150.78,
+          "h1_equilibrium": 4184.09
+        }
+      },
+      {
+        "symbol": "AUD/USD",
+        "raw_symbol": "AUD_USD",
+        "name": "AUD/USD (Dólar Australiano)",
+        "display": "AUD/USD",
+        "icon": "🦘",
+        "price": 0.6983,
+        "bid": 0.69784,
+        "ask": 0.69877,
+        "spread_pips": 9.3,
+        "bias": "BEARISH",
+        "bias_desc": "SESGO INSTITUCIONAL VENTA",
+        "prob_buy": 47,
+        "prob_sell": 53,
+        "retail_sentiment": {
+          "long_pct": 62.9,
+          "short_pct": 37.1,
+          "longs_in_loss": 26.9,
+          "shorts_in_loss": 20.5,
+          "summary": "Minoristas 62.9% Comprados vs 37.1% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+        },
+        "order_book": {
+          "order_long_pct": 42.6,
+          "order_short_pct": 57.4,
+          "top_bsl": [
+            {
+              "price": 0.6995,
+              "density_pct": 0.23,
+              "dist_pips": 12.0,
+              "label": "Buy Stops / BSL"
+            },
+            {
+              "price": 0.7,
+              "density_pct": 0.2,
+              "dist_pips": 17.0,
+              "label": "Buy Stops / BSL"
+            },
+            {
+              "price": 0.6985,
+              "density_pct": 0.19,
+              "dist_pips": 2.0,
+              "label": "Buy Stops / BSL"
+            }
+          ],
+          "top_ssl": [
+            {
+              "price": 0.6945,
+              "density_pct": 0.27,
+              "dist_pips": 38.0,
+              "label": "Sell Stops / SSL"
+            },
+            {
+              "price": 0.697,
+              "density_pct": 0.24,
+              "dist_pips": 13.0,
+              "label": "Sell Stops / SSL"
+            },
+            {
+              "price": 0.6935,
+              "density_pct": 0.15,
+              "dist_pips": 48.0,
+              "label": "Sell Stops / SSL"
+            }
+          ],
+          "bsl_target": 0.6995,
+          "ssl_target": 0.6945
+        },
+        "technical_smc": {
+          "trend_h4": "ALCISTA 🟢",
+          "trend_h1": "ALCISTA 🟢",
+          "trend_m15": "ALCISTA 🟢",
+          "zone": "PREMIUM 🔴 (Busca Ventas)",
+          "h1_high": 0.69954,
+          "h1_low": 0.69498,
+          "h1_equilibrium": 0.69726
+        }
+      }
+    ],
+    "calendar": [
+      {
+        "title": "MPC Member Breeden Speaks",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-12T05:30:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Bank Holiday",
+        "currency": "USD",
+        "impact": "Holiday",
+        "datetime_raw": "2026-10-12T07:00:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "MPC Member Mann Speaks",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-12T08:50:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "IMF Meetings",
+        "currency": "GLOBAL",
+        "impact": "Low",
+        "datetime_raw": "2026-10-12T10:15:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "FOMC Member Hammack Speaks",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-12T12:10:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "BRC Retail Sales Monitor y/y",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-12T19:01:00-04:00",
+        "forecast": "0.8%",
+        "previous": "0.5%"
+      },
+      {
+        "title": "Monetary Policy Meeting Minutes",
+        "currency": "AUD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-12T20:30:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "NAB Business Confidence",
+        "currency": "AUD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-12T20:30:00-04:00",
+        "forecast": "-",
+        "previous": "-8"
+      },
+      {
+        "title": "MPC Member Greene Speaks",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-12T23:00:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "German Final CPI m/m",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T02:00:00-04:00",
+        "forecast": "0.6%",
+        "previous": "0.6%"
+      },
+      {
+        "title": "FOMC Member Waller Speaks",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T03:45:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "NFIB Small Business Index",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T06:00:00-04:00",
+        "forecast": "98.1",
+        "previous": "98.7"
+      },
+      {
+        "title": "ADP Weekly Employment Change",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T08:15:00-04:00",
+        "forecast": "-",
+        "previous": "23.8K"
+      },
+      {
+        "title": "Existing Home Sales",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T10:00:00-04:00",
+        "forecast": "3.95M",
+        "previous": "3.98M"
+      },
+      {
+        "title": "IMF Meetings",
+        "currency": "GLOBAL",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T10:15:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "CB Leading Index m/m",
+        "currency": "AUD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T10:30:00-04:00",
+        "forecast": "-",
+        "previous": "0.5%"
+      },
+      {
+        "title": "FOMC Member Barkin Speaks",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T13:00:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "FOMC Member Collins Speaks",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T16:00:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "MI Leading Index m/m",
+        "currency": "AUD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T19:30:00-04:00",
+        "forecast": "-",
+        "previous": "0.0%"
+      },
+      {
+        "title": "ECB President Lagarde Speaks",
+        "currency": "EUR",
+        "impact": "Medium",
+        "datetime_raw": "2026-10-13T22:10:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "MPC Member Breeden Speaks",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-13T23:30:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "BOE Gov Bailey Speaks",
+        "currency": "GBP",
+        "impact": "Medium",
+        "datetime_raw": "2026-10-14T01:30:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "German WPI m/m",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-10-14T02:00:00-04:00",
+        "forecast": "0.6%",
+        "previous": "0.9%"
+      },
+      {
+        "title": "MPC Member Pill Speaks",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-14T02:00:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "ECB President Lagarde Speaks",
+        "currency": "EUR",
+        "impact": "Medium",
+        "datetime_raw": "2026-10-14T04:30:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "German 30-y Bond Auction",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-10-14T05:34:00-04:00",
+        "forecast": "-",
+        "previous": "3.80|1.6"
+      },
+      {
+        "title": "FOMC Member Bowman Speaks",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-14T05:40:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "EU Economic Summit",
+        "currency": "EUR",
+        "impact": "Medium",
+        "datetime_raw": "2026-10-14T06:15:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Core CPI m/m",
+        "currency": "USD",
+        "impact": "High",
+        "datetime_raw": "2026-10-14T08:30:00-04:00",
+        "forecast": "0.2%",
+        "previous": "0.3%"
+      },
+      {
+        "title": "Core CPI y/y",
+        "currency": "USD",
+        "impact": "High",
+        "datetime_raw": "2026-10-14T08:30:00-04:00",
+        "forecast": "2.5%",
+        "previous": "2.4%"
+      }
+    ],
+    "high_impact_count": 13,
+    "macro_summary": {
+      "high_impact_events": [
+        {
+          "title": "Core CPI m/m",
+          "currency": "USD",
+          "impact": "High",
+          "datetime_raw": "2026-10-14T08:30:00-04:00",
+          "forecast": "0.2%",
+          "previous": "0.3%"
+        },
+        {
+          "title": "Core CPI y/y",
+          "currency": "USD",
+          "impact": "High",
+          "datetime_raw": "2026-10-14T08:30:00-04:00",
+          "forecast": "2.5%",
+          "previous": "2.4%"
+        },
+        {
+          "title": "CPI m/m",
+          "currency": "USD",
+          "impact": "High",
+          "datetime_raw": "2026-10-14T08:30:00-04:00",
+          "forecast": "0.6%",
+          "previous": "0.4%"
+        },
+        {
+          "title": "CPI y/y",
+          "currency": "USD",
+          "impact": "High",
+          "datetime_raw": "2026-10-14T08:30:00-04:00",
+          "forecast": "3.6%",
+          "previous": "3.4%"
+        },
+        {
+          "title": "Employment Change",
+          "currency": "AUD",
+          "impact": "High",
+          "datetime_raw": "2026-10-14T20:30:00-04:00",
+          "forecast": "19.6K",
+          "previous": "39.5K"
+        }
+      ],
+      "dxy_bias": "Neutral",
+      "provider": "Mesa Cuantitativa & FairEconomy"
+    }
+  },
+  "account_hector": {
+    "terminal": "Héctor (Vantage 35126659)",
+    "connected": true,
+    "login": 35126659,
+    "server": "VantageMarkets-Live 5",
+    "balance": 252.04,
+    "equity": 302.04,
+    "margin": 0.0,
+    "margin_free": 302.04,
+    "floating": 0.0,
+    "positions_count": 0,
+    "dynamic_lot": 0.02,
+    "next_lot_balance": 350.0,
+    "positions": [],
+    "strategy": "smart+IA / MARO"
+  },
+  "account_tito": {
+    "terminal": "Tito (Pepperstone-03 51580714)",
+    "connected": true,
+    "login": 51580714,
+    "server": "PepperstoneBS-MT5-Live01",
+    "balance": 1000.0,
+    "equity": 1000.0,
+    "margin": 0.0,
+    "margin_free": 1000.0,
+    "floating": 0.0,
+    "positions_count": 0,
+    "dynamic_lot": 0.1,
+    "next_lot_balance": 1100.0,
+    "positions": [],
+    "strategy": "smart+IA y MARO"
+  },
+  "default_terminal": "TITO"
+};
