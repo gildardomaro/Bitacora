@@ -105,39 +105,45 @@ def sync_mt5_data():
 
 
 def add_timestamp_to_static_data():
-    """Inyecta/actualiza el campo generated_at en static_data.js para que el
-    dashboard muestre cuando se publicaron los datos."""
-    if not os.path.isfile(STATIC_JS):
-        log("static_data.js no encontrado — saltando inyeccion de timestamp.")
-        return
-
-    with open(STATIC_JS, "r", encoding="utf-8", errors="replace") as f:
-        content = f.read()
-
+    """Inyecta/actualiza el campo generated_at en todos los static_data.js (Maestro, HR y TITO)."""
+    import re
     ts = datetime.datetime.utcnow().isoformat() + "Z"
     new_field = f'  "generated_at": "{ts}",'
 
-    if '"generated_at":' in content or 'generated_at:' in content:
-        import re
-        content = re.sub(r'  "?generated_at"?: ".*?",', new_field, content)
-    else:
-        # Insertar despues de la primera llave de apertura del objeto raiz
-        content = content.replace(
-            "window.STATIC_DASHBOARD_DATA = {",
-            f"window.STATIC_DASHBOARD_DATA = {{\n{new_field}",
-            1
-        )
+    static_targets = [
+        STATIC_JS,
+        os.path.join(BOT_DIR, "static_data.js"),
+        os.path.join(BOT_DIR, "HR", "static_data.js"),
+        os.path.join(DASH_DIR, "HR", "static_data.js"),
+        os.path.join(BOT_DIR, "TITO", "static_data.js"),
+        os.path.join(DASH_DIR, "TITO", "static_data.js")
+    ]
 
-    with open(STATIC_JS, "w", encoding="utf-8") as f:
-        f.write(content)
+    for st in static_targets:
+        if os.path.isfile(st):
+            try:
+                with open(st, "r", encoding="utf-8", errors="replace") as f:
+                    content = f.read()
 
-    log(f"Timestamp inyectado en static_data.js: {ts}")
+                if '"generated_at":' in content or 'generated_at:' in content:
+                    content = re.sub(r'  "?generated_at"?: ".*?",', new_field, content)
+                else:
+                    content = content.replace(
+                        "window.STATIC_DASHBOARD_DATA = {",
+                        f"window.STATIC_DASHBOARD_DATA = {{\n{new_field}",
+                        1
+                    )
+                with open(st, "w", encoding="utf-8") as f:
+                    f.write(content)
+            except Exception as e:
+                log(f"Aviso actualizando timestamp en {st}: {e}")
+
+    log(f"Timestamp inyectado en todos los dashboards: {ts}")
 
 
 def sync_files_to_root():
-    """Copia los archivos actualizados del dashboard a la raiz del repositorio
-    para que GitHub Pages (que sirve desde la raiz) muestre exactamente los mismos
-    datos en tiempo real."""
+    """Copia los archivos actualizados del dashboard y subcarpetas (HR, TITO)
+    para que GitHub Pages muestre exactamente los mismos datos en tiempo real."""
     import shutil
     files_to_copy = [
         "static_data.js",
@@ -157,7 +163,20 @@ def sync_files_to_root():
                 shutil.copy2(src, dst)
             except Exception as e:
                 log(f"Error copiando {fn} a la raiz: {e}")
-    log("Archivos del dashboard sincronizados a la raiz (GitHub Pages root).")
+
+    # Sincronizar subcarpetas HR y TITO
+    for sub in ["HR", "TITO"]:
+        sub_src = os.path.join(DASH_DIR, sub)
+        sub_dst = os.path.join(BOT_DIR, sub)
+        if os.path.isdir(sub_src):
+            os.makedirs(sub_dst, exist_ok=True)
+            for fn in files_to_copy:
+                f_s = os.path.join(sub_src, fn)
+                f_d = os.path.join(sub_dst, fn)
+                if os.path.isfile(f_s):
+                    shutil.copy2(f_s, f_d)
+
+    log("Archivos del dashboard y portales /HR y /TITO sincronizados a la raiz (GitHub Pages root).")
 
 
 def git_push():
@@ -173,6 +192,8 @@ def git_push():
         "app.js",
         "auth.js",
         "styles.css",
+        "HR/",
+        "TITO/",
         "radar/",
         "VER_DASHBOARD_LOCAL.html"
     ]
