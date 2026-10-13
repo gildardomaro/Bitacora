@@ -17490,9 +17490,9 @@ window.STATIC_DASHBOARD_DATA = {
       "name": "Pepperstone-01 (smart+IA y MARO)",
       "symbol": "XAUUSD",
       "base_capital": 3000.0,
-      "total_deposit_usd": 8745.95,
+      "total_deposit_usd": 7750.0,
       "deposits_by_month": {
-        "2026-10": 3995.95,
+        "2026-10": 3000.0,
         "2026-05": 250.0,
         "2026-06": 500.0,
         "2026-07": 1000.0,
@@ -17504,7 +17504,7 @@ window.STATIC_DASHBOARD_DATA = {
       "total_trades": 318,
       "win_rate": 64.2,
       "total_profit_usd": 938.99,
-      "total_return_pct": 10.74,
+      "total_return_pct": 12.12,
       "monthly_series": [
         {
           "month": "2026-05",
@@ -17564,8 +17564,8 @@ window.STATIC_DASHBOARD_DATA = {
         {
           "month": "2026-10",
           "profit_usd": 325.26,
-          "profit_pct": 8.14,
-          "deposit_usd": 3995.95,
+          "profit_pct": 10.84,
+          "deposit_usd": 3000.0,
           "wins": 51,
           "losses": 31,
           "total_trades": 82,

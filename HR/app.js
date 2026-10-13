@@ -302,16 +302,18 @@ function startDashboard() {
 
     // Actualizar badges del panel superior
     const termNames = {
-      "PEPPERSTONE": "🦅 Pepperstone-01 (smart+IA y MARO)",
-      "REAL1000": "💎 Vantage REAL (REAL1000)",
-      "HECTOR": "🛡️ Vantage REAL (HECTOR)",
-      "VANTAGE": "📊 Vantage DEMO (BOT-1000)",
-      "VANTAGE05": "🚀 Vantage DEMO (26207178)"
+      "PEPPERSTONE": "Maro - 51571487",
+      "HECTOR": "Héctor - 35126659",
+      "TITO": "Tito - 51580714",
+      "REAL1000": "Vantage REAL (REAL1000)",
+      "VANTAGE": "Vantage DEMO (BOT-1000)",
+      "VANTAGE05": "Vantage DEMO (26207178)"
     };
     const termServers = {
-      "PEPPERSTONE": "PepperstoneBS-MT5-Live01 (51571487)",
+      "PEPPERSTONE": "Maro - 51571487",
+      "HECTOR": "Héctor - 35126659",
+      "TITO": "Tito - 51580714",
       "REAL1000": "VantageMarkets-Live 5 (27497962)",
-      "HECTOR": "VantageMarkets-Live 5 (29263904)",
       "VANTAGE": "Pepperstone-Demo (61587621)",
       "VANTAGE05": "VantageMarkets-Demo (26207178)"
     };
@@ -586,7 +588,12 @@ function startDashboard() {
     } else {
       dom.mt5StatusText.textContent = isFileMode ? 'MODO LOCAL (CARPETA)' : 'MT5 EN LÍNEA';
     }
-    dom.kpiTerminalName.textContent = `${acc.terminal} (Login: ${acc.login})`;
+    const nameMap = {
+      "PEPPERSTONE": `Maro (Login: ${acc.login || 51571487})`,
+      "HECTOR": `Héctor (Login: ${acc.login || 35126659})`,
+      "TITO": `Tito (Login: ${acc.login || 51580714})`
+    };
+    dom.kpiTerminalName.textContent = nameMap[state.activeTerminal] || `${acc.terminal} (Login: ${acc.login})`;
 
     // Formatear valores
     dom.kpiBalance.innerHTML = `$${acc.balance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} <small>USD</small>`;
