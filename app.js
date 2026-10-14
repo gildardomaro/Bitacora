@@ -72,6 +72,7 @@ function startDashboard() {
     kpiStrategyName: document.getElementById('kpiStrategyName'),
     btnShowReal1000: document.getElementById('btnShowReal1000'),
     btnShowHector: document.getElementById('btnShowHector'),
+    btnShowTito: document.getElementById('btnShowTito'),
     btnShowBot1000: document.getElementById('btnShowBot1000'),
     btnShowGold: document.getElementById('btnShowGold'),
     btnShowMaro: document.getElementById('btnShowMaro'),
@@ -558,6 +559,8 @@ function startDashboard() {
         acc = window.STATIC_DASHBOARD_DATA.account_real1000;
       } else if (state.activeTerminal === 'HECTOR') {
         acc = window.STATIC_DASHBOARD_DATA.account_hector;
+      } else if (state.activeTerminal === 'TITO') {
+        acc = window.STATIC_DASHBOARD_DATA.account_tito;
       } else if (state.activeTerminal === 'VANTAGE05') {
         acc = window.STATIC_DASHBOARD_DATA.account_vantage05;
       } else {
@@ -708,6 +711,9 @@ function startDashboard() {
     } else if (state.equityStrategy === 'hector') {
       dom.statProfitFactor.textContent = current.profit_factor || '1.81';
       if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'HECTOR (Vantage Real $200 -> $287.95 | +44.0% Net | WR 65.8%)';
+    } else if (state.equityStrategy === 'tito') {
+      dom.statProfitFactor.textContent = current.profit_factor || '1.80';
+      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'TITO (Pepperstone Real 51580714 | Oro XAUUSD)';
     } else {
       dom.statProfitFactor.textContent = current.profit_factor || '1.50';
       if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'Estrategia Cuantitativa';
@@ -754,7 +760,7 @@ function startDashboard() {
       if (state.tradeAccountFilter === 'ALL') {
         trades = all;
       } else {
-        trades = all.filter(t => t.account === state.tradeAccountFilter);
+        trades = all.filter(t => t.account === state.tradeAccountFilter || t.terminal === state.tradeAccountFilter);
       }
     }
 
@@ -786,10 +792,12 @@ function startDashboard() {
       const isBuy = (t.type || 'BUY').toUpperCase() === 'BUY';
       
       let accBadge = `<span class="badge" style="background:rgba(255, 171, 0, 0.15); color:#FFAB00; border:1px solid rgba(255,171,0,0.4);">${t.account || 'GENERAL'}</span>`;
-      if (t.account === 'REAL1000') {
-        accBadge = `<span class="badge" style="background:rgba(0, 230, 118, 0.15); color:#00E676; border:1px solid rgba(0,230,118,0.4);">REAL1000</span>`;
+      if (t.account === 'REAL1000' || t.account === 'PEPPERSTONE') {
+        accBadge = `<span class="badge" style="background:rgba(0, 230, 118, 0.15); color:#00E676; border:1px solid rgba(0,230,118,0.4);">${t.account === 'PEPPERSTONE' ? 'MARO' : 'REAL1000'}</span>`;
       } else if (t.account === 'HECTOR') {
         accBadge = `<span class="badge" style="background:rgba(0, 229, 255, 0.15); color:#00E5FF; border:1px solid rgba(0,229,255,0.4);">HECTOR</span>`;
+      } else if (t.account === 'TITO') {
+        accBadge = `<span class="badge" style="background:rgba(255, 152, 0, 0.15); color:#FF9800; border:1px solid rgba(255,152,0,0.4);">TITO</span>`;
       } else if (t.account === 'BOT-1000') {
         accBadge = `<span class="badge" style="background:rgba(187, 134, 252, 0.15); color:#BB86FC; border:1px solid rgba(187,134,252,0.4);">BOT-1000</span>`;
       } else if (t.account === 'SMART+IA') {
@@ -1080,15 +1088,34 @@ function startDashboard() {
   // Selector de terminal / bot -> Actualiza panel interactivo, gráficos y cuenta
   dom.terminalSelector.addEventListener('change', (e) => {
     state.activeTerminal = e.target.value;
-    state.activeSymbol = state.activeTerminal === 'PEPPERSTONE' ? 'XAUUSD' : 'GBPUSD';
+    if (state.activeTerminal === 'HECTOR') {
+      state.activeSymbol = 'GBPUSD+';
+      state.equityStrategy = 'hector';
+    } else if (state.activeTerminal === 'TITO') {
+      state.activeSymbol = 'XAUUSD';
+      state.equityStrategy = 'tito';
+    } else {
+      state.activeSymbol = 'XAUUSD';
+      state.equityStrategy = 'real1000';
+    }
+
+    equityButtons.forEach(item => {
+      if (item.btn) {
+        if (item.key === state.equityStrategy) item.btn.classList.add('active');
+        else item.btn.classList.remove('active');
+      }
+    });
+
     updateAccountData();
     loadAnalyticsData();
+    loadEquityCurves();
   });
 
   // Toggle de estrategia / cuenta en Curva de Equidad
   const equityButtons = [
     { btn: dom.btnShowReal1000, key: 'real1000' },
-    { btn: dom.btnShowHector, key: 'hector' }
+    { btn: dom.btnShowHector, key: 'hector' },
+    { btn: dom.btnShowTito, key: 'tito' }
   ];
 
   equityButtons.forEach(item => {
