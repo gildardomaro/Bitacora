@@ -303,7 +303,7 @@ function startDashboard() {
     // Actualizar badges del panel superior
     const termNames = {
       "PEPPERSTONE": "Maro - 51571487",
-      "HECTOR": "Héctor - 35126659",
+      "HECTOR": "Héctor - 51581712",
       "TITO": "Tito - 51580714",
       "REAL1000": "Vantage REAL (REAL1000)",
       "VANTAGE": "Vantage DEMO (BOT-1000)",
@@ -311,7 +311,7 @@ function startDashboard() {
     };
     const termServers = {
       "PEPPERSTONE": "Maro - 51571487",
-      "HECTOR": "Héctor - 35126659",
+      "HECTOR": "Héctor - 51581712",
       "TITO": "Tito - 51580714",
       "REAL1000": "VantageMarkets-Live 5 (27497962)",
       "VANTAGE": "Pepperstone-Demo (61587621)",
@@ -590,7 +590,7 @@ function startDashboard() {
     }
     const nameMap = {
       "PEPPERSTONE": `Maro (Login: ${acc.login || 51571487})`,
-      "HECTOR": `Héctor (Login: ${acc.login || 35126659})`,
+      "HECTOR": `Héctor (Login: ${acc.login || 51581712})`,
       "TITO": `Tito (Login: ${acc.login || 51580714})`
     };
     dom.kpiTerminalName.textContent = nameMap[state.activeTerminal] || `${acc.terminal} (Login: ${acc.login})`;
