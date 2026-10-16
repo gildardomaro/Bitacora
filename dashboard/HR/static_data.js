@@ -1,15 +1,15 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-16T00:14:35.741033Z",
+  "generated_at": "2026-10-16T00:19:34.481228Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
     "login": 51581712,
     "server": "PepperstoneBS-MT5-Live01",
     "balance": 235.56,
-    "equity": 237.11,
+    "equity": 237.05,
     "margin": 39.81,
-    "margin_free": 197.3,
-    "floating": 1.65,
+    "margin_free": 197.24,
+    "floating": 1.59,
     "positions_count": 2,
     "dynamic_lot": 0.02,
     "next_lot_balance": 342.0,
@@ -20,10 +20,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.03,
         "open_price": 1.32678,
-        "current_price": 1.3268900000000001,
+        "current_price": 1.3269,
         "sl": 0.0,
         "tp": 1.32609,
-        "profit": -0.33,
+        "profit": -0.36,
         "time": "2026-10-15 13:19:56"
       },
       {
@@ -32,10 +32,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.03,
         "open_price": 1.32755,
-        "current_price": 1.3268900000000001,
+        "current_price": 1.3269,
         "sl": 0.0,
         "tp": 1.32608,
-        "profit": 1.98,
+        "profit": 1.95,
         "time": "2026-10-15 14:15:37"
       }
     ],
@@ -1561,7 +1561,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-15 17:14:35",
+  "last_sync": "2026-10-15 17:19:34",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -1711,8 +1711,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-16T00:14:35.660823Z",
-    "last_sync": "2026-10-15 17:14:35",
+    "timestamp": "2026-10-16T00:19:34.396094Z",
+    "last_sync": "2026-10-15 17:19:34",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -1720,10 +1720,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.3269,
-        "bid": 1.32662,
-        "ask": 1.32718,
-        "spread_pips": 5.6,
+        "price": 1.32687,
+        "bid": 1.32659,
+        "ask": 1.32716,
+        "spread_pips": 5.7,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 48,
@@ -1742,19 +1742,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.328,
               "density_pct": 0.38,
-              "dist_pips": 11.0,
+              "dist_pips": 11.3,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.33,
               "density_pct": 0.24,
-              "dist_pips": 31.0,
+              "dist_pips": 31.3,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.3285,
               "density_pct": 0.23,
-              "dist_pips": 16.0,
+              "dist_pips": 16.3,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -1762,19 +1762,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.3,
               "density_pct": 0.23,
-              "dist_pips": 269.0,
+              "dist_pips": 268.7,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3025,
               "density_pct": 0.13,
-              "dist_pips": 244.0,
+              "dist_pips": 243.7,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.323,
               "density_pct": 0.13,
-              "dist_pips": 39.0,
+              "dist_pips": 38.7,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -1797,10 +1797,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 4155.62,
-        "bid": 4154.78,
-        "ask": 4156.46,
-        "spread_pips": 168.0,
+        "price": 4156.1,
+        "bid": 4155.25,
+        "ask": 4156.96,
+        "spread_pips": 171.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 45,
@@ -1819,19 +1819,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4197.0,
               "density_pct": 0.29,
-              "dist_pips": 4138.0,
+              "dist_pips": 4090.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4217.5,
               "density_pct": 0.24,
-              "dist_pips": 6188.0,
+              "dist_pips": 6140.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4159.0,
               "density_pct": 0.22,
-              "dist_pips": 338.0,
+              "dist_pips": 290.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -1839,19 +1839,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4076.5,
               "density_pct": 0.31,
-              "dist_pips": 7912.0,
+              "dist_pips": 7960.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 4132.5,
               "density_pct": 0.29,
-              "dist_pips": 2312.0,
+              "dist_pips": 2360.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 4099.5,
               "density_pct": 0.14,
-              "dist_pips": 5612.0,
+              "dist_pips": 5660.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -1874,9 +1874,9 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.69219,
-        "bid": 0.69171,
-        "ask": 0.69266,
+        "price": 0.69229,
+        "bid": 0.69181,
+        "ask": 0.69276,
         "spread_pips": 9.5,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
@@ -1896,19 +1896,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.6925,
               "density_pct": 0.35,
-              "dist_pips": 3.1,
+              "dist_pips": 2.1,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.6935,
               "density_pct": 0.3,
-              "dist_pips": 13.1,
+              "dist_pips": 12.1,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.696,
               "density_pct": 0.3,
-              "dist_pips": 38.1,
+              "dist_pips": 37.1,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -1916,19 +1916,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.6885,
               "density_pct": 0.22,
-              "dist_pips": 36.9,
+              "dist_pips": 37.9,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.6855,
               "density_pct": 0.18,
-              "dist_pips": 66.9,
+              "dist_pips": 67.9,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.6815,
               "density_pct": 0.18,
-              "dist_pips": 106.9,
+              "dist_pips": 107.9,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -2242,10 +2242,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 51581712,
     "server": "PepperstoneBS-MT5-Live01",
     "balance": 235.56,
-    "equity": 237.11,
+    "equity": 237.05,
     "margin": 39.81,
-    "margin_free": 197.3,
-    "floating": 1.65,
+    "margin_free": 197.24,
+    "floating": 1.59,
     "positions_count": 2,
     "dynamic_lot": 0.02,
     "next_lot_balance": 342.0,
@@ -2256,10 +2256,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.03,
         "open_price": 1.32678,
-        "current_price": 1.3268900000000001,
+        "current_price": 1.3269,
         "sl": 0.0,
         "tp": 1.32609,
-        "profit": -0.33,
+        "profit": -0.36,
         "time": "2026-10-15 13:19:56"
       },
       {
@@ -2268,10 +2268,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.03,
         "open_price": 1.32755,
-        "current_price": 1.3268900000000001,
+        "current_price": 1.3269,
         "sl": 0.0,
         "tp": 1.32608,
-        "profit": 1.98,
+        "profit": 1.95,
         "time": "2026-10-15 14:15:37"
       }
     ],
@@ -2283,10 +2283,10 @@ window.STATIC_DASHBOARD_DATA = {
     "login": 51580714,
     "server": "PepperstoneBS-MT5-Live01",
     "balance": 1022.96,
-    "equity": 1028.1,
+    "equity": 1027.9,
     "margin": 132.72,
-    "margin_free": 895.38,
-    "floating": 5.5,
+    "margin_free": 895.18,
+    "floating": 5.3,
     "positions_count": 2,
     "dynamic_lot": 0.1,
     "next_lot_balance": 1100.0,
@@ -2297,10 +2297,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.1,
         "open_price": 1.32678,
-        "current_price": 1.3268900000000001,
+        "current_price": 1.3269,
         "sl": 0.0,
         "tp": 1.32609,
-        "profit": -1.1,
+        "profit": -1.2,
         "time": "2026-10-15 13:19:58"
       },
       {
@@ -2309,10 +2309,10 @@ window.STATIC_DASHBOARD_DATA = {
         "type": "SELL",
         "volume": 0.1,
         "open_price": 1.32755,
-        "current_price": 1.3268900000000001,
+        "current_price": 1.3269,
         "sl": 0.0,
         "tp": 1.32608,
-        "profit": 6.6,
+        "profit": 6.5,
         "time": "2026-10-15 14:15:37"
       }
     ],
