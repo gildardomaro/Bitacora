@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-16T21:19:37.484544Z",
+  "generated_at": "2026-10-16T21:24:39.063199Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -30724,7 +30724,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-16 14:19:37",
+  "last_sync": "2026-10-16 14:24:38",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -32427,8 +32427,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-16T21:19:37.396959Z",
-    "last_sync": "2026-10-16 14:19:37",
+    "timestamp": "2026-10-16T21:24:38.973153Z",
+    "last_sync": "2026-10-16 14:24:38",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -32463,7 +32463,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 1.3345,
-              "density_pct": 0.17,
+              "density_pct": 0.18,
               "dist_pips": 16.3,
               "label": "Buy Stops / BSL"
             },
@@ -32529,12 +32529,12 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 72.5% Comprados vs 27.5% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 58.3,
-          "order_short_pct": 41.7,
+          "order_long_pct": 58.1,
+          "order_short_pct": 41.9,
           "top_bsl": [
             {
               "price": 4195.5,
-              "density_pct": 0.24,
+              "density_pct": 0.26,
               "dist_pips": 3008.0,
               "label": "Buy Stops / BSL"
             },
@@ -32554,7 +32554,7 @@ window.STATIC_DASHBOARD_DATA = {
           "top_ssl": [
             {
               "price": 4150.0,
-              "density_pct": 0.28,
+              "density_pct": 0.3,
               "dist_pips": 1542.0,
               "label": "Sell Stops / SSL"
             },
