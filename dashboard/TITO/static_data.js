@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-17T22:19:34.991610Z",
+  "generated_at": "2026-10-17T22:24:35.226969Z",
   "account_pepperstone": {
     "terminal": "Tito (Pepperstone-03 51580714)",
     "connected": true,
@@ -4128,7 +4128,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-17 15:19:34",
+  "last_sync": "2026-10-17 15:24:35",
   "equity": {
     "real1000": {
       "initial_balance": 1000.0,
@@ -4494,8 +4494,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-17T22:19:34.903202Z",
-    "last_sync": "2026-10-17 15:19:34",
+    "timestamp": "2026-10-17T22:24:35.147759Z",
+    "last_sync": "2026-10-17 15:24:35",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -4550,7 +4550,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 1.3305,
-              "density_pct": 0.16,
+              "density_pct": 0.18,
               "dist_pips": 23.7,
               "label": "Sell Stops / SSL"
             },
