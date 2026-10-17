@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-17T00:59:36.300502Z",
+  "generated_at": "2026-10-17T01:04:34.073554Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -1920,7 +1920,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-16 17:59:36",
+  "last_sync": "2026-10-16 18:04:34",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -2102,8 +2102,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-17T00:59:36.218690Z",
-    "last_sync": "2026-10-16 17:59:36",
+    "timestamp": "2026-10-17T01:04:34.003643Z",
+    "last_sync": "2026-10-16 18:04:34",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -2292,7 +2292,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 0.6975,
-              "density_pct": 0.25,
+              "density_pct": 0.24,
               "dist_pips": 29.0,
               "label": "Buy Stops / BSL"
             },
