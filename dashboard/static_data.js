@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-17T12:19:36.055991Z",
+  "generated_at": "2026-10-17T12:24:34.415076Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -30724,7 +30724,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-17 05:19:35",
+  "last_sync": "2026-10-17 05:24:34",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -32427,8 +32427,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-17T12:19:35.978426Z",
-    "last_sync": "2026-10-17 05:19:35",
+    "timestamp": "2026-10-17T12:24:34.324863Z",
+    "last_sync": "2026-10-17 05:24:34",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -32483,7 +32483,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 1.3305,
-              "density_pct": 0.18,
+              "density_pct": 0.21,
               "dist_pips": 23.7,
               "label": "Sell Stops / SSL"
             },
