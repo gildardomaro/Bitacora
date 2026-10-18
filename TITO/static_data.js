@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-18T04:39:35.552527Z",
+  "generated_at": "2026-10-18T04:44:35.492536Z",
   "account_pepperstone": {
     "terminal": "Tito (Pepperstone-03 51580714)",
     "connected": true,
@@ -4128,7 +4128,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-17 21:39:35",
+  "last_sync": "2026-10-17 21:44:35",
   "equity": {
     "real1000": {
       "initial_balance": 1000.0,
@@ -4494,8 +4494,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-18T04:39:35.471340Z",
-    "last_sync": "2026-10-17 21:39:35",
+    "timestamp": "2026-10-18T04:44:35.408787Z",
+    "last_sync": "2026-10-17 21:44:35",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -4731,170 +4731,226 @@ window.STATIC_DASHBOARD_DATA = {
     ],
     "calendar": [
       {
-        "title": "MPC Member Breeden Speaks",
-        "currency": "GBP",
-        "impact": "Low",
-        "datetime_raw": "2026-10-12T05:30:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Bank Holiday",
-        "currency": "USD",
-        "impact": "Holiday",
-        "datetime_raw": "2026-10-12T07:00:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "MPC Member Mann Speaks",
-        "currency": "GBP",
-        "impact": "Low",
-        "datetime_raw": "2026-10-12T08:50:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
         "title": "IMF Meetings",
         "currency": "GLOBAL",
         "impact": "Low",
-        "datetime_raw": "2026-10-12T10:15:00-04:00",
+        "datetime_raw": "2026-10-18T10:15:00-04:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "FOMC Member Hammack Speaks",
+        "title": "Rightmove HPI m/m",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-18T19:01:00-04:00",
+        "forecast": "-",
+        "previous": "0.7%"
+      },
+      {
+        "title": "RBA Assist Gov Kent Speaks",
+        "currency": "AUD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-18T19:05:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "NAHB Housing Market Index",
         "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "2026-10-12T12:10:00-04:00",
-        "forecast": "-",
-        "previous": "-"
+        "datetime_raw": "2026-10-19T10:00:00-04:00",
+        "forecast": "31",
+        "previous": "32"
       },
       {
-        "title": "BRC Retail Sales Monitor y/y",
-        "currency": "GBP",
-        "impact": "Low",
-        "datetime_raw": "2026-10-12T19:01:00-04:00",
-        "forecast": "0.8%",
-        "previous": "0.5%"
-      },
-      {
-        "title": "Monetary Policy Meeting Minutes",
-        "currency": "AUD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-12T20:30:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "NAB Business Confidence",
-        "currency": "AUD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-12T20:30:00-04:00",
-        "forecast": "-",
-        "previous": "-8"
-      },
-      {
-        "title": "MPC Member Greene Speaks",
-        "currency": "GBP",
-        "impact": "Low",
-        "datetime_raw": "2026-10-12T23:00:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "German Final CPI m/m",
+        "title": "German PPI m/m",
         "currency": "EUR",
         "impact": "Low",
-        "datetime_raw": "2026-10-13T02:00:00-04:00",
-        "forecast": "0.6%",
-        "previous": "0.6%"
+        "datetime_raw": "2026-10-20T02:00:00-04:00",
+        "forecast": "1.5%",
+        "previous": "1.1%"
       },
       {
-        "title": "FOMC Member Waller Speaks",
-        "currency": "USD",
+        "title": "Average Earnings Index 3m/y",
+        "currency": "GBP",
+        "impact": "Medium",
+        "datetime_raw": "2026-10-20T02:00:00-04:00",
+        "forecast": "3.8%",
+        "previous": "3.9%"
+      },
+      {
+        "title": "Claimant Count Change",
+        "currency": "GBP",
         "impact": "Low",
-        "datetime_raw": "2026-10-13T03:45:00-04:00",
+        "datetime_raw": "2026-10-20T02:00:00-04:00",
+        "forecast": "19.4K",
+        "previous": "27.8K"
+      },
+      {
+        "title": "Unemployment Rate",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-20T02:00:00-04:00",
+        "forecast": "4.9%",
+        "previous": "4.9%"
+      },
+      {
+        "title": "Current Account",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-10-20T04:00:00-04:00",
+        "forecast": "29.2B",
+        "previous": "27.6B"
+      },
+      {
+        "title": "German ZEW Economic Sentiment",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-10-20T05:00:00-04:00",
+        "forecast": "30.2",
+        "previous": "34.7"
+      },
+      {
+        "title": "ZEW Economic Sentiment",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-10-20T05:00:00-04:00",
+        "forecast": "23.6",
+        "previous": "25.8"
+      },
+      {
+        "title": "10-y Bond Auction",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-20T05:33:00-04:00",
         "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "NFIB Small Business Index",
-        "currency": "USD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-13T06:00:00-04:00",
-        "forecast": "98.1",
-        "previous": "98.7"
+        "previous": "5.38|3.3"
       },
       {
         "title": "ADP Weekly Employment Change",
         "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "2026-10-13T08:15:00-04:00",
+        "datetime_raw": "2026-10-20T08:15:00-04:00",
         "forecast": "-",
-        "previous": "23.8K"
+        "previous": "24.8K"
       },
       {
-        "title": "Existing Home Sales",
+        "title": "Building Permits",
         "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "2026-10-13T10:00:00-04:00",
-        "forecast": "3.95M",
-        "previous": "3.98M"
+        "datetime_raw": "2026-10-20T08:30:00-04:00",
+        "forecast": "1.39M",
+        "previous": "1.39M"
       },
       {
-        "title": "IMF Meetings",
-        "currency": "GLOBAL",
-        "impact": "Low",
-        "datetime_raw": "2026-10-13T10:15:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "CB Leading Index m/m",
-        "currency": "AUD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-13T10:30:00-04:00",
-        "forecast": "-",
-        "previous": "0.5%"
-      },
-      {
-        "title": "FOMC Member Barkin Speaks",
+        "title": "Housing Starts",
         "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "2026-10-13T13:00:00-04:00",
-        "forecast": "-",
-        "previous": "-"
+        "datetime_raw": "2026-10-20T08:30:00-04:00",
+        "forecast": "1.30M",
+        "previous": "1.28M"
       },
       {
-        "title": "FOMC Member Collins Speaks",
+        "title": "Pending Home Sales m/m",
         "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "2026-10-13T16:00:00-04:00",
-        "forecast": "-",
-        "previous": "-"
+        "datetime_raw": "2026-10-20T10:00:00-04:00",
+        "forecast": "-0.4%",
+        "previous": "0.3%"
       },
       {
-        "title": "MI Leading Index m/m",
-        "currency": "AUD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-13T19:30:00-04:00",
-        "forecast": "-",
-        "previous": "0.0%"
-      },
-      {
-        "title": "ECB President Lagarde Speaks",
-        "currency": "EUR",
-        "impact": "Medium",
-        "datetime_raw": "2026-10-13T22:10:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "MPC Member Breeden Speaks",
+        "title": "MPC Member Greene Speaks",
         "currency": "GBP",
         "impact": "Low",
-        "datetime_raw": "2026-10-13T23:30:00-04:00",
+        "datetime_raw": "2026-10-20T13:00:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "API Weekly Statistical Bulletin",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-20T16:30:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "RBA Deputy Gov Hauser Speaks",
+        "currency": "AUD",
+        "impact": "Low",
+        "datetime_raw": "2026-10-20T18:30:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "CPI y/y",
+        "currency": "GBP",
+        "impact": "High",
+        "datetime_raw": "2026-10-21T02:00:00-04:00",
+        "forecast": "3.4%",
+        "previous": "3.1%"
+      },
+      {
+        "title": "Core CPI y/y",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-21T02:00:00-04:00",
+        "forecast": "2.8%",
+        "previous": "2.6%"
+      },
+      {
+        "title": "PPI Input m/m",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-21T02:00:00-04:00",
+        "forecast": "1.3%",
+        "previous": "0.3%"
+      },
+      {
+        "title": "PPI Output m/m",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-21T02:00:00-04:00",
+        "forecast": "0.7%",
+        "previous": "0.7%"
+      },
+      {
+        "title": "Public Sector Net Borrowing",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-21T02:00:00-04:00",
+        "forecast": "23.9B",
+        "previous": "18.3B"
+      },
+      {
+        "title": "RPI y/y",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-21T02:00:00-04:00",
+        "forecast": "3.9%",
+        "previous": "3.4%"
+      },
+      {
+        "title": "German Buba President Nagel Speaks",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-10-21T03:15:00-04:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "HPI y/y",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-10-21T04:30:00-04:00",
+        "forecast": "1.7%",
+        "previous": "1.4%"
+      },
+      {
+        "title": "German Buba Monthly Report",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-10-21T06:00:00-04:00",
         "forecast": "-",
         "previous": "-"
       },
@@ -4902,117 +4958,29 @@ window.STATIC_DASHBOARD_DATA = {
         "title": "BOE Gov Bailey Speaks",
         "currency": "GBP",
         "impact": "Medium",
-        "datetime_raw": "2026-10-14T01:30:00-04:00",
+        "datetime_raw": "2026-10-21T09:00:00-04:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "German WPI m/m",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-10-14T02:00:00-04:00",
-        "forecast": "0.6%",
-        "previous": "0.9%"
-      },
-      {
-        "title": "MPC Member Pill Speaks",
-        "currency": "GBP",
-        "impact": "Low",
-        "datetime_raw": "2026-10-14T02:00:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "ECB President Lagarde Speaks",
-        "currency": "EUR",
-        "impact": "Medium",
-        "datetime_raw": "2026-10-14T04:30:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "German 30-y Bond Auction",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-10-14T05:38:00-04:00",
-        "forecast": "-",
-        "previous": "3.80|1.6"
-      },
-      {
-        "title": "FOMC Member Bowman Speaks",
+        "title": "Crude Oil Inventories",
         "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "2026-10-14T05:40:00-04:00",
+        "datetime_raw": "2026-10-21T10:30:00-04:00",
         "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "EU Economic Summit",
-        "currency": "EUR",
-        "impact": "Medium",
-        "datetime_raw": "2026-10-14T06:15:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Core CPI m/m",
-        "currency": "USD",
-        "impact": "High",
-        "datetime_raw": "2026-10-14T08:30:00-04:00",
-        "forecast": "0.2%",
-        "previous": "0.3%"
-      },
-      {
-        "title": "Core CPI y/y",
-        "currency": "USD",
-        "impact": "High",
-        "datetime_raw": "2026-10-14T08:30:00-04:00",
-        "forecast": "2.5%",
-        "previous": "2.4%"
+        "previous": "-8.6M"
       }
     ],
-    "high_impact_count": 13,
+    "high_impact_count": 1,
     "macro_summary": {
       "high_impact_events": [
         {
-          "title": "Core CPI m/m",
-          "currency": "USD",
-          "impact": "High",
-          "datetime_raw": "2026-10-14T08:30:00-04:00",
-          "forecast": "0.2%",
-          "previous": "0.3%"
-        },
-        {
-          "title": "Core CPI y/y",
-          "currency": "USD",
-          "impact": "High",
-          "datetime_raw": "2026-10-14T08:30:00-04:00",
-          "forecast": "2.5%",
-          "previous": "2.4%"
-        },
-        {
-          "title": "CPI m/m",
-          "currency": "USD",
-          "impact": "High",
-          "datetime_raw": "2026-10-14T08:30:00-04:00",
-          "forecast": "0.6%",
-          "previous": "0.4%"
-        },
-        {
           "title": "CPI y/y",
-          "currency": "USD",
+          "currency": "GBP",
           "impact": "High",
-          "datetime_raw": "2026-10-14T08:30:00-04:00",
-          "forecast": "3.6%",
-          "previous": "3.4%"
-        },
-        {
-          "title": "Employment Change",
-          "currency": "AUD",
-          "impact": "High",
-          "datetime_raw": "2026-10-14T20:30:00-04:00",
-          "forecast": "19.6K",
-          "previous": "39.5K"
+          "datetime_raw": "2026-10-21T02:00:00-04:00",
+          "forecast": "3.4%",
+          "previous": "3.1%"
         }
       ],
       "dxy_bias": "Neutral",
