@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-19T19:24:36.027911Z",
+  "generated_at": "2026-10-19T19:29:41.314699Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -32452,7 +32452,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-19 12:24:35",
+  "last_sync": "2026-10-19 12:29:41",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -34251,8 +34251,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-19T19:24:35.915251Z",
-    "last_sync": "2026-10-19 12:24:35",
+    "timestamp": "2026-10-19T19:29:41.114522Z",
+    "last_sync": "2026-10-19 12:29:41",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -34260,10 +34260,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.33045,
-        "bid": 1.33018,
-        "ask": 1.33073,
-        "spread_pips": 5.5,
+        "price": 1.33036,
+        "bid": 1.33009,
+        "ask": 1.33063,
+        "spread_pips": 5.4,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 51,
@@ -34282,19 +34282,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.332,
               "density_pct": 0.43,
-              "dist_pips": 15.5,
+              "dist_pips": 16.4,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.335,
               "density_pct": 0.36,
-              "dist_pips": 45.5,
+              "dist_pips": 46.4,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.3345,
               "density_pct": 0.24,
-              "dist_pips": 40.5,
+              "dist_pips": 41.4,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -34302,19 +34302,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.329,
               "density_pct": 0.27,
-              "dist_pips": 14.5,
+              "dist_pips": 13.6,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3,
               "density_pct": 0.21,
-              "dist_pips": 304.5,
+              "dist_pips": 303.6,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3285,
               "density_pct": 0.19,
-              "dist_pips": 19.5,
+              "dist_pips": 18.6,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -34337,10 +34337,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 4141.93,
-        "bid": 4141.14,
-        "ask": 4142.72,
-        "spread_pips": 158.0,
+        "price": 4142.39,
+        "bid": 4141.61,
+        "ask": 4143.17,
+        "spread_pips": 156.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 45,
@@ -34348,7 +34348,7 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 71.3,
           "short_pct": 28.7,
-          "longs_in_loss": 14.5,
+          "longs_in_loss": 14.4,
           "shorts_in_loss": 19.9,
           "summary": "Minoristas 71.3% Comprados vs 28.7% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
@@ -34359,19 +34359,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4186.5,
               "density_pct": 0.29,
-              "dist_pips": 4457.0,
+              "dist_pips": 4411.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4149.5,
               "density_pct": 0.27,
-              "dist_pips": 757.0,
+              "dist_pips": 711.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4155.0,
               "density_pct": 0.24,
-              "dist_pips": 1307.0,
+              "dist_pips": 1261.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -34379,19 +34379,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4132.5,
               "density_pct": 0.2,
-              "dist_pips": 943.0,
+              "dist_pips": 989.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 4050.0,
               "density_pct": 0.16,
-              "dist_pips": 9193.0,
+              "dist_pips": 9239.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 4053.0,
               "density_pct": 0.16,
-              "dist_pips": 8893.0,
+              "dist_pips": 8939.0,
               "label": "Sell Stops / SSL"
             }
           ],
