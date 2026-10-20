@@ -1,68 +1,19 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-20T05:49:35.195644Z",
+  "generated_at": "2026-10-20T05:54:35.800119Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
     "login": 51581712,
     "server": "PepperstoneBS-MT5-Live01",
-    "balance": 207.08,
-    "equity": 204.59,
-    "margin": 79.99,
-    "margin_free": 124.6,
-    "floating": -2.49,
-    "positions_count": 4,
+    "balance": 207.63,
+    "equity": 207.63,
+    "margin": 0.0,
+    "margin_free": 207.63,
+    "floating": 0.0,
+    "positions_count": 0,
     "dynamic_lot": 0.02,
     "next_lot_balance": 342.0,
-    "positions": [
-      {
-        "ticket": 340561033,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.03,
-        "open_price": 1.33264,
-        "current_price": 1.33335,
-        "sl": 1.33656,
-        "tp": 1.33258,
-        "profit": -2.13,
-        "time": "2026-10-19 23:00:00"
-      },
-      {
-        "ticket": 340578283,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.03,
-        "open_price": 1.33311,
-        "current_price": 1.33335,
-        "sl": 0.0,
-        "tp": 1.33256,
-        "profit": -0.72,
-        "time": "2026-10-20 00:15:59"
-      },
-      {
-        "ticket": 340584120,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.03,
-        "open_price": 1.3333,
-        "current_price": 1.33335,
-        "sl": 0.0,
-        "tp": 1.33262,
-        "profit": -0.15,
-        "time": "2026-10-20 00:50:23"
-      },
-      {
-        "ticket": 340595250,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.03,
-        "open_price": 1.33352,
-        "current_price": 1.33335,
-        "sl": 0.0,
-        "tp": 0.0,
-        "profit": 0.51,
-        "time": "2026-10-20 01:30:47"
-      }
-    ],
+    "positions": [],
     "strategy": "smart+IA / MARO"
   },
   "real_trades": [
@@ -737,6 +688,102 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "HECTOR",
       "strategy": "smart+IA / MARO",
       "comment": "{340583935}"
+    },
+    {
+      "time": "2026-10-20 01:54:01",
+      "date": "2026-10-20",
+      "hour": "01:54:01",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.33306,
+      "price_open": 1.33264,
+      "profit": -1.48,
+      "raw_profit": -1.26,
+      "commission": -0.22,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 298075668,
+      "order": 340603863,
+      "position_id": 340561033,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "{340560871}"
+    },
+    {
+      "time": "2026-10-20 01:54:01",
+      "date": "2026-10-20",
+      "hour": "01:54:01",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.33306,
+      "price_open": 1.33311,
+      "profit": -0.07,
+      "raw_profit": 0.15,
+      "commission": -0.22,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 298075669,
+      "order": 340603864,
+      "position_id": 340578283,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "{340578281}"
+    },
+    {
+      "time": "2026-10-20 01:54:01",
+      "date": "2026-10-20",
+      "hour": "01:54:01",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.33306,
+      "price_open": 1.3333,
+      "profit": 0.5,
+      "raw_profit": 0.72,
+      "commission": -0.22,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 298075670,
+      "order": 340603865,
+      "position_id": 340584120,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "{340584118}"
+    },
+    {
+      "time": "2026-10-20 01:54:01",
+      "date": "2026-10-20",
+      "hour": "01:54:01",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.33306,
+      "price_open": 1.33352,
+      "profit": 1.16,
+      "raw_profit": 1.38,
+      "commission": -0.22,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 298075671,
+      "order": 340603866,
+      "position_id": 340595250,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "{340595247}"
     }
   ],
   "trades": [
@@ -1411,6 +1458,102 @@ window.STATIC_DASHBOARD_DATA = {
       "terminal": "HECTOR",
       "strategy": "smart+IA / MARO",
       "comment": "{340583935}"
+    },
+    {
+      "time": "2026-10-20 01:54:01",
+      "date": "2026-10-20",
+      "hour": "01:54:01",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.33306,
+      "price_open": 1.33264,
+      "profit": -1.48,
+      "raw_profit": -1.26,
+      "commission": -0.22,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 298075668,
+      "order": 340603863,
+      "position_id": 340561033,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "{340560871}"
+    },
+    {
+      "time": "2026-10-20 01:54:01",
+      "date": "2026-10-20",
+      "hour": "01:54:01",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.33306,
+      "price_open": 1.33311,
+      "profit": -0.07,
+      "raw_profit": 0.15,
+      "commission": -0.22,
+      "swap": 0.0,
+      "result": "LOSS",
+      "ticket": 298075669,
+      "order": 340603864,
+      "position_id": 340578283,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "{340578281}"
+    },
+    {
+      "time": "2026-10-20 01:54:01",
+      "date": "2026-10-20",
+      "hour": "01:54:01",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.33306,
+      "price_open": 1.3333,
+      "profit": 0.5,
+      "raw_profit": 0.72,
+      "commission": -0.22,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 298075670,
+      "order": 340603865,
+      "position_id": 340584120,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "{340584118}"
+    },
+    {
+      "time": "2026-10-20 01:54:01",
+      "date": "2026-10-20",
+      "hour": "01:54:01",
+      "month": "2026-10",
+      "symbol": "GBPUSD",
+      "type": "SELL",
+      "lot": 0.03,
+      "volume": 0.03,
+      "price": 1.33306,
+      "price_open": 1.33352,
+      "profit": 1.16,
+      "raw_profit": 1.38,
+      "commission": -0.22,
+      "swap": 0.0,
+      "result": "WIN",
+      "ticket": 298075671,
+      "order": 340603866,
+      "position_id": 340595250,
+      "account": "HECTOR",
+      "terminal": "HECTOR",
+      "strategy": "smart+IA / MARO",
+      "comment": "{340595247}"
     }
   ],
   "monthly_analytics": {
@@ -1423,23 +1566,23 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-10": 251.98
       },
-      "total_wins": 10,
-      "total_losses": 18,
-      "total_trades": 28,
-      "win_rate": 35.7,
-      "total_profit_usd": -34.48,
-      "total_return_pct": -13.68,
+      "total_wins": 12,
+      "total_losses": 20,
+      "total_trades": 32,
+      "win_rate": 37.5,
+      "total_profit_usd": -34.37,
+      "total_return_pct": -13.64,
       "monthly_series": [
         {
           "month": "2026-10",
-          "profit_usd": -34.48,
-          "profit_pct": -13.68,
+          "profit_usd": -34.37,
+          "profit_pct": -13.64,
           "deposit_usd": 251.98,
-          "wins": 10,
-          "losses": 18,
-          "total_trades": 28,
-          "win_rate": 35.7,
-          "commission_swap_usd": -4.58
+          "wins": 12,
+          "losses": 20,
+          "total_trades": 32,
+          "win_rate": 37.5,
+          "commission_swap_usd": -5.46
         }
       ],
       "months_available": [
@@ -2097,6 +2240,54 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "{340466471}"
           },
           {
+            "time": "2026-10-20 01:54:01",
+            "date": "2026-10-20",
+            "hour": "01:54:01",
+            "month": "2026-10",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.03,
+            "volume": 0.03,
+            "price": 1.33306,
+            "price_open": 1.33264,
+            "profit": -1.48,
+            "raw_profit": -1.26,
+            "commission": -0.22,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 298075668,
+            "order": 340603863,
+            "position_id": 340561033,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "{340560871}"
+          },
+          {
+            "time": "2026-10-20 01:54:01",
+            "date": "2026-10-20",
+            "hour": "01:54:01",
+            "month": "2026-10",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.03,
+            "volume": 0.03,
+            "price": 1.33306,
+            "price_open": 1.33311,
+            "profit": -0.07,
+            "raw_profit": 0.15,
+            "commission": -0.22,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 298075669,
+            "order": 340603864,
+            "position_id": 340578283,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "{340578281}"
+          },
+          {
             "time": "2026-10-20 00:49:16",
             "date": "2026-10-20",
             "hour": "00:49:16",
@@ -2119,6 +2310,54 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "HECTOR",
             "strategy": "smart+IA / MARO",
             "comment": "{340583935}"
+          },
+          {
+            "time": "2026-10-20 01:54:01",
+            "date": "2026-10-20",
+            "hour": "01:54:01",
+            "month": "2026-10",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.03,
+            "volume": 0.03,
+            "price": 1.33306,
+            "price_open": 1.3333,
+            "profit": 0.5,
+            "raw_profit": 0.72,
+            "commission": -0.22,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 298075670,
+            "order": 340603865,
+            "position_id": 340584120,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "{340584118}"
+          },
+          {
+            "time": "2026-10-20 01:54:01",
+            "date": "2026-10-20",
+            "hour": "01:54:01",
+            "month": "2026-10",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.03,
+            "volume": 0.03,
+            "price": 1.33306,
+            "price_open": 1.33352,
+            "profit": 1.16,
+            "raw_profit": 1.38,
+            "commission": -0.22,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 298075671,
+            "order": 340603866,
+            "position_id": 340595250,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "{340595247}"
           }
         ]
       }
@@ -2132,23 +2371,23 @@ window.STATIC_DASHBOARD_DATA = {
       "deposits_by_month": {
         "2026-10": 251.98
       },
-      "total_wins": 10,
-      "total_losses": 18,
-      "total_trades": 28,
-      "win_rate": 35.7,
-      "total_profit_usd": -34.48,
-      "total_return_pct": -13.68,
+      "total_wins": 12,
+      "total_losses": 20,
+      "total_trades": 32,
+      "win_rate": 37.5,
+      "total_profit_usd": -34.37,
+      "total_return_pct": -13.64,
       "monthly_series": [
         {
           "month": "2026-10",
-          "profit_usd": -34.48,
-          "profit_pct": -13.68,
+          "profit_usd": -34.37,
+          "profit_pct": -13.64,
           "deposit_usd": 251.98,
-          "wins": 10,
-          "losses": 18,
-          "total_trades": 28,
-          "win_rate": 35.7,
-          "commission_swap_usd": -4.58
+          "wins": 12,
+          "losses": 20,
+          "total_trades": 32,
+          "win_rate": 37.5,
+          "commission_swap_usd": -5.46
         }
       ],
       "months_available": [
@@ -2806,6 +3045,54 @@ window.STATIC_DASHBOARD_DATA = {
             "comment": "{340466471}"
           },
           {
+            "time": "2026-10-20 01:54:01",
+            "date": "2026-10-20",
+            "hour": "01:54:01",
+            "month": "2026-10",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.03,
+            "volume": 0.03,
+            "price": 1.33306,
+            "price_open": 1.33264,
+            "profit": -1.48,
+            "raw_profit": -1.26,
+            "commission": -0.22,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 298075668,
+            "order": 340603863,
+            "position_id": 340561033,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "{340560871}"
+          },
+          {
+            "time": "2026-10-20 01:54:01",
+            "date": "2026-10-20",
+            "hour": "01:54:01",
+            "month": "2026-10",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.03,
+            "volume": 0.03,
+            "price": 1.33306,
+            "price_open": 1.33311,
+            "profit": -0.07,
+            "raw_profit": 0.15,
+            "commission": -0.22,
+            "swap": 0.0,
+            "result": "LOSS",
+            "ticket": 298075669,
+            "order": 340603864,
+            "position_id": 340578283,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "{340578281}"
+          },
+          {
             "time": "2026-10-20 00:49:16",
             "date": "2026-10-20",
             "hour": "00:49:16",
@@ -2828,19 +3115,67 @@ window.STATIC_DASHBOARD_DATA = {
             "terminal": "HECTOR",
             "strategy": "smart+IA / MARO",
             "comment": "{340583935}"
+          },
+          {
+            "time": "2026-10-20 01:54:01",
+            "date": "2026-10-20",
+            "hour": "01:54:01",
+            "month": "2026-10",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.03,
+            "volume": 0.03,
+            "price": 1.33306,
+            "price_open": 1.3333,
+            "profit": 0.5,
+            "raw_profit": 0.72,
+            "commission": -0.22,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 298075670,
+            "order": 340603865,
+            "position_id": 340584120,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "{340584118}"
+          },
+          {
+            "time": "2026-10-20 01:54:01",
+            "date": "2026-10-20",
+            "hour": "01:54:01",
+            "month": "2026-10",
+            "symbol": "GBPUSD",
+            "type": "SELL",
+            "lot": 0.03,
+            "volume": 0.03,
+            "price": 1.33306,
+            "price_open": 1.33352,
+            "profit": 1.16,
+            "raw_profit": 1.38,
+            "commission": -0.22,
+            "swap": 0.0,
+            "result": "WIN",
+            "ticket": 298075671,
+            "order": 340603866,
+            "position_id": 340595250,
+            "account": "HECTOR",
+            "terminal": "HECTOR",
+            "strategy": "smart+IA / MARO",
+            "comment": "{340595247}"
           }
         ]
       }
     }
   },
-  "last_sync": "2026-10-19 22:49:35",
+  "last_sync": "2026-10-19 22:54:35",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
-      "final_balance": 217.5,
-      "total_trades": 28,
-      "win_rate": 35.7,
-      "profit_factor": "0.31",
+      "final_balance": 217.61,
+      "total_trades": 32,
+      "win_rate": 37.5,
+      "profit_factor": "0.34",
       "curve": [
         {
           "time": "2026-10-05 19:28:34",
@@ -2957,15 +3292,31 @@ window.STATIC_DASHBOARD_DATA = {
         {
           "time": "2026-10-20 00:49:16",
           "balance": 217.5
+        },
+        {
+          "time": "2026-10-20 01:54:01",
+          "balance": 216.02
+        },
+        {
+          "time": "2026-10-20 01:54:01",
+          "balance": 215.95
+        },
+        {
+          "time": "2026-10-20 01:54:01",
+          "balance": 216.45
+        },
+        {
+          "time": "2026-10-20 01:54:01",
+          "balance": 217.61
         }
       ]
     },
     "hector": {
       "initial_balance": 251.98,
-      "final_balance": 217.5,
-      "total_trades": 28,
-      "win_rate": 35.7,
-      "profit_factor": "0.31",
+      "final_balance": 217.61,
+      "total_trades": 32,
+      "win_rate": 37.5,
+      "profit_factor": "0.34",
       "curve": [
         {
           "time": "2026-10-05 19:28:34",
@@ -3082,13 +3433,29 @@ window.STATIC_DASHBOARD_DATA = {
         {
           "time": "2026-10-20 00:49:16",
           "balance": 217.5
+        },
+        {
+          "time": "2026-10-20 01:54:01",
+          "balance": 216.02
+        },
+        {
+          "time": "2026-10-20 01:54:01",
+          "balance": 215.95
+        },
+        {
+          "time": "2026-10-20 01:54:01",
+          "balance": 216.45
+        },
+        {
+          "time": "2026-10-20 01:54:01",
+          "balance": 217.61
         }
       ]
     }
   },
   "radar": {
-    "timestamp": "2026-10-20T05:49:35.109510Z",
-    "last_sync": "2026-10-19 22:49:35",
+    "timestamp": "2026-10-20T05:54:35.717036Z",
+    "last_sync": "2026-10-19 22:54:35",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -3096,10 +3463,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.33337,
-        "bid": 1.33308,
-        "ask": 1.33365,
-        "spread_pips": 5.7,
+        "price": 1.33305,
+        "bid": 1.33278,
+        "ask": 1.33333,
+        "spread_pips": 5.5,
         "bias": "BULLISH",
         "bias_desc": "SESGO INSTITUCIONAL COMPRA",
         "prob_buy": 61,
@@ -3118,19 +3485,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.335,
               "density_pct": 0.36,
-              "dist_pips": 16.3,
+              "dist_pips": 19.5,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.3345,
               "density_pct": 0.26,
-              "dist_pips": 11.3,
+              "dist_pips": 14.5,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.334,
               "density_pct": 0.22,
-              "dist_pips": 6.3,
+              "dist_pips": 9.5,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -3138,19 +3505,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.3,
               "density_pct": 0.22,
-              "dist_pips": 333.7,
+              "dist_pips": 330.5,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3325,
               "density_pct": 0.22,
-              "dist_pips": 8.7,
+              "dist_pips": 5.5,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3285,
               "density_pct": 0.21,
-              "dist_pips": 48.7,
+              "dist_pips": 45.5,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -3173,10 +3540,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 4126.94,
-        "bid": 4126.13,
-        "ask": 4127.75,
-        "spread_pips": 162.0,
+        "price": 4121.62,
+        "bid": 4120.88,
+        "ask": 4122.36,
+        "spread_pips": 148.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 45,
@@ -3184,8 +3551,8 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 71.7,
           "short_pct": 28.3,
-          "longs_in_loss": 15.2,
-          "shorts_in_loss": 19.3,
+          "longs_in_loss": 15.5,
+          "shorts_in_loss": 19.2,
           "summary": "Minoristas 71.7% Comprados vs 28.3% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
@@ -3195,19 +3562,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4186.5,
               "density_pct": 0.31,
-              "dist_pips": 5956.0,
+              "dist_pips": 6488.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4156.5,
               "density_pct": 0.22,
-              "dist_pips": 2956.0,
+              "dist_pips": 3488.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4155.5,
               "density_pct": 0.2,
-              "dist_pips": 2856.0,
+              "dist_pips": 3388.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -3215,19 +3582,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4071.0,
               "density_pct": 0.27,
-              "dist_pips": 5594.0,
+              "dist_pips": 5062.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 4076.5,
               "density_pct": 0.22,
-              "dist_pips": 5044.0,
+              "dist_pips": 4512.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 4115.5,
               "density_pct": 0.18,
-              "dist_pips": 1144.0,
+              "dist_pips": 612.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -3250,14 +3617,14 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.69843,
-        "bid": 0.69797,
-        "ask": 0.6989,
-        "spread_pips": 9.3,
+        "price": 0.69814,
+        "bid": 0.69767,
+        "ask": 0.69861,
+        "spread_pips": 9.4,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 47,
-        "prob_sell": 53,
+        "prob_buy": 44,
+        "prob_sell": 56,
         "retail_sentiment": {
           "long_pct": 62.9,
           "short_pct": 37.1,
@@ -3272,19 +3639,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.6995,
               "density_pct": 0.26,
-              "dist_pips": 10.7,
+              "dist_pips": 13.6,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.699,
               "density_pct": 0.25,
-              "dist_pips": 5.7,
+              "dist_pips": 8.6,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.7,
               "density_pct": 0.25,
-              "dist_pips": 15.7,
+              "dist_pips": 18.6,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -3292,19 +3659,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.696,
               "density_pct": 0.47,
-              "dist_pips": 24.3,
+              "dist_pips": 21.4,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.6965,
               "density_pct": 0.45,
-              "dist_pips": 19.3,
+              "dist_pips": 16.4,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.6955,
               "density_pct": 0.31,
-              "dist_pips": 29.3,
+              "dist_pips": 26.4,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -3314,7 +3681,7 @@ window.STATIC_DASHBOARD_DATA = {
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
           "trend_h1": "ALCISTA 🟢",
-          "trend_m15": "ALCISTA 🟢",
+          "trend_m15": "BAJISTA 🔴",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
           "h1_high": 0.6993,
           "h1_low": 0.69365,
@@ -3585,64 +3952,15 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 51581712,
     "server": "PepperstoneBS-MT5-Live01",
-    "balance": 207.08,
-    "equity": 204.59,
-    "margin": 79.99,
-    "margin_free": 124.6,
-    "floating": -2.49,
-    "positions_count": 4,
+    "balance": 207.63,
+    "equity": 207.63,
+    "margin": 0.0,
+    "margin_free": 207.63,
+    "floating": 0.0,
+    "positions_count": 0,
     "dynamic_lot": 0.02,
     "next_lot_balance": 342.0,
-    "positions": [
-      {
-        "ticket": 340561033,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.03,
-        "open_price": 1.33264,
-        "current_price": 1.33335,
-        "sl": 1.33656,
-        "tp": 1.33258,
-        "profit": -2.13,
-        "time": "2026-10-19 23:00:00"
-      },
-      {
-        "ticket": 340578283,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.03,
-        "open_price": 1.33311,
-        "current_price": 1.33335,
-        "sl": 0.0,
-        "tp": 1.33256,
-        "profit": -0.72,
-        "time": "2026-10-20 00:15:59"
-      },
-      {
-        "ticket": 340584120,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.03,
-        "open_price": 1.3333,
-        "current_price": 1.33335,
-        "sl": 0.0,
-        "tp": 1.33262,
-        "profit": -0.15,
-        "time": "2026-10-20 00:50:23"
-      },
-      {
-        "ticket": 340595250,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.03,
-        "open_price": 1.33352,
-        "current_price": 1.33335,
-        "sl": 0.0,
-        "tp": 0.0,
-        "profit": 0.51,
-        "time": "2026-10-20 01:30:47"
-      }
-    ],
+    "positions": [],
     "strategy": "smart+IA / MARO"
   },
   "account_tito": {
@@ -3650,64 +3968,15 @@ window.STATIC_DASHBOARD_DATA = {
     "connected": true,
     "login": 51580714,
     "server": "PepperstoneBS-MT5-Live01",
-    "balance": 925.91,
-    "equity": 917.61,
-    "margin": 266.63,
-    "margin_free": 650.98,
-    "floating": -8.3,
-    "positions_count": 4,
+    "balance": 927.81,
+    "equity": 927.81,
+    "margin": 0.0,
+    "margin_free": 927.81,
+    "floating": 0.0,
+    "positions_count": 0,
     "dynamic_lot": 0.1,
     "next_lot_balance": 1100.0,
-    "positions": [
-      {
-        "ticket": 340560996,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.1,
-        "open_price": 1.33264,
-        "current_price": 1.33335,
-        "sl": 1.33656,
-        "tp": 1.33258,
-        "profit": -7.1,
-        "time": "2026-10-19 23:00:00"
-      },
-      {
-        "ticket": 340578282,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.1,
-        "open_price": 1.33311,
-        "current_price": 1.33335,
-        "sl": 0.0,
-        "tp": 1.33256,
-        "profit": -2.4,
-        "time": "2026-10-20 00:15:59"
-      },
-      {
-        "ticket": 340584119,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.1,
-        "open_price": 1.3333,
-        "current_price": 1.33335,
-        "sl": 0.0,
-        "tp": 1.33262,
-        "profit": -0.5,
-        "time": "2026-10-20 00:50:23"
-      },
-      {
-        "ticket": 340595249,
-        "symbol": "GBPUSD",
-        "type": "SELL",
-        "volume": 0.1,
-        "open_price": 1.33352,
-        "current_price": 1.33335,
-        "sl": 0.0,
-        "tp": 0.0,
-        "profit": 1.7,
-        "time": "2026-10-20 01:30:47"
-      }
-    ],
+    "positions": [],
     "strategy": "smart+IA y MARO"
   },
   "default_terminal": "HECTOR"
