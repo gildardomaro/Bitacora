@@ -86,19 +86,22 @@ function startDashboard() {
   const isGitHubPages = isLocalServer && (window.location.hostname.endsWith('github.io') || window.location.hostname.endsWith('githubusercontent.com'));
   const isFileMode = window.location.protocol === 'file:' || isGitHubPages;
 
-  // Mostrar badge de última actualización publicada (desde static_data.js)
-  (function showPublishedBadge() {
+    // Función reactiva para actualizar el badge con el timestamp exacto
+  function updatePublishedBadge() {
     const ts = window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.generated_at;
     const badge = document.getElementById('mt5StatusBadge');
     const text  = document.getElementById('mt5StatusText');
-    if (!ts || !badge || !text) return;
-    if (isGitHubPages) {
+    if (!badge || !text) return;
+    if (ts) {
       badge.className = 'status-badge sync-timer';
       const d = new Date(ts);
       const fmt = d.toLocaleString('es-MX', { month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
       text.textContent = `📡 Datos al: ${fmt}`;
+    } else if (isFileMode) {
+      text.textContent = '📡 Conectado (Local)';
     }
-  })();
+  }
+  updatePublishedBadge();
 
   // =========================================================================
   // RELOJ DE MERCADO
@@ -1152,8 +1155,25 @@ function startDashboard() {
     return `Sinc: ${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
   }
 
-  // Recargar el archivo static_data.js dinámicamente en modo archivo local
-  function reloadStaticDataScript() {
+    // Recargar el archivo static_data.js dinámicamente con bypass total de caché (no-store + script tag)
+  async function reloadStaticDataScript() {
+    const bust = Date.now();
+    try {
+      const res = await fetch(`static_data.js?_nc=${bust}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }
+      });
+      if (res.ok) {
+        const jsText = await res.text();
+        const runScript = new Function(jsText);
+        runScript();
+        updatePublishedBadge();
+        return true;
+      }
+    } catch (e) {
+      console.warn('Aviso en fetch no-store de static_data.js, intentando fallback de script tag:', e);
+    }
+
     return new Promise((resolve) => {
       const oldScript = document.getElementById('staticDataScript');
       if (oldScript) {
@@ -1161,14 +1181,19 @@ function startDashboard() {
       }
       const script = document.createElement('script');
       script.id = 'staticDataScript';
-      script.src = `static_data.js?t=${Date.now()}`;
-      script.onload = () => resolve(true);
+      script.src = `static_data.js?_nc=${bust}`;
+      script.onload = () => {
+        updatePublishedBadge();
+        resolve(true);
+      };
       script.onerror = () => {
-        console.warn('No se pudo recargar static_data.js con parámetro, intentando sin query');
         const fallback = document.createElement('script');
         fallback.id = 'staticDataScript';
         fallback.src = 'static_data.js';
-        fallback.onload = () => resolve(true);
+        fallback.onload = () => {
+          updatePublishedBadge();
+          resolve(true);
+        };
         fallback.onerror = () => resolve(false);
         document.body.appendChild(fallback);
       };
@@ -1207,6 +1232,7 @@ function startDashboard() {
         loadEquityCurves(),
         loadMarketRadar()
       ]);
+      updatePublishedBadge();
     } catch (err) {
       console.warn("Aviso en refresco de datos:", err);
     } finally {
