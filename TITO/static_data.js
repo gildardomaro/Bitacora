@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-22T21:34:50.369767Z",
+  "generated_at": "2026-10-22T21:39:45.311389Z",
   "account_pepperstone": {
     "terminal": "Tito (Pepperstone-03 51580714)",
     "connected": true,
@@ -7584,7 +7584,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-22 14:34:50",
+  "last_sync": "2026-10-22 14:39:45",
   "equity": {
     "real1000": {
       "initial_balance": 1000.0,
@@ -8238,8 +8238,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-22T21:34:50.112825Z",
-    "last_sync": "2026-10-22 14:34:50",
+    "timestamp": "2026-10-22T21:39:44.987181Z",
+    "last_sync": "2026-10-22 14:39:45",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -8248,9 +8248,9 @@ window.STATIC_DASHBOARD_DATA = {
         "display": "GBP/USD",
         "icon": "💷",
         "price": 1.33969,
-        "bid": 1.33893,
-        "ask": 1.34046,
-        "spread_pips": 15.3,
+        "bid": 1.339,
+        "ask": 1.34038,
+        "spread_pips": 13.8,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 51,
@@ -8402,9 +8402,9 @@ window.STATIC_DASHBOARD_DATA = {
         "display": "AUD/USD",
         "icon": "🦘",
         "price": 0.70164,
-        "bid": 0.70091,
-        "ask": 0.70236,
-        "spread_pips": 14.5,
+        "bid": 0.70081,
+        "ask": 0.70246,
+        "spread_pips": 16.5,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 38,
