@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-24T20:09:43.943653Z",
+  "generated_at": "2026-10-24T20:14:42.769473Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -40156,7 +40156,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-24 13:09:43",
+  "last_sync": "2026-10-24 13:14:42",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -42383,8 +42383,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-24T20:09:43.614066Z",
-    "last_sync": "2026-10-24 13:09:43",
+    "timestamp": "2026-10-24T20:14:42.483602Z",
+    "last_sync": "2026-10-24 13:14:42",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -42608,7 +42608,7 @@ window.STATIC_DASHBOARD_DATA = {
           "ssl_target": 0.6985
         },
         "technical_smc": {
-          "trend_h4": "ALCISTA 🟢",
+          "trend_h4": "NEUTRAL ⚪",
           "trend_h1": "ALCISTA 🟢",
           "trend_m15": "ALCISTA 🟢",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
