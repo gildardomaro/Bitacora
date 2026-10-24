@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-24T14:59:41.343347Z",
+  "generated_at": "2026-10-24T15:04:38.631778Z",
   "account_pepperstone": {
     "terminal": "Tito (Pepperstone-03 51580714)",
     "connected": true,
@@ -8160,7 +8160,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-24 07:59:41",
+  "last_sync": "2026-10-24 08:04:38",
   "equity": {
     "real1000": {
       "initial_balance": 1000.0,
@@ -8862,8 +8862,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-24T14:59:40.996006Z",
-    "last_sync": "2026-10-24 07:59:41",
+    "timestamp": "2026-10-24T15:04:38.470394Z",
+    "last_sync": "2026-10-24 08:04:38",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -9058,7 +9058,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 0.705,
-              "density_pct": 0.18,
+              "density_pct": 0.17,
               "dist_pips": 13.8,
               "label": "Buy Stops / BSL"
             }
