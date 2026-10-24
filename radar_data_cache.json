@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-10-24T18:19:41.367795Z",
-  "last_sync": "2026-10-24 11:19:41",
+  "timestamp": "2026-10-24T18:24:40.236306Z",
+  "last_sync": "2026-10-24 11:24:40",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -178,8 +178,8 @@
         "summary": "Minoristas 63.0% Comprados vs 37.0% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
       },
       "order_book": {
-        "order_long_pct": 42.6,
-        "order_short_pct": 57.4,
+        "order_long_pct": 42.7,
+        "order_short_pct": 57.3,
         "top_bsl": [
           {
             "price": 0.704,
