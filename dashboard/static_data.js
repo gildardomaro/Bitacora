@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-24T18:14:37.150285Z",
+  "generated_at": "2026-10-24T18:19:41.614088Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -40156,7 +40156,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-24 11:14:36",
+  "last_sync": "2026-10-24 11:19:41",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -42383,8 +42383,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-24T18:14:36.970939Z",
-    "last_sync": "2026-10-24 11:14:36",
+    "timestamp": "2026-10-24T18:19:41.367795Z",
+    "last_sync": "2026-10-24 11:19:41",
     "assets": [
       {
         "symbol": "GBP/USD",
