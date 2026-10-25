@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-10-25T03:59:46.747087Z",
-  "last_sync": "2026-10-24 20:59:46",
+  "timestamp": "2026-10-25T04:04:41.850099Z",
+  "last_sync": "2026-10-24 21:04:41",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -226,7 +226,7 @@
       "technical_smc": {
         "trend_h4": "ALCISTA 🟢",
         "trend_h1": "ALCISTA 🟢",
-        "trend_m15": "NEUTRAL ⚪",
+        "trend_m15": "ALCISTA 🟢",
         "zone": "PREMIUM 🔴 (Busca Ventas)",
         "h1_high": 0.70384,
         "h1_low": 0.69942,
