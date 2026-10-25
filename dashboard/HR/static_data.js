@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-25T09:54:52.322382Z",
+  "generated_at": "2026-10-25T09:59:38.244949Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -5760,7 +5760,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-25 02:54:52",
+  "last_sync": "2026-10-25 02:59:38",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -6262,8 +6262,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-25T09:54:52.064189Z",
-    "last_sync": "2026-10-25 02:54:52",
+    "timestamp": "2026-10-25T09:59:38.019241Z",
+    "last_sync": "2026-10-25 02:59:38",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -6275,10 +6275,10 @@ window.STATIC_DASHBOARD_DATA = {
         "bid": 1.33692,
         "ask": 1.33864,
         "spread_pips": 17.2,
-        "bias": "NEUTRAL",
-        "bias_desc": "MERCADO EN RANGO / NEUTRAL",
-        "prob_buy": 51,
-        "prob_sell": 49,
+        "bias": "BULLISH",
+        "bias_desc": "SESGO INSTITUCIONAL COMPRA",
+        "prob_buy": 54,
+        "prob_sell": 46,
         "retail_sentiment": {
           "long_pct": 59.2,
           "short_pct": 40.8,
@@ -6334,12 +6334,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
-          "trend_h1": "NEUTRAL ⚪",
+          "trend_h1": "BAJISTA 🔴",
           "trend_m15": "ALCISTA 🟢",
-          "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 1.33778,
-          "h1_low": 1.33778,
-          "h1_equilibrium": 1.33778
+          "zone": "DESCUENTO 🟢 (Busca Compras)",
+          "h1_high": 1.34192,
+          "h1_low": 1.3355,
+          "h1_equilibrium": 1.33871
         }
       },
       {
@@ -6354,8 +6354,8 @@ window.STATIC_DASHBOARD_DATA = {
         "spread_pips": 246.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 42,
-        "prob_sell": 58,
+        "prob_buy": 45,
+        "prob_sell": 55,
         "retail_sentiment": {
           "long_pct": 71.1,
           "short_pct": 28.9,
@@ -6411,12 +6411,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
-          "trend_h1": "NEUTRAL ⚪",
+          "trend_h1": "BAJISTA 🔴",
           "trend_m15": "BAJISTA 🔴",
-          "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 3995.81,
-          "h1_low": 3995.81,
-          "h1_equilibrium": 3995.81
+          "zone": "DESCUENTO 🟢 (Busca Compras)",
+          "h1_high": 4102.86,
+          "h1_low": 3975.65,
+          "h1_equilibrium": 4039.26
         }
       },
       {
