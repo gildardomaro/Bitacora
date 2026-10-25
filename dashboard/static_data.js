@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-25T12:50:06.529133Z",
+  "generated_at": "2026-10-25T12:54:50.323117Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -40156,7 +40156,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-25 05:50:06",
+  "last_sync": "2026-10-25 05:54:49",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -42383,8 +42383,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-25T12:50:06.242726Z",
-    "last_sync": "2026-10-25 05:50:06",
+    "timestamp": "2026-10-25T12:54:49.618038Z",
+    "last_sync": "2026-10-25 05:54:49",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -42475,8 +42475,8 @@ window.STATIC_DASHBOARD_DATA = {
         "spread_pips": 246.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 45,
-        "prob_sell": 55,
+        "prob_buy": 42,
+        "prob_sell": 58,
         "retail_sentiment": {
           "long_pct": 71.1,
           "short_pct": 28.9,
@@ -42532,12 +42532,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
-          "trend_h1": "BAJISTA 🔴",
+          "trend_h1": "NEUTRAL ⚪",
           "trend_m15": "BAJISTA 🔴",
-          "zone": "DESCUENTO 🟢 (Busca Compras)",
-          "h1_high": 4102.86,
-          "h1_low": 3975.65,
-          "h1_equilibrium": 4039.26
+          "zone": "PREMIUM 🔴 (Busca Ventas)",
+          "h1_high": 3995.81,
+          "h1_low": 3995.81,
+          "h1_equilibrium": 3995.81
         }
       },
       {
@@ -42609,12 +42609,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
-          "trend_h1": "ALCISTA 🟢",
+          "trend_h1": "NEUTRAL ⚪",
           "trend_m15": "ALCISTA 🟢",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 0.70384,
-          "h1_low": 0.69942,
-          "h1_equilibrium": 0.70163
+          "h1_high": 0.70362,
+          "h1_low": 0.70362,
+          "h1_equilibrium": 0.70362
         }
       }
     ],
