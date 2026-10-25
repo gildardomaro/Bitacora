@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-10-25T21:29:40.917995Z",
-  "last_sync": "2026-10-25 14:29:40",
+  "timestamp": "2026-10-25T21:34:44.723894Z",
+  "last_sync": "2026-10-25 14:34:44",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -8,10 +8,10 @@
       "name": "GBP/USD (Libra / Dólar)",
       "display": "GBP/USD",
       "icon": "💷",
-      "price": 1.33684,
-      "bid": 1.33595,
-      "ask": 1.33773,
-      "spread_pips": 17.8,
+      "price": 1.33695,
+      "bid": 1.33641,
+      "ask": 1.33749,
+      "spread_pips": 10.8,
       "bias": "BEARISH",
       "bias_desc": "SESGO INSTITUCIONAL VENTA",
       "prob_buy": 44,
@@ -30,19 +30,19 @@
           {
             "price": 1.3445,
             "density_pct": 0.19,
-            "dist_pips": 76.6,
+            "dist_pips": 75.5,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 1.342,
             "density_pct": 0.15,
-            "dist_pips": 51.6,
+            "dist_pips": 50.5,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 1.339,
             "density_pct": 0.14,
-            "dist_pips": 21.6,
+            "dist_pips": 20.5,
             "label": "Buy Stops / BSL"
           }
         ],
@@ -50,19 +50,19 @@
           {
             "price": 1.3,
             "density_pct": 0.24,
-            "dist_pips": 368.4,
+            "dist_pips": 369.5,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 1.3345,
             "density_pct": 0.18,
-            "dist_pips": 23.4,
+            "dist_pips": 24.5,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 1.334,
             "density_pct": 0.14,
-            "dist_pips": 28.4,
+            "dist_pips": 29.5,
             "label": "Sell Stops / SSL"
           }
         ],
