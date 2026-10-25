@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-25T15:39:44.782277Z",
+  "generated_at": "2026-10-25T15:44:40.732527Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -40156,7 +40156,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-25 08:39:44",
+  "last_sync": "2026-10-25 08:44:40",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -42383,8 +42383,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-25T15:39:44.466691Z",
-    "last_sync": "2026-10-25 08:39:44",
+    "timestamp": "2026-10-25T15:44:40.250471Z",
+    "last_sync": "2026-10-25 08:44:40",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -42496,13 +42496,13 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 4030.0,
-              "density_pct": 0.26,
+              "density_pct": 0.25,
               "dist_pips": 3419.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4035.5,
-              "density_pct": 0.26,
+              "density_pct": 0.25,
               "dist_pips": 3969.0,
               "label": "Buy Stops / BSL"
             }
@@ -42510,7 +42510,7 @@ window.STATIC_DASHBOARD_DATA = {
           "top_ssl": [
             {
               "price": 3978.5,
-              "density_pct": 0.26,
+              "density_pct": 0.25,
               "dist_pips": 1731.0,
               "label": "Sell Stops / SSL"
             },
