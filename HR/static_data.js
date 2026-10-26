@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-26T20:59:40.791382Z",
+  "generated_at": "2026-10-26T21:04:40.992594Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -6624,7 +6624,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-26 13:59:40",
+  "last_sync": "2026-10-26 14:04:40",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -7198,8 +7198,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-26T20:59:40.588288Z",
-    "last_sync": "2026-10-26 13:59:40",
+    "timestamp": "2026-10-26T21:04:40.677734Z",
+    "last_sync": "2026-10-26 14:04:40",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -7239,16 +7239,16 @@ window.STATIC_DASHBOARD_DATA = {
               "label": "Buy Stops / BSL"
             },
             {
-              "price": 1.3385,
+              "price": 1.3365,
               "density_pct": 0.16,
-              "dist_pips": 43.0,
+              "dist_pips": 23.0,
               "label": "Buy Stops / BSL"
             }
           ],
           "top_ssl": [
             {
               "price": 1.3325,
-              "density_pct": 0.28,
+              "density_pct": 0.25,
               "dist_pips": 17.0,
               "label": "Sell Stops / SSL"
             },
@@ -7295,29 +7295,29 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 71.4,
           "short_pct": 28.6,
-          "longs_in_loss": 16.1,
+          "longs_in_loss": 16.2,
           "shorts_in_loss": 19.3,
           "summary": "Minoristas 71.4% Comprados vs 28.6% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 58.2,
-          "order_short_pct": 41.8,
+          "order_long_pct": 58.0,
+          "order_short_pct": 42.0,
           "top_bsl": [
             {
               "price": 4034.0,
-              "density_pct": 0.36,
+              "density_pct": 0.37,
               "dist_pips": 1681.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4030.0,
-              "density_pct": 0.27,
+              "density_pct": 0.33,
               "dist_pips": 1281.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4035.5,
-              "density_pct": 0.23,
+              "density_pct": 0.24,
               "dist_pips": 1831.0,
               "label": "Buy Stops / BSL"
             }
@@ -7325,13 +7325,13 @@ window.STATIC_DASHBOARD_DATA = {
           "top_ssl": [
             {
               "price": 3930.0,
-              "density_pct": 0.23,
+              "density_pct": 0.24,
               "dist_pips": 8719.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3981.0,
-              "density_pct": 0.23,
+              "density_pct": 0.24,
               "dist_pips": 3619.0,
               "label": "Sell Stops / SSL"
             },
@@ -7372,7 +7372,7 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 62.9,
           "short_pct": 37.1,
-          "longs_in_loss": 26.0,
+          "longs_in_loss": 25.9,
           "shorts_in_loss": 21.0,
           "summary": "Minoristas 62.9% Comprados vs 37.1% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
@@ -7402,7 +7402,7 @@ window.STATIC_DASHBOARD_DATA = {
           "top_ssl": [
             {
               "price": 0.7005,
-              "density_pct": 0.36,
+              "density_pct": 0.37,
               "dist_pips": 11.4,
               "label": "Sell Stops / SSL"
             },
@@ -7414,7 +7414,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 0.6995,
-              "density_pct": 0.24,
+              "density_pct": 0.25,
               "dist_pips": 21.4,
               "label": "Sell Stops / SSL"
             }
