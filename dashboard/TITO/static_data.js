@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-26T11:20:14.351003Z",
+  "generated_at": "2026-10-26T11:25:20.094167Z",
   "account_pepperstone": {
     "terminal": "Tito (Pepperstone-03 51580714)",
     "connected": true,
@@ -8832,7 +8832,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-26 04:20:14",
+  "last_sync": "2026-10-26 04:25:19",
   "equity": {
     "real1000": {
       "initial_balance": 1000.0,
@@ -9590,8 +9590,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-26T11:20:14.015066Z",
-    "last_sync": "2026-10-26 04:20:14",
+    "timestamp": "2026-10-26T11:25:19.891633Z",
+    "last_sync": "2026-10-26 04:25:19",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -9599,10 +9599,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.33466,
-        "bid": 1.33437,
-        "ask": 1.33494,
-        "spread_pips": 5.7,
+        "price": 1.33473,
+        "bid": 1.33446,
+        "ask": 1.335,
+        "spread_pips": 5.4,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 44,
@@ -9615,45 +9615,45 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 59.1% Comprados vs 40.9% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
-          "order_long_pct": 47.1,
-          "order_short_pct": 52.9,
+          "order_long_pct": 47.0,
+          "order_short_pct": 53.0,
           "top_bsl": [
             {
               "price": 1.3365,
-              "density_pct": 0.22,
-              "dist_pips": 18.4,
+              "density_pct": 0.26,
+              "dist_pips": 17.7,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.336,
               "density_pct": 0.21,
-              "dist_pips": 13.4,
+              "dist_pips": 12.7,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.3385,
-              "density_pct": 0.19,
-              "dist_pips": 38.4,
+              "density_pct": 0.2,
+              "dist_pips": 37.7,
               "label": "Buy Stops / BSL"
             }
           ],
           "top_ssl": [
             {
               "price": 1.3335,
-              "density_pct": 0.29,
-              "dist_pips": 11.6,
+              "density_pct": 0.28,
+              "dist_pips": 12.3,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3,
               "density_pct": 0.23,
-              "dist_pips": 346.6,
+              "dist_pips": 347.3,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.333,
-              "density_pct": 0.2,
-              "dist_pips": 16.6,
+              "density_pct": 0.22,
+              "dist_pips": 17.3,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -9676,19 +9676,19 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 4011.01,
-        "bid": 4010.26,
-        "ask": 4011.76,
-        "spread_pips": 150.0,
-        "bias": "NEUTRAL",
-        "bias_desc": "MERCADO EN RANGO / NEUTRAL",
-        "prob_buy": 51,
-        "prob_sell": 49,
+        "price": 4012.23,
+        "bid": 4011.47,
+        "ask": 4013.0,
+        "spread_pips": 153.0,
+        "bias": "BEARISH",
+        "bias_desc": "SESGO INSTITUCIONAL VENTA",
+        "prob_buy": 45,
+        "prob_sell": 55,
         "retail_sentiment": {
           "long_pct": 71.4,
           "short_pct": 28.6,
-          "longs_in_loss": 16.8,
-          "shorts_in_loss": 18.7,
+          "longs_in_loss": 16.6,
+          "shorts_in_loss": 18.8,
           "summary": "Minoristas 71.4% Comprados vs 28.6% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
@@ -9698,19 +9698,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4030.0,
               "density_pct": 0.27,
-              "dist_pips": 1899.0,
+              "dist_pips": 1777.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4026.0,
               "density_pct": 0.25,
-              "dist_pips": 1499.0,
+              "dist_pips": 1377.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4023.0,
               "density_pct": 0.23,
-              "dist_pips": 1199.0,
+              "dist_pips": 1077.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -9718,19 +9718,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 3978.5,
               "density_pct": 0.23,
-              "dist_pips": 3251.0,
+              "dist_pips": 3373.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3981.0,
               "density_pct": 0.23,
-              "dist_pips": 3001.0,
+              "dist_pips": 3123.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3975.0,
               "density_pct": 0.16,
-              "dist_pips": 3601.0,
+              "dist_pips": 3723.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -9740,8 +9740,8 @@ window.STATIC_DASHBOARD_DATA = {
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
           "trend_h1": "ALCISTA 🟢",
-          "trend_m15": "BAJISTA 🔴",
-          "zone": "DESCUENTO 🟢 (Busca Compras)",
+          "trend_m15": "ALCISTA 🟢",
+          "zone": "PREMIUM 🔴 (Busca Ventas)",
           "h1_high": 4046.66,
           "h1_low": 3975.65,
           "h1_equilibrium": 4011.15
@@ -9753,14 +9753,14 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.70297,
-        "bid": 0.70251,
-        "ask": 0.70344,
-        "spread_pips": 9.3,
+        "price": 0.7029,
+        "bid": 0.70243,
+        "ask": 0.70337,
+        "spread_pips": 9.4,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 44,
-        "prob_sell": 56,
+        "prob_buy": 38,
+        "prob_sell": 62,
         "retail_sentiment": {
           "long_pct": 63.0,
           "short_pct": 37.0,
@@ -9775,19 +9775,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.7045,
               "density_pct": 0.28,
-              "dist_pips": 15.3,
+              "dist_pips": 16.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.704,
               "density_pct": 0.24,
-              "dist_pips": 10.3,
+              "dist_pips": 11.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.7055,
               "density_pct": 0.17,
-              "dist_pips": 25.3,
+              "dist_pips": 26.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -9795,19 +9795,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.7,
               "density_pct": 0.39,
-              "dist_pips": 29.7,
+              "dist_pips": 29.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.7015,
               "density_pct": 0.39,
-              "dist_pips": 14.7,
+              "dist_pips": 14.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.7005,
               "density_pct": 0.31,
-              "dist_pips": 24.7,
+              "dist_pips": 24.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -9816,7 +9816,7 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
-          "trend_h1": "ALCISTA 🟢",
+          "trend_h1": "BAJISTA 🔴",
           "trend_m15": "BAJISTA 🔴",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
           "h1_high": 0.70398,
