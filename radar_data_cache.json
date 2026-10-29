@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-10-29T20:24:50.801693Z",
-  "last_sync": "2026-10-29 13:24:50",
+  "timestamp": "2026-10-29T20:29:40.529038Z",
+  "last_sync": "2026-10-29 13:29:40",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -10,8 +10,8 @@
       "icon": "💷",
       "price": 1.33811,
       "bid": 1.33783,
-      "ask": 1.33839,
-      "spread_pips": 5.6,
+      "ask": 1.33838,
+      "spread_pips": 5.5,
       "bias": "NEUTRAL",
       "bias_desc": "MERCADO EN RANGO / NEUTRAL",
       "prob_buy": 51,
@@ -74,9 +74,9 @@
         "trend_h1": "ALCISTA 🟢",
         "trend_m15": "ALCISTA 🟢",
         "zone": "PREMIUM 🔴 (Busca Ventas)",
-        "h1_high": 1.33812,
+        "h1_high": 1.33832,
         "h1_low": 1.32725,
-        "h1_equilibrium": 1.33269
+        "h1_equilibrium": 1.33278
       }
     },
     {
@@ -85,10 +85,10 @@
       "name": "XAU/USD (Oro / Dólar)",
       "display": "XAU/USD (Oro)",
       "icon": "🥇",
-      "price": 4025.91,
-      "bid": 4025.1,
-      "ask": 4026.73,
-      "spread_pips": 163.0,
+      "price": 4025.09,
+      "bid": 4024.33,
+      "ask": 4025.85,
+      "spread_pips": 152.0,
       "bias": "NEUTRAL",
       "bias_desc": "MERCADO EN RANGO / NEUTRAL",
       "prob_buy": 48,
@@ -107,19 +107,19 @@
           {
             "price": 4048.0,
             "density_pct": 0.29,
-            "dist_pips": 2209.0,
+            "dist_pips": 2291.0,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 4035.5,
             "density_pct": 0.25,
-            "dist_pips": 959.0,
+            "dist_pips": 1041.0,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 4042.0,
             "density_pct": 0.23,
-            "dist_pips": 1609.0,
+            "dist_pips": 1691.0,
             "label": "Buy Stops / BSL"
           }
         ],
@@ -127,19 +127,19 @@
           {
             "price": 3984.0,
             "density_pct": 0.35,
-            "dist_pips": 4191.0,
+            "dist_pips": 4109.0,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 3992.0,
             "density_pct": 0.23,
-            "dist_pips": 3391.0,
+            "dist_pips": 3309.0,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 3975.5,
             "density_pct": 0.12,
-            "dist_pips": 5041.0,
+            "dist_pips": 4959.0,
             "label": "Sell Stops / SSL"
           }
         ],
@@ -162,9 +162,9 @@
       "name": "AUD/USD (Dólar Australiano)",
       "display": "AUD/USD",
       "icon": "🦘",
-      "price": 0.70314,
-      "bid": 0.70267,
-      "ask": 0.70361,
+      "price": 0.7031,
+      "bid": 0.70263,
+      "ask": 0.70357,
       "spread_pips": 9.4,
       "bias": "BEARISH",
       "bias_desc": "SESGO INSTITUCIONAL VENTA",
@@ -184,19 +184,19 @@
           {
             "price": 0.707,
             "density_pct": 0.21,
-            "dist_pips": 38.6,
+            "dist_pips": 39.0,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 0.7075,
             "density_pct": 0.2,
-            "dist_pips": 43.6,
+            "dist_pips": 44.0,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 0.704,
             "density_pct": 0.18,
-            "dist_pips": 8.6,
+            "dist_pips": 9.0,
             "label": "Buy Stops / BSL"
           }
         ],
@@ -204,19 +204,19 @@
           {
             "price": 0.7,
             "density_pct": 0.86,
-            "dist_pips": 31.4,
+            "dist_pips": 31.0,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 0.699,
             "density_pct": 0.55,
-            "dist_pips": 41.4,
+            "dist_pips": 41.0,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 0.7005,
             "density_pct": 0.41,
-            "dist_pips": 26.4,
+            "dist_pips": 26.0,
             "label": "Sell Stops / SSL"
           }
         ],
