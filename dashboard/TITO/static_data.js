@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-29T07:00:19.928943Z",
+  "generated_at": "2026-10-29T07:05:15.478726Z",
   "account_pepperstone": {
     "terminal": "Tito (Pepperstone-03 51580714)",
     "connected": true,
@@ -10560,7 +10560,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-29 00:00:19",
+  "last_sync": "2026-10-29 00:05:15",
   "equity": {
     "real1000": {
       "initial_balance": 1000.0,
@@ -11462,8 +11462,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-29T07:00:19.714412Z",
-    "last_sync": "2026-10-29 00:00:19",
+    "timestamp": "2026-10-29T07:05:15.258522Z",
+    "last_sync": "2026-10-29 00:05:15",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -11472,9 +11472,9 @@ window.STATIC_DASHBOARD_DATA = {
         "display": "GBP/USD",
         "icon": "💷",
         "price": 1.33108,
-        "bid": 1.33081,
-        "ask": 1.33135,
-        "spread_pips": 5.4,
+        "bid": 1.3308,
+        "ask": 1.33136,
+        "spread_pips": 5.6,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 34,
@@ -11548,10 +11548,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 4035.41,
-        "bid": 4034.62,
-        "ask": 4036.2,
-        "spread_pips": 158.0,
+        "price": 4035.76,
+        "bid": 4034.9,
+        "ask": 4036.62,
+        "spread_pips": 172.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 45,
@@ -11560,7 +11560,7 @@ window.STATIC_DASHBOARD_DATA = {
           "long_pct": 71.6,
           "short_pct": 28.4,
           "longs_in_loss": 15.9,
-          "shorts_in_loss": 19.2,
+          "shorts_in_loss": 19.3,
           "summary": "Minoristas 71.6% Comprados vs 28.4% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
@@ -11570,19 +11570,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 4138.5,
               "density_pct": 0.22,
-              "dist_pips": 10309.0,
+              "dist_pips": 10274.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4079.0,
               "density_pct": 0.21,
-              "dist_pips": 4359.0,
+              "dist_pips": 4324.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4068.5,
               "density_pct": 0.15,
-              "dist_pips": 3309.0,
+              "dist_pips": 3274.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -11590,19 +11590,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 3930.0,
               "density_pct": 0.27,
-              "dist_pips": 10541.0,
+              "dist_pips": 10576.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3992.0,
               "density_pct": 0.22,
-              "dist_pips": 4341.0,
+              "dist_pips": 4376.0,
               "label": "Sell Stops / SSL"
             },
             {
-              "price": 4018.0,
-              "density_pct": 0.14,
-              "dist_pips": 1741.0,
+              "price": 4035.5,
+              "density_pct": 0.21,
+              "dist_pips": 26.0,
               "label": "Sell Stops / SSL"
             }
           ],
