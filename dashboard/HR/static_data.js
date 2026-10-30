@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-30T21:49:47.879839Z",
+  "generated_at": "2026-10-30T21:54:37.549035Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -8736,7 +8736,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-30 14:49:47",
+  "last_sync": "2026-10-30 14:54:37",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -9486,8 +9486,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-30T21:49:47.557550Z",
-    "last_sync": "2026-10-30 14:49:47",
+    "timestamp": "2026-10-30T21:54:37.297581Z",
+    "last_sync": "2026-10-30 14:54:37",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -9578,8 +9578,8 @@ window.STATIC_DASHBOARD_DATA = {
         "spread_pips": 0.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 38,
-        "prob_sell": 62,
+        "prob_buy": 42,
+        "prob_sell": 58,
         "retail_sentiment": {
           "long_pct": 71.2,
           "short_pct": 28.8,
@@ -9635,12 +9635,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
-          "trend_h1": "NEUTRAL ⚪",
+          "trend_h1": "BAJISTA 🔴",
           "trend_m15": "BAJISTA 🔴",
-          "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 3875.64,
-          "h1_low": 3875.64,
-          "h1_equilibrium": 3875.64
+          "zone": "DESCUENTO 🟢 (Busca Compras)",
+          "h1_high": 4046.45,
+          "h1_low": 3870.32,
+          "h1_equilibrium": 3958.38
         }
       },
       {
