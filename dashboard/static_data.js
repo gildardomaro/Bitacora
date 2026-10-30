@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-30T23:49:36.001636Z",
+  "generated_at": "2026-10-30T23:54:57.260044Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -47068,7 +47068,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-30 16:49:35",
+  "last_sync": "2026-10-30 16:54:57",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -49679,8 +49679,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-30T23:49:35.749590Z",
-    "last_sync": "2026-10-30 16:49:35",
+    "timestamp": "2026-10-30T23:54:57.100754Z",
+    "last_sync": "2026-10-30 16:54:57",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -49692,10 +49692,10 @@ window.STATIC_DASHBOARD_DATA = {
         "bid": 1.33857,
         "ask": 1.33939,
         "spread_pips": 8.2,
-        "bias": "BEARISH",
-        "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 41,
-        "prob_sell": 59,
+        "bias": "NEUTRAL",
+        "bias_desc": "MERCADO EN RANGO / NEUTRAL",
+        "prob_buy": 48,
+        "prob_sell": 52,
         "retail_sentiment": {
           "long_pct": 59.3,
           "short_pct": 40.7,
@@ -49751,12 +49751,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
-          "trend_h1": "BAJISTA 🔴",
+          "trend_h1": "NEUTRAL ⚪",
           "trend_m15": "BAJISTA 🔴",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 1.3434,
-          "h1_low": 1.3296,
-          "h1_equilibrium": 1.3365
+          "h1_high": 1.33898,
+          "h1_low": 1.33898,
+          "h1_equilibrium": 1.33898
         }
       },
       {
@@ -49769,10 +49769,10 @@ window.STATIC_DASHBOARD_DATA = {
         "bid": 3874.03,
         "ask": 3877.26,
         "spread_pips": 323.0,
-        "bias": "BEARISH",
-        "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 42,
-        "prob_sell": 58,
+        "bias": "NEUTRAL",
+        "bias_desc": "MERCADO EN RANGO / NEUTRAL",
+        "prob_buy": 48,
+        "prob_sell": 52,
         "retail_sentiment": {
           "long_pct": 71.2,
           "short_pct": 28.8,
@@ -49827,7 +49827,7 @@ window.STATIC_DASHBOARD_DATA = {
           "ssl_target": 3869.5
         },
         "technical_smc": {
-          "trend_h4": "BAJISTA 🔴",
+          "trend_h4": "NEUTRAL ⚪",
           "trend_h1": "BAJISTA 🔴",
           "trend_m15": "BAJISTA 🔴",
           "zone": "DESCUENTO 🟢 (Busca Compras)",
