@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-30T22:44:50.038048Z",
+  "generated_at": "2026-10-30T22:49:45.163906Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -47068,7 +47068,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-30 15:44:49",
+  "last_sync": "2026-10-30 15:49:44",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -49679,8 +49679,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-30T22:44:49.349410Z",
-    "last_sync": "2026-10-30 15:44:49",
+    "timestamp": "2026-10-30T22:49:44.963250Z",
+    "last_sync": "2026-10-30 15:49:44",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -49694,8 +49694,8 @@ window.STATIC_DASHBOARD_DATA = {
         "spread_pips": 0.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 44,
-        "prob_sell": 56,
+        "prob_buy": 41,
+        "prob_sell": 59,
         "retail_sentiment": {
           "long_pct": 59.3,
           "short_pct": 40.7,
@@ -49752,7 +49752,7 @@ window.STATIC_DASHBOARD_DATA = {
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
           "trend_h1": "BAJISTA 🔴",
-          "trend_m15": "NEUTRAL ⚪",
+          "trend_m15": "BAJISTA 🔴",
           "zone": "PREMIUM 🔴 (Busca Ventas)",
           "h1_high": 1.3434,
           "h1_low": 1.3296,
@@ -49848,8 +49848,8 @@ window.STATIC_DASHBOARD_DATA = {
         "spread_pips": 0.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 38,
-        "prob_sell": 62,
+        "prob_buy": 41,
+        "prob_sell": 59,
         "retail_sentiment": {
           "long_pct": 63.1,
           "short_pct": 36.9,
@@ -49905,12 +49905,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
-          "trend_h1": "NEUTRAL ⚪",
+          "trend_h1": "BAJISTA 🔴",
           "trend_m15": "BAJISTA 🔴",
-          "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 0.70318,
-          "h1_low": 0.70318,
-          "h1_equilibrium": 0.70318
+          "zone": "DESCUENTO 🟢 (Busca Compras)",
+          "h1_high": 0.70561,
+          "h1_low": 0.70138,
+          "h1_equilibrium": 0.70349
         }
       }
     ],
