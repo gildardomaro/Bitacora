@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-10-30T23:59:37.077147Z",
+  "generated_at": "2026-10-31T00:04:42.302808Z",
   "account_pepperstone": {
     "terminal": "Tito (Pepperstone-03 51580714)",
     "connected": true,
@@ -11328,7 +11328,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-30 16:59:36",
+  "last_sync": "2026-10-30 17:04:42",
   "equity": {
     "real1000": {
       "initial_balance": 1000.0,
@@ -12294,8 +12294,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-10-30T23:59:36.903987Z",
-    "last_sync": "2026-10-30 16:59:36",
+    "timestamp": "2026-10-31T00:04:41.977837Z",
+    "last_sync": "2026-10-30 17:04:41",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -12319,8 +12319,8 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 59.3% Comprados vs 40.7% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
-          "order_long_pct": 46.1,
-          "order_short_pct": 53.9,
+          "order_long_pct": 46.2,
+          "order_short_pct": 53.8,
           "top_bsl": [
             {
               "price": 1.3445,
