@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-01T16:59:34.309413Z",
+  "generated_at": "2026-11-01T17:04:36.202237Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -8736,7 +8736,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-01 09:59:34",
+  "last_sync": "2026-11-01 10:04:35",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -9486,8 +9486,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-01T16:59:34.145858Z",
-    "last_sync": "2026-11-01 09:59:34",
+    "timestamp": "2026-11-01T17:04:35.993187Z",
+    "last_sync": "2026-11-01 10:04:35",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -9542,7 +9542,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 1.337,
-              "density_pct": 0.16,
+              "density_pct": 0.15,
               "dist_pips": 19.8,
               "label": "Sell Stops / SSL"
             },
