@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-01T19:39:34.757793Z",
-  "last_sync": "2026-11-01 12:39:34",
+  "timestamp": "2026-11-01T19:44:33.800083Z",
+  "last_sync": "2026-11-01 12:44:33",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -203,7 +203,7 @@
         "top_ssl": [
           {
             "price": 0.7,
-            "density_pct": 1.31,
+            "density_pct": 1.32,
             "dist_pips": 31.8,
             "label": "Sell Stops / SSL"
           },
@@ -215,7 +215,7 @@
           },
           {
             "price": 0.699,
-            "density_pct": 0.58,
+            "density_pct": 0.57,
             "dist_pips": 41.8,
             "label": "Sell Stops / SSL"
           }
