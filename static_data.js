@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-01T04:39:34.736268Z",
+  "generated_at": "2026-11-01T04:44:36.456692Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -47068,7 +47068,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-10-31 21:39:34",
+  "last_sync": "2026-10-31 21:44:36",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -49679,8 +49679,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-01T04:39:34.546621Z",
-    "last_sync": "2026-10-31 21:39:34",
+    "timestamp": "2026-11-01T04:44:36.257235Z",
+    "last_sync": "2026-10-31 21:44:36",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -49916,288 +49916,288 @@ window.STATIC_DASHBOARD_DATA = {
     ],
     "calendar": [
       {
-        "title": "RBA Assist Gov Jones Speaks",
-        "currency": "AUD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-25T17:10:00-04:00",
+        "title": "Daylight Saving Time Shift",
+        "currency": "USD",
+        "impact": "Holiday",
+        "datetime_raw": "2026-11-01T02:00:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "German ifo Business Climate",
-        "currency": "EUR",
+        "title": "MI Inflation Gauge m/m",
+        "currency": "AUD",
         "impact": "Low",
-        "datetime_raw": "2026-10-26T05:00:00-04:00",
-        "forecast": "90.0",
-        "previous": "89.9"
-      },
-      {
-        "title": "CBI Realized Sales",
-        "currency": "GBP",
-        "impact": "Low",
-        "datetime_raw": "2026-10-26T07:00:00-04:00",
-        "forecast": "-47",
-        "previous": "-55"
-      },
-      {
-        "title": "BRC Shop Price Index y/y",
-        "currency": "GBP",
-        "impact": "Low",
-        "datetime_raw": "2026-10-26T20:01:00-04:00",
-        "forecast": "1.6%",
-        "previous": "1.4%"
-      },
-      {
-        "title": "Spanish Unemployment Rate",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-10-27T04:00:00-04:00",
-        "forecast": "9.9%",
-        "previous": "9.9%"
-      },
-      {
-        "title": "M3 Money Supply y/y",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-10-27T05:00:00-04:00",
-        "forecast": "3.5%",
-        "previous": "3.5%"
-      },
-      {
-        "title": "Private Loans y/y",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-10-27T05:00:00-04:00",
-        "forecast": "3.1%",
-        "previous": "3.1%"
-      },
-      {
-        "title": "ADP Weekly Employment Change",
-        "currency": "USD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-27T08:15:00-04:00",
+        "datetime_raw": "2026-11-01T19:00:00-05:00",
         "forecast": "-",
-        "previous": "18.5K"
-      },
-      {
-        "title": "Core Durable Goods Orders m/m",
-        "currency": "USD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-27T08:30:00-04:00",
-        "forecast": "0.6%",
         "previous": "0.3%"
       },
       {
-        "title": "Durable Goods Orders m/m",
-        "currency": "USD",
+        "title": "Building Approvals m/m",
+        "currency": "AUD",
         "impact": "Low",
-        "datetime_raw": "2026-10-27T08:30:00-04:00",
-        "forecast": "2.0%",
-        "previous": "0.0%"
+        "datetime_raw": "2026-11-01T19:30:00-05:00",
+        "forecast": "1.8%",
+        "previous": "-6.1%"
       },
       {
-        "title": "HPI m/m",
-        "currency": "USD",
+        "title": "ANZ Job Advertisements m/m",
+        "currency": "AUD",
         "impact": "Low",
-        "datetime_raw": "2026-10-27T09:00:00-04:00",
-        "forecast": "0.2%",
-        "previous": "0.3%"
+        "datetime_raw": "2026-11-01T19:45:00-05:00",
+        "forecast": "-",
+        "previous": "2.2%"
       },
       {
-        "title": "S&P/CS Composite-20 HPI y/y",
-        "currency": "USD",
+        "title": "Commodity Prices y/y",
+        "currency": "AUD",
         "impact": "Low",
-        "datetime_raw": "2026-10-27T09:00:00-04:00",
-        "forecast": "2.6%",
-        "previous": "2.5%"
+        "datetime_raw": "2026-11-02T00:30:00-05:00",
+        "forecast": "-",
+        "previous": "15.5%"
       },
       {
-        "title": "CB Consumer Confidence",
-        "currency": "USD",
-        "impact": "Medium",
-        "datetime_raw": "2026-10-27T10:00:00-04:00",
-        "forecast": "81.2",
-        "previous": "81.9"
+        "title": "German Retail Sales m/m",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-02T02:00:00-05:00",
+        "forecast": "0.4%",
+        "previous": "1.3%"
       },
       {
-        "title": "New Home Sales",
-        "currency": "USD",
+        "title": "Spanish Manufacturing PMI",
+        "currency": "EUR",
         "impact": "Low",
-        "datetime_raw": "2026-10-27T10:00:00-04:00",
-        "forecast": "651K",
-        "previous": "684K"
+        "datetime_raw": "2026-11-02T03:15:00-05:00",
+        "forecast": "50.4",
+        "previous": "51.0"
       },
       {
-        "title": "Richmond Manufacturing Index",
-        "currency": "USD",
+        "title": "Italian Manufacturing PMI",
+        "currency": "EUR",
         "impact": "Low",
-        "datetime_raw": "2026-10-27T10:00:00-04:00",
-        "forecast": "0",
-        "previous": "-2"
+        "datetime_raw": "2026-11-02T03:45:00-05:00",
+        "forecast": "49.9",
+        "previous": "50.4"
       },
       {
-        "title": "API Weekly Statistical Bulletin",
-        "currency": "USD",
+        "title": "French Final Manufacturing PMI",
+        "currency": "EUR",
         "impact": "Low",
-        "datetime_raw": "2026-10-27T16:30:00-04:00",
+        "datetime_raw": "2026-11-02T03:50:00-05:00",
+        "forecast": "49.3",
+        "previous": "49.3"
+      },
+      {
+        "title": "German Final Manufacturing PMI",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-02T03:55:00-05:00",
+        "forecast": "54.2",
+        "previous": "54.2"
+      },
+      {
+        "title": "Final Manufacturing PMI",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-02T04:00:00-05:00",
+        "forecast": "52.4",
+        "previous": "52.4"
+      },
+      {
+        "title": "Final Manufacturing PMI",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-11-02T04:30:00-05:00",
+        "forecast": "52.8",
+        "previous": "52.8"
+      },
+      {
+        "title": "German Buba President Nagel Speaks",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-02T07:00:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "RBA Gov Bullock Speaks",
-        "currency": "AUD",
+        "title": "Final Manufacturing PMI",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-02T09:45:00-05:00",
+        "forecast": "56.0",
+        "previous": "56.0"
+      },
+      {
+        "title": "ISM Manufacturing PMI",
+        "currency": "USD",
         "impact": "Medium",
-        "datetime_raw": "2026-10-27T20:15:00-04:00",
-        "forecast": "-",
-        "previous": "-"
+        "datetime_raw": "2026-11-02T10:00:00-05:00",
+        "forecast": "54.7",
+        "previous": "54.5"
       },
       {
-        "title": "CPI m/m",
-        "currency": "AUD",
-        "impact": "High",
-        "datetime_raw": "2026-10-27T20:30:00-04:00",
-        "forecast": "0.7%",
-        "previous": "0.4%"
-      },
-      {
-        "title": "CPI y/y",
-        "currency": "AUD",
-        "impact": "High",
-        "datetime_raw": "2026-10-27T20:30:00-04:00",
-        "forecast": "4.2%",
-        "previous": "4.0%"
-      },
-      {
-        "title": "Trimmed Mean CPI m/m",
-        "currency": "AUD",
-        "impact": "High",
-        "datetime_raw": "2026-10-27T20:30:00-04:00",
+        "title": "Construction Spending m/m",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-02T10:00:00-05:00",
         "forecast": "0.3%",
-        "previous": "0.2%"
+        "previous": "0.9%"
       },
       {
-        "title": "German GfK Consumer Climate",
-        "currency": "EUR",
+        "title": "ISM Manufacturing Prices",
+        "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "2026-10-28T03:00:00-04:00",
-        "forecast": "-30.1",
-        "previous": "-30.6"
+        "datetime_raw": "2026-11-02T10:00:00-05:00",
+        "forecast": "77.2",
+        "previous": "77.9"
       },
       {
-        "title": "German 10-y Bond Auction",
-        "currency": "EUR",
+        "title": "Loan Officer Survey",
+        "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "2026-10-28T06:32:00-04:00",
-        "forecast": "-",
-        "previous": "3.58|1.2"
-      },
-      {
-        "title": "Annual Budget Release",
-        "currency": "GBP",
-        "impact": "High",
-        "datetime_raw": "2026-10-28T08:30:00-04:00",
+        "datetime_raw": "2026-11-02T14:03:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Autumn Forecast Statement",
+        "title": "Cash Rate",
+        "currency": "AUD",
+        "impact": "High",
+        "datetime_raw": "2026-11-02T22:30:00-05:00",
+        "forecast": "4.85%",
+        "previous": "4.60%"
+      },
+      {
+        "title": "RBA Monetary Policy Statement",
+        "currency": "AUD",
+        "impact": "High",
+        "datetime_raw": "2026-11-02T22:30:00-05:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "RBA Rate Statement",
+        "currency": "AUD",
+        "impact": "High",
+        "datetime_raw": "2026-11-02T22:30:00-05:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "RBA Press Conference",
+        "currency": "AUD",
+        "impact": "High",
+        "datetime_raw": "2026-11-02T23:30:00-05:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "French Gov Budget Balance",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-03T02:45:00-05:00",
+        "forecast": "-",
+        "previous": "-159.6B"
+      },
+      {
+        "title": "10-y Bond Auction",
         "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-11-03T05:33:00-05:00",
+        "forecast": "-",
+        "previous": "5.42|3.6"
+      },
+      {
+        "title": "JOLTS Job Openings",
+        "currency": "USD",
         "impact": "Medium",
-        "datetime_raw": "2026-10-28T08:30:00-04:00",
+        "datetime_raw": "2026-11-03T10:00:00-05:00",
+        "forecast": "7.11M",
+        "previous": "7.08M"
+      },
+      {
+        "title": "Factory Orders m/m",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-03T10:00:00-05:00",
+        "forecast": "1.2%",
+        "previous": "0.1%"
+      },
+      {
+        "title": "RCM/TIPP Economic Optimism",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-03T10:10:00-05:00",
+        "forecast": "46.2",
+        "previous": "46.8"
+      },
+      {
+        "title": "Omdia Total Vehicle Sales",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-03T10:15:00-05:00",
+        "forecast": "15.9M",
+        "previous": "16.0M"
+      },
+      {
+        "title": "Congressional Elections",
+        "currency": "USD",
+        "impact": "High",
+        "datetime_raw": "2026-11-03T10:16:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Goods Trade Balance",
-        "currency": "USD",
+        "title": "German Buba President Nagel Speaks",
+        "currency": "EUR",
         "impact": "Low",
-        "datetime_raw": "2026-10-28T08:30:00-04:00",
-        "forecast": "-130.4B",
-        "previous": "-132.6B"
-      },
-      {
-        "title": "Prelim Wholesale Inventories m/m",
-        "currency": "USD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-28T08:30:00-04:00",
-        "forecast": "0.5%",
-        "previous": "0.7%"
-      },
-      {
-        "title": "Crude Oil Inventories",
-        "currency": "USD",
-        "impact": "Low",
-        "datetime_raw": "2026-10-28T10:30:00-04:00",
-        "forecast": "0.1M",
-        "previous": "-3.1M"
-      },
-      {
-        "title": "Federal Funds Rate",
-        "currency": "USD",
-        "impact": "High",
-        "datetime_raw": "2026-10-28T14:00:00-04:00",
-        "forecast": "4.00%",
-        "previous": "4.00%"
-      },
-      {
-        "title": "FOMC Statement",
-        "currency": "USD",
-        "impact": "High",
-        "datetime_raw": "2026-10-28T14:00:00-04:00",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "FOMC Press Conference",
-        "currency": "USD",
-        "impact": "High",
-        "datetime_raw": "2026-10-28T14:30:00-04:00",
+        "datetime_raw": "2026-11-03T12:00:00-05:00",
         "forecast": "-",
         "previous": "-"
       }
     ],
-    "high_impact_count": 9,
+    "high_impact_count": 13,
     "macro_summary": {
       "high_impact_events": [
         {
-          "title": "CPI m/m",
+          "title": "Cash Rate",
           "currency": "AUD",
           "impact": "High",
-          "datetime_raw": "2026-10-27T20:30:00-04:00",
-          "forecast": "0.7%",
-          "previous": "0.4%"
+          "datetime_raw": "2026-11-02T22:30:00-05:00",
+          "forecast": "4.85%",
+          "previous": "4.60%"
         },
         {
-          "title": "CPI y/y",
+          "title": "RBA Monetary Policy Statement",
           "currency": "AUD",
           "impact": "High",
-          "datetime_raw": "2026-10-27T20:30:00-04:00",
-          "forecast": "4.2%",
-          "previous": "4.0%"
-        },
-        {
-          "title": "Trimmed Mean CPI m/m",
-          "currency": "AUD",
-          "impact": "High",
-          "datetime_raw": "2026-10-27T20:30:00-04:00",
-          "forecast": "0.3%",
-          "previous": "0.2%"
-        },
-        {
-          "title": "Annual Budget Release",
-          "currency": "GBP",
-          "impact": "High",
-          "datetime_raw": "2026-10-28T08:30:00-04:00",
+          "datetime_raw": "2026-11-02T22:30:00-05:00",
           "forecast": "-",
           "previous": "-"
         },
         {
-          "title": "Federal Funds Rate",
+          "title": "RBA Rate Statement",
+          "currency": "AUD",
+          "impact": "High",
+          "datetime_raw": "2026-11-02T22:30:00-05:00",
+          "forecast": "-",
+          "previous": "-"
+        },
+        {
+          "title": "RBA Press Conference",
+          "currency": "AUD",
+          "impact": "High",
+          "datetime_raw": "2026-11-02T23:30:00-05:00",
+          "forecast": "-",
+          "previous": "-"
+        },
+        {
+          "title": "Congressional Elections",
           "currency": "USD",
           "impact": "High",
-          "datetime_raw": "2026-10-28T14:00:00-04:00",
-          "forecast": "4.00%",
-          "previous": "4.00%"
+          "datetime_raw": "2026-11-03T10:16:00-05:00",
+          "forecast": "-",
+          "previous": "-"
         }
       ],
       "dxy_bias": "Neutral",
