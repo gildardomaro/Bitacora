@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-02T23:04:36.255263Z",
-  "last_sync": "2026-11-02 16:04:36",
+  "timestamp": "2026-11-02T23:09:36.885158Z",
+  "last_sync": "2026-11-02 16:09:36",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -8,10 +8,10 @@
       "name": "GBP/USD (Libra / Dólar)",
       "display": "GBP/USD",
       "icon": "💷",
-      "price": 1.34049,
-      "bid": 1.34018,
-      "ask": 1.34081,
-      "spread_pips": 6.3,
+      "price": 1.34041,
+      "bid": 1.34012,
+      "ask": 1.3407,
+      "spread_pips": 5.8,
       "bias": "NEUTRAL",
       "bias_desc": "MERCADO EN RANGO / NEUTRAL",
       "prob_buy": 51,
@@ -30,19 +30,19 @@
           {
             "price": 1.3445,
             "density_pct": 0.25,
-            "dist_pips": 40.1,
+            "dist_pips": 40.9,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 1.345,
             "density_pct": 0.18,
-            "dist_pips": 45.1,
+            "dist_pips": 45.9,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 1.342,
             "density_pct": 0.15,
-            "dist_pips": 15.1,
+            "dist_pips": 15.9,
             "label": "Buy Stops / BSL"
           }
         ],
@@ -50,19 +50,19 @@
           {
             "price": 1.339,
             "density_pct": 0.28,
-            "dist_pips": 14.9,
+            "dist_pips": 14.1,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 1.3395,
             "density_pct": 0.28,
-            "dist_pips": 9.9,
+            "dist_pips": 9.1,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 1.337,
             "density_pct": 0.23,
-            "dist_pips": 34.9,
+            "dist_pips": 34.1,
             "label": "Sell Stops / SSL"
           }
         ],
@@ -85,10 +85,10 @@
       "name": "XAU/USD (Oro / Dólar)",
       "display": "XAU/USD (Oro)",
       "icon": "🥇",
-      "price": 3946.74,
-      "bid": 3945.87,
-      "ask": 3947.61,
-      "spread_pips": 174.0,
+      "price": 3947.13,
+      "bid": 3946.1,
+      "ask": 3948.16,
+      "spread_pips": 206.0,
       "bias": "BEARISH",
       "bias_desc": "SESGO INSTITUCIONAL VENTA",
       "prob_buy": 42,
@@ -107,19 +107,19 @@
           {
             "price": 4029.0,
             "density_pct": 0.3,
-            "dist_pips": 8226.0,
+            "dist_pips": 8187.0,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 4054.0,
             "density_pct": 0.17,
-            "dist_pips": 10726.0,
+            "dist_pips": 10687.0,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 3954.0,
             "density_pct": 0.15,
-            "dist_pips": 726.0,
+            "dist_pips": 687.0,
             "label": "Buy Stops / BSL"
           }
         ],
@@ -127,19 +127,19 @@
           {
             "price": 3894.0,
             "density_pct": 0.32,
-            "dist_pips": 5274.0,
+            "dist_pips": 5313.0,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 3917.0,
             "density_pct": 0.26,
-            "dist_pips": 2974.0,
+            "dist_pips": 3013.0,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 3935.0,
             "density_pct": 0.15,
-            "dist_pips": 1174.0,
+            "dist_pips": 1213.0,
             "label": "Sell Stops / SSL"
           }
         ],
@@ -162,10 +162,10 @@
       "name": "AUD/USD (Dólar Australiano)",
       "display": "AUD/USD",
       "icon": "🦘",
-      "price": 0.69974,
-      "bid": 0.69927,
-      "ask": 0.70022,
-      "spread_pips": 9.5,
+      "price": 0.69965,
+      "bid": 0.69917,
+      "ask": 0.70013,
+      "spread_pips": 9.6,
       "bias": "BEARISH",
       "bias_desc": "SESGO INSTITUCIONAL VENTA",
       "prob_buy": 41,
@@ -184,19 +184,19 @@
           {
             "price": 0.703,
             "density_pct": 0.23,
-            "dist_pips": 32.6,
+            "dist_pips": 33.5,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 0.702,
             "density_pct": 0.2,
-            "dist_pips": 22.6,
+            "dist_pips": 23.5,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 0.7015,
             "density_pct": 0.19,
-            "dist_pips": 17.6,
+            "dist_pips": 18.5,
             "label": "Buy Stops / BSL"
           }
         ],
@@ -204,19 +204,19 @@
           {
             "price": 0.6985,
             "density_pct": 0.44,
-            "dist_pips": 12.4,
+            "dist_pips": 11.5,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 0.699,
             "density_pct": 0.4,
-            "dist_pips": 7.4,
+            "dist_pips": 6.5,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 0.698,
             "density_pct": 0.22,
-            "dist_pips": 17.4,
+            "dist_pips": 16.5,
             "label": "Sell Stops / SSL"
           }
         ],
