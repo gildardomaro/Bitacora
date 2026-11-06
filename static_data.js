@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-06T01:34:39.973193Z",
+  "generated_at": "2026-11-06T01:45:36.993955Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -17862,7 +17862,7 @@ window.STATIC_DASHBOARD_DATA = {
       "all_trades_by_month": {}
     }
   },
-  "last_sync": "2026-11-05 18:34:39",
+  "last_sync": "2026-11-05 18:45:36",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -18853,8 +18853,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-06T01:34:39.851591Z",
-    "last_sync": "2026-11-05 18:34:39",
+    "timestamp": "2026-11-06T01:45:36.582756Z",
+    "last_sync": "2026-11-05 18:45:36",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -18907,8 +18907,8 @@ window.STATIC_DASHBOARD_DATA = {
         "spread_pips": 0.0,
         "bias": "BULLISH",
         "bias_desc": "SESGO INSTITUCIONAL COMPRA",
-        "prob_buy": 54,
-        "prob_sell": 46,
+        "prob_buy": 57,
+        "prob_sell": 43,
         "retail_sentiment": {
           "long_pct": 50.0,
           "short_pct": 50.0,
@@ -18921,17 +18921,17 @@ window.STATIC_DASHBOARD_DATA = {
           "order_short_pct": 50.0,
           "top_bsl": [],
           "top_ssl": [],
-          "bsl_target": 0.0,
-          "ssl_target": 0.0
+          "bsl_target": 4146.92,
+          "ssl_target": 4021.24
         },
         "technical_smc": {
           "trend_h4": "NEUTRAL ⚪",
-          "trend_h1": "NEUTRAL ⚪",
+          "trend_h1": "BAJISTA 🔴",
           "trend_m15": "NEUTRAL ⚪",
-          "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 0.0,
-          "h1_low": 0.0,
-          "h1_equilibrium": 0.0
+          "zone": "DESCUENTO 🟢 (Busca Compras)",
+          "h1_high": 4146.92,
+          "h1_low": 4021.24,
+          "h1_equilibrium": 4084.08
         }
       },
       {
@@ -18940,14 +18940,14 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.0,
-        "bid": 0.0,
-        "ask": 0.0,
-        "spread_pips": 0.0,
-        "bias": "BULLISH",
-        "bias_desc": "SESGO INSTITUCIONAL COMPRA",
-        "prob_buy": 54,
-        "prob_sell": 46,
+        "price": 0.69287,
+        "bid": 0.69241,
+        "ask": 0.69334,
+        "spread_pips": 9.3,
+        "bias": "BEARISH",
+        "bias_desc": "SESGO INSTITUCIONAL VENTA",
+        "prob_buy": 46,
+        "prob_sell": 54,
         "retail_sentiment": {
           "long_pct": 50.0,
           "short_pct": 50.0,
@@ -18960,17 +18960,17 @@ window.STATIC_DASHBOARD_DATA = {
           "order_short_pct": 50.0,
           "top_bsl": [],
           "top_ssl": [],
-          "bsl_target": 0.0,
-          "ssl_target": 0.0
+          "bsl_target": 0.70246,
+          "ssl_target": 0.6923
         },
         "technical_smc": {
-          "trend_h4": "NEUTRAL ⚪",
-          "trend_h1": "NEUTRAL ⚪",
-          "trend_m15": "NEUTRAL ⚪",
-          "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 0.0,
-          "h1_low": 0.0,
-          "h1_equilibrium": 0.0
+          "trend_h4": "BAJISTA 🔴",
+          "trend_h1": "BAJISTA 🔴",
+          "trend_m15": "BAJISTA 🔴",
+          "zone": "DESCUENTO 🟢 (Busca Compras)",
+          "h1_high": 0.70246,
+          "h1_low": 0.6923,
+          "h1_equilibrium": 0.69738
         }
       }
     ],
