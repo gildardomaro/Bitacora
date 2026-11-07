@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-07T18:44:41.506887Z",
+  "generated_at": "2026-11-07T18:49:38.214109Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -25166,7 +25166,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-07 11:44:41",
+  "last_sync": "2026-11-07 11:49:37",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -25956,8 +25956,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-07T18:44:41.226421Z",
-    "last_sync": "2026-11-07 11:44:41",
+    "timestamp": "2026-11-07T18:49:37.967350Z",
+    "last_sync": "2026-11-07 11:49:37",
     "assets": [
       {
         "symbol": "GBP/USD",
