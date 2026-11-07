@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-07T03:19:37.072968Z",
+  "generated_at": "2026-11-07T03:24:55.010415Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -60145,7 +60145,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-06 20:19:36",
+  "last_sync": "2026-11-06 20:24:54",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -62792,8 +62792,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-07T03:19:36.833891Z",
-    "last_sync": "2026-11-06 20:19:36",
+    "timestamp": "2026-11-07T03:24:54.806948Z",
+    "last_sync": "2026-11-06 20:24:54",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -62805,16 +62805,16 @@ window.STATIC_DASHBOARD_DATA = {
         "bid": 1.33462,
         "ask": 1.3359,
         "spread_pips": 12.8,
-        "bias": "BEARISH",
-        "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 44,
-        "prob_sell": 56,
+        "bias": "BULLISH",
+        "bias_desc": "SESGO INSTITUCIONAL COMPRA",
+        "prob_buy": 54,
+        "prob_sell": 46,
         "retail_sentiment": {
-          "long_pct": 59.2,
-          "short_pct": 40.8,
-          "longs_in_loss": 18.8,
-          "shorts_in_loss": 27.8,
-          "summary": "Minoristas 59.2% Comprados vs 40.8% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
+          "long_pct": 50.0,
+          "short_pct": 50.0,
+          "longs_in_loss": 25.0,
+          "shorts_in_loss": 25.0,
+          "summary": "Minoristas 50.0% Comprados vs 50.0% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
           "order_long_pct": 46.4,
@@ -62863,13 +62863,13 @@ window.STATIC_DASHBOARD_DATA = {
           "ssl_target": 1.3
         },
         "technical_smc": {
-          "trend_h4": "BAJISTA 🔴",
-          "trend_h1": "BAJISTA 🔴",
-          "trend_m15": "BAJISTA 🔴",
-          "zone": "DESCUENTO 🟢 (Busca Compras)",
-          "h1_high": 1.3501,
-          "h1_low": 1.33425,
-          "h1_equilibrium": 1.34218
+          "trend_h4": "NEUTRAL ⚪",
+          "trend_h1": "NEUTRAL ⚪",
+          "trend_m15": "NEUTRAL ⚪",
+          "zone": "PREMIUM 🔴 (Busca Ventas)",
+          "h1_high": 1.33526,
+          "h1_low": 1.33526,
+          "h1_equilibrium": 1.33526
         }
       },
       {
