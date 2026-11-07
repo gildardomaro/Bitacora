@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-07T02:24:48.221473Z",
+  "generated_at": "2026-11-07T02:29:36.300723Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -60145,7 +60145,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-06 19:24:47",
+  "last_sync": "2026-11-06 19:29:36",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -62792,8 +62792,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-07T02:24:47.952931Z",
-    "last_sync": "2026-11-06 19:24:47",
+    "timestamp": "2026-11-07T02:29:36.049117Z",
+    "last_sync": "2026-11-06 19:29:36",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -62802,19 +62802,19 @@ window.STATIC_DASHBOARD_DATA = {
         "display": "GBP/USD",
         "icon": "💷",
         "price": 1.33526,
-        "bid": 0.0,
-        "ask": 0.0,
-        "spread_pips": 0.0,
+        "bid": 1.33462,
+        "ask": 1.3359,
+        "spread_pips": 12.8,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 46,
-        "prob_sell": 54,
+        "prob_buy": 44,
+        "prob_sell": 56,
         "retail_sentiment": {
-          "long_pct": 50.0,
-          "short_pct": 50.0,
-          "longs_in_loss": 25.0,
-          "shorts_in_loss": 25.0,
-          "summary": "Minoristas 50.0% Comprados vs 50.0% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
+          "long_pct": 59.2,
+          "short_pct": 40.8,
+          "longs_in_loss": 18.8,
+          "shorts_in_loss": 27.8,
+          "summary": "Minoristas 59.2% Comprados vs 40.8% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
           "order_long_pct": 46.4,
