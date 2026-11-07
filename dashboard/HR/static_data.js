@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-07T01:24:38.701867Z",
+  "generated_at": "2026-11-07T01:29:52.865131Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -25166,7 +25166,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-06 18:24:38",
+  "last_sync": "2026-11-06 18:29:52",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -25956,8 +25956,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-07T01:24:38.404283Z",
-    "last_sync": "2026-11-06 18:24:38",
+    "timestamp": "2026-11-07T01:29:52.571216Z",
+    "last_sync": "2026-11-06 18:29:52",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -25969,10 +25969,10 @@ window.STATIC_DASHBOARD_DATA = {
         "bid": 1.33462,
         "ask": 1.3359,
         "spread_pips": 12.8,
-        "bias": "BEARISH",
-        "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 44,
-        "prob_sell": 56,
+        "bias": "NEUTRAL",
+        "bias_desc": "MERCADO EN RANGO / NEUTRAL",
+        "prob_buy": 48,
+        "prob_sell": 52,
         "retail_sentiment": {
           "long_pct": 59.2,
           "short_pct": 40.8,
@@ -26029,7 +26029,7 @@ window.STATIC_DASHBOARD_DATA = {
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
           "trend_h1": "BAJISTA 🔴",
-          "trend_m15": "BAJISTA 🔴",
+          "trend_m15": "NEUTRAL ⚪",
           "zone": "DESCUENTO 🟢 (Busca Compras)",
           "h1_high": 1.3501,
           "h1_low": 1.33425,
@@ -26046,10 +26046,10 @@ window.STATIC_DASHBOARD_DATA = {
         "bid": 4068.26,
         "ask": 4072.92,
         "spread_pips": 466.0,
-        "bias": "BULLISH",
-        "bias_desc": "SESGO INSTITUCIONAL COMPRA",
-        "prob_buy": 60,
-        "prob_sell": 40,
+        "bias": "NEUTRAL",
+        "bias_desc": "MERCADO EN RANGO / NEUTRAL",
+        "prob_buy": 48,
+        "prob_sell": 52,
         "retail_sentiment": {
           "long_pct": 71.7,
           "short_pct": 28.3,
@@ -26058,59 +26058,21 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 71.7% Comprados vs 28.3% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 58.1,
-          "order_short_pct": 41.9,
-          "top_bsl": [
-            {
-              "price": 4112.5,
-              "density_pct": 0.53,
-              "dist_pips": 4191.0,
-              "label": "Buy Stops / BSL"
-            },
-            {
-              "price": 4077.5,
-              "density_pct": 0.29,
-              "dist_pips": 691.0,
-              "label": "Buy Stops / BSL"
-            },
-            {
-              "price": 4113.0,
-              "density_pct": 0.29,
-              "dist_pips": 4241.0,
-              "label": "Buy Stops / BSL"
-            }
-          ],
-          "top_ssl": [
-            {
-              "price": 4032.0,
-              "density_pct": 0.38,
-              "dist_pips": 3859.0,
-              "label": "Sell Stops / SSL"
-            },
-            {
-              "price": 3996.0,
-              "density_pct": 0.31,
-              "dist_pips": 7459.0,
-              "label": "Sell Stops / SSL"
-            },
-            {
-              "price": 3996.5,
-              "density_pct": 0.31,
-              "dist_pips": 7409.0,
-              "label": "Sell Stops / SSL"
-            }
-          ],
-          "bsl_target": 4112.5,
-          "ssl_target": 4032.0
+          "order_long_pct": 50.0,
+          "order_short_pct": 50.0,
+          "top_bsl": [],
+          "top_ssl": [],
+          "bsl_target": 4070.59,
+          "ssl_target": 4070.59
         },
         "technical_smc": {
           "trend_h4": "ALCISTA 🟢",
-          "trend_h1": "ALCISTA 🟢",
+          "trend_h1": "NEUTRAL ⚪",
           "trend_m15": "ALCISTA 🟢",
-          "zone": "DESCUENTO 🟢 (Busca Compras)",
-          "h1_high": 4140.88,
-          "h1_low": 4029.83,
-          "h1_equilibrium": 4085.36
+          "zone": "PREMIUM 🔴 (Busca Ventas)",
+          "h1_high": 4070.59,
+          "h1_low": 4070.59,
+          "h1_equilibrium": 4070.59
         }
       },
       {
