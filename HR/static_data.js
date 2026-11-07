@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-07T01:59:37.652954Z",
+  "generated_at": "2026-11-07T02:04:50.389169Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -25166,7 +25166,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-06 18:59:37",
+  "last_sync": "2026-11-06 19:04:50",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -25956,8 +25956,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-07T01:59:37.354047Z",
-    "last_sync": "2026-11-06 18:59:37",
+    "timestamp": "2026-11-07T02:04:50.013557Z",
+    "last_sync": "2026-11-06 19:04:50",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -25966,9 +25966,9 @@ window.STATIC_DASHBOARD_DATA = {
         "display": "GBP/USD",
         "icon": "💷",
         "price": 1.33526,
-        "bid": 1.33462,
-        "ask": 1.3359,
-        "spread_pips": 12.8,
+        "bid": 0.0,
+        "ask": 0.0,
+        "spread_pips": 0.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 44,
@@ -25997,9 +25997,9 @@ window.STATIC_DASHBOARD_DATA = {
               "label": "Buy Stops / BSL"
             },
             {
-              "price": 1.34,
-              "density_pct": 0.11,
-              "dist_pips": 47.4,
+              "price": 1.3395,
+              "density_pct": 0.1,
+              "dist_pips": 42.4,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -26125,8 +26125,8 @@ window.STATIC_DASHBOARD_DATA = {
         "spread_pips": 14.3,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 41,
-        "prob_sell": 59,
+        "prob_buy": 43,
+        "prob_sell": 57,
         "retail_sentiment": {
           "long_pct": 62.8,
           "short_pct": 37.2,
@@ -26135,50 +26135,12 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 62.8% Comprados vs 37.2% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 42.0,
-          "order_short_pct": 58.0,
-          "top_bsl": [
-            {
-              "price": 0.6895,
-              "density_pct": 0.15,
-              "dist_pips": 28.4,
-              "label": "Buy Stops / BSL"
-            },
-            {
-              "price": 0.6905,
-              "density_pct": 0.14,
-              "dist_pips": 38.4,
-              "label": "Buy Stops / BSL"
-            },
-            {
-              "price": 0.6885,
-              "density_pct": 0.11,
-              "dist_pips": 18.4,
-              "label": "Buy Stops / BSL"
-            }
-          ],
-          "top_ssl": [
-            {
-              "price": 0.6815,
-              "density_pct": 0.26,
-              "dist_pips": 51.6,
-              "label": "Sell Stops / SSL"
-            },
-            {
-              "price": 0.6825,
-              "density_pct": 0.21,
-              "dist_pips": 41.6,
-              "label": "Sell Stops / SSL"
-            },
-            {
-              "price": 0.6845,
-              "density_pct": 0.21,
-              "dist_pips": 21.6,
-              "label": "Sell Stops / SSL"
-            }
-          ],
-          "bsl_target": 0.6895,
-          "ssl_target": 0.6815
+          "order_long_pct": 50.0,
+          "order_short_pct": 50.0,
+          "top_bsl": [],
+          "top_ssl": [],
+          "bsl_target": 0.70246,
+          "ssl_target": 0.68544
         },
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
