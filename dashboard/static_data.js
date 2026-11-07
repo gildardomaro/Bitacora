@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-07T03:09:47.612665Z",
+  "generated_at": "2026-11-07T03:14:36.231782Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -60145,7 +60145,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-06 20:09:47",
+  "last_sync": "2026-11-06 20:14:36",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -62792,8 +62792,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-07T03:09:47.362402Z",
-    "last_sync": "2026-11-06 20:09:47",
+    "timestamp": "2026-11-07T03:14:36.015166Z",
+    "last_sync": "2026-11-06 20:14:36",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -62807,8 +62807,8 @@ window.STATIC_DASHBOARD_DATA = {
         "spread_pips": 12.8,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 41,
-        "prob_sell": 59,
+        "prob_buy": 44,
+        "prob_sell": 56,
         "retail_sentiment": {
           "long_pct": 59.2,
           "short_pct": 40.8,
@@ -62864,12 +62864,12 @@ window.STATIC_DASHBOARD_DATA = {
         },
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
-          "trend_h1": "NEUTRAL ⚪",
+          "trend_h1": "BAJISTA 🔴",
           "trend_m15": "BAJISTA 🔴",
-          "zone": "PREMIUM 🔴 (Busca Ventas)",
-          "h1_high": 1.33526,
-          "h1_low": 1.33526,
-          "h1_equilibrium": 1.33526
+          "zone": "DESCUENTO 🟢 (Busca Compras)",
+          "h1_high": 1.3501,
+          "h1_low": 1.33425,
+          "h1_equilibrium": 1.34218
         }
       },
       {
@@ -62961,14 +62961,14 @@ window.STATIC_DASHBOARD_DATA = {
         "spread_pips": 14.3,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 43,
-        "prob_sell": 57,
+        "prob_buy": 41,
+        "prob_sell": 59,
         "retail_sentiment": {
-          "long_pct": 50.0,
-          "short_pct": 50.0,
-          "longs_in_loss": 25.0,
-          "shorts_in_loss": 25.0,
-          "summary": "Minoristas 50.0% Comprados vs 50.0% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
+          "long_pct": 62.8,
+          "short_pct": 37.2,
+          "longs_in_loss": 32.6,
+          "shorts_in_loss": 16.9,
+          "summary": "Minoristas 62.8% Comprados vs 37.2% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
           "order_long_pct": 42.1,
