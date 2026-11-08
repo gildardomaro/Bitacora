@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-08T02:19:38.645316Z",
+  "generated_at": "2026-11-08T02:24:39.353916Z",
   "account_pepperstone": {
     "terminal": "Tito (Pepperstone-03 51580714)",
     "connected": true,
@@ -11742,7 +11742,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-07 19:19:38",
+  "last_sync": "2026-11-07 19:24:39",
   "equity": {
     "real1000": {
       "initial_balance": 1000.0,
@@ -12740,8 +12740,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-08T02:19:38.322331Z",
-    "last_sync": "2026-11-07 19:19:38",
+    "timestamp": "2026-11-08T02:24:39.124309Z",
+    "last_sync": "2026-11-07 19:24:39",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -12842,8 +12842,8 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 71.7% Comprados vs 28.3% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 58.0,
-          "order_short_pct": 42.0,
+          "order_long_pct": 58.1,
+          "order_short_pct": 41.9,
           "top_bsl": [
             {
               "price": 4112.5,
