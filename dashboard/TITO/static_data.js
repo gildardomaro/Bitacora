@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-08T15:09:37.272020Z",
+  "generated_at": "2026-11-08T15:14:37.977647Z",
   "account_pepperstone": {
     "terminal": "Tito (Pepperstone-03 51580714)",
     "connected": true,
@@ -11742,7 +11742,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-08 08:09:37",
+  "last_sync": "2026-11-08 08:14:37",
   "equity": {
     "real1000": {
       "initial_balance": 1000.0,
@@ -12740,8 +12740,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-08T15:09:37.008358Z",
-    "last_sync": "2026-11-08 08:09:37",
+    "timestamp": "2026-11-08T15:14:37.738053Z",
+    "last_sync": "2026-11-08 08:14:37",
     "assets": [
       {
         "symbol": "GBP/USD",
