@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-12T10:19:37.802232Z",
+  "generated_at": "2026-11-12T10:24:40.047595Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -25742,7 +25742,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-12 03:19:37",
+  "last_sync": "2026-11-12 03:24:39",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -26580,8 +26580,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-12T10:19:37.528154Z",
-    "last_sync": "2026-11-12 03:19:37",
+    "timestamp": "2026-11-12T10:24:39.711981Z",
+    "last_sync": "2026-11-12 03:24:39",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -26589,10 +26589,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.32776,
+        "price": 1.32777,
         "bid": 1.32749,
-        "ask": 1.32802,
-        "spread_pips": 5.3,
+        "ask": 1.32804,
+        "spread_pips": 5.5,
         "bias": "BULLISH",
         "bias_desc": "SESGO INSTITUCIONAL COMPRA",
         "prob_buy": 54,
@@ -26605,50 +26605,50 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 59.9% Comprados vs 40.1% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
-          "order_long_pct": 46.9,
-          "order_short_pct": 53.1,
+          "order_long_pct": 46.8,
+          "order_short_pct": 53.2,
           "top_bsl": [
             {
               "price": 1.328,
-              "density_pct": 0.54,
-              "dist_pips": 2.4,
-              "label": "Buy Stops / BSL"
-            },
-            {
-              "price": 1.329,
-              "density_pct": 0.27,
-              "dist_pips": 12.4,
+              "density_pct": 0.6,
+              "dist_pips": 2.3,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.3285,
+              "density_pct": 0.29,
+              "dist_pips": 7.3,
+              "label": "Buy Stops / BSL"
+            },
+            {
+              "price": 1.329,
               "density_pct": 0.26,
-              "dist_pips": 7.4,
+              "dist_pips": 12.3,
               "label": "Buy Stops / BSL"
             }
           ],
           "top_ssl": [
             {
-              "price": 1.3,
-              "density_pct": 0.22,
-              "dist_pips": 277.6,
+              "price": 1.3245,
+              "density_pct": 0.23,
+              "dist_pips": 32.7,
               "label": "Sell Stops / SSL"
             },
             {
-              "price": 1.3245,
+              "price": 1.3,
               "density_pct": 0.22,
-              "dist_pips": 32.6,
+              "dist_pips": 277.7,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.324,
-              "density_pct": 0.16,
-              "dist_pips": 37.6,
+              "density_pct": 0.17,
+              "dist_pips": 37.7,
               "label": "Sell Stops / SSL"
             }
           ],
           "bsl_target": 1.328,
-          "ssl_target": 1.3
+          "ssl_target": 1.3245
         },
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
@@ -26666,61 +26666,61 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 3949.02,
-        "bid": 3948.23,
-        "ask": 3949.81,
-        "spread_pips": 158.0,
+        "price": 3948.89,
+        "bid": 3948.09,
+        "ask": 3949.68,
+        "spread_pips": 159.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 46,
         "prob_sell": 54,
         "retail_sentiment": {
-          "long_pct": 66.0,
-          "short_pct": 34.0,
-          "longs_in_loss": 26.4,
-          "shorts_in_loss": 16.4,
-          "summary": "Minoristas 66.0% Comprados vs 34.0% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+          "long_pct": 66.2,
+          "short_pct": 33.8,
+          "longs_in_loss": 26.3,
+          "shorts_in_loss": 16.3,
+          "summary": "Minoristas 66.2% Comprados vs 33.8% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 65.4,
-          "order_short_pct": 34.6,
+          "order_long_pct": 64.3,
+          "order_short_pct": 35.7,
           "top_bsl": [
             {
               "price": 3997.0,
               "density_pct": 0.29,
-              "dist_pips": 4798.0,
+              "dist_pips": 4811.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4003.5,
               "density_pct": 0.29,
-              "dist_pips": 5448.0,
+              "dist_pips": 5461.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 4063.5,
               "density_pct": 0.27,
-              "dist_pips": 11448.0,
+              "dist_pips": 11461.0,
               "label": "Buy Stops / BSL"
             }
           ],
           "top_ssl": [
             {
               "price": 3920.5,
-              "density_pct": 0.32,
-              "dist_pips": 2852.0,
+              "density_pct": 0.31,
+              "dist_pips": 2839.0,
               "label": "Sell Stops / SSL"
             },
             {
-              "price": 3923.5,
+              "price": 3946.0,
               "density_pct": 0.2,
-              "dist_pips": 2552.0,
+              "dist_pips": 289.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3870.0,
               "density_pct": 0.18,
-              "dist_pips": 7902.0,
+              "dist_pips": 7889.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -26743,10 +26743,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.68332,
-        "bid": 0.68285,
-        "ask": 0.68379,
-        "spread_pips": 9.4,
+        "price": 0.68345,
+        "bid": 0.68298,
+        "ask": 0.68391,
+        "spread_pips": 9.3,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 44,
@@ -26754,50 +26754,50 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 63.1,
           "short_pct": 36.9,
-          "longs_in_loss": 31.8,
-          "shorts_in_loss": 17.2,
+          "longs_in_loss": 31.9,
+          "shorts_in_loss": 17.1,
           "summary": "Minoristas 63.1% Comprados vs 36.9% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 43.9,
-          "order_short_pct": 56.1,
+          "order_long_pct": 43.7,
+          "order_short_pct": 56.3,
           "top_bsl": [
             {
               "price": 0.686,
               "density_pct": 0.3,
-              "dist_pips": 26.8,
+              "dist_pips": 25.5,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.6835,
-              "density_pct": 0.28,
-              "dist_pips": 1.8,
+              "density_pct": 0.26,
+              "dist_pips": 0.5,
               "label": "Buy Stops / BSL"
             },
             {
-              "price": 0.685,
-              "density_pct": 0.2,
-              "dist_pips": 16.8,
+              "price": 0.684,
+              "density_pct": 0.21,
+              "dist_pips": 5.5,
               "label": "Buy Stops / BSL"
             }
           ],
           "top_ssl": [
             {
               "price": 0.681,
-              "density_pct": 0.24,
-              "dist_pips": 23.2,
+              "density_pct": 0.25,
+              "dist_pips": 24.5,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.68,
               "density_pct": 0.2,
-              "dist_pips": 33.2,
+              "dist_pips": 34.5,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.6805,
-              "density_pct": 0.2,
-              "dist_pips": 28.2,
+              "density_pct": 0.19,
+              "dist_pips": 29.5,
               "label": "Sell Stops / SSL"
             }
           ],
