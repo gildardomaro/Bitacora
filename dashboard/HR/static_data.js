@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-14T09:53:19.252453Z",
+  "generated_at": "2026-11-14T10:04:52.121288Z",
   "account_pepperstone": {
     "terminal": "Héctor (Pepperstone 51581712)",
     "connected": true,
@@ -25838,7 +25838,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-14 02:53:18",
+  "last_sync": "2026-11-14 03:04:38",
   "equity": {
     "real1000": {
       "initial_balance": 251.98,
@@ -26684,8 +26684,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-14T09:53:18.916327Z",
-    "last_sync": "2026-11-14 02:53:18",
+    "timestamp": "2026-11-14T10:04:38.555088Z",
+    "last_sync": "2026-11-14 03:04:38",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -26694,19 +26694,19 @@ window.STATIC_DASHBOARD_DATA = {
         "display": "GBP/USD",
         "icon": "💷",
         "price": 1.32128,
-        "bid": 1.3206,
-        "ask": 1.32196,
-        "spread_pips": 13.6,
+        "bid": 0.0,
+        "ask": 0.0,
+        "spread_pips": 0.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
-        "prob_buy": 44,
-        "prob_sell": 56,
+        "prob_buy": 46,
+        "prob_sell": 54,
         "retail_sentiment": {
-          "long_pct": 59.8,
-          "short_pct": 40.2,
-          "longs_in_loss": 23.6,
-          "shorts_in_loss": 24.2,
-          "summary": "Minoristas 59.8% Comprados vs 40.2% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
+          "long_pct": 50.0,
+          "short_pct": 50.0,
+          "longs_in_loss": 25.0,
+          "shorts_in_loss": 25.0,
+          "summary": "Minoristas 50.0% Comprados vs 50.0% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
           "order_long_pct": 47.0,
@@ -26863,8 +26863,8 @@ window.STATIC_DASHBOARD_DATA = {
           "summary": "Minoristas 63.0% Comprados vs 37.0% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 43.0,
-          "order_short_pct": 57.0,
+          "order_long_pct": 42.9,
+          "order_short_pct": 57.1,
           "top_bsl": [
             {
               "price": 0.679,
@@ -26880,7 +26880,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 0.6815,
-              "density_pct": 0.2,
+              "density_pct": 0.19,
               "dist_pips": 42.0,
               "label": "Buy Stops / BSL"
             }
