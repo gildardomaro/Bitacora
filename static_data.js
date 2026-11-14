@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-14T03:20:38.140029Z",
+  "generated_at": "2026-11-14T03:38:13.877913Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -61657,7 +61657,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-13 20:20:37",
+  "last_sync": "2026-11-13 20:38:13",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -64356,8 +64356,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-14T03:20:37.647799Z",
-    "last_sync": "2026-11-13 20:20:37",
+    "timestamp": "2026-11-14T03:38:13.576259Z",
+    "last_sync": "2026-11-13 20:38:13",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -64366,9 +64366,9 @@ window.STATIC_DASHBOARD_DATA = {
         "display": "GBP/USD",
         "icon": "💷",
         "price": 1.32128,
-        "bid": 1.3206,
-        "ask": 1.32196,
-        "spread_pips": 13.6,
+        "bid": 0.0,
+        "ask": 0.0,
+        "spread_pips": 0.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 44,
@@ -64446,16 +64446,16 @@ window.STATIC_DASHBOARD_DATA = {
         "bid": 3883.48,
         "ask": 3885.89,
         "spread_pips": 241.0,
-        "bias": "NEUTRAL",
-        "bias_desc": "MERCADO EN RANGO / NEUTRAL",
-        "prob_buy": 49,
-        "prob_sell": 51,
+        "bias": "BULLISH",
+        "bias_desc": "SESGO INSTITUCIONAL COMPRA",
+        "prob_buy": 53,
+        "prob_sell": 47,
         "retail_sentiment": {
-          "long_pct": 66.5,
-          "short_pct": 33.5,
-          "longs_in_loss": 26.9,
-          "shorts_in_loss": 16.6,
-          "summary": "Minoristas 66.5% Comprados vs 33.5% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+          "long_pct": 50.0,
+          "short_pct": 50.0,
+          "longs_in_loss": 25.0,
+          "shorts_in_loss": 25.0,
+          "summary": "Minoristas 50.0% Comprados vs 50.0% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
           "order_long_pct": 64.5,
