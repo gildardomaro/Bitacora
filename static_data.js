@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-14T08:05:42.718395Z",
+  "generated_at": "2026-11-14T08:15:31.236639Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -61657,7 +61657,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-14 01:05:42",
+  "last_sync": "2026-11-14 01:15:30",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -64356,8 +64356,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-14T08:05:42.322678Z",
-    "last_sync": "2026-11-14 01:05:42",
+    "timestamp": "2026-11-14T08:15:30.946647Z",
+    "last_sync": "2026-11-14 01:15:30",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -64366,9 +64366,9 @@ window.STATIC_DASHBOARD_DATA = {
         "display": "GBP/USD",
         "icon": "💷",
         "price": 1.32128,
-        "bid": 0.0,
-        "ask": 0.0,
-        "spread_pips": 0.0,
+        "bid": 1.3206,
+        "ask": 1.32196,
+        "spread_pips": 13.6,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 44,

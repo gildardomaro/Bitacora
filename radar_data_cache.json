@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-14T08:05:42.322678Z",
-  "last_sync": "2026-11-14 01:05:42",
+  "timestamp": "2026-11-14T08:15:30.946647Z",
+  "last_sync": "2026-11-14 01:15:30",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -9,9 +9,9 @@
       "display": "GBP/USD",
       "icon": "💷",
       "price": 1.32128,
-      "bid": 0.0,
-      "ask": 0.0,
-      "spread_pips": 0.0,
+      "bid": 1.3206,
+      "ask": 1.32196,
+      "spread_pips": 13.6,
       "bias": "BEARISH",
       "bias_desc": "SESGO INSTITUCIONAL VENTA",
       "prob_buy": 44,
