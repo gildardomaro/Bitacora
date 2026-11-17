@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-14T12:44:15.204753Z",
-  "last_sync": "2026-11-14 05:44:15",
+  "timestamp": "2026-11-17T14:39:55.656617Z",
+  "last_sync": "2026-11-17 07:39:55",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -8,75 +8,75 @@
       "name": "GBP/USD (Libra / Dólar)",
       "display": "GBP/USD",
       "icon": "💷",
-      "price": 1.32128,
-      "bid": 0.0,
-      "ask": 0.0,
-      "spread_pips": 0.0,
-      "bias": "BEARISH",
-      "bias_desc": "SESGO INSTITUCIONAL VENTA",
-      "prob_buy": 46,
-      "prob_sell": 54,
+      "price": 1.31959,
+      "bid": 1.31931,
+      "ask": 1.31987,
+      "spread_pips": 5.6,
+      "bias": "BULLISH",
+      "bias_desc": "SESGO INSTITUCIONAL COMPRA",
+      "prob_buy": 54,
+      "prob_sell": 46,
       "retail_sentiment": {
-        "long_pct": 50.0,
-        "short_pct": 50.0,
-        "longs_in_loss": 25.0,
-        "shorts_in_loss": 25.0,
-        "summary": "Minoristas 50.0% Comprados vs 50.0% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
+        "long_pct": 60.0,
+        "short_pct": 40.0,
+        "longs_in_loss": 26.2,
+        "shorts_in_loss": 22.5,
+        "summary": "Minoristas 60.0% Comprados vs 40.0% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
       },
       "order_book": {
-        "order_long_pct": 47.0,
-        "order_short_pct": 53.0,
+        "order_long_pct": 49.2,
+        "order_short_pct": 50.8,
         "top_bsl": [
           {
-            "price": 1.324,
-            "density_pct": 0.23,
-            "dist_pips": 27.2,
+            "price": 1.3205,
+            "density_pct": 0.41,
+            "dist_pips": 9.1,
             "label": "Buy Stops / BSL"
           },
           {
-            "price": 1.3305,
-            "density_pct": 0.23,
-            "dist_pips": 92.2,
+            "price": 1.321,
+            "density_pct": 0.32,
+            "dist_pips": 14.1,
             "label": "Buy Stops / BSL"
           },
           {
-            "price": 1.325,
-            "density_pct": 0.2,
-            "dist_pips": 37.2,
+            "price": 1.3215,
+            "density_pct": 0.31,
+            "dist_pips": 19.1,
             "label": "Buy Stops / BSL"
           }
         ],
         "top_ssl": [
           {
             "price": 1.3,
-            "density_pct": 0.23,
-            "dist_pips": 212.8,
+            "density_pct": 0.28,
+            "dist_pips": 195.9,
             "label": "Sell Stops / SSL"
           },
           {
-            "price": 1.32,
-            "density_pct": 0.16,
-            "dist_pips": 12.8,
+            "price": 1.316,
+            "density_pct": 0.18,
+            "dist_pips": 35.9,
             "label": "Sell Stops / SSL"
           },
           {
-            "price": 1.3195,
-            "density_pct": 0.13,
-            "dist_pips": 17.8,
+            "price": 1.3165,
+            "density_pct": 0.18,
+            "dist_pips": 30.9,
             "label": "Sell Stops / SSL"
           }
         ],
-        "bsl_target": 1.324,
+        "bsl_target": 1.3205,
         "ssl_target": 1.3
       },
       "technical_smc": {
         "trend_h4": "BAJISTA 🔴",
-        "trend_h1": "BAJISTA 🔴",
-        "trend_m15": "BAJISTA 🔴",
+        "trend_h1": "ALCISTA 🟢",
+        "trend_m15": "ALCISTA 🟢",
         "zone": "DESCUENTO 🟢 (Busca Compras)",
-        "h1_high": 1.32794,
-        "h1_low": 1.32051,
-        "h1_equilibrium": 1.32422
+        "h1_high": 1.32246,
+        "h1_low": 1.31688,
+        "h1_equilibrium": 1.31967
       }
     },
     {
@@ -85,75 +85,75 @@
       "name": "XAU/USD (Oro / Dólar)",
       "display": "XAU/USD (Oro)",
       "icon": "🥇",
-      "price": 3884.68,
-      "bid": 3883.48,
-      "ask": 3885.89,
-      "spread_pips": 241.0,
-      "bias": "NEUTRAL",
-      "bias_desc": "MERCADO EN RANGO / NEUTRAL",
-      "prob_buy": 49,
-      "prob_sell": 51,
+      "price": 3867.4,
+      "bid": 3866.57,
+      "ask": 3868.24,
+      "spread_pips": 167.0,
+      "bias": "BEARISH",
+      "bias_desc": "SESGO INSTITUCIONAL VENTA",
+      "prob_buy": 47,
+      "prob_sell": 53,
       "retail_sentiment": {
-        "long_pct": 66.5,
-        "short_pct": 33.5,
-        "longs_in_loss": 26.9,
-        "shorts_in_loss": 16.6,
-        "summary": "Minoristas 66.5% Comprados vs 33.5% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+        "long_pct": 63.1,
+        "short_pct": 36.9,
+        "longs_in_loss": 32.2,
+        "shorts_in_loss": 16.8,
+        "summary": "Minoristas 63.1% Comprados vs 36.9% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
       },
       "order_book": {
-        "order_long_pct": 64.5,
-        "order_short_pct": 35.5,
+        "order_long_pct": 65.5,
+        "order_short_pct": 34.5,
         "top_bsl": [
           {
-            "price": 3919.5,
-            "density_pct": 0.37,
-            "dist_pips": 3482.0,
+            "price": 3901.0,
+            "density_pct": 0.48,
+            "dist_pips": 3360.0,
             "label": "Buy Stops / BSL"
           },
           {
-            "price": 3929.5,
-            "density_pct": 0.3,
-            "dist_pips": 4482.0,
+            "price": 3883.5,
+            "density_pct": 0.35,
+            "dist_pips": 1610.0,
             "label": "Buy Stops / BSL"
           },
           {
-            "price": 3902.5,
-            "density_pct": 0.28,
-            "dist_pips": 1782.0,
+            "price": 3885.5,
+            "density_pct": 0.31,
+            "dist_pips": 1810.0,
             "label": "Buy Stops / BSL"
           }
         ],
         "top_ssl": [
           {
-            "price": 3855.0,
-            "density_pct": 0.35,
-            "dist_pips": 2968.0,
+            "price": 3807.5,
+            "density_pct": 0.55,
+            "dist_pips": 5990.0,
             "label": "Sell Stops / SSL"
           },
           {
-            "price": 3800.0,
-            "density_pct": 0.16,
-            "dist_pips": 8468.0,
+            "price": 3835.0,
+            "density_pct": 0.33,
+            "dist_pips": 3240.0,
             "label": "Sell Stops / SSL"
           },
           {
-            "price": 3868.5,
-            "density_pct": 0.14,
-            "dist_pips": 1618.0,
+            "price": 3832.0,
+            "density_pct": 0.31,
+            "dist_pips": 3540.0,
             "label": "Sell Stops / SSL"
           }
         ],
-        "bsl_target": 3919.5,
-        "ssl_target": 3855.0
+        "bsl_target": 3901.0,
+        "ssl_target": 3807.5
       },
       "technical_smc": {
         "trend_h4": "BAJISTA 🔴",
-        "trend_h1": "BAJISTA 🔴",
+        "trend_h1": "ALCISTA 🟢",
         "trend_m15": "ALCISTA 🟢",
-        "zone": "DESCUENTO 🟢 (Busca Compras)",
-        "h1_high": 3983.18,
-        "h1_low": 3852.58,
-        "h1_equilibrium": 3917.88
+        "zone": "PREMIUM 🔴 (Busca Ventas)",
+        "h1_high": 3901.37,
+        "h1_low": 3832.46,
+        "h1_equilibrium": 3866.91
       }
     },
     {
@@ -162,148 +162,148 @@
       "name": "AUD/USD (Dólar Australiano)",
       "display": "AUD/USD",
       "icon": "🦘",
-      "price": 0.6773,
-      "bid": 0.67658,
-      "ask": 0.67802,
-      "spread_pips": 14.4,
+      "price": 0.67391,
+      "bid": 0.67344,
+      "ask": 0.67438,
+      "spread_pips": 9.4,
       "bias": "BEARISH",
       "bias_desc": "SESGO INSTITUCIONAL VENTA",
-      "prob_buy": 41,
-      "prob_sell": 59,
+      "prob_buy": 46,
+      "prob_sell": 54,
       "retail_sentiment": {
-        "long_pct": 63.0,
-        "short_pct": 37.0,
-        "longs_in_loss": 34.2,
-        "shorts_in_loss": 15.7,
-        "summary": "Minoristas 63.0% Comprados vs 37.0% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+        "long_pct": 64.0,
+        "short_pct": 36.0,
+        "longs_in_loss": 23.8,
+        "shorts_in_loss": 22.1,
+        "summary": "Minoristas 64.0% Comprados vs 36.0% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
       },
       "order_book": {
-        "order_long_pct": 42.9,
-        "order_short_pct": 57.1,
+        "order_long_pct": 46.8,
+        "order_short_pct": 53.2,
         "top_bsl": [
           {
-            "price": 0.679,
-            "density_pct": 0.21,
-            "dist_pips": 17.0,
+            "price": 0.6745,
+            "density_pct": 0.4,
+            "dist_pips": 5.9,
             "label": "Buy Stops / BSL"
           },
           {
-            "price": 0.681,
-            "density_pct": 0.2,
-            "dist_pips": 37.0,
+            "price": 0.674,
+            "density_pct": 0.39,
+            "dist_pips": 0.9,
             "label": "Buy Stops / BSL"
           },
           {
-            "price": 0.6815,
-            "density_pct": 0.19,
-            "dist_pips": 42.0,
+            "price": 0.676,
+            "density_pct": 0.39,
+            "dist_pips": 20.9,
             "label": "Buy Stops / BSL"
           }
         ],
         "top_ssl": [
           {
-            "price": 0.676,
-            "density_pct": 0.2,
-            "dist_pips": 13.0,
+            "price": 0.6715,
+            "density_pct": 0.3,
+            "dist_pips": 24.1,
             "label": "Sell Stops / SSL"
           },
           {
-            "price": 0.6765,
-            "density_pct": 0.16,
-            "dist_pips": 8.0,
+            "price": 0.671,
+            "density_pct": 0.22,
+            "dist_pips": 29.1,
             "label": "Sell Stops / SSL"
           },
           {
-            "price": 0.6755,
-            "density_pct": 0.13,
-            "dist_pips": 18.0,
+            "price": 0.6665,
+            "density_pct": 0.18,
+            "dist_pips": 74.1,
             "label": "Sell Stops / SSL"
           }
         ],
-        "bsl_target": 0.679,
-        "ssl_target": 0.676
+        "bsl_target": 0.6745,
+        "ssl_target": 0.6715
       },
       "technical_smc": {
         "trend_h4": "BAJISTA 🔴",
         "trend_h1": "BAJISTA 🔴",
-        "trend_m15": "BAJISTA 🔴",
+        "trend_m15": "ALCISTA 🟢",
         "zone": "DESCUENTO 🟢 (Busca Compras)",
-        "h1_high": 0.68371,
-        "h1_low": 0.67698,
-        "h1_equilibrium": 0.68034
+        "h1_high": 0.67804,
+        "h1_low": 0.67201,
+        "h1_equilibrium": 0.67502
       }
     }
   ],
   "calendar": [
     {
-      "title": "RBA Assist Gov Hunter Speaks",
+      "title": "Rightmove HPI m/m",
+      "currency": "GBP",
+      "impact": "Low",
+      "datetime_raw": "2026-11-15T19:01:00-05:00",
+      "forecast": "-",
+      "previous": "1.0%"
+    },
+    {
+      "title": "Industrial Production m/m",
+      "currency": "EUR",
+      "impact": "Low",
+      "datetime_raw": "2026-11-16T05:00:00-05:00",
+      "forecast": "0.3%",
+      "previous": "-0.5%"
+    },
+    {
+      "title": "FOMC Member Barr Speaks",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-16T05:00:00-05:00",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "title": "Empire State Manufacturing Index",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-16T08:30:00-05:00",
+      "forecast": "17.6",
+      "previous": "25.5"
+    },
+    {
+      "title": "FOMC Member Williams Speaks",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-16T09:05:00-05:00",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "title": "Cleveland Fed Inflation Expectations",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-16T09:45:00-05:00",
+      "forecast": "-",
+      "previous": "3.3%"
+    },
+    {
+      "title": "Fed Chairman Warsh Speaks",
+      "currency": "USD",
+      "impact": "High",
+      "datetime_raw": "2026-11-16T12:00:00-05:00",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "title": "FOMC Member Hammack Speaks",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-16T14:15:00-05:00",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "title": "RBA Gov Bullock Speaks",
       "currency": "AUD",
-      "impact": "Low",
-      "datetime_raw": "2026-11-08T17:30:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "German Trade Balance",
-      "currency": "EUR",
-      "impact": "Low",
-      "datetime_raw": "2026-11-09T02:00:00-05:00",
-      "forecast": "19.2B",
-      "previous": "19.5B"
-    },
-    {
-      "title": "Sentix Investor Confidence",
-      "currency": "EUR",
-      "impact": "Low",
-      "datetime_raw": "2026-11-09T04:30:00-05:00",
-      "forecast": "2.1",
-      "previous": "2.7"
-    },
-    {
-      "title": "G7 Meetings",
-      "currency": "GLOBAL",
-      "impact": "Low",
-      "datetime_raw": "2026-11-09T04:45:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "ECOFIN Meetings",
-      "currency": "EUR",
-      "impact": "Low",
-      "datetime_raw": "2026-11-09T05:15:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "Eurogroup Meetings",
-      "currency": "EUR",
-      "impact": "Low",
-      "datetime_raw": "2026-11-09T05:15:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "FOMC Member Bowman Speaks",
-      "currency": "USD",
-      "impact": "Low",
-      "datetime_raw": "2026-11-09T08:40:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "Final Wholesale Inventories m/m",
-      "currency": "USD",
-      "impact": "Low",
-      "datetime_raw": "2026-11-09T10:00:00-05:00",
-      "forecast": "0.6%",
-      "previous": "0.6%"
-    },
-    {
-      "title": "FOMC Member Goolsbee Speaks",
-      "currency": "USD",
-      "impact": "Low",
-      "datetime_raw": "2026-11-09T10:00:00-05:00",
+      "impact": "High",
+      "datetime_raw": "2026-11-16T17:50:00-05:00",
       "forecast": "-",
       "previous": "-"
     },
@@ -311,213 +311,213 @@
       "title": "FOMC Member Barkin Speaks",
       "currency": "USD",
       "impact": "Low",
-      "datetime_raw": "2026-11-09T12:15:00-05:00",
+      "datetime_raw": "2026-11-16T18:10:00-05:00",
       "forecast": "-",
       "previous": "-"
     },
     {
-      "title": "BOE Gov Bailey Speaks",
+      "title": "FOMC Member Goolsbee Speaks",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-16T18:30:00-05:00",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "title": "Monetary Policy Meeting Minutes",
+      "currency": "AUD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-16T19:30:00-05:00",
+      "forecast": "-",
+      "previous": "-"
+    },
+    {
+      "title": "Average Earnings Index 3m/y",
       "currency": "GBP",
       "impact": "Medium",
-      "datetime_raw": "2026-11-09T12:25:00-05:00",
+      "datetime_raw": "2026-11-17T02:00:00-05:00",
+      "forecast": "3.5%",
+      "previous": "3.7%"
+    },
+    {
+      "title": "Claimant Count Change",
+      "currency": "GBP",
+      "impact": "Low",
+      "datetime_raw": "2026-11-17T02:00:00-05:00",
+      "forecast": "25.4K",
+      "previous": "30.3K"
+    },
+    {
+      "title": "Unemployment Rate",
+      "currency": "GBP",
+      "impact": "Low",
+      "datetime_raw": "2026-11-17T02:00:00-05:00",
+      "forecast": "4.7%",
+      "previous": "4.7%"
+    },
+    {
+      "title": "EU Economic Forecasts",
+      "currency": "EUR",
+      "impact": "Low",
+      "datetime_raw": "2026-11-17T05:00:00-05:00",
       "forecast": "-",
       "previous": "-"
     },
     {
-      "title": "Westpac Consumer Sentiment",
-      "currency": "AUD",
+      "title": "ZEW Economic Sentiment",
+      "currency": "EUR",
       "impact": "Low",
-      "datetime_raw": "2026-11-09T18:30:00-05:00",
-      "forecast": "-",
-      "previous": "-4.7%"
+      "datetime_raw": "2026-11-17T05:00:00-05:00",
+      "forecast": "19.1",
+      "previous": "18.5"
     },
     {
-      "title": "BRC Retail Sales Monitor y/y",
-      "currency": "GBP",
+      "title": "German ZEW Economic Sentiment",
+      "currency": "EUR",
       "impact": "Low",
-      "datetime_raw": "2026-11-09T19:01:00-05:00",
-      "forecast": "1.2%",
-      "previous": "1.0%"
+      "datetime_raw": "2026-11-17T05:00:00-05:00",
+      "forecast": "28.8",
+      "previous": "28.1"
     },
     {
-      "title": "NAB Business Confidence",
-      "currency": "AUD",
+      "title": "FOMC Member Musalem Speaks",
+      "currency": "USD",
       "impact": "Low",
-      "datetime_raw": "2026-11-09T19:30:00-05:00",
-      "forecast": "-",
-      "previous": "-13"
-    },
-    {
-      "title": "MPC Member Breeden Speaks",
-      "currency": "GBP",
-      "impact": "Low",
-      "datetime_raw": "2026-11-10T03:30:00-05:00",
+      "datetime_raw": "2026-11-17T07:30:00-05:00",
       "forecast": "-",
       "previous": "-"
+    },
+    {
+      "title": "ADP Weekly Employment Change",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-17T08:15:00-05:00",
+      "forecast": "-",
+      "previous": "19.8K"
+    },
+    {
+      "title": "Core Retail Sales m/m",
+      "currency": "USD",
+      "impact": "High",
+      "datetime_raw": "2026-11-17T08:30:00-05:00",
+      "forecast": "0.4%",
+      "previous": "0.9%"
+    },
+    {
+      "title": "Retail Sales m/m",
+      "currency": "USD",
+      "impact": "High",
+      "datetime_raw": "2026-11-17T08:30:00-05:00",
+      "forecast": "0.1%",
+      "previous": "0.8%"
+    },
+    {
+      "title": "Import Prices m/m",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-17T08:30:00-05:00",
+      "forecast": "0.7%",
+      "previous": "1.1%"
     },
     {
       "title": "FOMC Member Waller Speaks",
       "currency": "USD",
-      "impact": "Medium",
-      "datetime_raw": "2026-11-10T04:00:00-05:00",
+      "impact": "Low",
+      "datetime_raw": "2026-11-17T09:10:00-05:00",
       "forecast": "-",
       "previous": "-"
     },
     {
-      "title": "G7 Meetings",
-      "currency": "GLOBAL",
+      "title": "Capacity Utilization Rate",
+      "currency": "USD",
       "impact": "Low",
-      "datetime_raw": "2026-11-10T04:45:00-05:00",
+      "datetime_raw": "2026-11-17T09:15:00-05:00",
+      "forecast": "76.8%",
+      "previous": "76.9%"
+    },
+    {
+      "title": "Industrial Production m/m",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-17T09:15:00-05:00",
+      "forecast": "0.0%",
+      "previous": "0.7%"
+    },
+    {
+      "title": "FOMC Member Hammack Speaks",
+      "currency": "USD",
+      "impact": "Low",
+      "datetime_raw": "2026-11-17T09:30:00-05:00",
       "forecast": "-",
       "previous": "-"
     },
     {
-      "title": "30-y Bond Auction",
-      "currency": "GBP",
-      "impact": "Low",
-      "datetime_raw": "2026-11-10T05:02:00-05:00",
-      "forecast": "-",
-      "previous": "5.52|3.8"
-    },
-    {
-      "title": "NFIB Small Business Index",
+      "title": "Business Inventories m/m",
       "currency": "USD",
       "impact": "Low",
-      "datetime_raw": "2026-11-10T06:00:00-05:00",
-      "forecast": "98.0",
-      "previous": "97.9"
+      "datetime_raw": "2026-11-17T10:00:00-05:00",
+      "forecast": "0.5%",
+      "previous": "0.4%"
     },
     {
-      "title": "MPC Member Lombardelli Speaks",
-      "currency": "GBP",
-      "impact": "Low",
-      "datetime_raw": "2026-11-10T07:30:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "ADP Weekly Employment Change",
+      "title": "NAHB Housing Market Index",
       "currency": "USD",
       "impact": "Low",
-      "datetime_raw": "2026-11-10T08:14:00-05:00",
-      "forecast": "-",
-      "previous": "16.8K"
+      "datetime_raw": "2026-11-17T10:00:00-05:00",
+      "forecast": "29",
+      "previous": "29"
     },
     {
-      "title": "ADP Weekly Employment Change",
+      "title": "FOMC Member Williams Speaks",
       "currency": "USD",
       "impact": "Low",
-      "datetime_raw": "2026-11-10T08:15:00-05:00",
-      "forecast": "-",
-      "previous": "19.5K"
-    },
-    {
-      "title": "Core CPI m/m",
-      "currency": "USD",
-      "impact": "High",
-      "datetime_raw": "2026-11-10T08:30:00-05:00",
-      "forecast": "0.2%",
-      "previous": "0.3%"
-    },
-    {
-      "title": "CPI m/m",
-      "currency": "USD",
-      "impact": "High",
-      "datetime_raw": "2026-11-10T08:30:00-05:00",
-      "forecast": "0.3%",
-      "previous": "0.6%"
-    },
-    {
-      "title": "FOMC Member Logan Speaks",
-      "currency": "USD",
-      "impact": "Low",
-      "datetime_raw": "2026-11-10T10:50:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "10-y Bond Auction",
-      "currency": "USD",
-      "impact": "Low",
-      "datetime_raw": "2026-11-10T13:01:00-05:00",
-      "forecast": "-",
-      "previous": "5.30|2.8"
-    },
-    {
-      "title": "MPC Member Pill Speaks",
-      "currency": "GBP",
-      "impact": "Low",
-      "datetime_raw": "2026-11-10T13:30:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "FOMC Member Schmid Speaks",
-      "currency": "USD",
-      "impact": "Low",
-      "datetime_raw": "2026-11-10T13:30:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "FOMC Member Bowman Speaks",
-      "currency": "USD",
-      "impact": "Low",
-      "datetime_raw": "2026-11-10T15:30:00-05:00",
-      "forecast": "-",
-      "previous": "-"
-    },
-    {
-      "title": "API Weekly Statistical Bulletin",
-      "currency": "USD",
-      "impact": "Low",
-      "datetime_raw": "2026-11-10T16:30:00-05:00",
+      "datetime_raw": "2026-11-17T14:25:00-05:00",
       "forecast": "-",
       "previous": "-"
     }
   ],
-  "high_impact_count": 5,
+  "high_impact_count": 9,
   "macro_summary": {
     "high_impact_events": [
       {
-        "title": "Core CPI m/m",
+        "title": "Fed Chairman Warsh Speaks",
         "currency": "USD",
         "impact": "High",
-        "datetime_raw": "2026-11-10T08:30:00-05:00",
-        "forecast": "0.2%",
-        "previous": "0.3%"
+        "datetime_raw": "2026-11-16T12:00:00-05:00",
+        "forecast": "-",
+        "previous": "-"
       },
       {
-        "title": "CPI m/m",
+        "title": "RBA Gov Bullock Speaks",
+        "currency": "AUD",
+        "impact": "High",
+        "datetime_raw": "2026-11-16T17:50:00-05:00",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Core Retail Sales m/m",
         "currency": "USD",
         "impact": "High",
-        "datetime_raw": "2026-11-10T08:30:00-05:00",
-        "forecast": "0.3%",
-        "previous": "0.6%"
+        "datetime_raw": "2026-11-17T08:30:00-05:00",
+        "forecast": "0.4%",
+        "previous": "0.9%"
       },
       {
-        "title": "GDP m/m",
+        "title": "Retail Sales m/m",
+        "currency": "USD",
+        "impact": "High",
+        "datetime_raw": "2026-11-17T08:30:00-05:00",
+        "forecast": "0.1%",
+        "previous": "0.8%"
+      },
+      {
+        "title": "CPI y/y",
         "currency": "GBP",
         "impact": "High",
-        "datetime_raw": "2026-11-12T02:00:00-05:00",
-        "forecast": "0.0%",
-        "previous": "0.1%"
-      },
-      {
-        "title": "Core PPI m/m",
-        "currency": "USD",
-        "impact": "High",
-        "datetime_raw": "2026-11-13T08:30:00-05:00",
-        "forecast": "0.3%",
-        "previous": "0.7%"
-      },
-      {
-        "title": "PPI m/m",
-        "currency": "USD",
-        "impact": "High",
-        "datetime_raw": "2026-11-13T08:30:00-05:00",
-        "forecast": "0.4%",
-        "previous": "1.3%"
+        "datetime_raw": "2026-11-18T02:00:00-05:00",
+        "forecast": "3.6%",
+        "previous": "3.5%"
       }
     ],
     "dxy_bias": "Neutral",
