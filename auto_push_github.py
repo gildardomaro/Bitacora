@@ -222,17 +222,13 @@ def atomic_write(filepath: str, content: str):
 
 
 def add_timestamp_to_static_data():
-    """Inyecta/actualiza el campo generated_at en todos los static_data.js (Maestro, HR y TITO)."""
+    """Inyecta/actualiza el campo generated_at en static_data.js."""
     ts = datetime.datetime.utcnow().isoformat() + "Z"
     new_field = f'  "generated_at": "{ts}",'
 
     static_targets = [
         STATIC_JS,
-        os.path.join(BOT_DIR, "static_data.js"),
-        os.path.join(BOT_DIR, "HR", "static_data.js"),
-        os.path.join(DASH_DIR, "HR", "static_data.js"),
-        os.path.join(BOT_DIR, "TITO", "static_data.js"),
-        os.path.join(DASH_DIR, "TITO", "static_data.js")
+        os.path.join(BOT_DIR, "static_data.js")
     ]
 
     for st in static_targets:
@@ -278,22 +274,7 @@ def sync_files_to_root():
             except Exception as e:
                 log(f"Error copiando {fn} a la raíz: {e}")
 
-    # Sincronizar subcarpetas HR y TITO
-    for sub in ["HR", "TITO"]:
-        sub_src = os.path.join(DASH_DIR, sub)
-        sub_dst = os.path.join(BOT_DIR, sub)
-        if os.path.isdir(sub_src):
-            os.makedirs(sub_dst, exist_ok=True)
-            for fn in files_to_copy:
-                f_s = os.path.join(sub_src, fn)
-                f_d = os.path.join(sub_dst, fn)
-                if os.path.isfile(f_s):
-                    try:
-                        shutil.copy2(f_s, f_d)
-                    except Exception:
-                        pass
-
-    log("Archivos del dashboard y portales /HR y /TITO sincronizados a la raíz (GitHub Pages root).")
+    log("Archivos del dashboard sincronizados a la raíz (GitHub Pages root).")
 
 
 def git_push():
@@ -312,8 +293,6 @@ def git_push():
         "chart.umd.min.js",
         "lightweight-charts.standalone.production.js",
         "logo_maro.jpg",
-        "HR/",
-        "TITO/",
         "radar/",
         "radar_data_cache.json",
         "VER_DASHBOARD_LOCAL.html"

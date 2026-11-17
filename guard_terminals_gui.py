@@ -21,20 +21,6 @@ TERMINALS = [
         "folder": "Pepperstone-01",
         "account": 51571487,
         "strategy": "smart+IA (XAUUSD M1 / Oro)"
-    },
-    {
-        "key": "HECTOR",
-        "name": "Héctor (Vantage 35126659)",
-        "folder": "Pepperstone-02",
-        "account": 35126659,
-        "strategy": "smart+IA / MARO (GBPUSD & ORO)"
-    },
-    {
-        "key": "TITO",
-        "name": "Tito (Pepperstone-03 51580714)",
-        "folder": "Pepperstone-03",
-        "account": 51580714,
-        "strategy": "smart+IA y MARO (XAUUSD)"
     }
 ]
 
