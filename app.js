@@ -307,19 +307,13 @@ function startDashboard() {
     // Actualizar badges del panel superior
     const termNames = {
       "PEPPERSTONE": "Maro - 51571487",
-      "HECTOR": "Héctor - 51581712",
-      "TITO": "Tito - 51580714",
       "REAL1000": "Vantage REAL (REAL1000)",
-      "VANTAGE": "Vantage DEMO (BOT-1000)",
-      "VANTAGE05": "Vantage DEMO (26207178)"
+      "VANTAGE": "Vantage DEMO (BOT-1000)"
     };
     const termServers = {
-      "PEPPERSTONE": "Maro - 51571487",
-      "HECTOR": "Héctor - 51581712",
-      "TITO": "Tito - 51580714",
+      "PEPPERSTONE": "Pepperstone-Edge 01 (51571487)",
       "REAL1000": "VantageMarkets-Live 5 (27497962)",
-      "VANTAGE": "Pepperstone-Demo (61587621)",
-      "VANTAGE05": "VantageMarkets-Demo (26207178)"
+      "VANTAGE": "Pepperstone-Demo (61587621)"
     };
 
     if (dom.panelAccountPill) dom.panelAccountPill.textContent = termNames[state.activeTerminal] || analytics.name;
@@ -560,14 +554,8 @@ function startDashboard() {
         acc = window.STATIC_DASHBOARD_DATA.account_pepperstone;
       } else if (state.activeTerminal === 'REAL1000') {
         acc = window.STATIC_DASHBOARD_DATA.account_real1000;
-      } else if (state.activeTerminal === 'HECTOR') {
-        acc = window.STATIC_DASHBOARD_DATA.account_hector;
-      } else if (state.activeTerminal === 'TITO') {
-        acc = window.STATIC_DASHBOARD_DATA.account_tito;
-      } else if (state.activeTerminal === 'VANTAGE05') {
-        acc = window.STATIC_DASHBOARD_DATA.account_vantage05;
       } else {
-        acc = window.STATIC_DASHBOARD_DATA.account_vantage;
+        acc = window.STATIC_DASHBOARD_DATA.account_pepperstone;
       }
     }
 
@@ -595,9 +583,7 @@ function startDashboard() {
       dom.mt5StatusText.textContent = isFileMode ? 'MODO LOCAL (CARPETA)' : 'MT5 EN LÍNEA';
     }
     const nameMap = {
-      "PEPPERSTONE": `Maro (Login: ${acc.login || 51571487})`,
-      "HECTOR": `Héctor (Login: ${acc.login || 51581712})`,
-      "TITO": `Tito (Login: ${acc.login || 51580714})`
+      "PEPPERSTONE": `Maro (Login: ${acc.login || 51571487})`
     };
     dom.kpiTerminalName.textContent = nameMap[state.activeTerminal] || `${acc.terminal} (Login: ${acc.login})`;
 
@@ -708,19 +694,8 @@ function startDashboard() {
       dom.statEquityWinRate.textContent = `${current.win_rate}%`;
     }
 
-    if (state.equityStrategy === 'real1000') {
-      dom.statProfitFactor.textContent = current.profit_factor || '1.78';
-      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'Pepperstone-01 (smart+IA y MARO | Histórico REAL1000 + Octubre en Vivo)';
-    } else if (state.equityStrategy === 'hector') {
-      dom.statProfitFactor.textContent = current.profit_factor || '1.81';
-      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'HECTOR (Vantage Real $200 -> $287.95 | +44.0% Net | WR 65.8%)';
-    } else if (state.equityStrategy === 'tito') {
-      dom.statProfitFactor.textContent = current.profit_factor || '1.80';
-      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'TITO (Pepperstone Real 51580714 | Oro XAUUSD)';
-    } else {
-      dom.statProfitFactor.textContent = current.profit_factor || '1.50';
-      if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'Estrategia Cuantitativa';
-    }
+    dom.statProfitFactor.textContent = current.profit_factor || '1.78';
+    if (dom.kpiStrategyName) dom.kpiStrategyName.textContent = 'Pepperstone-01 (Maro 51571487 | Histórico REAL1000 + Operativa en Vivo)';
 
     // Mapear datos para TradingView Area Series con timestamps crecientes
     const areaData = [];
@@ -797,10 +772,6 @@ function startDashboard() {
       let accBadge = `<span class="badge" style="background:rgba(255, 171, 0, 0.15); color:#FFAB00; border:1px solid rgba(255,171,0,0.4);">${t.account || 'GENERAL'}</span>`;
       if (t.account === 'REAL1000' || t.account === 'PEPPERSTONE') {
         accBadge = `<span class="badge" style="background:rgba(0, 230, 118, 0.15); color:#00E676; border:1px solid rgba(0,230,118,0.4);">${t.account === 'PEPPERSTONE' ? 'MARO' : 'REAL1000'}</span>`;
-      } else if (t.account === 'HECTOR') {
-        accBadge = `<span class="badge" style="background:rgba(0, 229, 255, 0.15); color:#00E5FF; border:1px solid rgba(0,229,255,0.4);">HECTOR</span>`;
-      } else if (t.account === 'TITO') {
-        accBadge = `<span class="badge" style="background:rgba(255, 152, 0, 0.15); color:#FF9800; border:1px solid rgba(255,152,0,0.4);">TITO</span>`;
       } else if (t.account === 'BOT-1000') {
         accBadge = `<span class="badge" style="background:rgba(187, 134, 252, 0.15); color:#BB86FC; border:1px solid rgba(187,134,252,0.4);">BOT-1000</span>`;
       } else if (t.account === 'SMART+IA') {
@@ -1091,16 +1062,8 @@ function startDashboard() {
   // Selector de terminal / bot -> Actualiza panel interactivo, gráficos y cuenta
   dom.terminalSelector.addEventListener('change', (e) => {
     state.activeTerminal = e.target.value;
-    if (state.activeTerminal === 'HECTOR') {
-      state.activeSymbol = 'GBPUSD+';
-      state.equityStrategy = 'hector';
-    } else if (state.activeTerminal === 'TITO') {
-      state.activeSymbol = 'XAUUSD';
-      state.equityStrategy = 'tito';
-    } else {
-      state.activeSymbol = 'XAUUSD';
-      state.equityStrategy = 'real1000';
-    }
+    state.activeSymbol = 'GBPUSD';
+    state.equityStrategy = 'real1000';
 
     equityButtons.forEach(item => {
       if (item.btn) {
@@ -1116,9 +1079,7 @@ function startDashboard() {
 
   // Toggle de estrategia / cuenta en Curva de Equidad
   const equityButtons = [
-    { btn: dom.btnShowReal1000, key: 'real1000' },
-    { btn: dom.btnShowHector, key: 'hector' },
-    { btn: dom.btnShowTito, key: 'tito' }
+    { btn: dom.btnShowReal1000, key: 'real1000' }
   ];
 
   equityButtons.forEach(item => {
