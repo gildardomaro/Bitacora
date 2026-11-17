@@ -939,8 +939,16 @@ function startDashboard() {
             <strong class="${smc.trend_h1.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_h1.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
           </div>
           <div class="tf-box">
+            <span>M30</span>
+            <strong class="${(smc.trend_m30 || smc.trend_h1).includes('ALCISTA') ? 'green' : 'red'}">${(smc.trend_m30 || smc.trend_h1).includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+          </div>
+          <div class="tf-box">
             <span>M15</span>
             <strong class="${smc.trend_m15.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_m15.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+          </div>
+          <div class="tf-box">
+            <span>M5</span>
+            <strong class="${(smc.trend_m5 || smc.trend_m15).includes('ALCISTA') ? 'green' : 'red'}">${(smc.trend_m5 || smc.trend_m15).includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
           </div>
           <div class="tf-box">
             <span>Zona SMC</span>
