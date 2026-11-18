@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="../styles.css">
   <style>
     /* Estilos específicos para la vista pública independiente del radar */
@@ -122,7 +123,7 @@
     <!-- CABECERA PÚBLICA (SIN CONTRASEÑA) -->
     <header class="public-header">
       <div class="public-brand">
-        <img src="../logo_maro.jpg" alt="MARO Consultores" class="public-logo" onerror="this.style.display='none'">
+        <img src="logo_maro.jpg" alt="MARO Consultores" class="public-logo" onerror="if(this.getAttribute('data-fallback')!=='1'){this.setAttribute('data-fallback','1');this.src='../logo_maro.jpg';}else{this.style.display='none';}">
         <div class="public-title-group">
           <h1>📡 RADAR INSTITUCIONAL & ORDER FLOW</h1>
           <p>Mesa Cuantitativa MARO Consultores — Análisis en Vivo de Liquidez, Sentimiento y Calendario Macroeconómico</p>
@@ -132,7 +133,7 @@
       <div class="public-header-controls">
         <span class="status-badge live" id="liveBadge"><span class="pulse-dot"></span> Flujo en Vivo</span>
         <span class="status-badge sync-timer" id="clockBadge">🕒 --:--:--</span>
-        <a href="../" class="btn-portal" title="Acceso a la Bitácora General de Operaciones">📊 Bitácora General</a>
+        <a href="../" onclick="if(window.location.hostname.indexOf('vercel.app')!==-1 && window.location.pathname.indexOf('/radar')===-1){this.href='https://gildardomaro.github.io/Bitacora/';}" class="btn-portal" title="Acceso a la Bitácora General de Operaciones">📊 Bitácora General</a>
       </div>
     </header>
 
@@ -248,34 +249,52 @@
       setInterval(updateClock, 1000);
       updateClock();
 
-      // Cargar datos estáticos o desde API
+      // Cargar datos estáticos o desde API (Compatible con Vercel Root, Subcarpeta /radar/ y GitHub Pages)
       async function loadData() {
         if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar) {
           radarData = window.STATIC_DASHBOARD_DATA.radar;
-        } else {
-          try {
-            const res = await fetch('../api/radar');
-            radarData = await res.json();
-          } catch (e) {
-            console.warn('Error cargando API radar:', e);
-          }
+          renderUI();
+          return;
         }
 
-        if (!radarData || !radarData.assets) {
-          // Intentar cargar static_data.js si no estaba en ventana
+        const candidateJsonUrls = [
+          'radar_data_cache.json?v=' + Date.now(),
+          '../radar_data_cache.json?v=' + Date.now(),
+          '../api/radar'
+        ];
+        for (const u of candidateJsonUrls) {
+          try {
+            const res = await fetch(u);
+            if (res.ok) {
+              const j = await res.json();
+              if (j && j.assets) {
+                radarData = j;
+                renderUI();
+                return;
+              }
+            }
+          } catch (e) {}
+        }
+
+        // Fallback cargando static_data.js local o de carpeta padre
+        const tryStaticScript = (srcUrl, onFail) => {
           const s = document.createElement('script');
-          s.src = '../static_data.js?v=' + Date.now();
+          s.src = srcUrl + '?v=' + Date.now();
           s.onload = () => {
             if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar) {
               radarData = window.STATIC_DASHBOARD_DATA.radar;
               renderUI();
+            } else if (onFail) {
+              onFail();
             }
           };
+          s.onerror = () => { if (onFail) onFail(); };
           document.body.appendChild(s);
-          return;
-        }
+        };
 
-        renderUI();
+        tryStaticScript('static_data.js', () => {
+          tryStaticScript('../static_data.js');
+        });
       }
 
       function renderUI() {
@@ -405,8 +424,16 @@
                 <strong class="${smc.trend_h1.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_h1.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
               </div>
               <div class="tf-box">
+                <span>M30</span>
+                <strong class="${(smc.trend_m30 || smc.trend_h1).includes('ALCISTA') ? 'green' : 'red'}">${(smc.trend_m30 || smc.trend_h1).includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+              </div>
+              <div class="tf-box">
                 <span>M15</span>
                 <strong class="${smc.trend_m15.includes('ALCISTA') ? 'green' : 'red'}">${smc.trend_m15.includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
+              </div>
+              <div class="tf-box">
+                <span>M5</span>
+                <strong class="${(smc.trend_m5 || smc.trend_m15).includes('ALCISTA') ? 'green' : 'red'}">${(smc.trend_m5 || smc.trend_m15).includes('ALCISTA') ? '▲ ALC' : '▼ BAJ'}</strong>
               </div>
               <div class="tf-box">
                 <span>Zona SMC</span>
@@ -506,5 +533,11 @@
       loadData();
     })();
   </script>
+  <script src="lightweight-charts.standalone.production.js"></script>
+  <script src="../lightweight-charts.standalone.production.js"></script>
+  <script src="static_data.js"></script>
+  <script src="../static_data.js"></script>
+  <script src="radar_ai_copilot.js"></script>
+  <script src="../radar_ai_copilot.js"></script>
 </body>
 </html>
