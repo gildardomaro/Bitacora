@@ -719,6 +719,16 @@
     if (window.ResizeObserver) {
       new ResizeObserver(syncCanvasSize).observe(stage);
     }
+    // Detectar cambio a la pestaña de Radar cuando estaba oculta (display:none -> display:block)
+    document.querySelectorAll('[data-tab="tab-radar"]').forEach(tabBtn => {
+      tabBtn.addEventListener("click", () => {
+        [30, 120, 300].forEach(ms => setTimeout(() => {
+          syncCanvasSize();
+          if (tvChart) tvChart.timeScale().fitContent();
+          requestAnimationFrame(drawSmcOverlay);
+        }, ms));
+      });
+    });
     syncCanvasSize();
 
     tvChart.timeScale().subscribeVisibleLogicalRangeChange(() => {
@@ -982,39 +992,42 @@
     }
   }
 
-  async function loadChartCandles(tf, silentUpdate) {
-    if (!candleSeries) return;
-    const statusEl = document.getElementById("cpChartStatus");
-    if (!silentUpdate && statusEl) statusEl.textContent = `(Cargando ${tf}...)`;
-
-    let candles = [];
-    try {
-      const headers = { Authorization: "Bearer " + FEED_TOKEN };
-      const res = await fetch(`${FEED_URL}/instruments/GBP_USD/candles?count=120&granularity=${tf}`, { headers });
-      if (res.ok) {
-        const j = await res.json();
-        candles = (j.candles || []).map(c => ({
-          time: Math.floor(new Date(c.time).getTime() / 1000),
-          open: parseFloat(c.mid.o),
-          high: parseFloat(c.mid.h),
-          low: parseFloat(c.mid.l),
-          close: parseFloat(c.mid.c)
-        }));
-      }
-    } catch (e) {}
-
-    if (!candles.length && liveGbpData && liveGbpData.technical_smc && liveGbpData.technical_smc.candles_m15) {
-      candles = liveGbpData.technical_smc.candles_m15;
+  function getCachedCandlesForTf(tf) {
+    let gbpObj = liveGbpData;
+    if ((!gbpObj || !gbpObj.technical_smc) && window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar && window.STATIC_DASHBOARD_DATA.radar.assets) {
+      gbpObj = window.STATIC_DASHBOARD_DATA.radar.assets.find(a => a.symbol && a.symbol.includes("GBP"));
     }
+    if (gbpObj && gbpObj.technical_smc) {
+      const smc = gbpObj.technical_smc;
+      if (smc.candles_by_tf && smc.candles_by_tf[tf] && smc.candles_by_tf[tf].length > 10) {
+        return smc.candles_by_tf[tf];
+      }
+      if (smc.candles_m15 && smc.candles_m15.length > 10) {
+        return smc.candles_m15;
+      }
+    }
+    return [];
+  }
 
-    if (!candles.length) return;
-    chartCandles = candles;
-    candleSeries.setData(candles);
+  function renderCandlesIntoChart(candles, tf, silentUpdate) {
+    if (!candleSeries || !candles || !candles.length) return;
+    // Ordenar por timestamp ascendente y eliminar duplicados para evitar errores en LightweightCharts
+    const mapByTime = new Map();
+    candles.forEach(c => {
+      if (c && typeof c.time === "number" && !isNaN(c.open) && !isNaN(c.close)) {
+        mapByTime.set(c.time, c);
+      }
+    });
+    const cleanCandles = Array.from(mapByTime.values()).sort((a, b) => a.time - b.time);
+    if (cleanCandles.length < 5) return;
+
+    chartCandles = cleanCandles;
+    candleSeries.setData(cleanCandles);
 
     const ema12 = [], ema26 = [];
     const k12 = 2 / 13, k26 = 2 / 27;
-    let e12 = candles[0].close, e26 = candles[0].close;
-    candles.forEach(c => {
+    let e12 = cleanCandles[0].close, e26 = cleanCandles[0].close;
+    cleanCandles.forEach(c => {
       e12 = c.close * k12 + e12 * (1 - k12);
       e26 = c.close * k26 + e26 * (1 - k26);
       ema12.push({ time: c.time, value: Number(e12.toFixed(5)) });
@@ -1024,20 +1037,68 @@
     emaFastSeries.setData(showEMA ? ema12 : []);
     emaSlowSeries.setData(showEMA ? ema26 : []);
 
-    smcAnalysis = computeSmcZones(candles);
+    smcAnalysis = computeSmcZones(cleanCandles);
     if (showEMA && smcAnalysis.markers) {
       candleSeries.setMarkers(smcAnalysis.markers);
     } else {
       candleSeries.setMarkers([]);
     }
 
+    const container = document.getElementById("cp_lw_chart");
+    const overlay = document.getElementById("cp_smc_canvas");
+    if (container && overlay && container.clientWidth > 0) {
+      tvChart.applyOptions({ width: container.clientWidth, height: container.clientHeight || 500 });
+      overlay.width = container.clientWidth;
+      overlay.height = container.clientHeight || 500;
+    }
+
     if (!silentUpdate) {
       tvChart.timeScale().fitContent();
     }
+    const statusEl = document.getElementById("cpChartStatus");
     if (statusEl) {
       statusEl.textContent = `(${tf} • ${smcAnalysis.orderBlocks.length} OB Activos + BSL/SSL)`;
     }
     requestAnimationFrame(drawSmcOverlay);
+    setTimeout(() => requestAnimationFrame(drawSmcOverlay), 120);
+  }
+
+  async function loadChartCandles(tf, silentUpdate) {
+    if (!candleSeries) return;
+    const statusEl = document.getElementById("cpChartStatus");
+    if (!silentUpdate && statusEl) statusEl.textContent = `(Cargando ${tf}...)`;
+
+    // 1. Renderizar de inmediato desde caché pre-sincronizado si está disponible (0 ms de espera)
+    const cached = getCachedCandlesForTf(tf);
+    if (cached.length > 10 && (!chartCandles.length || !silentUpdate)) {
+      renderCandlesIntoChart(cached, tf, silentUpdate);
+    }
+
+    // 2. Intentar actualización en vivo desde API v20
+    try {
+      const headers = { Authorization: "Bearer " + FEED_TOKEN };
+      const res = await fetch(`${FEED_URL}/instruments/GBP_USD/candles?count=110&granularity=${tf}`, { headers });
+      if (res.ok) {
+        const j = await res.json();
+        const liveC = (j.candles || []).map(c => ({
+          time: Math.floor(new Date(c.time).getTime() / 1000),
+          open: parseFloat(c.mid.o),
+          high: parseFloat(c.mid.h),
+          low: parseFloat(c.mid.l),
+          close: parseFloat(c.mid.c)
+        }));
+        if (liveC.length > 10) {
+          renderCandlesIntoChart(liveC, tf, silentUpdate);
+          return;
+        }
+      }
+    } catch (e) {}
+
+    // 3. Si aún no había cargado static_data.js en el paso 1, volver a revisar caché
+    const retryCached = getCachedCandlesForTf(tf);
+    if (retryCached.length > 10) {
+      renderCandlesIntoChart(retryCached, tf, silentUpdate);
+    }
   }
 
   // --- ANIMACIÓN DEL ORBE 3D ---
