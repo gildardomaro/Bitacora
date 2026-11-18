@@ -611,6 +611,16 @@
     ensureLightweightChartsLoaded(() => {
       initSmcTradingViewChart();
       loadChartCandles(currentTf);
+      // Watchdog por si static_data.js termina de cargar unos milisegundos después
+      let retries = 0;
+      const wd = setInterval(() => {
+        retries++;
+        if (chartCandles.length > 10 || retries > 15) {
+          clearInterval(wd);
+        } else {
+          loadChartCandles(currentTf, true);
+        }
+      }, 600);
     });
     bindCopilotEvents();
     refreshAllGbpTelemetry();
