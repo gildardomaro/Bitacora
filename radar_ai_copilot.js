@@ -1,12 +1,14 @@
 /**
- * RADAR AI COPILOT — GBP/USD INSTITUTIONAL TERMINAL (MARO CONSULTORES)
- * =====================================================================
- * 1. Gráfico TradingView SMC Engine (Lightweight Charts + Overlay Canvas 60FPS):
+ * RADAR AI COPILOT — MULTI-ASSET INSTITUTIONAL TERMINAL (GBP/USD, XAU/USD, AUD/USD)
+ * ==================================================================================
+ * 1. Selector interactivo de activo: GBP/USD (Libra), XAU/USD (Oro) y AUD/USD (Australiano)
+ *    sincronizado con las tarjetas y filtros del Radar.
+ * 2. Gráfico TradingView SMC Engine (Lightweight Charts + Overlay Canvas 60FPS):
  *    - Dibuja gráficamente Order Blocks (OB+ Alcistas y OB- Bajistas) SIN FVG
  *    - Dibuja líneas y piscinas de liquidez BSL (Buy Stops) y SSL (Sell Stops)
  *    - Dibuja línea 50% Equilibrium (Zona Premium vs Descuento), EMAs 12/26 y señales Smart+IA
- * 2. Análisis de Libro de Órdenes, Contratos Compra/Venta y Tendencia H4->M5
- * 3. Interacción de IA 100% Institucional:
+ * 3. Análisis de Libro de Órdenes, Contratos Compra/Venta y Tendencia H4->M5 para los 3 activos
+ * 4. Interacción de IA 100% Institucional:
  *    - Sin mención de nombres personales ni de brokers/proveedores externos
  *    - Voz Femenina Permanente en Español
  */
@@ -18,6 +20,59 @@
   const FEED_TOKEN = "a2b781db6966dceb70368ff1f3b95f43-37cd79091463655c7588182a72a65899";
   const FEED_ACC   = "101-001-40640336-001";
   const FEED_URL   = "https://api-fxpractice.oanda.com/v3";
+
+  // Catálogo de los 3 activos institucionales
+  const INSTRUMENTS = {
+    "GBP/USD": {
+      key: "GBP/USD",
+      raw: "GBP_USD",
+      mt5: "GBPUSD",
+      title: "GBP/USD (Libra / Dólar)",
+      shortTitle: "GBP/USD",
+      spokenName: "la libra dólar",
+      icon: "💷",
+      digits: 5,
+      boxDecimals: 4,
+      pipMult: 10000,
+      minMove: 0.00001,
+      obMinBody: 0.00008
+    },
+    "XAU/USD": {
+      key: "XAU/USD",
+      raw: "XAU_USD",
+      mt5: "XAUUSD",
+      title: "XAU/USD (Oro / Dólar)",
+      shortTitle: "XAU/USD (Oro)",
+      spokenName: "el oro",
+      icon: "🥇",
+      digits: 2,
+      boxDecimals: 2,
+      pipMult: 100,
+      minMove: 0.01,
+      obMinBody: 0.35
+    },
+    "AUD/USD": {
+      key: "AUD/USD",
+      raw: "AUD_USD",
+      mt5: "AUDUSD",
+      title: "AUD/USD (Dólar Australiano)",
+      shortTitle: "AUD/USD",
+      spokenName: "el dólar australiano",
+      icon: "🦘",
+      digits: 5,
+      boxDecimals: 4,
+      pipMult: 10000,
+      minMove: 0.00001,
+      obMinBody: 0.00006
+    }
+  };
+
+  let currentAssetKey = "GBP/USD";
+  const liveAssetsMap = {
+    "GBP/USD": null,
+    "XAU/USD": null,
+    "AUD/USD": null
+  };
 
   // Clave Gemini
   const _kParts = ["AQ.Ab8RN6LEjuVkIR", "Qusa9su2VA6QEG5Ic7", "gQXAd5zWVk9XfliXDw"];
@@ -31,7 +86,6 @@
     "gemini-3.5-flash"
   ];
 
-  let liveGbpData = null;
   let orbState = "idle"; // idle | listening | thinking | speaking
   let isListening = false;
   let recognition = null;
@@ -51,6 +105,10 @@
   let showEQ = true;
   let showEMA = true;
 
+  function getActiveInst() {
+    return INSTRUMENTS[currentAssetKey] || INSTRUMENTS["GBP/USD"];
+  }
+
   // Sanitizador estricto: elimina cualquier mención del nombre del usuario o de OANDA
   function sanitizeInstitutionalText(text) {
     if (!text) return "";
@@ -68,7 +126,7 @@
       .replace(/^([a-záéíóúñ])/, m => m.toUpperCase());
   }
 
-  // Inyectar estilos del Copilot y Controles SMC
+  // Inyectar estilos del Copilot y Controles SMC Multi-Activo
   const styleEl = document.createElement("style");
   styleEl.textContent = `
     .copilot-master-panel {
@@ -89,12 +147,13 @@
       gap: 12px;
       padding-bottom: 14px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .copilot-brand {
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
     }
     .copilot-badge {
       background: linear-gradient(135deg, #00f0ff, #7000ff);
@@ -110,6 +169,51 @@
       font-size: 18px;
       font-weight: 800;
       color: #fff;
+    }
+    .cp-asset-selector {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+    }
+    .cp-asset-selector-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #8e9bb0;
+      margin-right: 6px;
+      letter-spacing: 0.6px;
+    }
+    .cp-asset-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .cp-asset-btn:hover {
+      background: rgba(0, 240, 255, 0.12);
+      border-color: rgba(0, 240, 255, 0.4);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .cp-asset-btn.active {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(112, 0, 255, 0.28));
+      border-color: #00f0ff;
+      color: #00f0ff;
+      box-shadow: 0 0 18px rgba(0, 240, 255, 0.25);
     }
     .copilot-pills {
       display: flex;
@@ -441,6 +545,13 @@
       border-color: rgba(0, 240, 255, 0.3);
       padding-left: 14px;
     }
+    .radar-card, .strip-card {
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .radar-card:hover, .strip-card:hover {
+      transform: translateY(-2px);
+    }
   `;
   document.head.appendChild(styleEl);
 
@@ -450,7 +561,7 @@
         <div class="copilot-top-bar">
           <div class="copilot-brand">
             <span class="copilot-badge">SMART+IA SMC ENGINE • ORDER FLOW</span>
-            <h3>💷 Agente Institucional en Vivo — Exclusivo GBP/USD</h3>
+            <h3 id="cpHeaderTitle">💷 Agente Institucional en Vivo — GBP/USD (Libra / Dólar)</h3>
           </div>
           <div class="copilot-pills">
             <div class="cp-pill"><span class="cp-dot"></span><span id="cpLiveState">Libro de Órdenes: EN VIVO</span></div>
@@ -460,12 +571,26 @@
           </div>
         </div>
 
-        <!-- CINTA DE 4 PILARES DE GBP/USD -->
+        <!-- SELECTOR INTERACTIVO DE ACTIVO (GBP/USD, XAU/USD ORO, AUD/USD) -->
+        <div class="cp-asset-selector">
+          <span class="cp-asset-selector-label">🎯 Seleccionar Activo para Gráfico e IA:</span>
+          <button class="cp-asset-btn active" data-cp-asset="GBP/USD">
+            <span>💷</span><span>GBP/USD (Libra / Dólar)</span>
+          </button>
+          <button class="cp-asset-btn" data-cp-asset="XAU/USD">
+            <span>🥇</span><span>XAU/USD (Oro / Gold)</span>
+          </button>
+          <button class="cp-asset-btn" data-cp-asset="AUD/USD">
+            <span>🦘</span><span>AUD/USD (Dólar Australiano)</span>
+          </button>
+        </div>
+
+        <!-- CINTA DE 4 PILARES DEL ACTIVO SELECCIONADO -->
         <div class="cp-strip">
           <!-- 1. INFORME RADAR & SESGO -->
           <div class="cp-metric-card">
             <div class="cp-metric-head">
-              <span>1. Informe Radar GBP/USD</span>
+              <span id="cpPillar1Title">1. Informe Radar GBP/USD</span>
               <span id="cpBiasTag" style="color:#00f0ff;">NEUTRAL</span>
             </div>
             <div class="cp-metric-val" id="cpBiasDesc" style="font-size:13px; color:#00f0ff;">CARGANDO FLUJO...</div>
@@ -524,7 +649,7 @@
           <div class="cp-tv-box">
             <div class="cp-tv-head">
               <div style="display:flex; align-items:center; gap:8px;">
-                <span>📈 <strong>Smart+IA SMC Chart — GBP/USD</strong></span>
+                <span>📈 <strong id="cpChartTitle">Smart+IA SMC Chart — GBP/USD</strong></span>
                 <span style="font-size:11px; color:#00e676; font-family:'JetBrains Mono';" id="cpChartStatus">(OB + BSL + SSL Activos)</span>
               </div>
               <div class="cp-tv-toolbar">
@@ -563,7 +688,7 @@
 
             <div class="cp-speech-area">
               <div class="cp-user-q" id="cpUserQ"></div>
-              <div class="cp-ai-a" id="cpAiA">"Haz clic en el micrófono o en un botón de abajo para escuchar el análisis de Order Blocks y liquidez BSL/SSL."</div>
+              <div class="cp-ai-a" id="cpAiA">"Selecciona GBP/USD, Oro o AUD/USD arriba y haz clic en el micrófono o en un botón para escuchar el análisis institucional."</div>
             </div>
 
             <button class="cp-btn-mic" id="cpBtnMic">
@@ -572,24 +697,24 @@
             </button>
 
             <div class="cp-input-row">
-              <input type="text" class="cp-text-input" id="cpTextInput" placeholder="O escribe tu pregunta de GBP/USD aquí..." />
+              <input type="text" class="cp-text-input" id="cpTextInput" placeholder="Pregunta sobre el activo seleccionado (o menciona Oro, Libra, AUD)..." />
               <button class="cp-btn-send" id="cpBtnSend">Enviar</button>
             </div>
 
             <div class="cp-quick-list">
-              <div class="cp-q-btn" data-cp-q="Dame el informe situacional completo del Radar para GBP/USD con Order Blocks y liquidez.">
-                <span>💷 Informe Completo del Radar GBP/USD</span><span>🔊</span>
+              <div class="cp-q-btn" data-cp-q="REPORT">
+                <span id="cpQuick1Lbl">💷 Informe Completo del Radar GBP/USD</span><span>🔊</span>
               </div>
-              <div class="cp-q-btn" data-cp-q="Analiza los Order Blocks activos y las piscinas BSL y SSL dibujadas en el gráfico.">
+              <div class="cp-q-btn" data-cp-q="OB_LIQ">
                 <span>📦 Analizar Order Blocks (OB) y BSL/SSL</span><span>🔊</span>
               </div>
-              <div class="cp-q-btn" data-cp-q="Analiza el libro de órdenes y el número de contratos de compra y venta.">
+              <div class="cp-q-btn" data-cp-q="CONTRACTS">
                 <span>💧 Libro de Órdenes y Contratos Compra/Venta</span><span>🔊</span>
               </div>
-              <div class="cp-q-btn" data-cp-q="Analiza la alineación de tendencia desde H4 hasta M5 en GBP/USD.">
+              <div class="cp-q-btn" data-cp-q="TRENDS">
                 <span>📊 Tendencia desde H4 hasta M5</span><span>🔊</span>
               </div>
-              <div class="cp-q-btn" data-cp-q="¿Recomiendas comprar o vender GBP/USD ahora mismo según los Order Blocks y el flujo institucional?">
+              <div class="cp-q-btn" data-cp-q="SETUP">
                 <span>🧠 ¿Comprar o Vender Ahora? (Setup)</span><span>🔊</span>
               </div>
             </div>
@@ -597,6 +722,64 @@
         </div>
       </div>
     `;
+  }
+
+  // Cambiar de activo activo (GBP/USD, XAU/USD, AUD/USD) y actualizar gráfico, 4 pilares y contexto de IA
+  function selectActiveAsset(assetKey, speakAnnouncement) {
+    let targetKey = "GBP/USD";
+    const norm = String(assetKey || "").toUpperCase();
+    if (norm.includes("XAU") || norm.includes("ORO") || norm.includes("GOLD")) {
+      targetKey = "XAU/USD";
+    } else if (norm.includes("AUD")) {
+      targetKey = "AUD/USD";
+    } else if (norm.includes("GBP") || norm.includes("LIBRA")) {
+      targetKey = "GBP/USD";
+    } else {
+      return;
+    }
+
+    const changed = (currentAssetKey !== targetKey);
+    currentAssetKey = targetKey;
+    const inst = getActiveInst();
+
+    // Actualizar botones del selector
+    document.querySelectorAll("[data-cp-asset]").forEach(btn => {
+      btn.classList.toggle("active", btn.getAttribute("data-cp-asset") === currentAssetKey);
+    });
+
+    // Actualizar títulos dinámicos
+    const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    setTxt("cpHeaderTitle", `${inst.icon} Agente Institucional en Vivo — ${inst.title}`);
+    setTxt("cpPillar1Title", `1. Informe Radar ${inst.shortTitle}`);
+    setTxt("cpChartTitle", `Smart+IA SMC Chart — ${inst.shortTitle}`);
+    setTxt("cpQuick1Lbl", `${inst.icon} Informe Completo del Radar ${inst.shortTitle}`);
+    if (orbState === "idle") {
+      setTxt("cpStatusPill", `● Analista IA ${inst.shortTitle} Lista`);
+    }
+
+    // Ajustar formato de decimales de la serie de velas en TradingView LightweightCharts
+    if (candleSeries) {
+      candleSeries.applyOptions({
+        priceFormat: { type: "price", precision: inst.digits, minMove: inst.minMove }
+      });
+    }
+
+    // Actualizar telemetría de los 4 pilares y recargar velas + Order Blocks + BSL/SSL del activo
+    const activeData = getAssetData(currentAssetKey);
+    if (activeData) {
+      renderCopilotTelemetry(activeData);
+    } else {
+      refreshSingleAssetFlow(currentAssetKey);
+    }
+
+    if (changed || !chartCandles.length) {
+      chartCandles = [];
+      loadChartCandles(currentTf, false);
+    }
+
+    if (speakAnnouncement) {
+      askCopilotAI(`Dame el informe situacional completo del Radar para ${inst.shortTitle} con sus Order Blocks y liquidez.`);
+    }
   }
 
   function mountCopilot() {
@@ -611,7 +794,6 @@
     ensureLightweightChartsLoaded(() => {
       initSmcTradingViewChart();
       loadChartCandles(currentTf);
-      // Watchdog por si static_data.js termina de cargar unos milisegundos después
       let retries = 0;
       const wd = setInterval(() => {
         retries++;
@@ -623,8 +805,8 @@
       }, 600);
     });
     bindCopilotEvents();
-    refreshAllGbpTelemetry();
-    setInterval(refreshAllGbpTelemetry, 12000);
+    refreshAllAssetsTelemetry();
+    setInterval(refreshAllAssetsTelemetry, 14000);
     setInterval(() => loadChartCandles(currentTf, true), 15000);
   }
 
@@ -655,6 +837,7 @@
     const overlay = document.getElementById("cp_smc_canvas");
     if (!container || !window.LightweightCharts) return;
 
+    const inst = getActiveInst();
     container.innerHTML = "";
     tvChart = window.LightweightCharts.createChart(container, {
       width: container.clientWidth || 800,
@@ -692,7 +875,7 @@
       borderDownColor: "#FF1744",
       wickUpColor: "#00E676",
       wickDownColor: "#FF1744",
-      priceFormat: { type: "price", precision: 5, minMove: 0.00001 }
+      priceFormat: { type: "price", precision: inst.digits, minMove: inst.minMove }
     });
 
     emaFastSeries = tvChart.addLineSeries({
@@ -729,7 +912,6 @@
     if (window.ResizeObserver) {
       new ResizeObserver(syncCanvasSize).observe(stage);
     }
-    // Detectar cambio a la pestaña de Radar cuando estaba oculta (display:none -> display:block)
     document.querySelectorAll('[data-tab="tab-radar"]').forEach(tabBtn => {
       tabBtn.addEventListener("click", () => {
         [30, 120, 300].forEach(ms => setTimeout(() => {
@@ -754,6 +936,8 @@
       return { orderBlocks: [], bslSwing: null, sslSwing: null, eqMid: null, markers: [] };
     }
 
+    const inst = getActiveInst();
+    const minBody = inst.obMinBody || 0.00008;
     const n = candles.length;
     const rawOBs = [];
 
@@ -764,10 +948,10 @@
       const currBody = Math.abs(curr.close - curr.open);
 
       const isObBull = (prev.close < prev.open) && (curr.close > curr.open) &&
-                       (curr.close > prev.high) && (currBody > 1.35 * Math.max(prevBody, 0.00008));
+                       (curr.close > prev.high) && (currBody > 1.32 * Math.max(prevBody, minBody));
 
       const isObBear = (prev.close > prev.open) && (curr.close < curr.open) &&
-                       (curr.close < prev.low) && (currBody > 1.35 * Math.max(prevBody, 0.00008));
+                       (curr.close < prev.low) && (currBody > 1.32 * Math.max(prevBody, minBody));
 
       if (isObBull) {
         rawOBs.push({
@@ -870,7 +1054,10 @@
     const H = overlay.height;
     ctx.clearRect(0, 0, W, H);
 
-    const chartRightEdge = W - 68;
+    const inst = getActiveInst();
+    const dBox = inst.boxDecimals;
+    const dFull = inst.digits;
+    const chartRightEdge = W - 70;
     const ts = tvChart.timeScale();
 
     // 1. DIBUJAR ORDER BLOCKS (OB+ Alcistas y OB- Bajistas — SIN FVG)
@@ -910,8 +1097,8 @@
         ctx.font = "bold 11px 'JetBrains Mono', monospace";
         ctx.fillStyle = isBull ? "#00E676" : "#FF5252";
         const label = isBull
-          ? `📦 OB+ Alcista (${ob.bot.toFixed(4)} - ${ob.top.toFixed(4)})`
-          : `📦 OB- Bajista (${ob.bot.toFixed(4)} - ${ob.top.toFixed(4)})`;
+          ? `📦 OB+ Alcista (${ob.bot.toFixed(dBox)} - ${ob.top.toFixed(dBox)})`
+          : `📦 OB- Bajista (${ob.bot.toFixed(dBox)} - ${ob.top.toFixed(dBox)})`;
         ctx.fillText(label, Math.max(boxX + 6, chartRightEdge - 255), boxY + Math.min(boxH - 4, 14));
       });
     }
@@ -946,14 +1133,16 @@
       ctx.fillText(labelText, px + 7, py + 12);
     }
 
-    // 2. DIBUJAR LÍNEAS DE LIQUIDEZ BSL Y SSL (SIN MENCIONAR OANDA)
+    const activeData = getAssetData(currentAssetKey);
+
+    // 2. DIBUJAR LÍNEAS DE LIQUIDEZ BSL Y SSL
     if (showLiq) {
       if (smcAnalysis.bslSwing) {
         drawPriceHorizontalLine(
           smcAnalysis.bslSwing,
           "#FFD700",
           [6, 4],
-          `💧 BSL Liquidez Compradora (${smcAnalysis.bslSwing.toFixed(5)})`,
+          `💧 BSL Liquidez Compradora (${smcAnalysis.bslSwing.toFixed(dFull)})`,
           "rgba(20, 16, 5, 0.9)"
         );
       }
@@ -962,19 +1151,19 @@
           smcAnalysis.sslSwing,
           "#FFD700",
           [6, 4],
-          `💧 SSL Liquidez Vendedora (${smcAnalysis.sslSwing.toFixed(5)})`,
+          `💧 SSL Liquidez Vendedora (${smcAnalysis.sslSwing.toFixed(dFull)})`,
           "rgba(20, 16, 5, 0.9)"
         );
       }
 
-      if (liveGbpData && liveGbpData.order_book) {
-        const ob = liveGbpData.order_book;
+      if (activeData && activeData.order_book) {
+        const ob = activeData.order_book;
         (ob.top_bsl || []).slice(0, 2).forEach((b, idx) => {
           drawPriceHorizontalLine(
             b.price,
             "#00E5FF",
             [2, 2],
-            `🎯 Pool BSL #${idx + 1}: ${b.price.toFixed(4)} (+${b.dist_pips}p | ${b.density_pct}%)`,
+            `🎯 Pool BSL #${idx + 1}: ${b.price.toFixed(dBox)} (+${b.dist_pips}p | ${b.density_pct}%)`,
             "rgba(4, 22, 32, 0.92)"
           );
         });
@@ -983,7 +1172,7 @@
             b.price,
             "#FF3366",
             [2, 2],
-            `🎯 Pool SSL #${idx + 1}: ${b.price.toFixed(4)} (-${b.dist_pips}p | ${b.density_pct}%)`,
+            `🎯 Pool SSL #${idx + 1}: ${b.price.toFixed(dBox)} (-${b.dist_pips}p | ${b.density_pct}%)`,
             "rgba(32, 6, 16, 0.92)"
           );
         });
@@ -996,19 +1185,29 @@
         smcAnalysis.eqMid,
         "#38BDF8",
         [3, 3],
-        `⚖️ 50% Equilibrium SMC (${smcAnalysis.eqMid.toFixed(5)}) — Premium / Descuento`,
+        `⚖️ 50% Equilibrium SMC (${smcAnalysis.eqMid.toFixed(dFull)}) — Premium / Descuento`,
         "rgba(8, 20, 38, 0.9)"
       );
     }
   }
 
-  function getCachedCandlesForTf(tf) {
-    let gbpObj = liveGbpData;
-    if ((!gbpObj || !gbpObj.technical_smc) && window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar && window.STATIC_DASHBOARD_DATA.radar.assets) {
-      gbpObj = window.STATIC_DASHBOARD_DATA.radar.assets.find(a => a.symbol && a.symbol.includes("GBP"));
+  function getAssetData(assetKey) {
+    if (liveAssetsMap[assetKey]) return liveAssetsMap[assetKey];
+    if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar && window.STATIC_DASHBOARD_DATA.radar.assets) {
+      const prefix = assetKey.split("/")[0];
+      const found = window.STATIC_DASHBOARD_DATA.radar.assets.find(a => a.symbol && a.symbol.includes(prefix));
+      if (found) {
+        liveAssetsMap[assetKey] = found;
+        return found;
+      }
     }
-    if (gbpObj && gbpObj.technical_smc) {
-      const smc = gbpObj.technical_smc;
+    return null;
+  }
+
+  function getCachedCandlesForTf(assetKey, tf) {
+    const assetObj = getAssetData(assetKey);
+    if (assetObj && assetObj.technical_smc) {
+      const smc = assetObj.technical_smc;
       if (smc.candles_by_tf && smc.candles_by_tf[tf] && smc.candles_by_tf[tf].length > 10) {
         return smc.candles_by_tf[tf];
       }
@@ -1021,7 +1220,7 @@
 
   function renderCandlesIntoChart(candles, tf, silentUpdate) {
     if (!candleSeries || !candles || !candles.length) return;
-    // Ordenar por timestamp ascendente y eliminar duplicados para evitar errores en LightweightCharts
+    const inst = getActiveInst();
     const mapByTime = new Map();
     candles.forEach(c => {
       if (c && typeof c.time === "number" && !isNaN(c.open) && !isNaN(c.close)) {
@@ -1040,8 +1239,8 @@
     cleanCandles.forEach(c => {
       e12 = c.close * k12 + e12 * (1 - k12);
       e26 = c.close * k26 + e26 * (1 - k26);
-      ema12.push({ time: c.time, value: Number(e12.toFixed(5)) });
-      ema26.push({ time: c.time, value: Number(e26.toFixed(5)) });
+      ema12.push({ time: c.time, value: Number(e12.toFixed(inst.digits)) });
+      ema26.push({ time: c.time, value: Number(e26.toFixed(inst.digits)) });
     });
 
     emaFastSeries.setData(showEMA ? ema12 : []);
@@ -1067,7 +1266,7 @@
     }
     const statusEl = document.getElementById("cpChartStatus");
     if (statusEl) {
-      statusEl.textContent = `(${tf} • ${smcAnalysis.orderBlocks.length} OB Activos + BSL/SSL)`;
+      statusEl.textContent = `(${inst.shortTitle} ${tf} • ${smcAnalysis.orderBlocks.length} OB Activos + BSL/SSL)`;
     }
     requestAnimationFrame(drawSmcOverlay);
     setTimeout(() => requestAnimationFrame(drawSmcOverlay), 120);
@@ -1075,20 +1274,22 @@
 
   async function loadChartCandles(tf, silentUpdate) {
     if (!candleSeries) return;
+    const inst = getActiveInst();
+    const requestedKey = currentAssetKey;
     const statusEl = document.getElementById("cpChartStatus");
-    if (!silentUpdate && statusEl) statusEl.textContent = `(Cargando ${tf}...)`;
+    if (!silentUpdate && statusEl) statusEl.textContent = `(Cargando ${inst.shortTitle} ${tf}...)`;
 
-    // 1. Renderizar de inmediato desde caché pre-sincronizado si está disponible (0 ms de espera)
-    const cached = getCachedCandlesForTf(tf);
+    // 1. Renderizar de inmediato desde caché pre-sincronizado
+    const cached = getCachedCandlesForTf(requestedKey, tf);
     if (cached.length > 10 && (!chartCandles.length || !silentUpdate)) {
       renderCandlesIntoChart(cached, tf, silentUpdate);
     }
 
-    // 2. Intentar actualización en vivo desde API v20
+    // 2. Actualizar en vivo desde feed institucional
     try {
       const headers = { Authorization: "Bearer " + FEED_TOKEN };
-      const res = await fetch(`${FEED_URL}/instruments/GBP_USD/candles?count=110&granularity=${tf}`, { headers });
-      if (res.ok) {
+      const res = await fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=110&granularity=${tf}`, { headers });
+      if (res.ok && currentAssetKey === requestedKey) {
         const j = await res.json();
         const liveC = (j.candles || []).map(c => ({
           time: Math.floor(new Date(c.time).getTime() / 1000),
@@ -1104,10 +1305,11 @@
       }
     } catch (e) {}
 
-    // 3. Si aún no había cargado static_data.js en el paso 1, volver a revisar caché
-    const retryCached = getCachedCandlesForTf(tf);
-    if (retryCached.length > 10) {
-      renderCandlesIntoChart(retryCached, tf, silentUpdate);
+    if (currentAssetKey === requestedKey) {
+      const retryCached = getCachedCandlesForTf(requestedKey, tf);
+      if (retryCached.length > 10) {
+        renderCandlesIntoChart(retryCached, tf, silentUpdate);
+      }
     }
   }
 
@@ -1183,13 +1385,14 @@
 
   function setOrbState(st, label) {
     orbState = st;
+    const inst = getActiveInst();
     const pill = document.getElementById("cpStatusPill");
     if (!pill) return;
     pill.className = "cp-status-pill " + st;
     pill.textContent = label || (
-      st === "idle" ? "● Analista IA GBP/USD Lista" :
+      st === "idle" ? `● Analista IA ${inst.shortTitle} Lista` :
       st === "listening" ? "🎙️ Escuchando tu voz..." :
-      st === "thinking" ? "⚡ Analizando OB & Liquidez..." :
+      st === "thinking" ? `⚡ Analizando ${inst.shortTitle}...` :
       "🔊 Narrando Informe..."
     );
   }
@@ -1211,25 +1414,26 @@
     };
   }
 
-  async function fetchDirectGbpFlow() {
+  async function fetchDirectAssetFlow(assetKey) {
+    const inst = INSTRUMENTS[assetKey] || INSTRUMENTS["GBP/USD"];
     const headers = { Authorization: "Bearer " + FEED_TOKEN };
     const [prRes, pbRes, obRes, h4Res, h1Res, m30Res, m15Res, m5Res] = await Promise.all([
-      fetch(`${FEED_URL}/accounts/${FEED_ACC}/pricing?instruments=GBP_USD`, { headers }),
-      fetch(`${FEED_URL}/instruments/GBP_USD/positionBook`, { headers }),
-      fetch(`${FEED_URL}/instruments/GBP_USD/orderBook`, { headers }),
-      fetch(`${FEED_URL}/instruments/GBP_USD/candles?count=35&granularity=H4`, { headers }),
-      fetch(`${FEED_URL}/instruments/GBP_USD/candles?count=35&granularity=H1`, { headers }),
-      fetch(`${FEED_URL}/instruments/GBP_USD/candles?count=35&granularity=M30`, { headers }),
-      fetch(`${FEED_URL}/instruments/GBP_USD/candles?count=35&granularity=M15`, { headers }),
-      fetch(`${FEED_URL}/instruments/GBP_USD/candles?count=35&granularity=M5`, { headers })
+      fetch(`${FEED_URL}/accounts/${FEED_ACC}/pricing?instruments=${inst.raw}`, { headers }),
+      fetch(`${FEED_URL}/instruments/${inst.raw}/positionBook`, { headers }),
+      fetch(`${FEED_URL}/instruments/${inst.raw}/orderBook`, { headers }),
+      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=H4`, { headers }),
+      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=H1`, { headers }),
+      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=M30`, { headers }),
+      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=M15`, { headers }),
+      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=M5`, { headers })
     ]);
 
     const prJson = await prRes.json();
     const pObj = (prJson.prices && prJson.prices[0]) || {};
-    const bid = parseFloat(pObj.closeoutBid || 1.3210);
-    const ask = parseFloat(pObj.closeoutAsk || 1.3212);
-    const price = Number(((bid + ask) / 2).toFixed(5));
-    const spread_pips = Number(((ask - bid) * 10000).toFixed(1));
+    const bid = parseFloat(pObj.closeoutBid || 0);
+    const ask = parseFloat(pObj.closeoutAsk || 0);
+    const price = Number(((bid + ask) / 2).toFixed(inst.digits));
+    const spread_pips = Number(((ask - bid) * inst.pipMult).toFixed(1));
 
     const pbJson = (await pbRes.json()).positionBook || {};
     const pbBuckets = pbJson.buckets || [];
@@ -1259,8 +1463,8 @@
       const sp = parseFloat(b.shortCountPercent || 0);
       obL += lp;
       obS += sp;
-      if (bp > price && bp <= price * 1.03) nearBsl.push({ price: bp, density_pct: lp, dist_pips: Number(((bp - price) * 10000).toFixed(1)) });
-      if (bp < price && bp >= price * 0.97) nearSsl.push({ price: bp, density_pct: sp, dist_pips: Number(((price - bp) * 10000).toFixed(1)) });
+      if (bp > price && bp <= price * 1.03) nearBsl.push({ price: bp, density_pct: lp, dist_pips: Number(((bp - price) * inst.pipMult).toFixed(1)) });
+      if (bp < price && bp >= price * 0.97) nearSsl.push({ price: bp, density_pct: sp, dist_pips: Number(((price - bp) * inst.pipMult).toFixed(1)) });
     });
     nearBsl.sort((a, b) => b.density_pct - a.density_pct);
     nearSsl.sort((a, b) => b.density_pct - a.density_pct);
@@ -1297,8 +1501,13 @@
     const bias = prob_buy >= 53 ? "BULLISH" : (prob_sell >= 53 ? "BEARISH" : "NEUTRAL");
     const bias_desc = bias === "BULLISH" ? "SESGO INSTITUCIONAL COMPRA" : (bias === "BEARISH" ? "SESGO INSTITUCIONAL VENTA" : "MERCADO EN RANGO / NEUTRAL");
 
+    // Preservar candles_by_tf pre-cargadas si existen
+    const existing = liveAssetsMap[assetKey];
+    const cachedCandlesByTf = (existing && existing.technical_smc && existing.technical_smc.candles_by_tf) || undefined;
+
     return {
-      symbol: "GBP/USD",
+      symbol: inst.key,
+      name: inst.title,
       price, bid, ask, spread_pips,
       bias, bias_desc, prob_buy, prob_sell,
       retail_sentiment: {
@@ -1317,37 +1526,56 @@
         trend_m30: tM30.trend,
         trend_m15: tM15.trend,
         trend_m5: tM5.trend,
-        zone, h1_high, h1_low
+        zone, h1_high, h1_low,
+        candles_by_tf: cachedCandlesByTf
       }
     };
   }
 
-  async function refreshAllGbpTelemetry() {
+  async function refreshSingleAssetFlow(assetKey) {
     try {
-      const direct = await fetchDirectGbpFlow();
+      const direct = await fetchDirectAssetFlow(assetKey);
       if (direct && direct.price) {
-        liveGbpData = direct;
-        renderCopilotTelemetry(liveGbpData);
-        requestAnimationFrame(drawSmcOverlay);
-        return;
+        liveAssetsMap[assetKey] = direct;
+        if (currentAssetKey === assetKey) {
+          renderCopilotTelemetry(direct);
+          requestAnimationFrame(drawSmcOverlay);
+        }
+        return direct;
       }
     } catch (e) {}
 
-    if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar && window.STATIC_DASHBOARD_DATA.radar.assets) {
-      const gbp = window.STATIC_DASHBOARD_DATA.radar.assets.find(a => a.symbol && a.symbol.includes("GBP"));
-      if (gbp) {
-        liveGbpData = gbp;
-        renderCopilotTelemetry(liveGbpData);
-        requestAnimationFrame(drawSmcOverlay);
-      }
+    const fallback = getAssetData(assetKey);
+    if (fallback && currentAssetKey === assetKey) {
+      renderCopilotTelemetry(fallback);
+      requestAnimationFrame(drawSmcOverlay);
     }
+    return fallback;
+  }
+
+  async function refreshAllAssetsTelemetry() {
+    // 1. Inicializar primero con static_data.js si aún no hay datos
+    if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar && window.STATIC_DASHBOARD_DATA.radar.assets) {
+      window.STATIC_DASHBOARD_DATA.radar.assets.forEach(a => {
+        if (a.symbol && a.symbol.includes("GBP") && !liveAssetsMap["GBP/USD"]) liveAssetsMap["GBP/USD"] = a;
+        if (a.symbol && a.symbol.includes("XAU") && !liveAssetsMap["XAU/USD"]) liveAssetsMap["XAU/USD"] = a;
+        if (a.symbol && a.symbol.includes("AUD") && !liveAssetsMap["AUD/USD"]) liveAssetsMap["AUD/USD"] = a;
+      });
+      const cur = getAssetData(currentAssetKey);
+      if (cur) renderCopilotTelemetry(cur);
+    }
+
+    // 2. Actualizar el activo seleccionado en vivo
+    await refreshSingleAssetFlow(currentAssetKey);
   }
 
   function renderCopilotTelemetry(d) {
     if (!d) return;
+    const inst = getActiveInst();
     const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
 
-    setTxt("cpPricePill", `GBP/USD: ${Number(d.price).toFixed(5)}`);
+    const priceFmt = inst.key === "XAU/USD" ? `$${Number(d.price).toFixed(2)}` : Number(d.price).toFixed(5);
+    setTxt("cpPricePill", `${inst.shortTitle}: ${priceFmt}`);
     setTxt("cpSpreadPill", `Spread: ${d.spread_pips} pips`);
     setTxt("cpBiasDesc", d.bias_desc || "MERCADO EN RANGO");
     setTxt("cpBiasTag", d.bias === "BULLISH" ? "COMPRA 🟢" : (d.bias === "BEARISH" ? "VENTA 🔴" : "NEUTRAL ⚪"));
@@ -1367,13 +1595,14 @@
     setTxt("cpObRatio", `${ob.order_long_pct || 50}% C / ${ob.order_short_pct || 50}% V`);
     const bsl0 = ob.top_bsl && ob.top_bsl[0];
     const ssl0 = ob.top_ssl && ob.top_ssl[0];
-    setTxt("cpBslTarget", bsl0 ? `🎯 BSL: ${bsl0.price.toFixed(4)} (${bsl0.dist_pips}p)` : `🎯 BSL: ${Number(ob.bsl_target || 0).toFixed(4)}`);
-    setTxt("cpSslTarget", ssl0 ? `🎯 SSL: ${ssl0.price.toFixed(4)} (${ssl0.dist_pips}p)` : `🎯 SSL: ${Number(ob.ssl_target || 0).toFixed(4)}`);
+    const dBox = inst.boxDecimals;
+    setTxt("cpBslTarget", bsl0 ? `🎯 BSL: ${bsl0.price.toFixed(dBox)} (${bsl0.dist_pips}p)` : `🎯 BSL: ${Number(ob.bsl_target || 0).toFixed(dBox)}`);
+    setTxt("cpSslTarget", ssl0 ? `🎯 SSL: ${ssl0.price.toFixed(dBox)} (${ssl0.dist_pips}p)` : `🎯 SSL: ${Number(ob.ssl_target || 0).toFixed(dBox)}`);
 
     const smc = d.technical_smc || {};
     setTxt("cpZoneTxt", `Zona SMC: ${smc.zone || "--"}`);
     if (smc.h1_low && smc.h1_high) {
-      setTxt("cpH1EqTxt", `Rango H1: ${Number(smc.h1_low).toFixed(5)} - ${Number(smc.h1_high).toFixed(5)}`);
+      setTxt("cpH1EqTxt", `Rango H1: ${Number(smc.h1_low).toFixed(inst.digits)} - ${Number(smc.h1_high).toFixed(inst.digits)}`);
     }
 
     const paintTf = (id, name, val) => {
@@ -1390,32 +1619,34 @@
     paintTf("cpTfM5", "M5", smc.trend_m5 || smc.trend_m15);
   }
 
-  // --- GENERADOR DE RESPUESTA LOCAL INTELIGENTE (SIN NOMBRES PERSONALES NI DE BROKER) ---
+  // --- GENERADOR DE RESPUESTA LOCAL INTELIGENTE PARA CUALQUIERA DE LOS 3 ACTIVOS ---
   function buildLocalSmartResponse(question, d) {
-    if (!d) return "Sincronizando el flujo institucional del libro de órdenes para la libra dólar.";
+    const inst = getActiveInst();
+    if (!d) return `Sincronizando el flujo institucional del libro de órdenes para ${inst.spokenName}.`;
     const q = (question || "").toLowerCase();
     const rs = d.retail_sentiment || {};
     const ob = d.order_book || {};
     const smc = d.technical_smc || {};
     const clean = s => String(s || "").replace(/[🟢🔴⚪]/g, "").trim();
+    const dBox = inst.boxDecimals;
 
     const bullObs = (smcAnalysis.orderBlocks || []).filter(o => o.type === "BULL");
     const bearObs = (smcAnalysis.orderBlocks || []).filter(o => o.type === "BEAR");
-    const obSummary = `En el gráfico de ${currentTf} se observa ${bullObs.length ? 'un Order Block alcista de demanda entre ' + bullObs[bullObs.length - 1].bot.toFixed(4) + ' y ' + bullObs[bullObs.length - 1].top.toFixed(4) : 'demanda estructural en ' + Number(smcAnalysis.sslSwing || d.price).toFixed(4)}, y ${bearObs.length ? 'un Order Block bajista de oferta entre ' + bearObs[bearObs.length - 1].bot.toFixed(4) + ' y ' + bearObs[bearObs.length - 1].top.toFixed(4) : 'oferta en ' + Number(smcAnalysis.bslSwing || d.price).toFixed(4)}.`;
+    const obSummary = `En el gráfico de ${currentTf} de ${inst.spokenName} se observa ${bullObs.length ? 'un Order Block alcista de demanda entre ' + bullObs[bullObs.length - 1].bot.toFixed(dBox) + ' y ' + bullObs[bullObs.length - 1].top.toFixed(dBox) : 'demanda estructural en ' + Number(smcAnalysis.sslSwing || d.price).toFixed(dBox)}, y ${bearObs.length ? 'un Order Block bajista de oferta entre ' + bearObs[bearObs.length - 1].bot.toFixed(dBox) + ' y ' + bearObs[bearObs.length - 1].top.toFixed(dBox) : 'oferta en ' + Number(smcAnalysis.bslSwing || d.price).toFixed(dBox)}.`;
 
-    const bslList = (ob.top_bsl || []).map(b => `${b.price.toFixed(4)} a ${b.dist_pips} pips`).join(", ");
-    const sslList = (ob.top_ssl || []).map(b => `${b.price.toFixed(4)} a ${b.dist_pips} pips`).join(", ");
+    const bslList = (ob.top_bsl || []).map(b => `${b.price.toFixed(dBox)} a ${b.dist_pips} pips`).join(", ");
+    const sslList = (ob.top_ssl || []).map(b => `${b.price.toFixed(dBox)} a ${b.dist_pips} pips`).join(", ");
 
     if (q.includes("order block") || q.includes("ob") || q.includes("dibujad")) {
-      return `Analizando los niveles institucionales dibujados en el gráfico de ${currentTf}: ${obSummary} La liquidez estructural BSL se ubica en ${Number(smcAnalysis.bslSwing || ob.bsl_target).toFixed(4)} y la SSL abajo en ${Number(smcAnalysis.sslSwing || ob.ssl_target).toFixed(4)}, mientras las piscinas del libro de órdenes apuntan a ${bslList || ob.bsl_target} por arriba y ${sslList || ob.ssl_target} por abajo.`;
+      return `Analizando los niveles institucionales dibujados en el gráfico de ${currentTf} para ${inst.spokenName}: ${obSummary} La liquidez estructural BSL se ubica en ${Number(smcAnalysis.bslSwing || ob.bsl_target).toFixed(dBox)} y la SSL abajo en ${Number(smcAnalysis.sslSwing || ob.ssl_target).toFixed(dBox)}, mientras las piscinas del libro de órdenes apuntan a ${bslList || ob.bsl_target} por arriba y ${sslList || ob.ssl_target} por abajo.`;
     }
     if (q.includes("libro") || q.includes("contrato")) {
-      return `En el libro de posiciones institucional para la libra dólar se registra un ${rs.long_pct}% de contratos en compra frente a un ${rs.short_pct}% en venta, con un ${rs.longs_in_loss}% de compradores atrapados en pérdida. En el libro de órdenes pendientes hay ${ob.order_long_pct}% de órdenes compradoras y ${ob.order_short_pct}% vendedoras, con piscinas de Buy Stops en ${bslList || ob.bsl_target} y Sell Stops abajo en ${sslList || ob.ssl_target}.`;
+      return `En el libro de posiciones institucional para ${inst.spokenName} se registra un ${rs.long_pct}% de contratos en compra frente a un ${rs.short_pct}% en venta, con un ${rs.longs_in_loss}% de compradores atrapados en pérdida. En el libro de órdenes pendientes hay ${ob.order_long_pct}% de órdenes compradoras y ${ob.order_short_pct}% vendedoras, con piscinas de Buy Stops en ${bslList || ob.bsl_target} y Sell Stops abajo en ${sslList || ob.ssl_target}.`;
     }
     if (q.includes("tendencia") || q.includes("h4") || q.includes("m5") || q.includes("temporal")) {
-      return `El barrido multitemporal de la libra dólar desde H4 hasta M5 muestra la siguiente alineación: H4 ${clean(smc.trend_h4)}, H1 ${clean(smc.trend_h1)}, M30 ${clean(smc.trend_m30 || smc.trend_h1)}, M15 ${clean(smc.trend_m15)} y M5 ${clean(smc.trend_m5 || smc.trend_m15)}. Actualmente el precio de ${d.price.toFixed(5)} opera en zona ${clean(smc.zone)} con equilibrio del 50 por ciento en ${Number(smcAnalysis.eqMid || d.price).toFixed(4)}.`;
+      return `El barrido multitemporal de ${inst.spokenName} desde H4 hasta M5 muestra la siguiente alineación: H4 ${clean(smc.trend_h4)}, H1 ${clean(smc.trend_h1)}, M30 ${clean(smc.trend_m30 || smc.trend_h1)}, M15 ${clean(smc.trend_m15)} y M5 ${clean(smc.trend_m5 || smc.trend_m15)}. Actualmente el precio de ${d.price.toFixed(inst.digits)} opera en zona ${clean(smc.zone)} con equilibrio del 50 por ciento en ${Number(smcAnalysis.eqMid || d.price).toFixed(dBox)}.`;
     }
-    return `Informe situacional del Radar para la libra dólar en ${d.price.toFixed(5)}. El modelo cuantitativo marca ${d.bias_desc} con ${d.prob_buy}% de probabilidad de compra y ${d.prob_sell}% de venta en zona ${clean(smc.zone)}. ${obSummary} En el posicionamiento de contratos el ${rs.long_pct}% de participantes minoristas están comprados y los objetivos de liquidez apuntan a BSL en ${ob.bsl_target} y SSL en ${ob.ssl_target}.`;
+    return `Informe situacional del Radar para ${inst.spokenName} cotizando en ${d.price.toFixed(inst.digits)}. El modelo cuantitativo marca ${d.bias_desc} con ${d.prob_buy}% de probabilidad de compra y ${d.prob_sell}% de venta en zona ${clean(smc.zone)}. ${obSummary} En el posicionamiento de contratos el ${rs.long_pct}% de participantes minoristas están comprados y los objetivos de liquidez apuntan a BSL en ${Number(ob.bsl_target || 0).toFixed(dBox)} y SSL en ${Number(ob.ssl_target || 0).toFixed(dBox)}.`;
   }
 
   // --- SELECCIÓN ESTRICTA DE VOZ FEMENINA EN ESPAÑOL ---
@@ -1453,7 +1684,7 @@
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = "es-MX";
       utter.rate = 1.03;
-      utter.pitch = 1.08; // Timbre femenino claro y natural
+      utter.pitch = 1.08;
 
       const femVoice = pickSpanishFemaleVoice();
       if (femVoice) utter.voice = femVoice;
@@ -1476,22 +1707,41 @@
     }
   }
 
+  // Detectar si el usuario mencionó un activo específico en su pregunta ("oro", "xau", "aud", "australiano", "libra", "gbp")
+  function detectMentionedAsset(questionText) {
+    const q = String(questionText || "").toLowerCase();
+    if (/\b(oro|xau|xauusd|gold)\b/.test(q)) return "XAU/USD";
+    if (/\b(aud|audusd|australiano)\b/.test(q)) return "AUD/USD";
+    if (/\b(gbp|gbpusd|libra)\b/.test(q)) return "GBP/USD";
+    return null;
+  }
+
   async function askCopilotAI(questionText) {
+    // Si menciona otro activo en su pregunta, cambiar automáticamente a ese activo
+    const mentioned = detectMentionedAsset(questionText);
+    if (mentioned && mentioned !== currentAssetKey) {
+      selectActiveAsset(mentioned, false);
+    }
+
+    const inst = getActiveInst();
     setOrbState("thinking");
     const uEl = document.getElementById("cpUserQ");
     const aEl = document.getElementById("cpAiA");
     if (uEl) uEl.textContent = `"${questionText}"`;
-    if (aEl) aEl.textContent = "Analizando Order Blocks (OB), piscinas BSL/SSL, contratos y tendencias H4-M5...";
+    if (aEl) aEl.textContent = `Analizando Order Blocks (OB), piscinas BSL/SSL, contratos y tendencias H4-M5 de ${inst.shortTitle}...`;
 
-    if (!liveGbpData) await refreshAllGbpTelemetry();
+    let d = getAssetData(currentAssetKey);
+    if (!d) {
+      d = await refreshSingleAssetFlow(currentAssetKey) || {};
+    }
 
-    const d = liveGbpData || {};
     const rs = d.retail_sentiment || {};
     const ob = d.order_book || {};
     const smc = d.technical_smc || {};
+    const dBox = inst.boxDecimals;
     const bslStr = (ob.top_bsl || []).map(b => `${b.price} (${b.dist_pips}p)`).join(", ");
     const sslStr = (ob.top_ssl || []).map(b => `${b.price} (${b.dist_pips}p)`).join(", ");
-    const obDesc = (smcAnalysis.orderBlocks || []).map(o => `${o.type === 'BULL' ? 'OB+ Alcista' : 'OB- Bajista'} [${o.bot.toFixed(4)}-${o.top.toFixed(4)}]`).join(", ");
+    const obDesc = (smcAnalysis.orderBlocks || []).map(o => `${o.type === 'BULL' ? 'OB+ Alcista' : 'OB- Bajista'} [${o.bot.toFixed(dBox)}-${o.top.toFixed(dBox)}]`).join(", ");
 
     // 1. Intentar servidor local (si está corriendo en la PC con voz femenina es-MX-DaliaNeural)
     if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
@@ -1500,8 +1750,8 @@
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            prompt: `${questionText} (Order Blocks en gráfico ${currentTf}: ${obDesc})`,
-            symbol: "GBPUSD",
+            prompt: `${questionText} (Activo: ${inst.title}, Order Blocks en gráfico ${currentTf}: ${obDesc})`,
+            symbol: inst.mt5,
             voice: "es-MX-DaliaNeural"
           })
         });
@@ -1510,7 +1760,10 @@
           if (lData.success && lData.text) {
             const cleanText = sanitizeInstitutionalText(lData.text);
             if (aEl) aEl.textContent = cleanText;
-            if (lData.radar) { liveGbpData = lData.radar; renderCopilotTelemetry(liveGbpData); }
+            if (lData.radar) {
+              liveAssetsMap[currentAssetKey] = lData.radar;
+              renderCopilotTelemetry(lData.radar);
+            }
             if (lData.audio) {
               setOrbState("speaking");
               audioPlayer.src = "data:audio/mp3;base64," + lData.audio;
@@ -1523,10 +1776,10 @@
       } catch (e) {}
     }
 
-    // 2. Consultar Gemini Cloud API (Sin nombres personales ni mención de OANDA)
-    const prompt = `Eres la analista institucional senior exclusiva de GBP/USD de la mesa cuantitativa.
-DATOS EN TIEMPO REAL DEL FLUJO INSTITUCIONAL Y GRÁFICO SMC (${currentTf}) PARA GBP/USD:
-- Precio: ${d.price} (Spread: ${d.spread_pips} pips)
+    // 2. Consultar Gemini Cloud API para el activo seleccionado (Sin nombres personales ni mención de OANDA)
+    const prompt = `Eres la analista institucional senior de ${inst.title} (${inst.spokenName}) de la mesa cuantitativa.
+DATOS EN TIEMPO REAL DEL FLUJO INSTITUCIONAL Y GRÁFICO SMC (${currentTf}) PARA ${inst.title}:
+- Precio Actual: ${d.price} (Spread: ${d.spread_pips} pips)
 - Order Blocks (OB) dibujados en el gráfico: ${obDesc || "En formación"}
 - Liquidez Estructural del Gráfico: BSL=${smcAnalysis.bslSwing}, SSL=${smcAnalysis.sslSwing}, 50% Equilibrium=${smcAnalysis.eqMid}
 - Sesgo Radar: ${d.bias_desc} (Probabilidad Compra: ${d.prob_buy}%, Venta: ${d.prob_sell}%)
@@ -1537,7 +1790,7 @@ DATOS EN TIEMPO REAL DEL FLUJO INSTITUCIONAL Y GRÁFICO SMC (${currentTf}) PARA 
 PREGUNTA: "${questionText}"
 REGLAS ESTRICTAS:
 1. PROHIBIDO mencionar cualquier nombre de persona (no digas Gildardo) y PROHIBIDO mencionar la palabra OANDA. Refiérete siempre al "libro de órdenes institucional" o "flujo institucional".
-2. Responde en español profesional en máximo 3 oraciones fluidas para ser leídas por voz femenina, integrando los Order Blocks activos, las piscinas BSL/SSL, contratos y tendencias H4 a M5.
+2. Responde en español profesional sobre ${inst.spokenName} en máximo 3 oraciones fluidas para ser leídas por voz femenina, integrando los Order Blocks activos, las piscinas BSL/SSL, contratos y tendencias H4 a M5.
 3. No uses asteriscos ni formato markdown.`;
 
     let answerText = null;
@@ -1562,14 +1815,57 @@ REGLAS ESTRICTAS:
     }
 
     if (!answerText) {
-      answerText = sanitizeInstitutionalText(buildLocalSmartResponse(questionText, liveGbpData));
+      answerText = sanitizeInstitutionalText(buildLocalSmartResponse(questionText, d));
     }
 
     if (aEl) aEl.textContent = answerText;
     speakWithBrowserTTS(answerText);
   }
 
+  function buildQuickQuestion(code) {
+    const inst = getActiveInst();
+    if (code === "REPORT") return `Dame el informe situacional completo del Radar para ${inst.shortTitle} con Order Blocks y liquidez.`;
+    if (code === "OB_LIQ") return `Analiza los Order Blocks activos y las piscinas BSL y SSL dibujadas en el gráfico de ${inst.shortTitle}.`;
+    if (code === "CONTRACTS") return `Analiza el libro de órdenes y el número de contratos de compra y venta para ${inst.shortTitle}.`;
+    if (code === "TRENDS") return `Analiza la alineación de tendencia desde H4 hasta M5 en ${inst.shortTitle}.`;
+    if (code === "SETUP") return `¿Recomiendas comprar o vender ${inst.shortTitle} ahora mismo según los Order Blocks y el flujo institucional?`;
+    return code;
+  }
+
   function bindCopilotEvents() {
+    // 1. Selector de Activo en el Copilot (GBP/USD, XAU/USD, AUD/USD)
+    document.querySelectorAll("[data-cp-asset]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-cp-asset");
+        selectActiveAsset(target, false);
+      });
+    });
+
+    // 2. Sincronizar con los botones de filtro del Radar ([data-radar-filter])
+    document.querySelectorAll("[data-radar-filter]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const fVal = btn.getAttribute("data-radar-filter");
+        if (fVal && (fVal.includes("GBP") || fVal.includes("XAU") || fVal.includes("AUD"))) {
+          selectActiveAsset(fVal, false);
+        }
+      });
+    });
+
+    // 3. Sincronizar al hacer clic sobre cualquier tarjeta del Radar (.radar-card o .strip-card)
+    document.addEventListener("click", e => {
+      const card = e.target.closest(".radar-card, .strip-card");
+      if (!card) return;
+      const txt = card.textContent || "";
+      if (txt.includes("XAU/USD") || txt.includes("Oro")) {
+        selectActiveAsset("XAU/USD", false);
+      } else if (txt.includes("AUD/USD") || txt.includes("Australiano")) {
+        selectActiveAsset("AUD/USD", false);
+      } else if (txt.includes("GBP/USD") || txt.includes("Libra")) {
+        selectActiveAsset("GBP/USD", false);
+      }
+    });
+
+    // 4. Botones de Temporalidad del Gráfico SMC
     document.querySelectorAll("[data-cp-tf]").forEach(btn => {
       btn.addEventListener("click", () => {
         document.querySelectorAll("[data-cp-tf]").forEach(b => b.classList.remove("active"));
@@ -1579,6 +1875,7 @@ REGLAS ESTRICTAS:
       });
     });
 
+    // 5. Interruptores de Capas SMC
     const bindToggle = (id, getter, setter) => {
       const btn = document.getElementById(id);
       if (!btn) return;
@@ -1594,12 +1891,15 @@ REGLAS ESTRICTAS:
     bindToggle("btnToggleEQ",  () => showEQ,  v => { showEQ = v; });
     bindToggle("btnToggleEMA", () => showEMA, v => { showEMA = v; });
 
+    // 6. Botones rápidos de voz (dinámicos para el activo seleccionado)
     document.querySelectorAll("[data-cp-q]").forEach(btn => {
       btn.addEventListener("click", () => {
-        askCopilotAI(btn.getAttribute("data-cp-q"));
+        const qCode = btn.getAttribute("data-cp-q");
+        askCopilotAI(buildQuickQuestion(qCode));
       });
     });
 
+    // 7. Input de texto
     const inp = document.getElementById("cpTextInput");
     const btnSend = document.getElementById("cpBtnSend");
     if (btnSend && inp) {
@@ -1617,6 +1917,7 @@ REGLAS ESTRICTAS:
       });
     }
 
+    // 8. Narradora automática cada 2 min
     const btnAuto = document.getElementById("cpBtnAuto");
     if (btnAuto) {
       btnAuto.addEventListener("click", () => {
@@ -1628,16 +1929,17 @@ REGLAS ESTRICTAS:
         } else {
           btnAuto.textContent = "⏱️ Narradora Auto: CADA 2 MIN";
           btnAuto.style.background = "rgba(0,255,136,0.15)";
-          askCopilotAI("Dame el informe situacional completo del Radar para GBP/USD con Order Blocks y liquidez.");
+          askCopilotAI(buildQuickQuestion("REPORT"));
           autoTimer = setInterval(() => {
             if (orbState === "idle") {
-              askCopilotAI("Actualización automática de Order Blocks, piscinas BSL/SSL y tendencias de GBP/USD.");
+              askCopilotAI(buildQuickQuestion("REPORT"));
             }
           }, 120000);
         }
       });
     }
 
+    // 9. Micrófono
     const btnMic = document.getElementById("cpBtnMic");
     const micLbl = document.getElementById("cpMicLabel");
     const uEl = document.getElementById("cpUserQ");
