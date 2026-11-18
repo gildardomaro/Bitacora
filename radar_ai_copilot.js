@@ -816,14 +816,19 @@
       return;
     }
     const s = document.createElement("script");
-    const isSubdir = window.location.pathname.includes("/radar");
-    s.src = isSubdir ? "../lightweight-charts.standalone.production.js" : "lightweight-charts.standalone.production.js";
+    s.src = "lightweight-charts.standalone.production.js";
     s.onload = cb;
     s.onerror = () => {
-      const s2 = document.createElement("script");
-      s2.src = "https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js";
-      s2.onload = cb;
-      document.head.appendChild(s2);
+      const sParent = document.createElement("script");
+      sParent.src = "../lightweight-charts.standalone.production.js";
+      sParent.onload = cb;
+      sParent.onerror = () => {
+        const s2 = document.createElement("script");
+        s2.src = "https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js";
+        s2.onload = cb;
+        document.head.appendChild(s2);
+      };
+      document.head.appendChild(sParent);
     };
     document.head.appendChild(s);
   }

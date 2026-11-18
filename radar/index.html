@@ -133,7 +133,7 @@
       <div class="public-header-controls">
         <span class="status-badge live" id="liveBadge"><span class="pulse-dot"></span> Flujo en Vivo</span>
         <span class="status-badge sync-timer" id="clockBadge">🕒 --:--:--</span>
-        <a href="../" class="btn-portal" title="Acceso a la Bitácora General de Operaciones">📊 Bitácora General</a>
+        <a href="../" onclick="if(window.location.hostname.indexOf('vercel.app')!==-1 && window.location.pathname.indexOf('/radar')===-1){this.href='https://gildardomaro.github.io/Bitacora/';}" class="btn-portal" title="Acceso a la Bitácora General de Operaciones">📊 Bitácora General</a>
       </div>
     </header>
 
