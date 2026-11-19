@@ -8,8 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css" onerror="if(!this.dataset.fb){this.dataset.fb='1';this.href='../styles.css';}">
   <style>
     /* Estilos específicos para la vista pública independiente del radar */
     body {
@@ -249,14 +248,8 @@
       setInterval(updateClock, 1000);
       updateClock();
 
-      // Cargar datos estáticos o desde API (Compatible con Vercel Root, Subcarpeta /radar/ y GitHub Pages)
-      async function loadData() {
-        if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar) {
-          radarData = window.STATIC_DASHBOARD_DATA.radar;
-          renderUI();
-          return;
-        }
-
+      // Cargar datos desde radar_data_cache.json (~340 KB) o API local; sin depender de static_data.js (1.35 MB)
+      async function loadData(isBackgroundRefresh) {
         const candidateJsonUrls = [
           'radar_data_cache.json?v=' + Date.now(),
           '../radar_data_cache.json?v=' + Date.now(),
@@ -264,26 +257,43 @@
         ];
         for (const u of candidateJsonUrls) {
           try {
-            const res = await fetch(u);
+            const res = await fetch(u, { cache: 'no-store' });
             if (res.ok) {
               const j = await res.json();
               if (j && j.assets) {
                 radarData = j;
+                window.RADAR_LIVE_DATA = radarData;
                 renderUI();
+                try {
+                  window.dispatchEvent(new CustomEvent('radar:data-loaded', { detail: radarData }));
+                } catch (_) {}
                 return;
               }
             }
           } catch (e) {}
         }
 
-        // Fallback cargando static_data.js local o de carpeta padre
+        if (isBackgroundRefresh) return;
+
+        if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar) {
+          radarData = window.STATIC_DASHBOARD_DATA.radar;
+          window.RADAR_LIVE_DATA = radarData;
+          renderUI();
+          return;
+        }
+
+        // Fallback extremo si ningún JSON estuvo disponible
         const tryStaticScript = (srcUrl, onFail) => {
           const s = document.createElement('script');
           s.src = srcUrl + '?v=' + Date.now();
           s.onload = () => {
             if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar) {
               radarData = window.STATIC_DASHBOARD_DATA.radar;
+              window.RADAR_LIVE_DATA = radarData;
               renderUI();
+              try {
+                window.dispatchEvent(new CustomEvent('radar:data-loaded', { detail: radarData }));
+              } catch (_) {}
             } else if (onFail) {
               onFail();
             }
@@ -529,15 +539,33 @@
         });
       });
 
-      // Arranque
-      loadData();
+      // Sincronización en vivo: cuando el Copilot recibe telemetría nueva, actualizar tarjetas y franja superior
+      window.addEventListener('radar:asset-updated', (ev) => {
+        const detail = ev && ev.detail;
+        if (!detail || !detail.asset) return;
+        if (!radarData) radarData = { assets: [], calendar: [] };
+        if (!Array.isArray(radarData.assets)) radarData.assets = [];
+
+        const updated = detail.asset;
+        const prefix = (detail.assetKey || updated.symbol || '').split('/')[0];
+        const idx = radarData.assets.findIndex(a => a.symbol && a.symbol.includes(prefix));
+        if (idx >= 0) {
+          radarData.assets[idx] = Object.assign({}, radarData.assets[idx], updated);
+        } else {
+          radarData.assets.push(updated);
+        }
+        const nowStr = new Date().toLocaleTimeString('es-MX', { hour12: false });
+        radarData.last_sync = nowStr;
+        window.RADAR_LIVE_DATA = radarData;
+        renderUI();
+      });
+
+      // Arranque y auto-refresh periódico del snapshot (calendario + activos) cada 60 segundos
+      loadData(false);
+      setInterval(() => loadData(true), 60000);
     })();
   </script>
-  <script src="lightweight-charts.standalone.production.js"></script>
-  <script src="../lightweight-charts.standalone.production.js"></script>
-  <script src="static_data.js"></script>
-  <script src="../static_data.js"></script>
-  <script src="radar_ai_copilot.js"></script>
-  <script src="../radar_ai_copilot.js"></script>
+  <script src="lightweight-charts.standalone.production.js" onerror="if(!this.dataset.fb){this.dataset.fb='1';var s=document.createElement('script');s.src='../lightweight-charts.standalone.production.js';document.body.appendChild(s);}"></script>
+  <script src="radar_ai_copilot.js" onerror="if(!this.dataset.fb){this.dataset.fb='1';var s=document.createElement('script');s.src='../radar_ai_copilot.js';document.body.appendChild(s);}"></script>
 </body>
 </html>

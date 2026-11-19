@@ -16,10 +16,66 @@
   if (window.__RADAR_AI_COPILOT_LOADED__) return;
   window.__RADAR_AI_COPILOT_LOADED__ = true;
 
-  // Conexión de datos de liquidez institucional v20
-  const FEED_TOKEN = "a2b781db6966dceb70368ff1f3b95f43-37cd79091463655c7588182a72a65899";
-  const FEED_ACC   = "101-001-40640336-001";
-  const FEED_URL   = "https://api-fxpractice.oanda.com/v3";
+  // Proxy seguro del servidor (Vercel Serverless / dashboard_server.py local)
+  // Sin tokens ni API keys embebidos en el cliente.
+  let _oandaProxyBase = null;    // null = sin probar, "" = no disponible (hosting estático)
+  let _copilotProxyBase = null;  // null = sin probar, "" = no disponible
+
+  async function fetchJsonFromCandidates(candidates, options) {
+    for (const url of candidates) {
+      try {
+        const res = await fetch(url, options);
+        if (res.ok) {
+          const ct = (res.headers.get("content-type") || "").toLowerCase();
+          if (ct.includes("application/json")) {
+            const data = await res.json();
+            return { ok: true, url, data };
+          }
+        }
+      } catch (_) {}
+    }
+    return { ok: false, url: null, data: null };
+  }
+
+  async function fetchOandaProxy(queryString) {
+    if (_oandaProxyBase === "") return null;
+    const candidates = _oandaProxyBase
+      ? [`${_oandaProxyBase}?${queryString}`]
+      : [`api/oanda?${queryString}`, `../api/oanda?${queryString}`];
+    const r = await fetchJsonFromCandidates(candidates);
+    if (r.ok && r.data && r.data.success) {
+      if (!_oandaProxyBase) {
+        _oandaProxyBase = r.url.split("?")[0];
+      }
+      return r.data;
+    }
+    if (_oandaProxyBase === null) {
+      _oandaProxyBase = "";
+    }
+    return null;
+  }
+
+  async function fetchCopilotProxy(prompt) {
+    if (_copilotProxyBase === "") return null;
+    const candidates = _copilotProxyBase
+      ? [_copilotProxyBase]
+      : ["api/copilot", "../api/copilot"];
+    const r = await fetchJsonFromCandidates(candidates, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt })
+    });
+    if (r.ok && r.data && r.data.success && r.data.text) {
+      if (!_copilotProxyBase) {
+        _copilotProxyBase = r.url;
+      }
+      return r.data;
+    }
+    if (_copilotProxyBase === null) {
+      _copilotProxyBase = "";
+    }
+    return null;
+  }
 
   // Catálogo de los 3 activos institucionales
   const INSTRUMENTS = {
@@ -74,17 +130,17 @@
     "AUD/USD": null
   };
 
-  // Clave Gemini
-  const _kParts = ["AQ.Ab8RN6LEjuVkIR", "Qusa9su2VA6QEG5Ic7", "gQXAd5zWVk9XfliXDw"];
-  const GEMINI_KEY = localStorage.getItem("MARO_GEMINI_KEY") || _kParts.join("");
+  // Clave Gemini opcional BYOK (solo si el usuario la guarda manualmente en localStorage; nunca hardcodeada)
+  const GEMINI_KEY = localStorage.getItem("MARO_GEMINI_KEY") || "";
   const GEMINI_MODELS = [
-    "gemini-3.5-flash-lite",
-    "gemini-3.1-flash-lite",
-    "gemma-4-31b-it",
-    "gemma-4-26b-a4b-it",
-    "gemini-3.8-flash",
-    "gemini-3.5-flash"
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-flash",
+    "gemini-2.0-flash-lite",
+    "gemini-2.0-flash",
+    "gemma-3-27b-it"
   ];
+  const ASSET_KEYS = ["GBP/USD", "XAU/USD", "AUD/USD"];
+  let _bgRotateIdx = 0;
 
   let orbState = "idle"; // idle | listening | thinking | speaking
   let isListening = false;
@@ -1196,11 +1252,22 @@
     }
   }
 
+  function getRadarSourceAssets() {
+    if (window.RADAR_LIVE_DATA && Array.isArray(window.RADAR_LIVE_DATA.assets)) {
+      return window.RADAR_LIVE_DATA.assets;
+    }
+    if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar && Array.isArray(window.STATIC_DASHBOARD_DATA.radar.assets)) {
+      return window.STATIC_DASHBOARD_DATA.radar.assets;
+    }
+    return [];
+  }
+
   function getAssetData(assetKey) {
     if (liveAssetsMap[assetKey]) return liveAssetsMap[assetKey];
-    if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar && window.STATIC_DASHBOARD_DATA.radar.assets) {
+    const sourceAssets = getRadarSourceAssets();
+    if (sourceAssets.length) {
       const prefix = assetKey.split("/")[0];
-      const found = window.STATIC_DASHBOARD_DATA.radar.assets.find(a => a.symbol && a.symbol.includes(prefix));
+      const found = sourceAssets.find(a => a.symbol && a.symbol.includes(prefix));
       if (found) {
         liveAssetsMap[assetKey] = found;
         return found;
@@ -1290,23 +1357,12 @@
       renderCandlesIntoChart(cached, tf, silentUpdate);
     }
 
-    // 2. Actualizar en vivo desde feed institucional
+    // 2. Actualizar en vivo desde el proxy seguro del servidor (/api/oanda)
     try {
-      const headers = { Authorization: "Bearer " + FEED_TOKEN };
-      const res = await fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=110&granularity=${tf}`, { headers });
-      if (res.ok && currentAssetKey === requestedKey) {
-        const j = await res.json();
-        const liveC = (j.candles || []).map(c => ({
-          time: Math.floor(new Date(c.time).getTime() / 1000),
-          open: parseFloat(c.mid.o),
-          high: parseFloat(c.mid.h),
-          low: parseFloat(c.mid.l),
-          close: parseFloat(c.mid.c)
-        }));
-        if (liveC.length > 10) {
-          renderCandlesIntoChart(liveC, tf, silentUpdate);
-          return;
-        }
+      const data = await fetchOandaProxy(`action=candles&instrument=${encodeURIComponent(inst.raw)}&tf=${encodeURIComponent(tf)}&count=110`);
+      if (data && Array.isArray(data.candles) && data.candles.length > 10 && currentAssetKey === requestedKey) {
+        renderCandlesIntoChart(data.candles, tf, silentUpdate);
+        return;
       }
     } catch (e) {}
 
@@ -1419,129 +1475,51 @@
     };
   }
 
+  function notifyAssetUpdated(assetKey, asset) {
+    if (!asset) return;
+    liveAssetsMap[assetKey] = asset;
+    if (window.RADAR_LIVE_DATA && Array.isArray(window.RADAR_LIVE_DATA.assets)) {
+      const prefix = assetKey.split("/")[0];
+      const idx = window.RADAR_LIVE_DATA.assets.findIndex(a => a.symbol && a.symbol.includes(prefix));
+      if (idx >= 0) window.RADAR_LIVE_DATA.assets[idx] = asset;
+    }
+    try {
+      window.dispatchEvent(new CustomEvent("radar:asset-updated", {
+        detail: { assetKey, asset, syncedAt: new Date().toISOString() }
+      }));
+    } catch (_) {}
+  }
+
   async function fetchDirectAssetFlow(assetKey) {
     const inst = INSTRUMENTS[assetKey] || INSTRUMENTS["GBP/USD"];
-    const headers = { Authorization: "Bearer " + FEED_TOKEN };
-    const [prRes, pbRes, obRes, h4Res, h1Res, m30Res, m15Res, m5Res] = await Promise.all([
-      fetch(`${FEED_URL}/accounts/${FEED_ACC}/pricing?instruments=${inst.raw}`, { headers }),
-      fetch(`${FEED_URL}/instruments/${inst.raw}/positionBook`, { headers }),
-      fetch(`${FEED_URL}/instruments/${inst.raw}/orderBook`, { headers }),
-      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=H4`, { headers }),
-      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=H1`, { headers }),
-      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=M30`, { headers }),
-      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=M15`, { headers }),
-      fetch(`${FEED_URL}/instruments/${inst.raw}/candles?count=35&granularity=M5`, { headers })
+    // 1. Proxy seguro del servidor (/api/oanda — usa 95 velas H1 unificadas con Python)
+    const proxyRes = await fetchOandaProxy(`action=flow&instrument=${encodeURIComponent(inst.raw)}`);
+    if (proxyRes && proxyRes.asset && proxyRes.asset.price) {
+      return proxyRes.asset;
+    }
+
+    // 2. Fallback para hosting estático (GitHub Pages): recargar radar_data_cache.json actualizado cada 5 min
+    const cacheRes = await fetchJsonFromCandidates([
+      "radar_data_cache.json?v=" + Date.now(),
+      "../radar_data_cache.json?v=" + Date.now()
     ]);
-
-    const prJson = await prRes.json();
-    const pObj = (prJson.prices && prJson.prices[0]) || {};
-    const bid = parseFloat(pObj.closeoutBid || 0);
-    const ask = parseFloat(pObj.closeoutAsk || 0);
-    const price = Number(((bid + ask) / 2).toFixed(inst.digits));
-    const spread_pips = Number(((ask - bid) * inst.pipMult).toFixed(1));
-
-    const pbJson = (await pbRes.json()).positionBook || {};
-    const pbBuckets = pbJson.buckets || [];
-    let tLong = 0, tShort = 0, lLoss = 0, sLoss = 0;
-    pbBuckets.forEach(b => {
-      const lp = parseFloat(b.longCountPercent || 0);
-      const sp = parseFloat(b.shortCountPercent || 0);
-      const bp = parseFloat(b.price || 0);
-      tLong += lp;
-      tShort += sp;
-      if (bp > price) lLoss += lp;
-      if (bp < price) sLoss += sp;
-    });
-    const totPos = tLong + tShort || 1;
-    const long_pct = Number(((tLong / totPos) * 100).toFixed(1));
-    const short_pct = Number(((tShort / totPos) * 100).toFixed(1));
-    const longs_in_loss = Number(lLoss.toFixed(1));
-    const shorts_in_loss = Number(sLoss.toFixed(1));
-
-    const obJson = (await obRes.json()).orderBook || {};
-    const obBuckets = obJson.buckets || [];
-    let obL = 0, obS = 0;
-    const nearBsl = [], nearSsl = [];
-    obBuckets.forEach(b => {
-      const bp = parseFloat(b.price || 0);
-      const lp = parseFloat(b.longCountPercent || 0);
-      const sp = parseFloat(b.shortCountPercent || 0);
-      obL += lp;
-      obS += sp;
-      if (bp > price && bp <= price * 1.03) nearBsl.push({ price: bp, density_pct: lp, dist_pips: Number(((bp - price) * inst.pipMult).toFixed(1)) });
-      if (bp < price && bp >= price * 0.97) nearSsl.push({ price: bp, density_pct: sp, dist_pips: Number(((price - bp) * inst.pipMult).toFixed(1)) });
-    });
-    nearBsl.sort((a, b) => b.density_pct - a.density_pct);
-    nearSsl.sort((a, b) => b.density_pct - a.density_pct);
-    const top_bsl = nearBsl.slice(0, 3);
-    const top_ssl = nearSsl.slice(0, 3);
-    const totOb = obL + obS || 1;
-    const order_long_pct = Number(((obL / totOb) * 100).toFixed(1));
-    const order_short_pct = Number(((obS / totOb) * 100).toFixed(1));
-
-    const tH4  = calcCandleTrend((await h4Res.json()).candles);
-    const tH1  = calcCandleTrend((await h1Res.json()).candles);
-    const tM30 = calcCandleTrend((await m30Res.json()).candles);
-    const tM15 = calcCandleTrend((await m15Res.json()).candles);
-    const tM5  = calcCandleTrend((await m5Res.json()).candles);
-
-    const h1_high = tH1.high || price;
-    const h1_low  = tH1.low  || price;
-    const h1_mid  = (h1_high + h1_low) / 2;
-    const is_discount = price < h1_mid;
-    const zone = is_discount ? "DESCUENTO 🟢 (Busca Compras)" : "PREMIUM 🔴 (Busca Ventas)";
-
-    let sBuy = 50, sSell = 50;
-    if (long_pct > 55) sSell += Math.round((long_pct - 50) * 0.8);
-    else if (short_pct > 55) sBuy += Math.round((short_pct - 50) * 0.8);
-    if (order_long_pct > 55) sBuy += 10;
-    else if (order_short_pct > 55) sSell += 10;
-    if (tH4.is_bull) sBuy += 10; else sSell += 10;
-    if (tH1.is_bull) sBuy += 10; else sSell += 10;
-    if (tM15.is_bull) sBuy += 5; else sSell += 5;
-    if (is_discount) sBuy += 15; else sSell += 15;
-
-    const prob_buy = Math.round((sBuy / (sBuy + sSell)) * 100);
-    const prob_sell = 100 - prob_buy;
-    const bias = prob_buy >= 53 ? "BULLISH" : (prob_sell >= 53 ? "BEARISH" : "NEUTRAL");
-    const bias_desc = bias === "BULLISH" ? "SESGO INSTITUCIONAL COMPRA" : (bias === "BEARISH" ? "SESGO INSTITUCIONAL VENTA" : "MERCADO EN RANGO / NEUTRAL");
-
-    // Preservar candles_by_tf pre-cargadas si existen
-    const existing = liveAssetsMap[assetKey];
-    const cachedCandlesByTf = (existing && existing.technical_smc && existing.technical_smc.candles_by_tf) || undefined;
-
-    return {
-      symbol: inst.key,
-      name: inst.title,
-      price, bid, ask, spread_pips,
-      bias, bias_desc, prob_buy, prob_sell,
-      retail_sentiment: {
-        long_pct, short_pct, longs_in_loss, shorts_in_loss,
-        summary: `Minoristas ${long_pct}% Comprados vs ${short_pct}% Vendidos. El flujo institucional contrarian favorece ${long_pct > 58 ? 'VENTA por exceso de compradores atrapados' : (short_pct > 58 ? 'COMPRA por exceso de vendedores atrapados' : 'operativa en extremos de liquidez')}.`
-      },
-      order_book: {
-        order_long_pct, order_short_pct,
-        top_bsl, top_ssl,
-        bsl_target: top_bsl[0] ? top_bsl[0].price : h1_high,
-        ssl_target: top_ssl[0] ? top_ssl[0].price : h1_low
-      },
-      technical_smc: {
-        trend_h4: tH4.trend,
-        trend_h1: tH1.trend,
-        trend_m30: tM30.trend,
-        trend_m15: tM15.trend,
-        trend_m5: tM5.trend,
-        zone, h1_high, h1_low,
-        candles_by_tf: cachedCandlesByTf
-      }
-    };
+    if (cacheRes.ok && cacheRes.data && Array.isArray(cacheRes.data.assets)) {
+      window.RADAR_LIVE_DATA = cacheRes.data;
+      cacheRes.data.assets.forEach(a => {
+        if (a.symbol && a.symbol.includes("GBP")) liveAssetsMap["GBP/USD"] = a;
+        if (a.symbol && a.symbol.includes("XAU")) liveAssetsMap["XAU/USD"] = a;
+        if (a.symbol && a.symbol.includes("AUD")) liveAssetsMap["AUD/USD"] = a;
+      });
+      return liveAssetsMap[assetKey] || null;
+    }
+    return null;
   }
 
   async function refreshSingleAssetFlow(assetKey) {
     try {
       const direct = await fetchDirectAssetFlow(assetKey);
       if (direct && direct.price) {
-        liveAssetsMap[assetKey] = direct;
+        notifyAssetUpdated(assetKey, direct);
         if (currentAssetKey === assetKey) {
           renderCopilotTelemetry(direct);
           requestAnimationFrame(drawSmcOverlay);
@@ -1559,9 +1537,10 @@
   }
 
   async function refreshAllAssetsTelemetry() {
-    // 1. Inicializar primero con static_data.js si aún no hay datos
-    if (window.STATIC_DASHBOARD_DATA && window.STATIC_DASHBOARD_DATA.radar && window.STATIC_DASHBOARD_DATA.radar.assets) {
-      window.STATIC_DASHBOARD_DATA.radar.assets.forEach(a => {
+    // 1. Sembrar desde window.RADAR_LIVE_DATA o window.STATIC_DASHBOARD_DATA.radar
+    const sourceAssets = getRadarSourceAssets();
+    if (sourceAssets.length) {
+      sourceAssets.forEach(a => {
         if (a.symbol && a.symbol.includes("GBP") && !liveAssetsMap["GBP/USD"]) liveAssetsMap["GBP/USD"] = a;
         if (a.symbol && a.symbol.includes("XAU") && !liveAssetsMap["XAU/USD"]) liveAssetsMap["XAU/USD"] = a;
         if (a.symbol && a.symbol.includes("AUD") && !liveAssetsMap["AUD/USD"]) liveAssetsMap["AUD/USD"] = a;
@@ -1570,8 +1549,14 @@
       if (cur) renderCopilotTelemetry(cur);
     }
 
-    // 2. Actualizar el activo seleccionado en vivo
+    // 2. Actualizar el activo seleccionado en vivo y rotar 1 secundario para mantener sincronizadas todas las tarjetas
     await refreshSingleAssetFlow(currentAssetKey);
+    const others = ASSET_KEYS.filter(k => k !== currentAssetKey);
+    if (others.length && _oandaProxyBase !== "") {
+      const nextKey = others[_bgRotateIdx % others.length];
+      _bgRotateIdx++;
+      await refreshSingleAssetFlow(nextKey);
+    }
   }
 
   function renderCopilotTelemetry(d) {
@@ -1799,24 +1784,33 @@ REGLAS ESTRICTAS:
 3. No uses asteriscos ni formato markdown.`;
 
     let answerText = null;
-    for (const model of GEMINI_MODELS) {
-      try {
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_KEY)}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }]
-          })
-        });
-        if (res.ok) {
-          const j = await res.json();
-          const cand = j.candidates && j.candidates[0] && j.candidates[0].content && j.candidates[0].content.parts && j.candidates[0].content.parts[0];
-          if (cand && cand.text) {
-            answerText = sanitizeInstitutionalText(cand.text);
-            break;
+    // 2. Consultar proxy seguro del servidor (/api/copilot — Vercel Serverless / servidor local)
+    const proxyAi = await fetchCopilotProxy(prompt);
+    if (proxyAi && proxyAi.text) {
+      answerText = sanitizeInstitutionalText(proxyAi.text);
+    }
+
+    // 3. Fallback BYOK opcional (solo si el usuario configuró manualmente su propia clave en localStorage)
+    if (!answerText && GEMINI_KEY) {
+      for (const model of GEMINI_MODELS) {
+        try {
+          const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(GEMINI_KEY)}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }]
+            })
+          });
+          if (res.ok) {
+            const j = await res.json();
+            const cand = j.candidates && j.candidates[0] && j.candidates[0].content && j.candidates[0].content.parts && j.candidates[0].content.parts[0];
+            if (cand && cand.text) {
+              answerText = sanitizeInstitutionalText(cand.text);
+              break;
+            }
           }
-        }
-      } catch (e) {}
+        } catch (e) {}
+      }
     }
 
     if (!answerText) {
@@ -1838,6 +1832,19 @@ REGLAS ESTRICTAS:
   }
 
   function bindCopilotEvents() {
+    // 0. Cuando radar/index.html termina de cargar radar_data_cache.json, sembrar de inmediato el Copilot y el gráfico
+    window.addEventListener("radar:data-loaded", () => {
+      const sourceAssets = getRadarSourceAssets();
+      sourceAssets.forEach(a => {
+        if (a.symbol && a.symbol.includes("GBP") && !liveAssetsMap["GBP/USD"]) liveAssetsMap["GBP/USD"] = a;
+        if (a.symbol && a.symbol.includes("XAU") && !liveAssetsMap["XAU/USD"]) liveAssetsMap["XAU/USD"] = a;
+        if (a.symbol && a.symbol.includes("AUD") && !liveAssetsMap["AUD/USD"]) liveAssetsMap["AUD/USD"] = a;
+      });
+      const cur = getAssetData(currentAssetKey);
+      if (cur) renderCopilotTelemetry(cur);
+      if (!chartCandles.length) loadChartCandles(currentTf, false);
+    });
+
     // 1. Selector de Activo en el Copilot (GBP/USD, XAU/USD, AUD/USD)
     document.querySelectorAll("[data-cp-asset]").forEach(btn => {
       btn.addEventListener("click", () => {

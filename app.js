@@ -1048,6 +1048,23 @@ function startDashboard() {
     });
   }
 
+  // Sincronización en vivo de tarjetas del Radar cuando el Copilot recibe telemetría fresca
+  window.addEventListener('radar:asset-updated', (ev) => {
+    const detail = ev && ev.detail;
+    if (!detail || !detail.asset || !radarDataCache || !Array.isArray(radarDataCache.assets)) return;
+    const updated = detail.asset;
+    const prefix = (detail.assetKey || updated.symbol || '').split('/')[0];
+    const idx = radarDataCache.assets.findIndex(a => a.symbol && a.symbol.includes(prefix));
+    if (idx >= 0) {
+      radarDataCache.assets[idx] = Object.assign({}, radarDataCache.assets[idx], updated);
+      const syncBadge = document.getElementById('radarLastSyncBadge');
+      if (syncBadge) {
+        syncBadge.textContent = '⏱️ ' + new Date().toLocaleTimeString('es-MX', { hour12: false });
+      }
+      renderRadarAssetCards();
+    }
+  });
+
   // =========================================================================
   // EVENT LISTENERS & TABS
   // =========================================================================
