@@ -133,11 +133,13 @@
   // Clave Gemini opcional BYOK (solo si el usuario la guarda manualmente en localStorage; nunca hardcodeada)
   const GEMINI_KEY = localStorage.getItem("MARO_GEMINI_KEY") || "";
   const GEMINI_MODELS = [
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemma-4-31b-it",
+    "gemma-4-26b-a4b-it",
+    "gemini-3.5-flash",
     "gemini-2.5-flash-lite",
-    "gemini-2.5-flash",
-    "gemini-2.0-flash-lite",
-    "gemini-2.0-flash",
-    "gemma-3-27b-it"
+    "gemini-2.5-flash"
   ];
   const ASSET_KEYS = ["GBP/USD", "XAU/USD", "AUD/USD"];
   let _bgRotateIdx = 0;
