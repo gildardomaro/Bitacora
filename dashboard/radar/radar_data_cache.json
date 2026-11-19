@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-19T21:59:37.431900Z",
-  "last_sync": "2026-11-19 14:59:37",
+  "timestamp": "2026-11-19T22:04:37.092105Z",
+  "last_sync": "2026-11-19 15:04:37",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -17,15 +17,15 @@
       "prob_buy": 44,
       "prob_sell": 56,
       "retail_sentiment": {
-        "long_pct": 59.8,
-        "short_pct": 40.2,
+        "long_pct": 59.7,
+        "short_pct": 40.3,
         "longs_in_loss": 29.5,
         "shorts_in_loss": 18.9,
-        "summary": "Minoristas 59.8% Comprados vs 40.2% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
+        "summary": "Minoristas 59.7% Comprados vs 40.3% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
       },
       "order_book": {
-        "order_long_pct": 49.1,
-        "order_short_pct": 50.9,
+        "order_long_pct": 49.0,
+        "order_short_pct": 51.0,
         "top_bsl": [
           {
             "price": 1.3125,
@@ -4100,20 +4100,20 @@
       "prob_buy": 47,
       "prob_sell": 53,
       "retail_sentiment": {
-        "long_pct": 62.7,
-        "short_pct": 37.3,
-        "longs_in_loss": 33.7,
+        "long_pct": 62.9,
+        "short_pct": 37.1,
+        "longs_in_loss": 33.8,
         "shorts_in_loss": 12.7,
-        "summary": "Minoristas 62.7% Comprados vs 37.3% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+        "summary": "Minoristas 62.9% Comprados vs 37.1% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
       },
       "order_book": {
-        "order_long_pct": 66.8,
-        "order_short_pct": 33.2,
+        "order_long_pct": 66.6,
+        "order_short_pct": 33.4,
         "top_bsl": [
           {
-            "price": 3705.0,
-            "density_pct": 0.68,
-            "dist_pips": 8039.0,
+            "price": 3703.0,
+            "density_pct": 0.93,
+            "dist_pips": 7839.0,
             "label": "Buy Stops / BSL"
           },
           {
@@ -4149,7 +4149,7 @@
             "label": "Sell Stops / SSL"
           }
         ],
-        "bsl_target": 3705.0,
+        "bsl_target": 3703.0,
         "ssl_target": 3580.0
       },
       "technical_smc": {
@@ -8183,19 +8183,19 @@
       "prob_buy": 43,
       "prob_sell": 57,
       "retail_sentiment": {
-        "long_pct": 64.0,
-        "short_pct": 36.0,
+        "long_pct": 63.9,
+        "short_pct": 36.1,
         "longs_in_loss": 30.5,
         "shorts_in_loss": 18.2,
-        "summary": "Minoristas 64.0% Comprados vs 36.0% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+        "summary": "Minoristas 63.9% Comprados vs 36.1% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
       },
       "order_book": {
-        "order_long_pct": 46.2,
-        "order_short_pct": 53.8,
+        "order_long_pct": 46.3,
+        "order_short_pct": 53.7,
         "top_bsl": [
           {
             "price": 0.6685,
-            "density_pct": 0.27,
+            "density_pct": 0.28,
             "dist_pips": 25.8,
             "label": "Buy Stops / BSL"
           },
@@ -8215,7 +8215,7 @@
         "top_ssl": [
           {
             "price": 0.6645,
-            "density_pct": 0.25,
+            "density_pct": 0.23,
             "dist_pips": 14.2,
             "label": "Sell Stops / SSL"
           },
