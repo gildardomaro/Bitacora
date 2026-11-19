@@ -154,17 +154,27 @@ module.exports = async function handler(req, res) {
       if (!ALLOWED_TFS.has(tf)) {
         return res.status(400).json({ error: "Unsupported timeframe" });
       }
-      const count = Math.min(200, Math.max(20, parseInt((req.query && req.query.count) || "110", 10) || 110));
-      const r = await fetch(`${baseUrl}/instruments/${inst.raw}/candles?count=${count}&granularity=${tf}`, { headers });
+      const count = Math.min(500, Math.max(20, parseInt((req.query && req.query.count) || "300", 10) || 300));
+      const rawTo = req.query && req.query.to ? parseInt(String(req.query.to), 10) : 0;
+      let url = `${baseUrl}/instruments/${inst.raw}/candles?count=${count}&granularity=${tf}`;
+      if (rawTo && Number.isFinite(rawTo) && rawTo > 946684800) {
+        url += `&to=${rawTo}`;
+      }
+      const r = await fetch(url, { headers });
       if (!r.ok) {
         return res.status(r.status).json({ error: "Upstream candle fetch failed" });
       }
       const j = await r.json();
+      let parsed = parseOhlc(j.candles, inst.digits);
+      if (rawTo && Number.isFinite(rawTo) && rawTo > 946684800) {
+        parsed = parsed.filter(c => c.time < rawTo);
+      }
       return res.status(200).json({
         success: true,
         symbol: inst.key,
         tf,
-        candles: parseOhlc(j.candles, inst.digits)
+        candles: parsed,
+        has_more: parsed.length >= 15
       });
     }
 
