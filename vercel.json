@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "headers": [
     {
-      "source": "/(.*)(static_data\\.js|radar_data_cache\\.json)",
+      "source": "/(.*)(static_data\\.js|radar_data_cache\\.json|radar_ai_copilot\\.js|auth\\.js|index\\.html)",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
       ]

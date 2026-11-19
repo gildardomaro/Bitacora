@@ -481,6 +481,28 @@
       color: #ff6b8b;
       box-shadow: 0 0 14px rgba(255, 51, 102, 0.35);
     }
+    .cp-action-btn.tg-send-btn {
+      background: linear-gradient(135deg, rgba(34, 158, 217, 0.26), rgba(0, 136, 204, 0.36));
+      border: 1px solid #29b6f6;
+      color: #e0f7ff;
+      padding: 5px 12px;
+      box-shadow: 0 0 12px rgba(41, 182, 246, 0.28);
+    }
+    .cp-action-btn.tg-send-btn:hover {
+      background: linear-gradient(135deg, rgba(34, 158, 217, 0.44), rgba(0, 136, 204, 0.56));
+      color: #ffffff;
+      box-shadow: 0 0 16px rgba(41, 182, 246, 0.48);
+    }
+    .cp-action-btn.tg-send-btn.tg-ok {
+      background: rgba(0, 230, 118, 0.28);
+      border-color: #00e676;
+      color: #00ff88;
+    }
+    .cp-action-btn.tg-send-btn.tg-err {
+      background: rgba(255, 51, 102, 0.28);
+      border-color: #ff3366;
+      color: #ff6b8b;
+    }
     .cp-float-expand-btn {
       position: absolute;
       bottom: 36px;
@@ -885,9 +907,10 @@
                 <button class="cp-layer-btn active" id="btnToggleEQ" title="Mostrar/Ocultar 50% Equilibrium SMC">⚖️ 50% EQ</button>
                 <button class="cp-layer-btn active" id="btnToggleEMA" title="Mostrar/Ocultar EMAs 12/26">📈 EMAs</button>
                 <span style="color:#334155;">|</span>
-                <!-- Historial & Pantalla Expandida -->
+                <!-- Historial, Telegram & Pantalla Expandida -->
                 <button class="cp-action-btn" id="btnLoadMoreHistory" title="Cargar +300 velas más atrás en el historial">⏮ +Historial</button>
                 <button class="cp-action-btn" id="btnScrollLatest" title="Volver a la vela actual en vivo">⏭ Hoy</button>
+                <button class="cp-action-btn tg-send-btn" id="btnSendTelegram" title="Enviar señal SMC completa y captura del gráfico a Telegram">📨 Telegram</button>
                 <button class="cp-action-btn expand-btn-highlight" id="btnExpandChart" title="Expandir gráfico a pantalla completa manteniendo visible la IA">⛶ Pantalla Completa</button>
               </div>
             </div>
@@ -2396,6 +2419,314 @@ REGLAS ESTRICTAS:
           recognition.start();
         }
       });
+    }
+
+    // 10. Envío de Señal SMC + Captura del Gráfico a Telegram
+    const btnSendTelegram = document.getElementById("btnSendTelegram");
+    if (btnSendTelegram) {
+      btnSendTelegram.addEventListener("click", () => {
+        sendSignalToTelegram();
+      });
+    }
+  }
+
+  // ==================== ENVÍO DE SEÑALES SMC A TELEGRAM (VERCEL /api/telegram) ====================
+  function escapeHtmlTg(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function computeLastEmas(candles) {
+    if (!candles || candles.length < 2) return { ema12: null, ema26: null, atr: 0 };
+    const kFast = 2 / 13, kSlow = 2 / 27;
+    let eF = candles[0].close;
+    let eS = candles[0].close;
+    let trSum = 0;
+    const atrWin = Math.min(14, candles.length - 1);
+    for (let i = 1; i < candles.length; i++) {
+      const c = candles[i];
+      const p = candles[i - 1];
+      eF = c.close * kFast + eF * (1 - kFast);
+      eS = c.close * kSlow + eS * (1 - kSlow);
+      if (i >= candles.length - atrWin) {
+        const tr = Math.max(
+          c.high - c.low,
+          Math.abs(c.high - p.close),
+          Math.abs(c.low - p.close)
+        );
+        trSum += tr;
+      }
+    }
+    return {
+      ema12: eF,
+      ema26: eS,
+      atr: atrWin > 0 ? trSum / atrWin : 0
+    };
+  }
+
+  function buildTelegramSmcSignal() {
+    const inst = getActiveInst();
+    const digits = inst.digits || 5;
+    const fmt = (v) => (typeof v === "number" && isFinite(v)) ? v.toFixed(digits) : "--";
+    const radar = getActiveAssetRadar() || {};
+    const candles = Array.isArray(chartCandles) ? chartCandles : [];
+    const lastC = candles.length ? candles[candles.length - 1] : null;
+    const price = lastC ? lastC.close : (typeof radar.price === "number" ? radar.price : null);
+
+    const { ema12, ema26, atr } = computeLastEmas(candles);
+    const emaBull = (ema12 !== null && ema26 !== null) ? ema12 > ema26 : null;
+
+    const eqMid = (smcAnalysis && typeof smcAnalysis.eqMid === "number") ? smcAnalysis.eqMid : null;
+    const bslSwing = (smcAnalysis && typeof smcAnalysis.bslSwing === "number") ? smcAnalysis.bslSwing : null;
+    const sslSwing = (smcAnalysis && typeof smcAnalysis.sslSwing === "number") ? smcAnalysis.sslSwing : null;
+    const bslPool = (radar.order_book && typeof radar.order_book.bsl_price === "number") ? radar.order_book.bsl_price : bslSwing;
+    const sslPool = (radar.order_book && typeof radar.order_book.ssl_price === "number") ? radar.order_book.ssl_price : sslSwing;
+
+    const obs = (smcAnalysis && Array.isArray(smcAnalysis.orderBlocks)) ? smcAnalysis.orderBlocks : [];
+    const bullOBs = obs.filter(o => o.type === "BULL");
+    const bearOBs = obs.filter(o => o.type === "BEAR");
+    const nearBullOB = bullOBs.length ? bullOBs[bullOBs.length - 1] : null;
+    const nearBearOB = bearOBs.length ? bearOBs[bearOBs.length - 1] : null;
+
+    // Detectar barrido de liquidez en las últimas 10 velas
+    let sweepTxt = "Sin barrido reciente (estructura en formación)";
+    if (candles.length >= 12 && bslSwing !== null && sslSwing !== null) {
+      const recent = candles.slice(-10);
+      const sweptHigh = recent.some(c => c.high >= bslSwing * 0.99995 && c.close < bslSwing);
+      const sweptLow  = recent.some(c => c.low  <= sslSwing * 1.00005 && c.close > sslSwing);
+      if (sweptLow && !sweptHigh) sweepTxt = "Barrido SSL (Liquidez inferior tomada)";
+      else if (sweptHigh && !sweptLow) sweepTxt = "Barrido BSL (Liquidez superior tomada)";
+      else if (sweptHigh && sweptLow) sweepTxt = "Barrido doble BSL/SSL (alta volatilidad)";
+    }
+
+    // Detectar toque / mitigación de Order Block
+    let obTouchTxt = "Precio entre zonas OB";
+    if (price !== null && nearBullOB && price <= nearBullOB.top && price >= nearBullOB.bot) {
+      obTouchTxt = `Testeando OB+ Demanda (${fmt(nearBullOB.bot)} - ${fmt(nearBullOB.top)})`;
+    } else if (price !== null && nearBearOB && price >= nearBearOB.bot && price <= nearBearOB.top) {
+      obTouchTxt = `Testeando OB- Oferta (${fmt(nearBearOB.bot)} - ${fmt(nearBearOB.top)})`;
+    }
+
+    // Determinar dirección del Setup SMC
+    const radarBias = String(radar.bias || "").toUpperCase();
+    let score = 0;
+    if (emaBull === true) score += 1;
+    else if (emaBull === false) score -= 1;
+    if (radarBias.includes("ALCISTA") || radarBias.includes("COMPRA") || radarBias.includes("BULL")) score += 1;
+    else if (radarBias.includes("BAJISTA") || radarBias.includes("VENTA") || radarBias.includes("BEAR")) score -= 1;
+    if (price !== null && eqMid !== null) {
+      if (price < eqMid) score += 0.5; // Zona Descuento
+      else if (price > eqMid) score -= 0.5; // Zona Premium
+    }
+
+    let dir = "COMPRA";
+    let dirEmoji = "🟢";
+    if (score < 0) {
+      dir = "VENTA";
+      dirEmoji = "🔴";
+    } else if (score === 0) {
+      dir = emaBull === false ? "VENTA" : "COMPRA";
+      dirEmoji = dir === "COMPRA" ? "🟢" : "🔴";
+    }
+
+    // Calcular Entrada, SL, TP1, TP2 y R:R
+    const step = Math.max(atr || 0, price ? price * 0.0012 : 0.001);
+    let entry = price;
+    let sl = null, tp1 = null, tp2 = null;
+
+    if (price !== null) {
+      if (dir === "COMPRA") {
+        const obSl = nearBullOB && nearBullOB.bot < price ? (nearBullOB.bot - step * 0.35) : (price - step * 1.4);
+        sl = Math.min(obSl, price - step * 0.8);
+        const risk = Math.max(price - sl, step * 0.5);
+        tp1 = (eqMid && eqMid > price + risk * 0.6) ? eqMid : (price + risk * 1.5);
+        tp2 = (bslPool && bslPool > tp1) ? bslPool : (price + risk * 2.5);
+      } else {
+        const obSl = nearBearOB && nearBearOB.top > price ? (nearBearOB.top + step * 0.35) : (price + step * 1.4);
+        sl = Math.max(obSl, price + step * 0.8);
+        const risk = Math.max(sl - price, step * 0.5);
+        tp1 = (eqMid && eqMid < price - risk * 0.6) ? eqMid : (price - risk * 1.5);
+        tp2 = (sslPool && sslPool < tp1) ? sslPool : (price - risk * 2.5);
+      }
+    }
+
+    const rr2 = (entry !== null && sl !== null && tp2 !== null && Math.abs(entry - sl) > 0)
+      ? (Math.abs(tp2 - entry) / Math.abs(entry - sl)).toFixed(2)
+      : "--";
+
+    const zoneLabel = (price !== null && eqMid !== null)
+      ? (price < eqMid ? "Descuento (&lt;50% EQ)" : "Premium (&gt;50% EQ)")
+      : "--";
+    const emaLabel = emaBull === true
+      ? `Alcista (EMA12 ${fmt(ema12)} &gt; EMA26 ${fmt(ema26)})`
+      : emaBull === false
+        ? `Bajista (EMA12 ${fmt(ema12)} &lt; EMA26 ${fmt(ema26)})`
+        : "--";
+
+    const nowStr = new Date().toLocaleTimeString("es-MX", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+    const rawMsg = [
+      `📡 <b>SEÑAL INSTITUCIONAL SMART+IA SMC</b>`,
+      `${dirEmoji} <b>${escapeHtmlTg(currentAssetKey)} · ${escapeHtmlTg(currentTf)} — ${dir}</b>`,
+      `🕒 Hora: <code>${escapeHtmlTg(nowStr)}</code> | Precio: <code>${fmt(price)}</code>`,
+      ``,
+      `🎯 <b>PLAN OPERATIVO</b>`,
+      `• Entrada: <code>${fmt(entry)}</code>`,
+      `• Stop Loss (SL): <code>${fmt(sl)}</code>`,
+      `• TP1: <code>${fmt(tp1)}</code> | TP2: <code>${fmt(tp2)}</code> (R:R 1:${rr2})`,
+      ``,
+      `📦 <b>CONFLUENCIA SMC</b>`,
+      `• Liquidez: ${escapeHtmlTg(sweepTxt)}`,
+      `• BSL: <code>${fmt(bslPool)}</code> | SSL: <code>${fmt(sslPool)}</code>`,
+      `• OB+ Demanda: <code>${nearBullOB ? `${fmt(nearBullOB.bot)} - ${fmt(nearBullOB.top)}` : "--"}</code>`,
+      `• OB- Oferta: <code>${nearBearOB ? `${fmt(nearBearOB.bot)} - ${fmt(nearBearOB.top)}` : "--"}</code>`,
+      `• Estado OB: ${escapeHtmlTg(obTouchTxt)}`,
+      `• EMAs 12/26: ${emaLabel}`,
+      `• Zona 50% EQ: <code>${fmt(eqMid)}</code> (${zoneLabel})`
+    ].join("\n");
+
+    const cleanMsg = sanitizeInstitutionalText(rawMsg);
+    const shortCap = sanitizeInstitutionalText(
+      `📡 <b>${escapeHtmlTg(currentAssetKey)} · ${escapeHtmlTg(currentTf)} — ${dirEmoji} ${dir}</b> | Precio: <code>${fmt(price)}</code>`
+    );
+
+    return {
+      message: cleanMsg,
+      caption: shortCap,
+      dir: dir,
+      priceStr: fmt(price),
+      nowStr: nowStr
+    };
+  }
+
+  function captureSmcChartDataUrl(signalMeta) {
+    try {
+      if (!tvChart || typeof tvChart.takeScreenshot !== "function") return null;
+      // Asegurar que el overlay SMC esté recién dibujado antes de capturar
+      drawSmcOverlay();
+      const chartShot = tvChart.takeScreenshot();
+      if (!chartShot || !chartShot.width || !chartShot.height) return null;
+
+      const overlay = document.getElementById("cp_smc_canvas");
+      const headerH = 44;
+      const out = document.createElement("canvas");
+      out.width = chartShot.width;
+      out.height = chartShot.height + headerH;
+      const ctx = out.getContext("2d");
+
+      // Fondo oscuro + barra superior institucional
+      ctx.fillStyle = "#070a10";
+      ctx.fillRect(0, 0, out.width, out.height);
+
+      ctx.fillStyle = "#0d1322";
+      ctx.fillRect(0, 0, out.width, headerH);
+      ctx.strokeStyle = "rgba(0, 240, 255, 0.35)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, headerH - 0.5);
+      ctx.lineTo(out.width, headerH - 0.5);
+      ctx.stroke();
+
+      const dirColor = signalMeta && signalMeta.dir === "VENTA" ? "#ff3366" : "#00e676";
+      ctx.fillStyle = "#00f0ff";
+      ctx.font = "bold 15px 'JetBrains Mono', Consolas, monospace";
+      const headerLeft = `SMART+IA SMC  |  ${currentAssetKey} · ${currentTf}  |  Precio: ${signalMeta ? signalMeta.priceStr : "--"}`;
+      ctx.fillText(headerLeft, 14, 27);
+
+      if (signalMeta && signalMeta.dir) {
+        ctx.fillStyle = dirColor;
+        const rightTxt = `${signalMeta.dir}  ·  ${signalMeta.nowStr || ""}`;
+        const tw = ctx.measureText(rightTxt).width;
+        ctx.fillText(rightTxt, Math.max(14, out.width - tw - 16), 27);
+      }
+
+      // Dibujar el gráfico base de LightweightCharts
+      ctx.drawImage(chartShot, 0, headerH);
+
+      // Componer encima el canvas SMC (OB+, OB-, BSL, SSL, 50% EQ)
+      if (overlay && overlay.width > 0 && overlay.height > 0) {
+        ctx.drawImage(overlay, 0, 0, overlay.width, overlay.height, 0, headerH, chartShot.width, chartShot.height);
+      }
+
+      return out.toDataURL("image/jpeg", 0.88);
+    } catch (e) {
+      console.warn("No se pudo capturar el gráfico SMC:", e);
+      return null;
+    }
+  }
+
+  async function sendSignalToTelegram() {
+    const btn = document.getElementById("btnSendTelegram");
+    const statusPill = document.getElementById("cpStatusPill");
+    if (!btn || btn.disabled) return;
+
+    const origLabel = "📨 Telegram";
+    btn.disabled = true;
+    btn.classList.remove("tg-ok", "tg-err");
+    btn.textContent = "⏳ Enviando...";
+
+    try {
+      const sig = buildTelegramSmcSignal();
+      const imageBase64 = captureSmcChartDataUrl(sig);
+
+      const endpoints = isLocalHost()
+        ? ["http://127.0.0.1:8080/api/telegram", "/api/telegram", "api/telegram"]
+        : ["/api/telegram", "api/telegram", "../api/telegram"];
+
+      let lastErr = "No se pudo conectar con /api/telegram";
+      let sent = false;
+
+      for (const ep of endpoints) {
+        try {
+          const resp = await fetch(ep, {
+            method: "POST",
+            headers: getAuthHeaders({ "Content-Type": "application/json" }),
+            body: JSON.stringify({
+              message: sig.message,
+              caption: sig.caption,
+              imageBase64: imageBase64 || "",
+              parseMode: "HTML"
+            })
+          });
+          const data = await resp.json().catch(() => ({}));
+          if (resp.ok && data.success) {
+            sent = true;
+            break;
+          }
+          lastErr = data.error || data.hint || `HTTP ${resp.status}`;
+          if (resp.status === 401 || resp.status === 503) break;
+        } catch (err) {
+          lastErr = err.message || String(err);
+        }
+      }
+
+      if (sent) {
+        btn.classList.add("tg-ok");
+        btn.textContent = "✅ Enviado";
+        if (statusPill) {
+          statusPill.textContent = `✅ Señal ${currentAssetKey} (${currentTf}) enviada a Telegram`;
+        }
+      } else {
+        btn.classList.add("tg-err");
+        btn.textContent = "⚠️ Error TG";
+        if (statusPill) {
+          statusPill.textContent = `⚠️ Telegram: ${lastErr}`;
+        }
+      }
+    } catch (e) {
+      btn.classList.add("tg-err");
+      btn.textContent = "⚠️ Error TG";
+      if (statusPill) {
+        statusPill.textContent = `⚠️ Error Telegram: ${e.message || e}`;
+      }
+    } finally {
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.classList.remove("tg-ok", "tg-err");
+        btn.textContent = origLabel;
+      }, 3200);
     }
   }
 

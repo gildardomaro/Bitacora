@@ -647,6 +647,21 @@
     })();
   </script>
   <script src="lightweight-charts.standalone.production.js" onerror="if(!this.dataset.fb){this.dataset.fb='1';var s=document.createElement('script');s.src='../lightweight-charts.standalone.production.js';document.body.appendChild(s);}"></script>
-  <script src="radar_ai_copilot.js" onerror="if(!this.dataset.fb){this.dataset.fb='1';var s=document.createElement('script');s.src='../radar_ai_copilot.js';document.body.appendChild(s);}"></script>
+  <script>
+    (function () {
+      var v = Date.now();
+      var s = document.createElement('script');
+      s.src = 'radar_ai_copilot.js?v=' + v;
+      s.onerror = function () {
+        if (!this.dataset.fb) {
+          this.dataset.fb = '1';
+          var fb = document.createElement('script');
+          fb.src = '../radar_ai_copilot.js?v=' + v;
+          document.body.appendChild(fb);
+        }
+      };
+      document.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>
