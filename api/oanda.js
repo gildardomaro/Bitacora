@@ -96,16 +96,35 @@ function parseOhlc(candles, digits) {
   return out;
 }
 
+const crypto = require("crypto");
+
+const EXPECTED_AUTH_TOKEN = process.env.RADAR_AUTH_TOKEN ||
+  "1a442fdc3e588ede068248fb11cc950266fa3642bc132375d12e354d641cd122";
+
+function isAuthorizedRequest(req) {
+  const provided = String((req.headers && (req.headers["x-radar-auth"] || req.headers["X-Radar-Auth"])) || "").trim();
+  if (!provided || provided.length !== EXPECTED_AUTH_TOKEN.length) return false;
+  try {
+    return crypto.timingSafeEqual(Buffer.from(provided), Buffer.from(EXPECTED_AUTH_TOKEN));
+  } catch (_) {
+    return false;
+  }
+}
+
 module.exports = async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, X-Radar-Auth");
 
   if (req.method === "OPTIONS") {
     return res.status(204).end();
   }
   if (req.method !== "GET") {
     return res.status(405).json({ error: "Method not allowed" });
+  }
+  if (!isAuthorizedRequest(req)) {
+    return res.status(401).json({ success: false, error: "Acceso restringido. Inicia sesión para continuar." });
   }
 
   const token = process.env.OANDA_API_TOKEN;
