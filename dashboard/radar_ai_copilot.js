@@ -468,10 +468,44 @@
       opacity: 0.45;
       cursor: wait;
     }
+    .cp-action-btn.expand-btn-highlight {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(112, 0, 255, 0.32));
+      border: 1px solid #00f0ff;
+      color: #ffffff;
+      padding: 5px 12px;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.28);
+    }
     .cp-action-btn.expand-active {
-      background: rgba(255, 51, 102, 0.2);
-      border-color: rgba(255, 51, 102, 0.6);
+      background: rgba(255, 51, 102, 0.25);
+      border-color: #ff3366;
       color: #ff6b8b;
+      box-shadow: 0 0 14px rgba(255, 51, 102, 0.35);
+    }
+    .cp-float-expand-btn {
+      position: absolute;
+      bottom: 36px;
+      left: 12px;
+      z-index: 20;
+      background: rgba(7, 10, 18, 0.88);
+      border: 1px solid rgba(0, 240, 255, 0.55);
+      color: #00f0ff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      transition: all 0.18s ease;
+    }
+    .cp-float-expand-btn:hover {
+      background: rgba(0, 240, 255, 0.22);
+      color: #ffffff;
+      transform: translateY(-1px);
     }
     /* MODO PANTALLA EXPANDIDA (GRÁFICO GIGANTE + IA SIEMPRE VISIBLE AL LADO) */
     .copilot-master-panel.cp-expanded {
@@ -854,7 +888,7 @@
                 <!-- Historial & Pantalla Expandida -->
                 <button class="cp-action-btn" id="btnLoadMoreHistory" title="Cargar +300 velas más atrás en el historial">⏮ +Historial</button>
                 <button class="cp-action-btn" id="btnScrollLatest" title="Volver a la vela actual en vivo">⏭ Hoy</button>
-                <button class="cp-action-btn" id="btnExpandChart" title="Expandir gráfico a pantalla completa manteniendo visible la IA">⛶ Expandir</button>
+                <button class="cp-action-btn expand-btn-highlight" id="btnExpandChart" title="Expandir gráfico a pantalla completa manteniendo visible la IA">⛶ Pantalla Completa</button>
               </div>
             </div>
 
@@ -865,6 +899,7 @@
                 <div class="cp-leg-pill"><span style="color:#FFD700;">---</span><span>BSL / SSL Estructura</span></div>
                 <div class="cp-leg-pill"><span style="color:#00E5FF;">━━</span><span>Piscinas Liquidez (BSL/SSL)</span></div>
               </div>
+              <button class="cp-float-expand-btn" id="btnExpandChartFloat" title="Expandir o contraer gráfico a pantalla completa (ESC)">⛶ Pantalla Completa</button>
               <div id="cp_lw_chart"></div>
               <canvas id="cp_smc_canvas"></canvas>
             </div>
@@ -1666,14 +1701,18 @@
   function toggleChartExpanded(forceState) {
     const panel = document.getElementById("gbpCopilotMaster");
     const btn = document.getElementById("btnExpandChart");
+    const btnFloat = document.getElementById("btnExpandChartFloat");
     if (!panel) return;
     isChartExpanded = (typeof forceState === "boolean") ? forceState : !isChartExpanded;
     panel.classList.toggle("cp-expanded", isChartExpanded);
     document.body.style.overflow = isChartExpanded ? "hidden" : "";
     if (btn) {
-      btn.textContent = isChartExpanded ? "✕ Contraer" : "⛶ Expandir";
+      btn.textContent = isChartExpanded ? "✕ Salir Pantalla Completa" : "⛶ Pantalla Completa";
       btn.classList.toggle("expand-active", isChartExpanded);
       btn.title = isChartExpanded ? "Salir de pantalla completa (ESC)" : "Expandir gráfico a pantalla completa manteniendo visible la IA";
+    }
+    if (btnFloat) {
+      btnFloat.textContent = isChartExpanded ? "✕ Salir Pantalla Completa (ESC)" : "⛶ Pantalla Completa";
     }
     [20, 90, 220].forEach(ms => setTimeout(() => {
       if (_syncCanvasSizeFn) _syncCanvasSizeFn();
@@ -2219,6 +2258,10 @@ REGLAS ESTRICTAS:
     const btnExpand = document.getElementById("btnExpandChart");
     if (btnExpand) {
       btnExpand.addEventListener("click", () => toggleChartExpanded());
+    }
+    const btnExpandFloat = document.getElementById("btnExpandChartFloat");
+    if (btnExpandFloat) {
+      btnExpandFloat.addEventListener("click", () => toggleChartExpanded());
     }
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && isChartExpanded) {
