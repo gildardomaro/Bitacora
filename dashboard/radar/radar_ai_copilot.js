@@ -182,6 +182,11 @@
   let showLiq = true;
   let showEQ = true;
   let showEMA = true;
+  let isChartExpanded = false;
+  let isLoadingOlder = false;
+  let hasMoreHistory = true;
+  let _syncCanvasSizeFn = null;
+  let _lastOlderLoadAt = 0;
 
   function getActiveInst() {
     return INSTRUMENTS[currentAssetKey] || INSTRUMENTS["GBP/USD"];
@@ -441,6 +446,108 @@
       background: rgba(0, 230, 118, 0.16);
       border-color: rgba(0, 230, 118, 0.5);
       color: #00e676;
+    }
+    .cp-action-btn {
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      color: #00f0ff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .cp-action-btn:hover {
+      background: rgba(0, 240, 255, 0.22);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+    }
+    .cp-action-btn:disabled {
+      opacity: 0.45;
+      cursor: wait;
+    }
+    .cp-action-btn.expand-active {
+      background: rgba(255, 51, 102, 0.2);
+      border-color: rgba(255, 51, 102, 0.6);
+      color: #ff6b8b;
+    }
+    /* MODO PANTALLA EXPANDIDA (GRÁFICO GIGANTE + IA SIEMPRE VISIBLE AL LADO) */
+    .copilot-master-panel.cp-expanded {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      margin: 0;
+      border-radius: 0;
+      border: none;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #06090f;
+      box-shadow: none;
+    }
+    .copilot-master-panel.cp-expanded .copilot-top-bar {
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+    .copilot-master-panel.cp-expanded .copilot-brand h3 {
+      font-size: 15px;
+    }
+    .copilot-master-panel.cp-expanded .cp-asset-selector {
+      margin-bottom: 8px;
+      padding: 6px 10px;
+    }
+    .copilot-master-panel.cp-expanded .cp-asset-btn {
+      padding: 5px 12px;
+      font-size: 12px;
+    }
+    .copilot-master-panel.cp-expanded .cp-strip {
+      display: none;
+    }
+    .copilot-master-panel.cp-expanded .copilot-cockpit-grid {
+      flex: 1;
+      min-height: 0;
+      grid-template-columns: 1fr 355px;
+      gap: 12px;
+    }
+    .copilot-master-panel.cp-expanded .cp-tv-box {
+      height: 100%;
+      min-height: 0;
+    }
+    .copilot-master-panel.cp-expanded .cp-chart-stage {
+      min-height: 0;
+      height: 100%;
+    }
+    .copilot-master-panel.cp-expanded #cp_lw_chart {
+      height: 100% !important;
+    }
+    .copilot-master-panel.cp-expanded .cp-orb-box {
+      height: 100%;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 12px;
+      justify-content: flex-start;
+    }
+    .copilot-master-panel.cp-expanded .cp-orb-wrap {
+      width: 112px;
+      height: 112px;
+      flex-shrink: 0;
+    }
+    .copilot-master-panel.cp-expanded .cp-speech-area {
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    @media (max-width: 960px) {
+      .copilot-master-panel.cp-expanded .copilot-cockpit-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr minmax(210px, 34vh);
+      }
+      .copilot-master-panel.cp-expanded .cp-orb-wrap {
+        width: 72px;
+        height: 72px;
+      }
     }
     .cp-chart-stage {
       position: relative;
@@ -743,6 +850,11 @@
                 <button class="cp-layer-btn active" id="btnToggleLiq" title="Mostrar/Ocultar Liquidez BSL y SSL">💧 BSL/SSL</button>
                 <button class="cp-layer-btn active" id="btnToggleEQ" title="Mostrar/Ocultar 50% Equilibrium SMC">⚖️ 50% EQ</button>
                 <button class="cp-layer-btn active" id="btnToggleEMA" title="Mostrar/Ocultar EMAs 12/26">📈 EMAs</button>
+                <span style="color:#334155;">|</span>
+                <!-- Historial & Pantalla Expandida -->
+                <button class="cp-action-btn" id="btnLoadMoreHistory" title="Cargar +300 velas más atrás en el historial">⏮ +Historial</button>
+                <button class="cp-action-btn" id="btnScrollLatest" title="Volver a la vela actual en vivo">⏭ Hoy</button>
+                <button class="cp-action-btn" id="btnExpandChart" title="Expandir gráfico a pantalla completa manteniendo visible la IA">⛶ Expandir</button>
               </div>
             </div>
 
@@ -852,6 +964,10 @@
 
     if (changed || !chartCandles.length) {
       chartCandles = [];
+      hasMoreHistory = true;
+      isLoadingOlder = false;
+      const btnHist = document.getElementById("btnLoadMoreHistory");
+      if (btnHist) { btnHist.disabled = false; btnHist.textContent = "⏮ +Historial"; }
       loadChartCandles(currentTf, false);
     }
 
@@ -917,6 +1033,7 @@
       if (authed) {
         startCopilotLiveFeeds();
       } else {
+        if (isChartExpanded) toggleChartExpanded(false);
         if (autoTimer) {
           clearInterval(autoTimer);
           autoTimer = null;
@@ -1016,9 +1133,9 @@
     });
 
     function syncCanvasSize() {
-      if (!overlay || !container) return;
-      const w = container.clientWidth;
-      const h = container.clientHeight;
+      if (!overlay || !container || !stage) return;
+      const w = stage.clientWidth || container.clientWidth;
+      const h = isChartExpanded ? (stage.clientHeight || container.clientHeight) : (container.clientHeight || 500);
       if (w > 0 && h > 0) {
         tvChart.applyOptions({ width: w, height: h });
         overlay.width = w;
@@ -1028,6 +1145,7 @@
         drawSmcOverlay();
       }
     }
+    _syncCanvasSizeFn = syncCanvasSize;
 
     window.addEventListener("resize", syncCanvasSize);
     if (window.ResizeObserver) {
@@ -1044,8 +1162,19 @@
     });
     syncCanvasSize();
 
-    tvChart.timeScale().subscribeVisibleLogicalRangeChange(() => {
+    tvChart.timeScale().subscribeVisibleLogicalRangeChange((logicalRange) => {
       requestAnimationFrame(drawSmcOverlay);
+      // Auto-carga progresiva hacia atrás al arrastrar cerca del borde izquierdo
+      if (
+        logicalRange &&
+        logicalRange.from < 12 &&
+        chartCandles.length >= 20 &&
+        hasMoreHistory &&
+        !isLoadingOlder &&
+        (Date.now() - _lastOlderLoadAt) > 1200
+      ) {
+        loadOlderCandles(true);
+      }
     });
     tvChart.subscribeCrosshairMove(() => {
       requestAnimationFrame(drawSmcOverlay);
@@ -1350,16 +1479,25 @@
     return [];
   }
 
-  function renderCandlesIntoChart(candles, tf, silentUpdate) {
-    if (!candleSeries || !candles || !candles.length) return;
-    const inst = getActiveInst();
+  function mergeCandlesLists(existing, incoming) {
     const mapByTime = new Map();
-    candles.forEach(c => {
+    (existing || []).forEach(c => {
       if (c && typeof c.time === "number" && !isNaN(c.open) && !isNaN(c.close)) {
         mapByTime.set(c.time, c);
       }
     });
-    const cleanCandles = Array.from(mapByTime.values()).sort((a, b) => a.time - b.time);
+    (incoming || []).forEach(c => {
+      if (c && typeof c.time === "number" && !isNaN(c.open) && !isNaN(c.close)) {
+        mapByTime.set(c.time, c);
+      }
+    });
+    return Array.from(mapByTime.values()).sort((a, b) => a.time - b.time);
+  }
+
+  function renderCandlesIntoChart(candles, tf, silentUpdate, preserveRange) {
+    if (!candleSeries || !candles || !candles.length) return;
+    const inst = getActiveInst();
+    const cleanCandles = mergeCandlesLists([], candles);
     if (cleanCandles.length < 5) return;
 
     chartCandles = cleanCandles;
@@ -1385,23 +1523,106 @@
       candleSeries.setMarkers([]);
     }
 
-    const container = document.getElementById("cp_lw_chart");
-    const overlay = document.getElementById("cp_smc_canvas");
-    if (container && overlay && container.clientWidth > 0) {
-      tvChart.applyOptions({ width: container.clientWidth, height: container.clientHeight || 500 });
-      overlay.width = container.clientWidth;
-      overlay.height = container.clientHeight || 500;
+    if (_syncCanvasSizeFn) {
+      _syncCanvasSizeFn();
+    } else {
+      const container = document.getElementById("cp_lw_chart");
+      const overlay = document.getElementById("cp_smc_canvas");
+      if (container && overlay && container.clientWidth > 0) {
+        tvChart.applyOptions({ width: container.clientWidth, height: container.clientHeight || 500 });
+        overlay.width = container.clientWidth;
+        overlay.height = container.clientHeight || 500;
+      }
     }
 
-    if (!silentUpdate) {
-      tvChart.timeScale().fitContent();
+    if (preserveRange && typeof preserveRange.from === "number" && typeof preserveRange.to === "number") {
+      try {
+        tvChart.timeScale().setVisibleLogicalRange(preserveRange);
+      } catch (_) {}
+    } else if (!silentUpdate) {
+      // Mostrar las últimas ~110 velas en zoom cómodo dejando el resto del historial listo al deslizar a la izquierda
+      if (cleanCandles.length > 115) {
+        try {
+          tvChart.timeScale().setVisibleLogicalRange({
+            from: cleanCandles.length - 110,
+            to: cleanCandles.length + 8
+          });
+        } catch (_) {
+          tvChart.timeScale().fitContent();
+        }
+      } else {
+        tvChart.timeScale().fitContent();
+      }
     }
     const statusEl = document.getElementById("cpChartStatus");
     if (statusEl) {
-      statusEl.textContent = `(${inst.shortTitle} ${tf} • ${smcAnalysis.orderBlocks.length} OB Activos + BSL/SSL)`;
+      statusEl.textContent = `(${inst.shortTitle} ${tf} • ${cleanCandles.length} velas • ${smcAnalysis.orderBlocks.length} OB + BSL/SSL)`;
     }
     requestAnimationFrame(drawSmcOverlay);
     setTimeout(() => requestAnimationFrame(drawSmcOverlay), 120);
+  }
+
+  async function loadOlderCandles(isAutoScroll) {
+    if (!candleSeries || !chartCandles.length || isLoadingOlder || !hasMoreHistory) return;
+    if (chartCandles.length >= 3000) {
+      hasMoreHistory = false;
+      return;
+    }
+    const inst = getActiveInst();
+    const requestedKey = currentAssetKey;
+    const requestedTf = currentTf;
+    const oldestTime = chartCandles[0].time;
+    const prevCount = chartCandles.length;
+    const prevRange = tvChart ? tvChart.timeScale().getVisibleLogicalRange() : null;
+
+    isLoadingOlder = true;
+    _lastOlderLoadAt = Date.now();
+    const btnHist = document.getElementById("btnLoadMoreHistory");
+    if (btnHist) {
+      btnHist.disabled = true;
+      btnHist.textContent = "⏳ Cargando...";
+    }
+
+    try {
+      const data = await fetchOandaProxy(
+        `action=candles&instrument=${encodeURIComponent(inst.raw)}&tf=${encodeURIComponent(requestedTf)}&count=300&to=${oldestTime}`
+      );
+      if (
+        data &&
+        Array.isArray(data.candles) &&
+        data.candles.length > 0 &&
+        currentAssetKey === requestedKey &&
+        currentTf === requestedTf
+      ) {
+        const merged = mergeCandlesLists(data.candles, chartCandles);
+        const addedCount = merged.length - prevCount;
+        if (addedCount > 0) {
+          let nextRange = null;
+          if (prevRange) {
+            // Si el usuario dio clic al botón, desplazar un poco hacia el pasado para que vea de inmediato las velas nuevas
+            const extraShift = isAutoScroll ? 0 : -Math.min(80, addedCount);
+            nextRange = {
+              from: prevRange.from + addedCount + extraShift,
+              to: prevRange.to + addedCount + extraShift
+            };
+          }
+          renderCandlesIntoChart(merged, requestedTf, true, nextRange);
+        } else {
+          hasMoreHistory = false;
+        }
+        if (data.has_more === false) {
+          hasMoreHistory = false;
+        }
+      } else if (data && Array.isArray(data.candles) && data.candles.length === 0) {
+        hasMoreHistory = false;
+      }
+    } catch (_) {}
+
+    isLoadingOlder = false;
+    if (btnHist) {
+      btnHist.disabled = false;
+      btnHist.textContent = hasMoreHistory ? "⏮ +Historial" : "⏮ Inicio";
+    }
   }
 
   async function loadChartCandles(tf, silentUpdate) {
@@ -1411,27 +1632,53 @@
     const statusEl = document.getElementById("cpChartStatus");
     if (!silentUpdate && statusEl) statusEl.textContent = `(Cargando ${inst.shortTitle} ${tf}...)`;
 
-    // 1. Renderizar de inmediato desde caché pre-sincronizado
+    // 1. Renderizar de inmediato desde caché pre-sincronizado solo si aún no hay velas cargadas
     const cached = getCachedCandlesForTf(requestedKey, tf);
-    if (cached.length > 10 && (!chartCandles.length || !silentUpdate)) {
+    if (cached.length > 10 && !chartCandles.length) {
       renderCandlesIntoChart(cached, tf, silentUpdate);
     }
 
     // 2. Actualizar en vivo desde el proxy seguro del servidor (/api/oanda)
+    //    Carga inicial: 300 velas; refresh cada 15s: 120 velas fusionadas sin borrar historial antiguo.
     try {
-      const data = await fetchOandaProxy(`action=candles&instrument=${encodeURIComponent(inst.raw)}&tf=${encodeURIComponent(tf)}&count=110`);
-      if (data && Array.isArray(data.candles) && data.candles.length > 10 && currentAssetKey === requestedKey) {
-        renderCandlesIntoChart(data.candles, tf, silentUpdate);
+      const reqCount = (silentUpdate && chartCandles.length > 120) ? 120 : 300;
+      const data = await fetchOandaProxy(`action=candles&instrument=${encodeURIComponent(inst.raw)}&tf=${encodeURIComponent(tf)}&count=${reqCount}`);
+      if (data && Array.isArray(data.candles) && data.candles.length > 10 && currentAssetKey === requestedKey && currentTf === tf) {
+        if (silentUpdate && chartCandles.length > 0) {
+          const prevRange = tvChart ? tvChart.timeScale().getVisibleLogicalRange() : null;
+          const merged = mergeCandlesLists(chartCandles, data.candles);
+          renderCandlesIntoChart(merged, tf, true, prevRange);
+        } else {
+          renderCandlesIntoChart(data.candles, tf, silentUpdate);
+        }
         return;
       }
     } catch (e) {}
 
-    if (currentAssetKey === requestedKey) {
+    if (currentAssetKey === requestedKey && !chartCandles.length) {
       const retryCached = getCachedCandlesForTf(requestedKey, tf);
       if (retryCached.length > 10) {
         renderCandlesIntoChart(retryCached, tf, silentUpdate);
       }
     }
+  }
+
+  function toggleChartExpanded(forceState) {
+    const panel = document.getElementById("gbpCopilotMaster");
+    const btn = document.getElementById("btnExpandChart");
+    if (!panel) return;
+    isChartExpanded = (typeof forceState === "boolean") ? forceState : !isChartExpanded;
+    panel.classList.toggle("cp-expanded", isChartExpanded);
+    document.body.style.overflow = isChartExpanded ? "hidden" : "";
+    if (btn) {
+      btn.textContent = isChartExpanded ? "✕ Contraer" : "⛶ Expandir";
+      btn.classList.toggle("expand-active", isChartExpanded);
+      btn.title = isChartExpanded ? "Salir de pantalla completa (ESC)" : "Expandir gráfico a pantalla completa manteniendo visible la IA";
+    }
+    [20, 90, 220].forEach(ms => setTimeout(() => {
+      if (_syncCanvasSizeFn) _syncCanvasSizeFn();
+      requestAnimationFrame(drawSmcOverlay);
+    }, ms));
   }
 
   // --- ANIMACIÓN DEL ORBE 3D ---
@@ -1943,8 +2190,40 @@ REGLAS ESTRICTAS:
         document.querySelectorAll("[data-cp-tf]").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         currentTf = btn.getAttribute("data-cp-tf");
+        chartCandles = [];
+        hasMoreHistory = true;
+        isLoadingOlder = false;
+        const btnHist = document.getElementById("btnLoadMoreHistory");
+        if (btnHist) { btnHist.disabled = false; btnHist.textContent = "⏮ +Historial"; }
         loadChartCandles(currentTf, false);
       });
+    });
+
+    // 4b. Botones de Historial Profundo y Pantalla Expandida
+    const btnHist = document.getElementById("btnLoadMoreHistory");
+    if (btnHist) {
+      btnHist.addEventListener("click", () => loadOlderCandles(false));
+    }
+    const btnLatest = document.getElementById("btnScrollLatest");
+    if (btnLatest) {
+      btnLatest.addEventListener("click", () => {
+        if (tvChart && chartCandles.length > 10) {
+          tvChart.timeScale().setVisibleLogicalRange({
+            from: Math.max(0, chartCandles.length - 110),
+            to: chartCandles.length + 8
+          });
+          requestAnimationFrame(drawSmcOverlay);
+        }
+      });
+    }
+    const btnExpand = document.getElementById("btnExpandChart");
+    if (btnExpand) {
+      btnExpand.addEventListener("click", () => toggleChartExpanded());
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isChartExpanded) {
+        toggleChartExpanded(false);
+      }
     });
 
     // 5. Interruptores de Capas SMC
@@ -1954,8 +2233,12 @@ REGLAS ESTRICTAS:
       btn.addEventListener("click", () => {
         setter(!getter());
         btn.classList.toggle("active", getter());
-        if (id === "btnToggleEMA") loadChartCandles(currentTf, true);
-        else requestAnimationFrame(drawSmcOverlay);
+        if (id === "btnToggleEMA" && chartCandles.length) {
+          const prevRange = tvChart ? tvChart.timeScale().getVisibleLogicalRange() : null;
+          renderCandlesIntoChart(chartCandles, currentTf, true, prevRange);
+        } else {
+          requestAnimationFrame(drawSmcOverlay);
+        }
       });
     };
     bindToggle("btnToggleOB",  () => showOB,  v => { showOB = v; });
