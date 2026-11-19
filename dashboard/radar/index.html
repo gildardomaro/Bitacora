@@ -624,9 +624,26 @@
         renderUI();
       });
 
-      // Arranque y auto-refresh periódico del snapshot (calendario + activos) cada 60 segundos
-      loadData(false);
-      setInterval(() => loadData(true), 60000);
+      // Arranque protegido por sesión (carga inmediata si ya está autenticado o al iniciar sesión)
+      let refreshTimerStarted = false;
+      function startRadarIfAuthed() {
+        if (!canAccessRadar()) return;
+        loadData(false);
+        if (!refreshTimerStarted) {
+          refreshTimerStarted = true;
+          setInterval(() => {
+            if (canAccessRadar()) loadData(true);
+          }, 60000);
+        }
+      }
+
+      window.addEventListener('maro:auth-changed', (ev) => {
+        if (ev && ev.detail && ev.detail.authenticated) {
+          startRadarIfAuthed();
+        }
+      });
+
+      startRadarIfAuthed();
     })();
   </script>
   <script src="lightweight-charts.standalone.production.js" onerror="if(!this.dataset.fb){this.dataset.fb='1';var s=document.createElement('script');s.src='../lightweight-charts.standalone.production.js';document.body.appendChild(s);}"></script>
