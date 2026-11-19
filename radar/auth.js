@@ -219,7 +219,6 @@
       btnLogout.addEventListener('click', (e) => {
         e.preventDefault();
         clearSession();
-        dispatchAuthEvent(false);
         if (appCont) appCont.classList.add('blurred');
         if (overlay) {
           overlay.classList.remove('hidden');
@@ -242,7 +241,6 @@
   // Exponer objeto global para inspección o cambio de credenciales
   window.MaroAuth = {
     isAuthenticated,
-    getAuthToken,
     clearSession
   };
 })();
