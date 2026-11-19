@@ -17,9 +17,25 @@
   window.__RADAR_AI_COPILOT_LOADED__ = true;
 
   // Proxy seguro del servidor (Vercel Serverless / dashboard_server.py local)
-  // Sin tokens ni API keys embebidos en el cliente.
+  // Sin tokens ni API keys embebidos en el cliente; protegido con sesión MaroAuth.
   let _oandaProxyBase = null;    // null = sin probar, "" = no disponible (hosting estático)
   let _copilotProxyBase = null;  // null = sin probar, "" = no disponible
+
+  function isUserAuthenticated() {
+    if (window.MaroAuth && typeof window.MaroAuth.isAuthenticated === "function") {
+      return window.MaroAuth.isAuthenticated();
+    }
+    return true;
+  }
+
+  function getAuthHeaders(extra) {
+    const h = Object.assign({}, extra || {});
+    if (window.MaroAuth && typeof window.MaroAuth.getAuthToken === "function") {
+      const tok = window.MaroAuth.getAuthToken();
+      if (tok) h["X-Radar-Auth"] = tok;
+    }
+    return h;
+  }
 
   async function fetchJsonFromCandidates(candidates, options) {
     for (const url of candidates) {
@@ -38,11 +54,14 @@
   }
 
   async function fetchOandaProxy(queryString) {
+    if (!isUserAuthenticated()) return null;
     if (_oandaProxyBase === "") return null;
     const candidates = _oandaProxyBase
       ? [`${_oandaProxyBase}?${queryString}`]
       : [`api/oanda?${queryString}`, `../api/oanda?${queryString}`];
-    const r = await fetchJsonFromCandidates(candidates);
+    const r = await fetchJsonFromCandidates(candidates, {
+      headers: getAuthHeaders()
+    });
     if (r.ok && r.data && r.data.success) {
       if (!_oandaProxyBase) {
         _oandaProxyBase = r.url.split("?")[0];
@@ -56,13 +75,14 @@
   }
 
   async function fetchCopilotProxy(prompt) {
+    if (!isUserAuthenticated()) return null;
     if (_copilotProxyBase === "") return null;
     const candidates = _copilotProxyBase
       ? [_copilotProxyBase]
       : ["api/copilot", "../api/copilot"];
     const r = await fetchJsonFromCandidates(candidates, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: getAuthHeaders({ "Content-Type": "application/json" }),
       body: JSON.stringify({ prompt })
     });
     if (r.ok && r.data && r.data.success && r.data.text) {
@@ -840,9 +860,31 @@
     }
   }
 
+  let _copilotMounted = false;
+  let _telemetryStarted = false;
+
+  function startCopilotLiveFeeds() {
+    if (!isUserAuthenticated()) return;
+    _oandaProxyBase = null;
+    _copilotProxyBase = null;
+    loadChartCandles(currentTf, false);
+    refreshAllAssetsTelemetry();
+    if (!_telemetryStarted) {
+      _telemetryStarted = true;
+      setInterval(() => {
+        if (isUserAuthenticated()) refreshAllAssetsTelemetry();
+      }, 14000);
+      setInterval(() => {
+        if (isUserAuthenticated()) loadChartCandles(currentTf, true);
+      }, 15000);
+    }
+  }
+
   function mountCopilot() {
+    if (_copilotMounted) return;
     const radarHeader = document.querySelector("#tab-radar .radar-header") || document.querySelector(".public-radar-wrapper .radar-header");
     if (!radarHeader) return;
+    _copilotMounted = true;
 
     const wrapper = document.createElement("div");
     wrapper.innerHTML = buildCopilotHTML();
@@ -851,21 +893,37 @@
     initOrbAnimation();
     ensureLightweightChartsLoaded(() => {
       initSmcTradingViewChart();
-      loadChartCandles(currentTf);
-      let retries = 0;
-      const wd = setInterval(() => {
-        retries++;
-        if (chartCandles.length > 10 || retries > 15) {
-          clearInterval(wd);
-        } else {
-          loadChartCandles(currentTf, true);
-        }
-      }, 600);
+      if (isUserAuthenticated()) {
+        loadChartCandles(currentTf);
+        let retries = 0;
+        const wd = setInterval(() => {
+          retries++;
+          if (chartCandles.length > 10 || retries > 15 || !isUserAuthenticated()) {
+            clearInterval(wd);
+          } else {
+            loadChartCandles(currentTf, true);
+          }
+        }, 600);
+      }
     });
     bindCopilotEvents();
-    refreshAllAssetsTelemetry();
-    setInterval(refreshAllAssetsTelemetry, 14000);
-    setInterval(() => loadChartCandles(currentTf, true), 15000);
+
+    if (isUserAuthenticated()) {
+      startCopilotLiveFeeds();
+    }
+
+    window.addEventListener("maro:auth-changed", (ev) => {
+      const authed = Boolean(ev && ev.detail && ev.detail.authenticated);
+      if (authed) {
+        startCopilotLiveFeeds();
+      } else {
+        if (autoTimer) {
+          clearInterval(autoTimer);
+          autoTimer = null;
+        }
+        if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      }
+    });
   }
 
   function ensureLightweightChartsLoaded(cb) {

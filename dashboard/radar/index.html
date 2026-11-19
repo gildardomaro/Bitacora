@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" onerror="if(!this.dataset.fb){this.dataset.fb='1';this.href='../styles.css';}">
+  <script src="auth.js" onerror="if(!this.dataset.fb){this.dataset.fb='1';var s=document.createElement('script');s.src='../auth.js';document.head.appendChild(s);}"></script>
   <style>
     /* Estilos específicos para la vista pública independiente del radar */
     body {
@@ -118,8 +119,65 @@
 </head>
 <body>
 
-  <div class="public-radar-wrapper">
-    <!-- CABECERA PÚBLICA (SIN CONTRASEÑA) -->
+  <!-- PANTALLA DE ACCESO INSTITUCIONAL (MISMO USUARIO Y CONTRASEÑA QUE LA BITÁCORA) -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-backdrop-glow"></div>
+    <div class="login-card" id="loginCard">
+      <div class="login-brand">
+        <div class="login-logo-ring">
+          <img src="logo_maro.jpg" alt="Maro Consultores" class="login-logo-img"
+            onerror="if(this.getAttribute('data-fb')!=='1'){this.setAttribute('data-fb','1');this.src='../logo_maro.jpg';}else{this.style.display='none';document.getElementById('loginLogoFallback').style.display='flex';}">
+          <div id="loginLogoFallback" class="login-logo-fallback" style="display:none;">📡</div>
+        </div>
+        <h2 class="login-title">MARO <span>CONSULTORES</span></h2>
+        <p class="login-subtitle">Radar Institucional &amp; Order Flow Cuantitativo</p>
+        <div class="login-badge-secure">
+          <span>🔒</span> Acceso Restringido &amp; Autenticado
+        </div>
+      </div>
+
+      <form id="loginForm" class="login-form" autocomplete="on">
+        <div class="login-input-group">
+          <label for="loginUser">Usuario Institucional</label>
+          <div class="login-input-wrapper">
+            <span class="input-icon">👤</span>
+            <input type="text" id="loginUser" name="username" placeholder="admin" required autofocus autocomplete="username">
+          </div>
+        </div>
+
+        <div class="login-input-group">
+          <label for="loginPass">Contraseña de Acceso</label>
+          <div class="login-input-wrapper">
+            <span class="input-icon">🔑</span>
+            <input type="password" id="loginPass" name="password" placeholder="••••••••••••" required autocomplete="current-password">
+            <button type="button" id="btnTogglePassword" class="btn-toggle-pass" title="Mostrar/Ocultar contraseña">
+              <span id="eyeIcon">👁️</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="login-options-row">
+          <label class="login-remember-label">
+            <input type="checkbox" id="chkRememberMe" checked>
+            <span>Recordar sesión en este equipo</span>
+          </label>
+        </div>
+
+        <div id="loginErrorMsg" class="login-error-alert" style="display: none;">
+          <span class="alert-icon">⚠️</span>
+          <span id="loginErrorText">Usuario o contraseña incorrectos.</span>
+        </div>
+
+        <button type="submit" id="btnLoginSubmit" class="login-submit-btn">
+          <span id="loginBtnText">INGRESAR AL RADAR</span>
+          <span class="submit-arrow">➔</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="public-radar-wrapper app-container blurred">
+    <!-- CABECERA AUTENTICADA -->
     <header class="public-header">
       <div class="public-brand">
         <img src="logo_maro.jpg" alt="MARO Consultores" class="public-logo" onerror="if(this.getAttribute('data-fallback')!=='1'){this.setAttribute('data-fallback','1');this.src='../logo_maro.jpg';}else{this.style.display='none';}">
@@ -133,6 +191,7 @@
         <span class="status-badge live" id="liveBadge"><span class="pulse-dot"></span> Flujo en Vivo</span>
         <span class="status-badge sync-timer" id="clockBadge">🕒 --:--:--</span>
         <a href="../" onclick="if(window.location.hostname.indexOf('vercel.app')!==-1 && window.location.pathname.indexOf('/radar')===-1){this.href='https://gildardomaro.github.io/Bitacora/';}" class="btn-portal" title="Acceso a la Bitácora General de Operaciones">📊 Bitácora General</a>
+        <button type="button" id="btnLogout" class="btn-portal" style="cursor:pointer; border-color:rgba(255,82,82,0.45); color:#ff8a80;" title="Cerrar sesión">🔒 Salir</button>
       </div>
     </header>
 
@@ -248,8 +307,13 @@
       setInterval(updateClock, 1000);
       updateClock();
 
-      // Cargar datos desde radar_data_cache.json (~340 KB) o API local; sin depender de static_data.js (1.35 MB)
+      function canAccessRadar() {
+        return !(window.MaroAuth && typeof window.MaroAuth.isAuthenticated === 'function') || window.MaroAuth.isAuthenticated();
+      }
+
+      // Cargar datos desde radar_data_cache.json (~340 KB) o API local; solo cuando la sesión está autenticada
       async function loadData(isBackgroundRefresh) {
+        if (!canAccessRadar()) return;
         const candidateJsonUrls = [
           'radar_data_cache.json?v=' + Date.now(),
           '../radar_data_cache.json?v=' + Date.now(),
@@ -560,9 +624,26 @@
         renderUI();
       });
 
-      // Arranque y auto-refresh periódico del snapshot (calendario + activos) cada 60 segundos
-      loadData(false);
-      setInterval(() => loadData(true), 60000);
+      // Arranque protegido por sesión (carga inmediata si ya está autenticado o al iniciar sesión)
+      let refreshTimerStarted = false;
+      function startRadarIfAuthed() {
+        if (!canAccessRadar()) return;
+        loadData(false);
+        if (!refreshTimerStarted) {
+          refreshTimerStarted = true;
+          setInterval(() => {
+            if (canAccessRadar()) loadData(true);
+          }, 60000);
+        }
+      }
+
+      window.addEventListener('maro:auth-changed', (ev) => {
+        if (ev && ev.detail && ev.detail.authenticated) {
+          startRadarIfAuthed();
+        }
+      });
+
+      startRadarIfAuthed();
     })();
   </script>
   <script src="lightweight-charts.standalone.production.js" onerror="if(!this.dataset.fb){this.dataset.fb='1';var s=document.createElement('script');s.src='../lightweight-charts.standalone.production.js';document.body.appendChild(s);}"></script>

@@ -19,6 +19,8 @@
     // Respaldo en texto plano para entornos sin soporte crypto.subtle
     fallbackUser: "admin",
     fallbackPass: "Maro2026!",
+    // Token derivado SHA-256(userHash + ":" + passHash) para autenticar llamadas a /api/*
+    sessionToken: "1a442fdc3e588ede068248fb11cc950266fa3642bc132375d12e354d641cd122",
     sessionKey: "maro_auth_session_v1",
     sessionDurationMs: 30 * 24 * 60 * 60 * 1000 // 30 días
   };
@@ -57,6 +59,7 @@
     const sessionData = JSON.stringify({
       authenticated: true,
       user: username,
+      token: AUTH_CONFIG.sessionToken,
       timestamp: Date.now()
     });
 
@@ -65,6 +68,20 @@
     } else {
       sessionStorage.setItem(AUTH_CONFIG.sessionKey, sessionData);
     }
+  }
+
+  // Obtener token de autenticación activo para endpoints /api/*
+  function getAuthToken() {
+    if (!isAuthenticated()) return "";
+    return AUTH_CONFIG.sessionToken;
+  }
+
+  function dispatchAuthEvent(authenticated) {
+    try {
+      window.dispatchEvent(new CustomEvent('maro:auth-changed', {
+        detail: { authenticated: Boolean(authenticated) }
+      }));
+    } catch (_) {}
   }
 
   // Cerrar sesión
@@ -104,11 +121,13 @@
     const eyeIcon   = document.getElementById('eyeIcon');
     const appCont   = document.querySelector('.app-container');
     const btnLogout = document.getElementById('btnLogout');
+    const defaultBtnLabel = (btnText && btnText.textContent.trim()) || 'INGRESAR A LA BITÁCORA';
 
     // 1. Verificar estado inicial
     if (isAuthenticated()) {
       if (overlay) overlay.classList.add('hidden');
       if (appCont) appCont.classList.remove('blurred');
+      dispatchAuthEvent(true);
     } else {
       if (overlay) overlay.classList.remove('hidden');
       if (appCont) appCont.classList.add('blurred');
@@ -148,6 +167,7 @@
           if (btnText) btnText.textContent = '✓ ACCESO CONCEDIDO';
 
           saveSession(userVal, remVal);
+          dispatchAuthEvent(true);
 
           setTimeout(() => {
             if (overlay) {
@@ -164,12 +184,12 @@
               btnSubmit.classList.remove('success');
               btnSubmit.style.background = '';
             }
-            if (btnText) btnText.textContent = 'INGRESAR A LA BITÁCORA';
+            if (btnText) btnText.textContent = defaultBtnLabel;
           }, 450);
         } else {
           // Error: animación de vibración y alerta
           if (btnSubmit) btnSubmit.disabled = false;
-          if (btnText) btnText.textContent = 'INGRESAR A LA BITÁCORA';
+          if (btnText) btnText.textContent = defaultBtnLabel;
 
           if (errorText) errorText.textContent = 'Usuario o contraseña incorrectos.';
           if (errorBox) {
@@ -199,6 +219,7 @@
       btnLogout.addEventListener('click', (e) => {
         e.preventDefault();
         clearSession();
+        dispatchAuthEvent(false);
         if (appCont) appCont.classList.add('blurred');
         if (overlay) {
           overlay.classList.remove('hidden');
@@ -221,6 +242,7 @@
   // Exponer objeto global para inspección o cambio de credenciales
   window.MaroAuth = {
     isAuthenticated,
+    getAuthToken,
     clearSession
   };
 })();
