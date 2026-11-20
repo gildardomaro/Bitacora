@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-20T08:14:44.133514Z",
+  "generated_at": "2026-11-20T08:19:39.452894Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -33803,7 +33803,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-20 01:14:43",
+  "last_sync": "2026-11-20 01:19:39",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -35652,8 +35652,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-20T08:14:43.874429Z",
-    "last_sync": "2026-11-20 01:14:43",
+    "timestamp": "2026-11-20T08:19:39.196999Z",
+    "last_sync": "2026-11-20 01:19:39",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -35661,10 +35661,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.31104,
-        "bid": 1.31076,
-        "ask": 1.31132,
-        "spread_pips": 5.6,
+        "price": 1.31102,
+        "bid": 1.31075,
+        "ask": 1.3113,
+        "spread_pips": 5.5,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 47,
@@ -35683,19 +35683,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.3125,
               "density_pct": 0.35,
-              "dist_pips": 14.6,
+              "dist_pips": 14.8,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.319,
               "density_pct": 0.2,
-              "dist_pips": 79.6,
+              "dist_pips": 79.8,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.313,
               "density_pct": 0.19,
-              "dist_pips": 19.6,
+              "dist_pips": 19.8,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -35703,19 +35703,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.3,
               "density_pct": 0.26,
-              "dist_pips": 110.4,
+              "dist_pips": 110.2,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.303,
               "density_pct": 0.15,
-              "dist_pips": 80.4,
+              "dist_pips": 80.2,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.307,
               "density_pct": 0.15,
-              "dist_pips": 40.4,
+              "dist_pips": 40.2,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -35733,13 +35733,6 @@ window.STATIC_DASHBOARD_DATA = {
           "h1_low": 1.30783,
           "h1_equilibrium": 1.31532,
           "candles_m15": [
-            {
-              "time": 1795077000,
-              "open": 1.3152,
-              "high": 1.31562,
-              "low": 1.31508,
-              "close": 1.31522
-            },
             {
               "time": 1795077900,
               "open": 1.31523,
@@ -36397,6 +36390,13 @@ window.STATIC_DASHBOARD_DATA = {
               "high": 1.31149,
               "low": 1.31072,
               "close": 1.31104
+            },
+            {
+              "time": 1795162500,
+              "open": 1.31104,
+              "high": 1.31116,
+              "low": 1.31096,
+              "close": 1.31102
             }
           ],
           "candles_by_tf": {
@@ -37064,7 +37064,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 1.31064,
                 "high": 1.31224,
                 "low": 1.31057,
-                "close": 1.31104
+                "close": 1.31103
               }
             ],
             "H1": [
@@ -37731,7 +37731,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 1.31143,
                 "high": 1.31149,
                 "low": 1.31072,
-                "close": 1.31104
+                "close": 1.31103
               }
             ],
             "M30": [
@@ -38398,17 +38398,10 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 1.31143,
                 "high": 1.31149,
                 "low": 1.31072,
-                "close": 1.31104
+                "close": 1.31103
               }
             ],
             "M15": [
-              {
-                "time": 1795077000,
-                "open": 1.3152,
-                "high": 1.31562,
-                "low": 1.31508,
-                "close": 1.31522
-              },
               {
                 "time": 1795077900,
                 "open": 1.31523,
@@ -39066,16 +39059,16 @@ window.STATIC_DASHBOARD_DATA = {
                 "high": 1.31149,
                 "low": 1.31072,
                 "close": 1.31104
+              },
+              {
+                "time": 1795162500,
+                "open": 1.31104,
+                "high": 1.31116,
+                "low": 1.31096,
+                "close": 1.31102
               }
             ],
             "M5": [
-              {
-                "time": 1795134000,
-                "open": 1.30925,
-                "high": 1.30928,
-                "low": 1.30902,
-                "close": 1.3092
-              },
               {
                 "time": 1795134300,
                 "open": 1.30921,
@@ -39732,7 +39725,14 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 1.31112,
                 "high": 1.31126,
                 "low": 1.31089,
-                "close": 1.31105
+                "close": 1.31104
+              },
+              {
+                "time": 1795162500,
+                "open": 1.31104,
+                "high": 1.31116,
+                "low": 1.31096,
+                "close": 1.31102
               }
             ]
           }
@@ -39744,10 +39744,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 3573.14,
-        "bid": 3572.22,
-        "ask": 3574.05,
-        "spread_pips": 183.0,
+        "price": 3573.13,
+        "bid": 3572.28,
+        "ask": 3573.98,
+        "spread_pips": 170.0,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 50,
@@ -39766,19 +39766,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 3594.5,
               "density_pct": 0.95,
-              "dist_pips": 2136.0,
+              "dist_pips": 2137.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 3627.5,
               "density_pct": 0.29,
-              "dist_pips": 5436.0,
+              "dist_pips": 5437.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 3672.5,
               "density_pct": 0.21,
-              "dist_pips": 9936.0,
+              "dist_pips": 9937.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -39786,19 +39786,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 3547.0,
               "density_pct": 0.29,
-              "dist_pips": 2614.0,
+              "dist_pips": 2613.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3471.5,
               "density_pct": 0.13,
-              "dist_pips": 10164.0,
+              "dist_pips": 10163.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3498.5,
               "density_pct": 0.13,
-              "dist_pips": 7464.0,
+              "dist_pips": 7463.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -39816,13 +39816,6 @@ window.STATIC_DASHBOARD_DATA = {
           "h1_low": 3514.56,
           "h1_equilibrium": 3702.82,
           "candles_m15": [
-            {
-              "time": 1795073400,
-              "open": 3734.37,
-              "high": 3737.78,
-              "low": 3731.31,
-              "close": 3733.2
-            },
             {
               "time": 1795074300,
               "open": 3733.24,
@@ -40479,7 +40472,14 @@ window.STATIC_DASHBOARD_DATA = {
               "open": 3568.3,
               "high": 3578.61,
               "low": 3567.36,
-              "close": 3573.44
+              "close": 3573.27
+            },
+            {
+              "time": 1795162500,
+              "open": 3573.29,
+              "high": 3574.41,
+              "low": 3571.43,
+              "close": 3573.08
             }
           ],
           "candles_by_tf": {
@@ -41147,7 +41147,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3544.91,
                 "high": 3578.61,
                 "low": 3541.32,
-                "close": 3573.09
+                "close": 3573.08
               }
             ],
             "H1": [
@@ -41814,7 +41814,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3568.3,
                 "high": 3578.61,
                 "low": 3567.36,
-                "close": 3573.04
+                "close": 3573.08
               }
             ],
             "M30": [
@@ -42481,17 +42481,10 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3568.3,
                 "high": 3578.61,
                 "low": 3567.36,
-                "close": 3573.54
+                "close": 3573.07
               }
             ],
             "M15": [
-              {
-                "time": 1795073400,
-                "open": 3734.37,
-                "high": 3737.78,
-                "low": 3731.31,
-                "close": 3733.2
-              },
               {
                 "time": 1795074300,
                 "open": 3733.24,
@@ -43148,17 +43141,17 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3568.3,
                 "high": 3578.61,
                 "low": 3567.36,
-                "close": 3573.44
+                "close": 3573.27
+              },
+              {
+                "time": 1795162500,
+                "open": 3573.29,
+                "high": 3574.41,
+                "low": 3571.43,
+                "close": 3573.08
               }
             ],
             "M5": [
-              {
-                "time": 1795134000,
-                "open": 3623.74,
-                "high": 3623.96,
-                "low": 3616.12,
-                "close": 3618.89
-              },
               {
                 "time": 1795134300,
                 "open": 3618.9,
@@ -43815,7 +43808,14 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3576.82,
                 "high": 3577.72,
                 "low": 3571.22,
-                "close": 3573.44
+                "close": 3573.27
+              },
+              {
+                "time": 1795162500,
+                "open": 3573.29,
+                "high": 3574.41,
+                "low": 3571.43,
+                "close": 3573.07
               }
             ]
           }
@@ -43827,9 +43827,9 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.66673,
-        "bid": 0.66626,
-        "ask": 0.6672,
+        "price": 0.66689,
+        "bid": 0.66642,
+        "ask": 0.66736,
         "spread_pips": 9.4,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
@@ -43849,19 +43849,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.6685,
               "density_pct": 0.42,
-              "dist_pips": 17.7,
+              "dist_pips": 16.1,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.6695,
               "density_pct": 0.25,
-              "dist_pips": 27.7,
+              "dist_pips": 26.1,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.6705,
               "density_pct": 0.23,
-              "dist_pips": 37.7,
+              "dist_pips": 36.1,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -43869,19 +43869,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.6635,
               "density_pct": 0.25,
-              "dist_pips": 32.3,
+              "dist_pips": 33.9,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.662,
               "density_pct": 0.18,
-              "dist_pips": 47.3,
+              "dist_pips": 48.9,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.663,
               "density_pct": 0.18,
-              "dist_pips": 37.3,
+              "dist_pips": 38.9,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -43891,7 +43891,7 @@ window.STATIC_DASHBOARD_DATA = {
         "technical_smc": {
           "trend_h4": "BAJISTA 🔴",
           "trend_h1": "BAJISTA 🔴",
-          "trend_m30": "BAJISTA 🔴",
+          "trend_m30": "ALCISTA 🟢",
           "trend_m15": "BAJISTA 🔴",
           "trend_m5": "BAJISTA 🔴",
           "zone": "DESCUENTO 🟢 (Busca Compras)",
@@ -43899,13 +43899,6 @@ window.STATIC_DASHBOARD_DATA = {
           "h1_low": 0.66456,
           "h1_equilibrium": 0.67026,
           "candles_m15": [
-            {
-              "time": 1795077000,
-              "open": 0.66992,
-              "high": 0.67028,
-              "low": 0.66988,
-              "close": 0.67002
-            },
             {
               "time": 1795077900,
               "open": 0.67003,
@@ -44562,7 +44555,14 @@ window.STATIC_DASHBOARD_DATA = {
               "open": 0.66757,
               "high": 0.6677,
               "low": 0.66666,
-              "close": 0.66671
+              "close": 0.66672
+            },
+            {
+              "time": 1795162500,
+              "open": 0.66675,
+              "high": 0.66696,
+              "low": 0.66672,
+              "close": 0.66688
             }
           ],
           "candles_by_tf": {
@@ -45230,7 +45230,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 0.6668,
                 "high": 0.66824,
                 "low": 0.66666,
-                "close": 0.66671
+                "close": 0.66688
               }
             ],
             "H1": [
@@ -45897,7 +45897,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 0.66757,
                 "high": 0.6677,
                 "low": 0.66666,
-                "close": 0.66671
+                "close": 0.66688
               }
             ],
             "M30": [
@@ -46564,17 +46564,10 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 0.66757,
                 "high": 0.6677,
                 "low": 0.66666,
-                "close": 0.66671
+                "close": 0.66688
               }
             ],
             "M15": [
-              {
-                "time": 1795077000,
-                "open": 0.66992,
-                "high": 0.67028,
-                "low": 0.66988,
-                "close": 0.67002
-              },
               {
                 "time": 1795077900,
                 "open": 0.67003,
@@ -47231,17 +47224,17 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 0.66757,
                 "high": 0.6677,
                 "low": 0.66666,
-                "close": 0.66671
+                "close": 0.66672
+              },
+              {
+                "time": 1795162500,
+                "open": 0.66675,
+                "high": 0.66696,
+                "low": 0.66672,
+                "close": 0.66688
               }
             ],
             "M5": [
-              {
-                "time": 1795134000,
-                "open": 0.66576,
-                "high": 0.66586,
-                "low": 0.66563,
-                "close": 0.66573
-              },
               {
                 "time": 1795134300,
                 "open": 0.66574,
@@ -47898,7 +47891,14 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 0.66706,
                 "high": 0.6671,
                 "low": 0.66666,
-                "close": 0.66671
+                "close": 0.66672
+              },
+              {
+                "time": 1795162500,
+                "open": 0.66675,
+                "high": 0.66696,
+                "low": 0.66672,
+                "close": 0.66689
               }
             ]
           }
