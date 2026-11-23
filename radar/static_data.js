@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-23T21:59:44.346480Z",
+  "generated_at": "2026-11-23T22:04:41.404832Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -34667,7 +34667,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-23 14:59:44",
+  "last_sync": "2026-11-23 15:04:41",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -36564,8 +36564,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-23T21:59:44.099015Z",
-    "last_sync": "2026-11-23 14:59:44",
+    "timestamp": "2026-11-23T22:04:41.105545Z",
+    "last_sync": "2026-11-23 15:04:41",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -36585,16 +36585,16 @@ window.STATIC_DASHBOARD_DATA = {
           "long_pct": 59.7,
           "short_pct": 40.3,
           "longs_in_loss": 30.5,
-          "shorts_in_loss": 18.7,
+          "shorts_in_loss": 18.8,
           "summary": "Minoristas 59.7% Comprados vs 40.3% Vendidos. Contrarian Smart Money favorece equilibrio de flujo."
         },
         "order_book": {
-          "order_long_pct": 47.1,
-          "order_short_pct": 52.9,
+          "order_long_pct": 47.2,
+          "order_short_pct": 52.8,
           "top_bsl": [
             {
               "price": 1.3045,
-              "density_pct": 0.22,
+              "density_pct": 0.21,
               "dist_pips": 13.7,
               "label": "Buy Stops / BSL"
             },
@@ -36614,7 +36614,7 @@ window.STATIC_DASHBOARD_DATA = {
           "top_ssl": [
             {
               "price": 1.3,
-              "density_pct": 0.47,
+              "density_pct": 0.46,
               "dist_pips": 31.3,
               "label": "Sell Stops / SSL"
             },
@@ -40665,15 +40665,15 @@ window.STATIC_DASHBOARD_DATA = {
         "prob_buy": 53,
         "prob_sell": 47,
         "retail_sentiment": {
-          "long_pct": 64.4,
-          "short_pct": 35.6,
+          "long_pct": 64.5,
+          "short_pct": 35.5,
           "longs_in_loss": 33.8,
           "shorts_in_loss": 14.0,
-          "summary": "Minoristas 64.4% Comprados vs 35.6% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+          "summary": "Minoristas 64.5% Comprados vs 35.5% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
-          "order_long_pct": 58.1,
-          "order_short_pct": 41.9,
+          "order_long_pct": 58.4,
+          "order_short_pct": 41.6,
           "top_bsl": [
             {
               "price": 3676.5,
@@ -44786,7 +44786,7 @@ window.STATIC_DASHBOARD_DATA = {
             },
             {
               "price": 0.659,
-              "density_pct": 0.22,
+              "density_pct": 0.21,
               "dist_pips": 38.5,
               "label": "Sell Stops / SSL"
             },
