@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-24T14:24:42.263037Z",
+  "generated_at": "2026-11-24T14:29:56.029313Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -34667,7 +34667,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-24 07:24:42",
+  "last_sync": "2026-11-24 07:29:55",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -36564,8 +36564,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-24T14:24:42.106918Z",
-    "last_sync": "2026-11-24 07:24:42",
+    "timestamp": "2026-11-24T14:29:55.820617Z",
+    "last_sync": "2026-11-24 07:29:55",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -36573,10 +36573,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.31017,
-        "bid": 1.30989,
-        "ask": 1.31045,
-        "spread_pips": 5.6,
+        "price": 1.31001,
+        "bid": 1.30974,
+        "ask": 1.31028,
+        "spread_pips": 5.4,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 51,
@@ -36595,19 +36595,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.3105,
               "density_pct": 0.27,
-              "dist_pips": 3.3,
+              "dist_pips": 4.9,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.311,
               "density_pct": 0.25,
-              "dist_pips": 8.3,
+              "dist_pips": 9.9,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.3145,
               "density_pct": 0.2,
-              "dist_pips": 43.3,
+              "dist_pips": 44.9,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -36615,19 +36615,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.3,
               "density_pct": 0.38,
-              "dist_pips": 101.7,
+              "dist_pips": 100.1,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.2955,
               "density_pct": 0.14,
-              "dist_pips": 146.7,
+              "dist_pips": 145.1,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3085,
               "density_pct": 0.12,
-              "dist_pips": 16.7,
+              "dist_pips": 15.1,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -37308,7 +37308,7 @@ window.STATIC_DASHBOARD_DATA = {
               "open": 1.30941,
               "high": 1.3107,
               "low": 1.30941,
-              "close": 1.31014
+              "close": 1.31
             }
           ],
           "candles_by_tf": {
@@ -37976,7 +37976,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 1.30982,
                 "high": 1.3107,
                 "low": 1.3094,
-                "close": 1.31013
+                "close": 1.31001
               }
             ],
             "H1": [
@@ -38643,7 +38643,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 1.30982,
                 "high": 1.3107,
                 "low": 1.3094,
-                "close": 1.31013
+                "close": 1.31002
               }
             ],
             "M30": [
@@ -39310,7 +39310,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 1.30982,
                 "high": 1.3107,
                 "low": 1.3094,
-                "close": 1.31013
+                "close": 1.31002
               }
             ],
             "M15": [
@@ -39977,17 +39977,10 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 1.30941,
                 "high": 1.3107,
                 "low": 1.30941,
-                "close": 1.31014
+                "close": 1.31
               }
             ],
             "M5": [
-              {
-                "time": 1795501800,
-                "open": 1.30454,
-                "high": 1.30464,
-                "low": 1.30444,
-                "close": 1.30446
-              },
               {
                 "time": 1795502100,
                 "open": 1.30447,
@@ -40643,8 +40636,15 @@ window.STATIC_DASHBOARD_DATA = {
                 "time": 1795530000,
                 "open": 1.31004,
                 "high": 1.3107,
-                "low": 1.31002,
-                "close": 1.3101
+                "low": 1.30996,
+                "close": 1.30997
+              },
+              {
+                "time": 1795530300,
+                "open": 1.30998,
+                "high": 1.3104,
+                "low": 1.30984,
+                "close": 1.31
               }
             ]
           }
@@ -40656,10 +40656,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 3614.59,
-        "bid": 3613.63,
-        "ask": 3615.55,
-        "spread_pips": 192.0,
+        "price": 3619.66,
+        "bid": 3618.79,
+        "ask": 3620.54,
+        "spread_pips": 175.0,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 47,
@@ -40667,8 +40667,8 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 62.7,
           "short_pct": 37.3,
-          "longs_in_loss": 34.2,
-          "shorts_in_loss": 13.2,
+          "longs_in_loss": 33.3,
+          "shorts_in_loss": 15.1,
           "summary": "Minoristas 62.7% Comprados vs 37.3% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
@@ -40678,19 +40678,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 3622.5,
               "density_pct": 0.43,
-              "dist_pips": 791.0,
+              "dist_pips": 284.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 3646.5,
               "density_pct": 0.36,
-              "dist_pips": 3191.0,
+              "dist_pips": 2684.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 3645.0,
               "density_pct": 0.33,
-              "dist_pips": 3041.0,
+              "dist_pips": 2534.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -40698,19 +40698,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 3612.0,
               "density_pct": 0.66,
-              "dist_pips": 259.0,
+              "dist_pips": 766.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3610.0,
               "density_pct": 0.4,
-              "dist_pips": 459.0,
+              "dist_pips": 966.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3605.0,
               "density_pct": 0.19,
-              "dist_pips": 959.0,
+              "dist_pips": 1466.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -41391,7 +41391,7 @@ window.STATIC_DASHBOARD_DATA = {
               "open": 3616.91,
               "high": 3620.95,
               "low": 3613.76,
-              "close": 3614.53
+              "close": 3620.15
             }
           ],
           "candles_by_tf": {
@@ -42059,7 +42059,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3615.08,
                 "high": 3623.11,
                 "low": 3613.64,
-                "close": 3614.78
+                "close": 3619.73
               }
             ],
             "H1": [
@@ -42726,7 +42726,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3615.08,
                 "high": 3623.11,
                 "low": 3613.64,
-                "close": 3614.76
+                "close": 3619.82
               }
             ],
             "M30": [
@@ -43393,7 +43393,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3615.08,
                 "high": 3623.11,
                 "low": 3613.64,
-                "close": 3614.39
+                "close": 3620.11
               }
             ],
             "M15": [
@@ -44060,17 +44060,10 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3616.91,
                 "high": 3620.95,
                 "low": 3613.76,
-                "close": 3614.53
+                "close": 3620.15
               }
             ],
             "M5": [
-              {
-                "time": 1795501800,
-                "open": 3618.45,
-                "high": 3623.88,
-                "low": 3617.39,
-                "close": 3622.41
-              },
               {
                 "time": 1795502100,
                 "open": 3622.39,
@@ -44727,7 +44720,14 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 3615.99,
                 "high": 3618.84,
                 "low": 3613.76,
-                "close": 3614.52
+                "close": 3615.11
+              },
+              {
+                "time": 1795530300,
+                "open": 3615.18,
+                "high": 3620.3,
+                "low": 3614.24,
+                "close": 3620.22
               }
             ]
           }
@@ -44739,10 +44739,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "AUD/USD (Dólar Australiano)",
         "display": "AUD/USD",
         "icon": "🦘",
-        "price": 0.66426,
-        "bid": 0.66379,
-        "ask": 0.66473,
-        "spread_pips": 9.4,
+        "price": 0.6644,
+        "bid": 0.66393,
+        "ask": 0.66486,
+        "spread_pips": 9.3,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 50,
@@ -44761,19 +44761,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.666,
               "density_pct": 0.47,
-              "dist_pips": 17.4,
+              "dist_pips": 16.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.665,
               "density_pct": 0.37,
-              "dist_pips": 7.4,
+              "dist_pips": 6.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 0.6655,
               "density_pct": 0.31,
-              "dist_pips": 12.4,
+              "dist_pips": 11.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -44781,19 +44781,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 0.6615,
               "density_pct": 0.81,
-              "dist_pips": 27.6,
+              "dist_pips": 29.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.661,
               "density_pct": 0.4,
-              "dist_pips": 32.6,
+              "dist_pips": 34.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 0.6605,
               "density_pct": 0.29,
-              "dist_pips": 37.6,
+              "dist_pips": 39.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -45473,8 +45473,8 @@ window.STATIC_DASHBOARD_DATA = {
               "time": 1795529700,
               "open": 0.66418,
               "high": 0.6647,
-              "low": 0.66412,
-              "close": 0.6643
+              "low": 0.66404,
+              "close": 0.66439
             }
           ],
           "candles_by_tf": {
@@ -46142,7 +46142,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 0.66386,
                 "high": 0.6647,
                 "low": 0.66382,
-                "close": 0.66426
+                "close": 0.66439
               }
             ],
             "H1": [
@@ -46809,7 +46809,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 0.66386,
                 "high": 0.6647,
                 "low": 0.66382,
-                "close": 0.66426
+                "close": 0.66439
               }
             ],
             "M30": [
@@ -47476,7 +47476,7 @@ window.STATIC_DASHBOARD_DATA = {
                 "open": 0.66386,
                 "high": 0.6647,
                 "low": 0.66382,
-                "close": 0.66425
+                "close": 0.66439
               }
             ],
             "M15": [
@@ -48142,18 +48142,11 @@ window.STATIC_DASHBOARD_DATA = {
                 "time": 1795529700,
                 "open": 0.66418,
                 "high": 0.6647,
-                "low": 0.66412,
-                "close": 0.6643
+                "low": 0.66404,
+                "close": 0.66439
               }
             ],
             "M5": [
-              {
-                "time": 1795501800,
-                "open": 0.66318,
-                "high": 0.66323,
-                "low": 0.6631,
-                "close": 0.66322
-              },
               {
                 "time": 1795502100,
                 "open": 0.66321,
@@ -48809,8 +48802,15 @@ window.STATIC_DASHBOARD_DATA = {
                 "time": 1795530000,
                 "open": 0.66437,
                 "high": 0.66454,
-                "low": 0.66424,
-                "close": 0.6643
+                "low": 0.6642,
+                "close": 0.6642
+              },
+              {
+                "time": 1795530300,
+                "open": 0.6642,
+                "high": 0.66446,
+                "low": 0.66404,
+                "close": 0.66439
               }
             ]
           }
@@ -48819,489 +48819,418 @@ window.STATIC_DASHBOARD_DATA = {
     ],
     "calendar": [
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "MPC Member Greene Speaks",
+        "currency": "GBP",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-24T07:30:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "ADP Weekly Employment Change",
+        "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-24T08:15:00-05:00",
+        "forecast": "-",
+        "previous": "23.8K"
+      },
+      {
+        "title": "Belgian NBB Business Climate",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-24T09:00:00-05:00",
+        "forecast": "-9.4",
+        "previous": "-9.8"
+      },
+      {
+        "title": "HPI m/m",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-24T09:00:00-05:00",
+        "forecast": "0.2%",
+        "previous": "0.3%"
+      },
+      {
+        "title": "S&P/CS Composite-20 HPI y/y",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-24T09:00:00-05:00",
+        "forecast": "2.7%",
+        "previous": "2.7%"
+      },
+      {
+        "title": "CB Consumer Confidence",
+        "currency": "USD",
+        "impact": "Medium",
+        "datetime_raw": "2026-11-24T10:00:00-05:00",
+        "forecast": "92.4",
+        "previous": "91.7"
+      },
+      {
+        "title": "Richmond Manufacturing Index",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-24T10:00:00-05:00",
+        "forecast": "-2",
+        "previous": "-2"
+      },
+      {
+        "title": "API Weekly Statistical Bulletin",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-24T16:30:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "CPI m/m",
+        "currency": "AUD",
+        "impact": "High",
+        "datetime_raw": "2026-11-24T19:30:00-05:00",
+        "forecast": "0.4%",
+        "previous": "0.8%"
+      },
+      {
+        "title": "CPI y/y",
+        "currency": "AUD",
+        "impact": "High",
+        "datetime_raw": "2026-11-24T19:30:00-05:00",
+        "forecast": "4.7%",
+        "previous": "4.3%"
+      },
+      {
+        "title": "Trimmed Mean CPI m/m",
+        "currency": "AUD",
+        "impact": "High",
+        "datetime_raw": "2026-11-24T19:30:00-05:00",
+        "forecast": "0.3%",
+        "previous": "0.3%"
+      },
+      {
+        "title": "Construction Work Done q/q",
+        "currency": "AUD",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-24T19:30:00-05:00",
+        "forecast": "0.8%",
+        "previous": "-2.1%"
+      },
+      {
+        "title": "German Final GDP q/q",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T02:00:00-05:00",
+        "forecast": "0.2%",
+        "previous": "0.2%"
+      },
+      {
+        "title": "German 10-y Bond Auction",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T05:42:00-05:00",
+        "forecast": "-",
+        "previous": "3.37|1.1"
+      },
+      {
+        "title": "Core PCE Price Index m/m",
+        "currency": "USD",
+        "impact": "High",
+        "datetime_raw": "2026-11-25T08:30:00-05:00",
+        "forecast": "0.3%",
+        "previous": "0.3%"
+      },
+      {
+        "title": "Prelim GDP q/q",
+        "currency": "USD",
+        "impact": "High",
+        "datetime_raw": "2026-11-25T08:30:00-05:00",
+        "forecast": "3.5%",
+        "previous": "3.4%"
+      },
+      {
+        "title": "Prelim GDP Price Index q/q",
+        "currency": "USD",
+        "impact": "Medium",
+        "datetime_raw": "2026-11-25T08:30:00-05:00",
+        "forecast": "2.3%",
+        "previous": "2.3%"
+      },
+      {
+        "title": "Core Durable Goods Orders m/m",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T08:30:00-05:00",
+        "forecast": "0.5%",
+        "previous": "0.5%"
+      },
+      {
+        "title": "Durable Goods Orders m/m",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T08:30:00-05:00",
+        "forecast": "0.7%",
+        "previous": "1.8%"
+      },
+      {
+        "title": "Personal Income m/m",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T08:30:00-05:00",
+        "forecast": "0.4%",
+        "previous": "0.2%"
+      },
+      {
+        "title": "Personal Spending m/m",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T08:30:00-05:00",
+        "forecast": "0.4%",
+        "previous": "0.5%"
+      },
+      {
+        "title": "Unemployment Claims",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T08:30:00-05:00",
+        "forecast": "201K",
+        "previous": "203K"
+      },
+      {
+        "title": "New Home Sales",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T10:00:00-05:00",
+        "forecast": "650K",
+        "previous": "676K"
+      },
+      {
+        "title": "Crude Oil Inventories",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T10:30:00-05:00",
+        "forecast": "-",
+        "previous": "3.4M"
+      },
+      {
+        "title": "Natural Gas Storage",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T12:00:00-05:00",
+        "forecast": "-19B",
+        "previous": "20B"
+      },
+      {
+        "title": "Beige Book",
+        "currency": "USD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T14:00:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "Private Capital Expenditure q/q",
+        "currency": "AUD",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-25T19:30:00-05:00",
+        "forecast": "4.5%",
+        "previous": "-3.6%"
+      },
+      {
+        "title": "RBA Bulletin",
+        "currency": "AUD",
+        "impact": "Low",
+        "datetime_raw": "2026-11-25T19:30:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "German GfK Consumer Climate",
+        "currency": "EUR",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-26T02:00:00-05:00",
+        "forecast": "-29.4",
+        "previous": "-30.8"
+      },
+      {
+        "title": "M3 Money Supply y/y",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-26T04:00:00-05:00",
+        "forecast": "3.5%",
+        "previous": "3.5%"
+      },
+      {
+        "title": "Private Loans y/y",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-26T04:00:00-05:00",
+        "forecast": "3.2%",
+        "previous": "3.1%"
+      },
+      {
+        "title": "BOE Financial Stability Report",
+        "currency": "GBP",
+        "impact": "Low",
+        "datetime_raw": "2026-11-26T05:30:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "FPC Meeting Minutes",
+        "currency": "GBP",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-26T05:30:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "FPC Statement",
+        "currency": "GBP",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-26T05:30:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "ECB Monetary Policy Meeting Accounts",
+        "currency": "EUR",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-26T07:30:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
+        "title": "Bank Holiday",
+        "currency": "USD",
+        "impact": "Holiday",
+        "datetime_raw": "2026-11-26T08:00:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "French Consumer Spending m/m",
+        "currency": "EUR",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-27T02:45:00-05:00",
+        "forecast": "0.1%",
+        "previous": "-0.5%"
+      },
+      {
+        "title": "French Final Private Payrolls q/q",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-27T02:45:00-05:00",
+        "forecast": "-0.1%",
+        "previous": "-0.1%"
+      },
+      {
+        "title": "French Prelim CPI m/m",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-27T02:45:00-05:00",
+        "forecast": "-0.2%",
+        "previous": "0.4%"
+      },
+      {
+        "title": "French Prelim GDP q/q",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-27T02:45:00-05:00",
+        "forecast": "-0.1%",
+        "previous": "-0.1%"
+      },
+      {
+        "title": "Spanish Flash CPI y/y",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-27T03:00:00-05:00",
+        "forecast": "4.7%",
+        "previous": "4.9%"
+      },
+      {
+        "title": "German Unemployment Change",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-27T03:55:00-05:00",
+        "forecast": "5K",
+        "previous": "4K"
+      },
+      {
+        "title": "Italian 10-y Bond Auction",
+        "currency": "EUR",
+        "impact": "Low",
+        "datetime_raw": "2026-11-27T05:33:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "German Buba President Nagel Speaks",
+        "currency": "EUR",
         "impact": "Low",
-        "datetime_raw": "",
+        "datetime_raw": "2026-11-27T07:40:00-05:00",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "Goods Trade Balance",
+        "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
+        "datetime_raw": "2026-11-27T08:30:00-05:00",
+        "forecast": "-135.9B",
+        "previous": "-134.9B"
       },
       {
-        "title": "Evento",
-        "currency": "",
+        "title": "Prelim Wholesale Inventories m/m",
+        "currency": "USD",
         "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
-      },
-      {
-        "title": "Evento",
-        "currency": "",
-        "impact": "Low",
-        "datetime_raw": "",
-        "forecast": "-",
-        "previous": "-"
+        "datetime_raw": "2026-11-27T08:30:00-05:00",
+        "forecast": "0.5%",
+        "previous": "0.6%"
       }
     ],
-    "high_impact_count": 0,
+    "high_impact_count": 5,
     "macro_summary": {
-      "high_impact_events": [],
+      "high_impact_events": [
+        {
+          "title": "CPI m/m",
+          "currency": "AUD",
+          "impact": "High",
+          "datetime_raw": "2026-11-24T19:30:00-05:00",
+          "forecast": "0.4%",
+          "previous": "0.8%"
+        },
+        {
+          "title": "CPI y/y",
+          "currency": "AUD",
+          "impact": "High",
+          "datetime_raw": "2026-11-24T19:30:00-05:00",
+          "forecast": "4.7%",
+          "previous": "4.3%"
+        },
+        {
+          "title": "Trimmed Mean CPI m/m",
+          "currency": "AUD",
+          "impact": "High",
+          "datetime_raw": "2026-11-24T19:30:00-05:00",
+          "forecast": "0.3%",
+          "previous": "0.3%"
+        },
+        {
+          "title": "Core PCE Price Index m/m",
+          "currency": "USD",
+          "impact": "High",
+          "datetime_raw": "2026-11-25T08:30:00-05:00",
+          "forecast": "0.3%",
+          "previous": "0.3%"
+        },
+        {
+          "title": "Prelim GDP q/q",
+          "currency": "USD",
+          "impact": "High",
+          "datetime_raw": "2026-11-25T08:30:00-05:00",
+          "forecast": "3.5%",
+          "previous": "3.4%"
+        }
+      ],
       "dxy_bias": "Neutral",
       "provider": "Mesa Cuantitativa & FairEconomy"
     }
