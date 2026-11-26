@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-26T20:10:50.867912Z",
-  "last_sync": "2026-11-26 13:10:50",
+  "timestamp": "2026-11-26T20:14:40.786099Z",
+  "last_sync": "2026-11-26 13:14:40",
   "assets": [
     {
       "symbol": "GBP/USD",
@@ -8,10 +8,10 @@
       "name": "GBP/USD (Libra / Dólar)",
       "display": "GBP/USD",
       "icon": "💷",
-      "price": 1.31074,
+      "price": 1.31073,
       "bid": 1.31046,
-      "ask": 1.31102,
-      "spread_pips": 5.6,
+      "ask": 1.31101,
+      "spread_pips": 5.5,
       "bias": "NEUTRAL",
       "bias_desc": "MERCADO EN RANGO / NEUTRAL",
       "prob_buy": 51,
@@ -30,19 +30,19 @@
           {
             "price": 1.313,
             "density_pct": 0.37,
-            "dist_pips": 22.6,
+            "dist_pips": 22.7,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 1.3125,
             "density_pct": 0.23,
-            "dist_pips": 17.6,
+            "dist_pips": 17.7,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 1.315,
             "density_pct": 0.22,
-            "dist_pips": 42.6,
+            "dist_pips": 42.7,
             "label": "Buy Stops / BSL"
           }
         ],
@@ -50,19 +50,19 @@
           {
             "price": 1.3,
             "density_pct": 0.4,
-            "dist_pips": 107.4,
+            "dist_pips": 107.3,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 1.3095,
             "density_pct": 0.26,
-            "dist_pips": 12.4,
+            "dist_pips": 12.3,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 1.309,
             "density_pct": 0.24,
-            "dist_pips": 17.4,
+            "dist_pips": 17.3,
             "label": "Sell Stops / SSL"
           }
         ],
@@ -743,7 +743,7 @@
             "open": 1.31082,
             "high": 1.31092,
             "low": 1.31071,
-            "close": 1.31074
+            "close": 1.31073
           }
         ],
         "candles_by_tf": {
@@ -1411,7 +1411,7 @@
               "open": 1.3108,
               "high": 1.31092,
               "low": 1.31041,
-              "close": 1.31074
+              "close": 1.31073
             }
           ],
           "H1": [
@@ -2078,7 +2078,7 @@
               "open": 1.31082,
               "high": 1.31092,
               "low": 1.31071,
-              "close": 1.31074
+              "close": 1.31073
             }
           ],
           "M30": [
@@ -2745,7 +2745,7 @@
               "open": 1.31082,
               "high": 1.31092,
               "low": 1.31071,
-              "close": 1.31074
+              "close": 1.31073
             }
           ],
           "M15": [
@@ -3412,7 +3412,7 @@
               "open": 1.31082,
               "high": 1.31092,
               "low": 1.31071,
-              "close": 1.31074
+              "close": 1.31073
             }
           ],
           "M5": [
@@ -4078,8 +4078,8 @@
               "time": 1795723800,
               "open": 1.31072,
               "high": 1.31074,
-              "low": 1.31072,
-              "close": 1.31074
+              "low": 1.31071,
+              "close": 1.31073
             }
           ]
         }
@@ -8174,10 +8174,10 @@
       "name": "AUD/USD (Dólar Australiano)",
       "display": "AUD/USD",
       "icon": "🦘",
-      "price": 0.6634,
-      "bid": 0.66292,
-      "ask": 0.66388,
-      "spread_pips": 9.6,
+      "price": 0.66337,
+      "bid": 0.6629,
+      "ask": 0.66384,
+      "spread_pips": 9.4,
       "bias": "BEARISH",
       "bias_desc": "SESGO INSTITUCIONAL VENTA",
       "prob_buy": 47,
@@ -8196,19 +8196,19 @@
           {
             "price": 0.6645,
             "density_pct": 0.25,
-            "dist_pips": 11.0,
+            "dist_pips": 11.3,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 0.664,
             "density_pct": 0.23,
-            "dist_pips": 6.0,
+            "dist_pips": 6.3,
             "label": "Buy Stops / BSL"
           },
           {
             "price": 0.667,
             "density_pct": 0.2,
-            "dist_pips": 36.0,
+            "dist_pips": 36.3,
             "label": "Buy Stops / BSL"
           }
         ],
@@ -8216,19 +8216,19 @@
           {
             "price": 0.6615,
             "density_pct": 0.52,
-            "dist_pips": 19.0,
+            "dist_pips": 18.7,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 0.6605,
             "density_pct": 0.46,
-            "dist_pips": 29.0,
+            "dist_pips": 28.7,
             "label": "Sell Stops / SSL"
           },
           {
             "price": 0.662,
             "density_pct": 0.39,
-            "dist_pips": 14.0,
+            "dist_pips": 13.7,
             "label": "Sell Stops / SSL"
           }
         ],
@@ -8909,7 +8909,7 @@
             "open": 0.66336,
             "high": 0.6634,
             "low": 0.66335,
-            "close": 0.6634
+            "close": 0.66336
           }
         ],
         "candles_by_tf": {
@@ -9577,7 +9577,7 @@
               "open": 0.66312,
               "high": 0.6634,
               "low": 0.66301,
-              "close": 0.6634
+              "close": 0.66336
             }
           ],
           "H1": [
@@ -10244,7 +10244,7 @@
               "open": 0.66336,
               "high": 0.6634,
               "low": 0.66335,
-              "close": 0.6634
+              "close": 0.66336
             }
           ],
           "M30": [
@@ -10911,7 +10911,7 @@
               "open": 0.66336,
               "high": 0.6634,
               "low": 0.66335,
-              "close": 0.6634
+              "close": 0.66336
             }
           ],
           "M15": [
@@ -11578,7 +11578,7 @@
               "open": 0.66336,
               "high": 0.6634,
               "low": 0.66335,
-              "close": 0.6634
+              "close": 0.66336
             }
           ],
           "M5": [
@@ -12244,8 +12244,8 @@
               "time": 1795723800,
               "open": 0.6634,
               "high": 0.6634,
-              "low": 0.6634,
-              "close": 0.6634
+              "low": 0.66336,
+              "close": 0.66336
             }
           ]
         }
