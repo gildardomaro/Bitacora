@@ -1,5 +1,5 @@
 window.STATIC_DASHBOARD_DATA = {
-  "generated_at": "2026-11-26T02:20:08.789812Z",
+  "generated_at": "2026-11-26T02:24:44.236217Z",
   "account_pepperstone": {
     "terminal": "Pepperstone-01 (smart+IA y MARO)",
     "connected": true,
@@ -35243,7 +35243,7 @@ window.STATIC_DASHBOARD_DATA = {
       }
     }
   },
-  "last_sync": "2026-11-25 19:20:08",
+  "last_sync": "2026-11-25 19:24:44",
   "equity": {
     "real1000": {
       "initial_balance": 250.0,
@@ -37172,8 +37172,8 @@ window.STATIC_DASHBOARD_DATA = {
     }
   },
   "radar": {
-    "timestamp": "2026-11-26T02:20:08.505055Z",
-    "last_sync": "2026-11-25 19:20:08",
+    "timestamp": "2026-11-26T02:24:43.993999Z",
+    "last_sync": "2026-11-25 19:24:43",
     "assets": [
       {
         "symbol": "GBP/USD",
@@ -37181,10 +37181,10 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "GBP/USD (Libra / Dólar)",
         "display": "GBP/USD",
         "icon": "💷",
-        "price": 1.31154,
-        "bid": 1.31126,
-        "ask": 1.31181,
-        "spread_pips": 5.5,
+        "price": 1.31142,
+        "bid": 1.31114,
+        "ask": 1.31171,
+        "spread_pips": 5.7,
         "bias": "NEUTRAL",
         "bias_desc": "MERCADO EN RANGO / NEUTRAL",
         "prob_buy": 51,
@@ -37192,8 +37192,8 @@ window.STATIC_DASHBOARD_DATA = {
         "retail_sentiment": {
           "long_pct": 60.2,
           "short_pct": 39.8,
-          "longs_in_loss": 27.4,
-          "shorts_in_loss": 21.8,
+          "longs_in_loss": 28.1,
+          "shorts_in_loss": 21.2,
           "summary": "Minoristas 60.2% Comprados vs 39.8% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
@@ -37202,20 +37202,20 @@ window.STATIC_DASHBOARD_DATA = {
           "top_bsl": [
             {
               "price": 1.314,
-              "density_pct": 0.32,
-              "dist_pips": 24.6,
+              "density_pct": 0.35,
+              "dist_pips": 25.8,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.313,
-              "density_pct": 0.28,
-              "dist_pips": 14.6,
+              "density_pct": 0.27,
+              "dist_pips": 15.8,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 1.3145,
               "density_pct": 0.25,
-              "dist_pips": 29.6,
+              "dist_pips": 30.8,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -37223,19 +37223,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 1.3,
               "density_pct": 0.38,
-              "dist_pips": 115.4,
+              "dist_pips": 114.2,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.3095,
-              "density_pct": 0.16,
-              "dist_pips": 20.4,
+              "density_pct": 0.2,
+              "dist_pips": 19.2,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 1.308,
               "density_pct": 0.12,
-              "dist_pips": 35.4,
+              "dist_pips": 34.2,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -37914,9 +37914,9 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "time": 1795659300,
               "open": 1.31128,
-              "high": 1.31158,
+              "high": 1.31176,
               "low": 1.31127,
-              "close": 1.31153
+              "close": 1.31142
             }
           ],
           "candles_by_tf": {
@@ -38582,9 +38582,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795658400,
                 "open": 1.31091,
-                "high": 1.31158,
+                "high": 1.31176,
                 "low": 1.3108,
-                "close": 1.31153
+                "close": 1.31142
               }
             ],
             "H1": [
@@ -39249,9 +39249,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795658400,
                 "open": 1.31091,
-                "high": 1.31158,
+                "high": 1.31176,
                 "low": 1.3108,
-                "close": 1.31153
+                "close": 1.31142
               }
             ],
             "M30": [
@@ -39916,9 +39916,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795658400,
                 "open": 1.31091,
-                "high": 1.31158,
+                "high": 1.31176,
                 "low": 1.3108,
-                "close": 1.31153
+                "close": 1.31142
               }
             ],
             "M15": [
@@ -40583,19 +40583,12 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795659300,
                 "open": 1.31128,
-                "high": 1.31158,
+                "high": 1.31176,
                 "low": 1.31127,
-                "close": 1.31153
+                "close": 1.31142
               }
             ],
             "M5": [
-              {
-                "time": 1795631100,
-                "open": 1.31276,
-                "high": 1.3128,
-                "low": 1.31245,
-                "close": 1.3126
-              },
               {
                 "time": 1795631400,
                 "open": 1.3126,
@@ -41253,6 +41246,13 @@ window.STATIC_DASHBOARD_DATA = {
                 "high": 1.31158,
                 "low": 1.31127,
                 "close": 1.31153
+              },
+              {
+                "time": 1795659600,
+                "open": 1.31154,
+                "high": 1.31176,
+                "low": 1.31135,
+                "close": 1.31142
               }
             ]
           }
@@ -41264,20 +41264,20 @@ window.STATIC_DASHBOARD_DATA = {
         "name": "XAU/USD (Oro / Dólar)",
         "display": "XAU/USD (Oro)",
         "icon": "🥇",
-        "price": 3586.54,
-        "bid": 3585.6,
-        "ask": 3587.48,
-        "spread_pips": 188.0,
-        "bias": "BULLISH",
-        "bias_desc": "SESGO INSTITUCIONAL COMPRA",
-        "prob_buy": 53,
-        "prob_sell": 47,
+        "price": 3584.21,
+        "bid": 3583.29,
+        "ask": 3585.13,
+        "spread_pips": 184.0,
+        "bias": "BEARISH",
+        "bias_desc": "SESGO INSTITUCIONAL VENTA",
+        "prob_buy": 47,
+        "prob_sell": 53,
         "retail_sentiment": {
-          "long_pct": 64.1,
-          "short_pct": 35.9,
-          "longs_in_loss": 32.0,
-          "shorts_in_loss": 16.3,
-          "summary": "Minoristas 64.1% Comprados vs 35.9% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
+          "long_pct": 64.2,
+          "short_pct": 35.8,
+          "longs_in_loss": 32.1,
+          "shorts_in_loss": 16.2,
+          "summary": "Minoristas 64.2% Comprados vs 35.8% Vendidos. Contrarian Smart Money favorece VENTA por exceso de compradores atrapados."
         },
         "order_book": {
           "order_long_pct": 59.8,
@@ -41286,19 +41286,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 3597.0,
               "density_pct": 0.67,
-              "dist_pips": 1046.0,
+              "dist_pips": 1279.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 3643.5,
               "density_pct": 0.35,
-              "dist_pips": 5696.0,
+              "dist_pips": 5929.0,
               "label": "Buy Stops / BSL"
             },
             {
               "price": 3689.5,
               "density_pct": 0.16,
-              "dist_pips": 10296.0,
+              "dist_pips": 10529.0,
               "label": "Buy Stops / BSL"
             }
           ],
@@ -41306,19 +41306,19 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "price": 3505.0,
               "density_pct": 0.24,
-              "dist_pips": 8154.0,
+              "dist_pips": 7921.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3553.5,
               "density_pct": 0.24,
-              "dist_pips": 3304.0,
+              "dist_pips": 3071.0,
               "label": "Sell Stops / SSL"
             },
             {
               "price": 3504.0,
               "density_pct": 0.19,
-              "dist_pips": 8254.0,
+              "dist_pips": 8021.0,
               "label": "Sell Stops / SSL"
             }
           ],
@@ -41326,7 +41326,7 @@ window.STATIC_DASHBOARD_DATA = {
           "ssl_target": 3505.0
         },
         "technical_smc": {
-          "trend_h4": "ALCISTA 🟢",
+          "trend_h4": "BAJISTA 🔴",
           "trend_h1": "ALCISTA 🟢",
           "trend_m30": "ALCISTA 🟢",
           "trend_m15": "ALCISTA 🟢",
@@ -41997,9 +41997,9 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "time": 1795659300,
               "open": 3584.2,
-              "high": 3587.88,
+              "high": 3591.22,
               "low": 3582.11,
-              "close": 3586.32
+              "close": 3583.93
             }
           ],
           "candles_by_tf": {
@@ -42665,9 +42665,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795658400,
                 "open": 3570.15,
-                "high": 3587.88,
+                "high": 3591.22,
                 "low": 3567.62,
-                "close": 3586.63
+                "close": 3583.81
               }
             ],
             "H1": [
@@ -43332,9 +43332,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795658400,
                 "open": 3570.15,
-                "high": 3587.88,
+                "high": 3591.22,
                 "low": 3567.62,
-                "close": 3586.61
+                "close": 3583.95
               }
             ],
             "M30": [
@@ -43999,9 +43999,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795658400,
                 "open": 3570.15,
-                "high": 3587.88,
+                "high": 3591.22,
                 "low": 3567.62,
-                "close": 3586.32
+                "close": 3583.95
               }
             ],
             "M15": [
@@ -44666,9 +44666,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795659300,
                 "open": 3584.2,
-                "high": 3587.88,
+                "high": 3591.22,
                 "low": 3582.11,
-                "close": 3586.32
+                "close": 3583.93
               }
             ],
             "M5": [
@@ -45333,9 +45333,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795659600,
                 "open": 3586.33,
-                "high": 3586.72,
-                "low": 3586.03,
-                "close": 3586.53
+                "high": 3591.22,
+                "low": 3582.95,
+                "close": 3583.84
               }
             ]
           }
@@ -45348,9 +45348,9 @@ window.STATIC_DASHBOARD_DATA = {
         "display": "AUD/USD",
         "icon": "🦘",
         "price": 0.664,
-        "bid": 0.66352,
+        "bid": 0.66353,
         "ask": 0.66447,
-        "spread_pips": 9.5,
+        "spread_pips": 9.4,
         "bias": "BEARISH",
         "bias_desc": "SESGO INSTITUCIONAL VENTA",
         "prob_buy": 47,
@@ -46080,9 +46080,9 @@ window.STATIC_DASHBOARD_DATA = {
             {
               "time": 1795659300,
               "open": 0.66383,
-              "high": 0.66399,
+              "high": 0.66452,
               "low": 0.6637,
-              "close": 0.66399
+              "close": 0.664
             }
           ],
           "candles_by_tf": {
@@ -46748,9 +46748,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795658400,
                 "open": 0.66306,
-                "high": 0.66399,
+                "high": 0.66452,
                 "low": 0.66306,
-                "close": 0.66399
+                "close": 0.664
               }
             ],
             "H1": [
@@ -47415,9 +47415,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795658400,
                 "open": 0.66306,
-                "high": 0.66399,
+                "high": 0.66452,
                 "low": 0.66306,
-                "close": 0.66399
+                "close": 0.664
               }
             ],
             "M30": [
@@ -48082,9 +48082,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795658400,
                 "open": 0.66306,
-                "high": 0.66399,
+                "high": 0.66452,
                 "low": 0.66306,
-                "close": 0.66399
+                "close": 0.664
               }
             ],
             "M15": [
@@ -48749,9 +48749,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795659300,
                 "open": 0.66383,
-                "high": 0.66399,
+                "high": 0.66452,
                 "low": 0.6637,
-                "close": 0.66399
+                "close": 0.664
               }
             ],
             "M5": [
@@ -49416,9 +49416,9 @@ window.STATIC_DASHBOARD_DATA = {
               {
                 "time": 1795659600,
                 "open": 0.66396,
-                "high": 0.66399,
+                "high": 0.66452,
                 "low": 0.66396,
-                "close": 0.66399
+                "close": 0.664
               }
             ]
           }
@@ -49427,172 +49427,484 @@ window.STATIC_DASHBOARD_DATA = {
     ],
     "calendar": [
       {
-        "title": "Private Capital Expenditure q/q",
-        "currency": "AUD",
+        "title": "Evento",
+        "currency": "",
         "impact": "Low",
-        "datetime_raw": "2026-11-25T19:30:00-05:00",
-        "forecast": "4.5%",
-        "previous": "-3.6%"
-      },
-      {
-        "title": "RBA Bulletin",
-        "currency": "AUD",
-        "impact": "Low",
-        "datetime_raw": "2026-11-25T19:30:00-05:00",
+        "datetime_raw": "",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "German GfK Consumer Climate",
-        "currency": "EUR",
+        "title": "Evento",
+        "currency": "",
         "impact": "Low",
-        "datetime_raw": "2026-11-26T02:00:00-05:00",
-        "forecast": "-29.4",
-        "previous": "-30.8"
-      },
-      {
-        "title": "M3 Money Supply y/y",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-26T04:00:00-05:00",
-        "forecast": "3.5%",
-        "previous": "3.5%"
-      },
-      {
-        "title": "Private Loans y/y",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-26T04:00:00-05:00",
-        "forecast": "3.2%",
-        "previous": "3.1%"
-      },
-      {
-        "title": "Euro Summit",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-26T04:15:00-05:00",
+        "datetime_raw": "",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "BOE Financial Stability Report",
-        "currency": "GBP",
+        "title": "Evento",
+        "currency": "",
         "impact": "Low",
-        "datetime_raw": "2026-11-26T05:30:00-05:00",
+        "datetime_raw": "",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "FPC Meeting Minutes",
-        "currency": "GBP",
+        "title": "Evento",
+        "currency": "",
         "impact": "Low",
-        "datetime_raw": "2026-11-26T05:30:00-05:00",
+        "datetime_raw": "",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "FPC Statement",
-        "currency": "GBP",
+        "title": "Evento",
+        "currency": "",
         "impact": "Low",
-        "datetime_raw": "2026-11-26T05:30:00-05:00",
+        "datetime_raw": "",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "ECB Monetary Policy Meeting Accounts",
-        "currency": "EUR",
+        "title": "Evento",
+        "currency": "",
         "impact": "Low",
-        "datetime_raw": "2026-11-26T07:30:00-05:00",
+        "datetime_raw": "",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Bank Holiday",
-        "currency": "USD",
-        "impact": "Holiday",
-        "datetime_raw": "2026-11-26T08:00:00-05:00",
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "French Consumer Spending m/m",
-        "currency": "EUR",
+        "title": "Evento",
+        "currency": "",
         "impact": "Low",
-        "datetime_raw": "2026-11-27T02:45:00-05:00",
-        "forecast": "0.1%",
-        "previous": "-0.5%"
-      },
-      {
-        "title": "French Final Private Payrolls q/q",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-27T02:45:00-05:00",
-        "forecast": "-0.1%",
-        "previous": "-0.1%"
-      },
-      {
-        "title": "French Prelim CPI m/m",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-27T02:45:00-05:00",
-        "forecast": "-0.2%",
-        "previous": "0.4%"
-      },
-      {
-        "title": "French Prelim GDP q/q",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-27T02:45:00-05:00",
-        "forecast": "-0.1%",
-        "previous": "-0.1%"
-      },
-      {
-        "title": "Spanish Flash CPI y/y",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-27T03:00:00-05:00",
-        "forecast": "4.7%",
-        "previous": "4.9%"
-      },
-      {
-        "title": "German Unemployment Change",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-27T03:55:00-05:00",
-        "forecast": "5K",
-        "previous": "4K"
-      },
-      {
-        "title": "Italian 10-y Bond Auction",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-27T05:33:00-05:00",
-        "forecast": "-",
-        "previous": "4.49|1.6"
-      },
-      {
-        "title": "German Buba President Nagel Speaks",
-        "currency": "EUR",
-        "impact": "Low",
-        "datetime_raw": "2026-11-27T07:40:00-05:00",
+        "datetime_raw": "",
         "forecast": "-",
         "previous": "-"
       },
       {
-        "title": "Goods Trade Balance",
-        "currency": "USD",
+        "title": "Evento",
+        "currency": "",
         "impact": "Low",
-        "datetime_raw": "2026-11-27T08:30:00-05:00",
-        "forecast": "-135.9B",
-        "previous": "-134.9B"
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
       },
       {
-        "title": "Prelim Wholesale Inventories m/m",
-        "currency": "USD",
+        "title": "Evento",
+        "currency": "",
         "impact": "Low",
-        "datetime_raw": "2026-11-27T08:30:00-05:00",
-        "forecast": "0.5%",
-        "previous": "0.6%"
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
+      },
+      {
+        "title": "Evento",
+        "currency": "",
+        "impact": "Low",
+        "datetime_raw": "",
+        "forecast": "-",
+        "previous": "-"
       }
     ],
     "high_impact_count": 0,
